@@ -2,107 +2,87 @@
   font-family: 'Nova Mono', monospace;
 }
 
-/* .title {
-  height: 100vh; 
-  background: url(arcadeEntrance.jpg) no-repeat center fixed; 
+.arcadeBackground {
+  height: calc(1000px + 100vh); 
+  background-image: url(arcadeEntrance.jpg);
+  background-color: black; 
+  background-position-x: right;
+  background-position-y: -50vh;
   background-size: cover; 
-} */
+} 
 
-.arcadePic {
-  position: absolute; 
-    top: 500px; 
-    right: 1500px; 
-    width: 100vw; 
-    height: 100vh;
-    transform: scale(4, 4)
-}
-
-.arcadePic img {
-  height: 100%; 
-}
-
-@keyframes divMove {
-  0% {position: absolute; 
-    top: 500px; 
-    right: 1500px; 
-    width: 100vw; 
-    height: 100vh;
-    transform: scale(4, 4)}
-  50% { position: absolute; 
-    top: 0px; 
-    right: 0px; 
-    width: 100vw; 
-    height: 100vh;
-    transform: scale(1, 1)}
-  100% {position: relative;}
-}
-
-.entrancePic{ 
-  width: 100vw; 
-  height: 100vh;
-  animation-name: divMove;
-  animation-duration: 20s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards; 
-  }
-
-@keyframes picMove {
-  0% { 
-    height: 100%; 
-}
-  50% {
-    height: 100vh; 
-    transform: scale(1,1)}
-  100% {transform: scale(2, 2);
-      position: relative; }
-}
-
-
-.entrancePic img {
-  width: 100vw; 
-  height: 100vh; 
-  animation-name: picMove;
-  animation-duration: 20s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
- }
-
-.nothing {
-  display:none; 
-}
-
-
-@keyframes textMove {
-  0% {transform: rotate(-2deg);
-     top:320px; 
-     right: 600px;
-     color: #fe735a;
-     text-shadow: 0px 0px 10px #fe735a;}
-  100% {
-    top:320.5px; 
-    right: 599.5px;
-    color: #fe805a;
-    text-shadow: 1px 1px 15px #fe805a;}
-}
-
-h1 {
-  transform: rotate(-2deg);
-  position: absolute; 
-  font-size: 4em;
-  z-index: 1;
+.titleName {
+  position: absolute;
+  top: 40%;
+  left: 55%;
+  transform: translate(-70%, -50%)
+              rotate(-6deg);
+  font-size: 3.3em;
+  color: #fe735a;
+  white-space: nowrap;
+  text-shadow: 0px 0px 10px #fe735a;
   animation-name: textMove;
   animation-duration: 0.5s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-  animation-fill-mode: forwards;
+}
+
+@keyframes textMove {
+  0% {
+    left: 55%;
+    color: #fe735a;
+    text-shadow: 0px 0px 10px #fe735a;}
+  100% {
+    left: 55.1%;
+    color: #fe805a;
+    text-shadow: 1px 1px 15px #fe805a;}
 }
 
 h1 :hover {
   font-size: larger;
+} 
+
+
+.entranceBackground{
+  background-image: url(arcadeEntrance.jpg);
+  background-color: black; 
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh; 
+  width: 100vw; 
+  background-position: center; 
+  animation-name: divMove;
+  animation-duration: 20s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards; 
 }
+
+
+@keyframes divMove {
+  0% { 
+    height: calc(1000px + 100vh); 
+    background-position-x: right;
+    background-position-y: -50vh;
+    background-size: cover; 
+    }
+  50% {
+    height: 100vh; 
+    width: 100vw; 
+    background-position: center; 
+    transform: scale(1,1);
+    }
+  100% {
+    transform: scale(2, 2); 
+    }
+  }
+
+
+.nothing {
+  display:none; 
+}
+
 
 .gameTease  {
   position: absolute; 
@@ -120,19 +100,15 @@ h1 :hover {
   0% { height: 0;
     width: 0;
     min-width: 0; 
-    min-height: 0;
-    border: 0px solid rgba(255, 238, 184, 0);}
+    min-height: 0;}
   70% {
     margin: 20vw; 
-    border: 0px solid rgba(255, 238, 184, 0);
     height: 0;
     width: 0;
     min-width: 0; 
     min-height: 0;}
   100% {
-    border: 10px solid rgba(255, 238, 184, .7);
-    height: 16vw;
-    width: 16vw;
+   
     margin: 50px;}
   }
 
@@ -142,7 +118,6 @@ h1 :hover {
   min-width: 200px; 
   min-height: 200px; 
   border-radius: 50%;
-  border: 10px solid rgba(255, 238, 184, .7);
   margin: 50px; 
   z-index: 2;
   overflow: hidden;
@@ -157,3 +132,5 @@ h1 :hover {
   height: 100%;
   opacity: 0.8;
 }
+
+
