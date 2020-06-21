@@ -2,42 +2,58 @@
   font-family: 'Nova Mono', monospace;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.title {
-  /* width: 100vw;  */
+/* .title {
   height: 100vh; 
   background: url(arcadeEntrance.jpg) no-repeat center fixed; 
   background-size: cover; 
-  /* transform: scale(2, 3); */
-}
+} */
 
 .arcadePic {
   position: absolute; 
-  top: -550px; 
-  right: 0; 
+    top: 500px; 
+    right: 1500px; 
+    width: 100vw; 
+    height: 100vh;
+    transform: scale(4, 4)
 }
 
 .arcadePic img {
   height: 100%; 
 }
 
+@keyframes divMove {
+  0% {position: absolute; 
+    top: 500px; 
+    right: 1500px; 
+    width: 100vw; 
+    height: 100vh;
+    transform: scale(4, 4)}
+  50% { position: absolute; 
+    top: 0px; 
+    right: 0px; 
+    width: 100vw; 
+    height: 100vh;
+    transform: scale(1, 1)}
+  100% {position: relative;}
+}
+
 .entrancePic{ 
   width: 100vw; 
-  height: 100vh; 
+  height: 100vh;
+  animation-name: divMove;
+  animation-duration: 20s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards; 
   }
 
 @keyframes picMove {
-  0% {transform: scale(1)}
+  0% { 
+    height: 100%; 
+}
+  50% {
+    height: 100vh; 
+    transform: scale(1,1)}
   100% {transform: scale(2, 2);
       position: relative; }
 }
@@ -47,7 +63,7 @@
   width: 100vw; 
   height: 100vh; 
   animation-name: picMove;
-  animation-duration: 10s;
+  animation-duration: 20s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
@@ -90,25 +106,54 @@ h1 :hover {
 
 .gameTease  {
   position: absolute; 
+  top: 0; 
   display: flex; 
   flex-wrap: wrap;
   justify-content: space-around;
-  top: 100px; 
-  width: 80%; 
-}
+  width: 80%;
+  max-width: 921px;
+  height: 100vh; 
+  margin: 3vh 0 0 12vw;
+  }
 
-/* animieren mit delay, da das Bild erst groß werden muss ...  */
+@keyframes gameTease {
+  0% { height: 0;
+    width: 0;
+    min-width: 0; 
+    min-height: 0;
+    border: 0px solid rgba(255, 238, 184, 0);}
+  70% {
+    margin: 20vw; 
+    border: 0px solid rgba(255, 238, 184, 0);
+    height: 0;
+    width: 0;
+    min-width: 0; 
+    min-height: 0;}
+  100% {
+    border: 10px solid rgba(255, 238, 184, .7);
+    height: 16vw;
+    width: 16vw;
+    margin: 50px;}
+  }
+
 .gameTease .hangman {
-  height: 400px;
-  width: 400px;
+  height: 16vw;
+  width: 16vw;
+  min-width: 200px; 
+  min-height: 200px; 
   border-radius: 50%;
-  border: 10px solid black; 
+  border: 10px solid rgba(255, 238, 184, .7);
   margin: 50px; 
   z-index: 2;
-  overflow: hidden; 
-}
+  overflow: hidden;
+  animation-name: gameTease;
+  animation-duration: 25s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards; 
+ }
 
 .gameTease .hangman img {
   width: 100%; 
-
+  height: 100%;
+  opacity: 0.8;
 }
