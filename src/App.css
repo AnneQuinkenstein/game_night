@@ -89,35 +89,34 @@ h1 :hover {
   top: 0;
   width: 80%;
   max-width: 921px;
-  margin: 12vh 0 0 65vw;
+  margin: 20vh 0 0 30vw;
   }
 
 @keyframes gameTease {
-  0% { font-size: 0; 
-      font-weight: 0}
-  70% {
-    margin: 20vw; 
-    height: 0;
-    width: 0;
-    min-width: 0; 
-    min-height: 0;}
+  0% { 
+  color: transparent;
+  text-shadow: 0px 0px 10px transparent;
+    }
+  80% {
+  color: transparent;
+  text-shadow: 0px 0px 10px transparent;
+    }
   100% {
-    margin: 50px;}
+  color: #fe735a;
+  text-shadow: 0px 0px 10px #fe735a;
+    }
   }
 
 .gameTease .hangman {
   font-size: 80px; 
   font-weight: 1000; 
+  margin-left: 40vw;
+  transform: rotate(-6deg);
+  white-space: nowrap;
+  color: #fe735a;
+  text-shadow: 0px 0px 10px #fe735a;
   animation-name: gameTease;
   animation-duration: 25s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards; 
  }
-
-.gameTease .hangman img {
-  width: 100%; 
-  height: 100%;
-  opacity: 0.8;
-}
-
-
