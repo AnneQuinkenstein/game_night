@@ -1,5 +1,6 @@
 import React from 'react';
 import background from '../arcadeEntrance.jpg';
+import pacghost from '../blinky.png'
 
 const style = false; 
 
@@ -12,14 +13,16 @@ function Title() {
     </div> 
       <div className={style? "nothing": "gameTease"}> 
         <div className='hangman'>
-          HANGMAN
-          {/* <img src='https://cdn2.momjunction.com/wp-content/uploads/2015/05/Hangman-Word-Game.jpg.webp' /> */}
+          <img src={pacghost} /> 
+          <div class="center">HANGMAN</div>
         </div>
         <div className='hangman'>
-          QUARTETT
+          <img src={pacghost} /> 
+          <div class="center"> QUARTETT</div>
         </div>
         <div className='hangman'>
-          QUIZ
+        <img src={pacghost} /> 
+        <div class="center"> QUIZ</div>
         </div>
       </div>
     </>
