@@ -1,7 +1,7 @@
 import React from 'react';
 import background from '../arcadeEntrance.jpg';
 
-const style = false; 
+const style = true; 
 
 
 function Title() {
