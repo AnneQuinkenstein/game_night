@@ -22,11 +22,13 @@
   white-space: nowrap;
   text-shadow: 0px 0px 10px #fe735a;
   animation-name: textMove;
-  animation-duration: 0.5s;
-  animation-timing-function: ease-in-out;
+  animation-duration: 0.1s;
+  animation-timing-function: cubic-bezier(.215,.61,.355,1);
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
+
+/* .01s  infinite alternate */
 
 @keyframes textMove {
   0% {
@@ -34,7 +36,7 @@
     color: #fe735a;
     text-shadow: 0px 0px 10px #fe735a;}
   100% {
-    left: 55.1%;
+    left: 55.006%;
     color: #fe805a;
     text-shadow: 1px 1px 15px #fe805a;}
 }
@@ -53,7 +55,7 @@ h1 :hover {
   width: 100vw; 
   background-position: center; 
   animation-name: divMove;
-  animation-duration: 20s;
+  animation-duration: 5s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: 1;
   animation-fill-mode: forwards; 
@@ -67,17 +69,16 @@ h1 :hover {
     background-position-y: -50vh;
     background-size: cover; 
     }
-  50% {
+  100% {
     height: 100vh; 
     width: 100vw; 
     background-position: center; 
     transform: scale(1,1);
     }
-  100% {
+  /* 100% {
     transform: scale(2, 2); 
-    }
+    } */
   }
-
 
 .nothing {
   display:none; 
@@ -85,60 +86,72 @@ h1 :hover {
 
 .gameTease  {
   position: absolute; 
-  top: 0; 
+  left: 33vw; 
   display: flex; 
-  flex-wrap: wrap;
-  justify-content: space-around;
-  width: 80%;
-  max-width: 921px;
-  height: 100vh; 
-  margin: 3vh 0 0 12vw;
+  flex-flow: wrap;
+  align-items: baseline; 
+  width: 30%;
+  height: 80%; 
+  animation-name: gameTeaseBox;
+  animation-duration: 7s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards; 
   }
+
+  @keyframes gameTeaseBox{
+    0% { top: 100vh; 
+       }
+    40% {
+      top: 100vh
+      }
+    100% {
+      top: 35vh
+      }
+    }
 
 .gameTease .hangman {
   position: relative; 
-  height: 16vw;
-  width: 16vw;
-  min-width: 200px; 
-  min-height: 200px; 
-  /* border-radius: 50%;
-  border: 10px solid rgba(255, 238, 184, .7); */
-  margin: 50px; 
   z-index: 2;
-  /* overflow: hidden; */
+  padding: 0; 
   animation-name: gameTease;
-  animation-duration: 25s;
+  animation-duration: 7s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards; 
  }
 
+
 @keyframes gameTease {
   0% { height: 0;
-    width: 0;
-    min-width: 0; 
-    min-height: 0;
-    /* border: 0px solid rgba(255, 238, 184, 0); */
-  }
-  70% {
-    margin: 20vw; 
-    /* border: 0px solid rgba(255, 238, 184, 0); */
+     }
+  40% {
     height: 0;
-    width: 0;
-    min-width: 0; 
-    min-height: 0;
+    margin: 0;
     }
-  100% {
-    /* border: 10px solid rgba(255, 238, 184, .7); */
-    height: 16vw;
-    width: 16vw;
-    margin: 50px;
-    }
+  41% {
+    height: 12vw;
   }
+  100% {
+    height: 10vw;
+    min-height: 150px; 
+    }
+}
+
+.gameTease .hangman:nth-child(1){
+  align-self: flex-end; 
+}
+
+.gameTease .hangman:nth-child(2){
+  align-self: flex-start; 
+}
+
+.gameTease .hangman:nth-child(3){
+  margin-left: 7vw; 
+}
+
 
 .gameTease .hangman img {
-  width: 100%; 
   height: 100%;
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
 .center {
@@ -148,7 +161,7 @@ h1 :hover {
   font-size: 121%;
   font-weight: bolder; 
   animation-name: gameTeaseFont;
-  animation-duration: 25s;
+  animation-duration: 7s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards; 
 }
@@ -159,8 +172,8 @@ h1 :hover {
     font-size: 0%;
     font-weight: 0; 
     }
-  70% {
-    font-size: 0%;
+  40% {
+    font-size: 121%;
     font-weight: 0; 
     }
   100% {
@@ -168,42 +181,3 @@ h1 :hover {
     font-weight: bolder; 
     }
   }
-
-
-/* 
-.gameTease  {
-  position: absolute; 
-  top: 0;
-  width: 80%;
-  max-width: 921px;
-  margin: 20vh 0 0 30vw;
-  }
-
-@keyframes gameTease {
-  0% { 
-  color: transparent;
-  text-shadow: 0px 0px 10px transparent;
-    }
-  80% {
-  color: transparent;
-  text-shadow: 0px 0px 10px transparent;
-    }
-  100% {
-  color: #fe735a;
-  text-shadow: 0px 0px 10px #fe735a;
-    }
-  }
-
-.gameTease .hangman {
-  font-size: 80px; 
-  font-weight: 1000; 
-  margin-left: 40vw;
-  transform: rotate(-6deg);
-  white-space: nowrap;
-  color: #fe735a;
-  text-shadow: 0px 0px 10px #fe735a;
-  animation-name: gameTease;
-  animation-duration: 25s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards; 
- } */

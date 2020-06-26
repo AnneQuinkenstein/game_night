@@ -1,32 +1,39 @@
-import React from 'react';
+import React, { Component } from 'react';
 import background from '../arcadeEntrance.jpg';
-import pacghost from '../blinky.png'
-
-const style = false; 
+import pacghost from '../blinky.png';
 
 
-function Title() {
-  return (  
-    <>
-    <div className={style? "arcadeBackground": "entranceBackground"}>
-      <h1 className={style? "titleName": "nothing"}><i class="fa fa-long-arrow-left" aria-hidden="true"  onClick={()=> style = false}></i> online Game Night</h1>
-    </div> 
-      <div className={style? "nothing": "gameTease"}> 
-        <div className='hangman'>
+class Title extends Component {
+  constructor(props){
+    super(props); 
+    this.state={
+      style: true
+    };
+  }
+
+  render() {
+    return (  
+      <>
+      <div className={this.style? "arcadeBackground": "entranceBackground"}>
+        <h1 className={this.style? "titleName": "nothing"}><i class="fa fa-long-arrow-left" aria-hidden="true"  onClick={()=> this.setState({style: true})}></i> online Game Night</h1>
+      </div> 
+        <div className={this.style? "nothing": "gameTease"}> 
+          <div className='hangman'>
+            <img src={pacghost} /> 
+            <div class="center">HANGMAN</div>
+          </div>
+          <div className='hangman'>
+            <img src={pacghost} /> 
+            <div class="center"> QUARTETT</div>
+          </div>
+          <div className='hangman'>
           <img src={pacghost} /> 
-          <div class="center">HANGMAN</div>
+          <div class="center"> QUIZ</div>
+          </div>
         </div>
-        <div className='hangman'>
-          <img src={pacghost} /> 
-          <div class="center"> QUARTETT</div>
-        </div>
-        <div className='hangman'>
-        <img src={pacghost} /> 
-        <div class="center"> QUIZ</div>
-        </div>
-      </div>
-    </>
-  )
+      </>
+    )
+  }
 }
 
 export default Title;
