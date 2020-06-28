@@ -1,6 +1,9 @@
 * {
   font-family: 'Nova Mono', monospace;
 }
+html{
+  overflow: hidden; 
+}
 
 .arcadeBackground {
   height: calc(1000px + 100vh); 
@@ -28,7 +31,27 @@
   animation-direction: alternate;
 }
 
-/* .01s  infinite alternate */
+.jokes {
+  position: absolute;
+  top: 47%;
+  left: 55%; 
+  transform: translate(-60%, -50%)
+              rotate(-4.2deg);
+  font-size: 3.3em;
+  color: #fe735a;
+  white-space: nowrap;
+  text-shadow: 0px 0px 10px #fe735a;
+  animation-name: textMove;
+  animation-duration: 0.1s;
+  animation-timing-function: cubic-bezier(.215,.61,.355,1);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.jokes span {
+  font-size: 0.9em; 
+}
+
 
 @keyframes textMove {
   0% {
