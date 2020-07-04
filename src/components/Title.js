@@ -35,8 +35,8 @@ class Title extends Component {
       <>
       <div className={this.state.style? "arcadeBackground": "entranceBackground"}>
         <h1 className={this.state.style? "titleName": "nothing"}><i class="fa fa-long-arrow-left" aria-hidden="true"  onClick={this.handleClick}></i> <span onClick={this.handleClick}>online Game Night</span></h1>
-        <h1 className={this.state.style? "jokes": "nothing"}><i class="fa fa-long-arrow-down" aria-hidden="true"  onClick={this.changeJoke}></i> <span onClick={this.changeJoke}>What is so</span>funny about Code?</h1>
-        <p>{this.state.joke}</p>
+        <h1 className={this.state.style? "nothing": "jokes"} onMouseEnter={this.changeJoke}> <span onMouseEnter={this.changeJoke}>What</span> <span onMouseEnter={this.changeJoke}> is so </span> <span onMouseEnter={this.changeJoke}>funny</span> about <span onMouseEnter={this.changeJoke}>... </span></h1>
+        <p className={this.state.style? "nothing": "jokes"}>{this.state.joke}</p>
       </div> 
         <div className={this.state.style? "nothing": "gameTease"}> 
           <div className='hangman'>

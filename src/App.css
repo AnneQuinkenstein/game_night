@@ -31,13 +31,19 @@ html{
   animation-direction: alternate;
 }
 
-.jokes {
+.titleName:hover {
+  cursor: pointer;
+}
+
+/* on arcadeBackground */
+/* 
+h1.jokes {
   position: absolute;
-  top: 47%;
+  top: 54%;
   left: 55%; 
   transform: translate(-60%, -50%)
-              rotate(-4.2deg);
-  font-size: 3.3em;
+              rotate(2deg);
+  font-size: 3em;
   color: #fe735a;
   white-space: nowrap;
   text-shadow: 0px 0px 10px #fe735a;
@@ -46,12 +52,87 @@ html{
   animation-timing-function: cubic-bezier(.215,.61,.355,1);
   animation-iteration-count: infinite;
   animation-direction: alternate;
+} */
+
+/* on entranceBackground */
+h1.jokes {
+  position: absolute;
+  top: 26%;
+  left: 55%; 
+  transform: translate(10%, 0%)
+              rotate(-12.5deg);
+  font-size: 2em;
+  color: transparent;
+  white-space: nowrap;
+  text-shadow: 0px 0px 10px #fe735a;
+  animation-name: wait;
+  animation-duration: 7s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards; 
 }
 
-.jokes span {
+h1.jokes:hover {
+  color: #b91317; 
+}
+
+@keyframes wait {
+  0% { 
+    font-size: 0;
+    }
+  49%{
+    font-size: 0;
+  }
+  50% {
+    font-size: 2em; 
+    }
+  100% {
+    font-size: 2em;
+    }
+  }
+
+h1.jokes span:first-child {
+  font-size: 0.6em; 
+}
+
+h1.jokes span:nth-child(2) {
+  font-size: 0.8em; 
+}
+
+h1.jokes span:nth-child(3){
   font-size: 0.9em; 
 }
 
+h1.jokes span:nth-child(4){
+  font-size: 2em; 
+}
+
+/* on arcadeBackground */
+/* p.jokes {
+  width: 800px;
+  position: absolute;
+  top: 75%;
+  left: 55%; 
+  transform: translate(-60%, -50%);
+  font-size: 1.7em;
+  color: #fe735a;
+  text-shadow: 0px 0px 10px #fe735a;
+  animation-name: textMove;
+  animation-duration: 0.1s;
+  animation-timing-function: cubic-bezier(.215,.61,.355,1);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+} */
+
+/* on entranceBackground */
+p.jokes {
+  width: 400px;
+  position: absolute;
+  top:37%;
+  transform: translate(30%, 0%);
+  font-size: 1.5em;
+  color: #b91317;
+  text-shadow: 0px 0px 1px #fe805a;
+}
 
 @keyframes textMove {
   0% {
