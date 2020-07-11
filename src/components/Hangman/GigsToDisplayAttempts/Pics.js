@@ -9,7 +9,7 @@ class Pics extends Component {
     super(props); 
     this.state = {
       dataArray: [],
-      cathegory: props.movieTitle, 
+      cathegory: props.movieTitle,
     }
   }
 
@@ -18,7 +18,7 @@ class Pics extends Component {
   }
   
   fetchData = () => {
-    fetch(`https://api.giphy.com/v1/gifs/search?q=${this.state.cathegory}&api_key=${giphy_key}&limit=5`)
+    fetch(`https://api.giphy.com/v1/gifs/search?q=${this.state.cathegory}&tag=movie&api_key=${giphy_key}&limit=5`)
       .then(res => res.json())
       .then(data => this.setState({dataArray: data.data}))
   }
@@ -27,7 +27,7 @@ class Pics extends Component {
   render(){
     return (
       <div className="Pics"> 
-          <GifList gifs={this.state.dataArray} /> 
+          <GifList gifs={this.state.dataArray} falseGuesses={this.props.falseGuesses}/>  
       </div> 
     );
   }

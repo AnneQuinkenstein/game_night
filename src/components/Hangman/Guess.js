@@ -9,14 +9,13 @@ class Guess extends Component {
 
     handleChange = event => {
         this.props.updateGuessedLetters(event.target.value);
-        this.props.getWrongLetters();
         event.target.value = '';
     }
     
     render() {
         return(
                 <form className="Guess" onSubmit={this.handleSubmit}>
-                    <input onChange={this.handleChange} type="text" name="guessedLetter" id="guessedLetter" maxLength="1" />
+                    <input onChange={this.handleChange} type="text" name="guessedLetter" id="guessedLetter" maxLength="1" autofocus/>
                 </form>
             )
     }

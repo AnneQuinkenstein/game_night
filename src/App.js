@@ -2,14 +2,15 @@ import React from 'react';
 import './App.css';
 import Title from './components/Title'
 import Hangman from './components/Hangman/Hangman';
+import { Route, Switch } from 'react-router-dom'; 
 
 
 function App() {
     return(
-      <>
-      {/* <Title /> */}
-      <Hangman />
-      </>
+      <Switch>
+        <Route exact path='/' component={Title} />
+        <Route path='/hangman' component={Hangman} />
+      </Switch> 
     )
 }
 
