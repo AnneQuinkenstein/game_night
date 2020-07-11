@@ -1,10 +1,29 @@
+.DisplayWord {
+  margin: 15vh auto 15vh auto; 
+  font-family: 'Zilla Slab Highlight', cursive;
+  letter-spacing:20px;
+  font-size: 13em;
+  color: grey; 
+  text-shadow: 20px 20px 0 black, 20px 20px black, 20px 20px 0 black, 20px 20px black; 
+} 
+
 .Pics {
   display: flex; 
   justify-content: space-evenly;
+  position: relative;
+}
+
+h1  {
+  position: absolute;
+  text-shadow: 0 0 20px grey, 0 0 20px grey; 
 }
 
 .GifsList {
   display: flex;
+  position: absolute;
+  height: 100vh;
+  z-index: -1;
+
 }
 
 .Gif{
@@ -12,11 +31,9 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  height: 50vh; 
-  width: 19vw; 
-  margin: 0.5vh; 
+  height: 100%;
+  width: 20vw; 
 }
-
 
 .Gif img {
   min-width: 100%; 
@@ -25,9 +42,9 @@
 }
 
 
-/* .Gif img{
-  filter: blur(10px);
-} */
+.blurr {
+  filter: blur(30px);
+}
 
 .SelectedGif {
   width: 50vw; 

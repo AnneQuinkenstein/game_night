@@ -1,5 +1,18 @@
-.DisplayWord, .Guess  {
-    text-align: center;
-    font-size: 2em;
+html .Hangman{
+    overflow: visible; 
+    /* background-image: url('./Wheel_puzzle_board.jpg');  */
+    background-size: cover; 
+
+  }
+
+.DisplayWord, .Guess, .Letterbox {
+    display: flex; 
+    justify-content: space-evenly;
+    font-size: 70px; 
     font-weight: bolder;
+}
+
+.Letterbox {
+    width: 10px; 
+    border: 3px solid black;
 }
