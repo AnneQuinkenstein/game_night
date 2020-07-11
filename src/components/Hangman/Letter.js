@@ -14,7 +14,6 @@ const Letter = (props) => {
         return letterState
     }
 
-    console.log('render:', answerLetter());
     return (
         <div className='Letter'>
             {answerLetter()}

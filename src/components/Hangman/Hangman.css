@@ -1,18 +1,24 @@
-html .Hangman{
-    overflow: visible; 
-    /* background-image: url('./Wheel_puzzle_board.jpg');  */
-    background-size: cover; 
+/* Hangman classic  */
 
-  }
-
-.DisplayWord, .Guess, .Letterbox {
+.DisplayWord {
     display: flex; 
-    justify-content: space-evenly;
-    font-size: 70px; 
-    font-weight: bolder;
+    justify-content: space-evenly; 
+    margin: 50vh 20vw;   
 }
 
-.Letterbox {
-    width: 10px; 
-    border: 3px solid black;
+.Letter {
+    /* font-family: 'Zilla Slab Highlight', cursive; */
+    border: 6px solid black; 
+    width: 100px; 
+    font-size: 10em;
+    font-weight: bolder;
+    color: grey; 
+    text-shadow: 20px 20px 0 black, 20px 20px black, 20px 20px 0 black, 20px 20px black; 
 }
+
+
+h1  {
+    position: realtive;
+}
+  
+
