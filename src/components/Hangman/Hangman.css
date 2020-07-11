@@ -1,24 +1,63 @@
 /* Hangman classic  */
 
-.DisplayWord {
-    display: flex; 
-    justify-content: space-evenly; 
-    margin: 50vh 20vw;   
+
+h1 {
+    position: relative;
 }
 
-.Letter {
-    /* font-family: 'Zilla Slab Highlight', cursive; */
-    border: 6px solid black; 
-    width: 100px; 
-    font-size: 10em;
+.DisplayWord {
+    position: relative;
+    top: 30vh; 
+    text-align: center;
+    font-size: 10vw;
     font-weight: bolder;
     color: grey; 
-    text-shadow: 20px 20px 0 black, 20px 20px black, 20px 20px 0 black, 20px 20px black; 
+    text-shadow: 20px 20px 0 black, 20px 20px black, 20px 20px 0 black, 20px 20px black;  
+}
+    /* font-family: 'Zilla Slab Highlight', cursive; */
+
+.Guess {
+    z-index: 2;
+    opacity: 0.1; 
 }
 
+.guessedLetters {
+    width: 100vh;
+    text-decoration: line-through;
+}
 
-h1  {
-    position: realtive;
+/* Background Pics */
+  
+.GifsList {
+    display: flex;
+    position: absolute;
+    height: 100vh;
+    z-index: -1;
+    border: 1vw solid black; 
 }
   
-
+.Gif{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 100%;
+    width: 19.5vw; 
+}
+  
+.Gif img {
+    min-width: 100%; 
+    min-height: 100%; 
+    flex-shrink: 0;
+}
+ 
+.blurr {
+    filter: blur(30px);
+}
+  
+.wrongLetter {
+    position: absolute;
+    font-size: 5em;
+    top: 3vh;
+    text-decoration: line-through;
+}

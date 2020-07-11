@@ -2,7 +2,7 @@ import React from 'react';
 import { Component } from 'react';
 import DisplayWord from './DisplayWord';
 import Guess from './Guess';
-import Pics from './GigsToDisplayAttempts/Pics';
+import GifsList from './GigsToDisplayAttempts/GifsList';
 import './Hangman.css';
 import ExplainHangman from './ExplainHangman';
 // import themoviedb_key from './../../Keys';
@@ -81,14 +81,13 @@ class Hangman extends Component {
         return (
             <div className="Hangman">
                 <ExplainHangman/>
-                <Pics movieTitle={movieTitle} falseGuesses={this.getWronglyGuessedLetters().length} />
+                <GifsList movieTitle={movieTitle} falseGuesses={this.getWronglyGuessedLetters().length} wrongLetters={this.getWronglyGuessedLetters()} />
                 <DisplayWord sentence={this.state.sentence} guessedLetters={this.state.guessedLetters} />
                 <Guess updateGuessedLetters={this.updateGuessedLetters} />
-                <h1>{this.getWronglyGuessedLetters()}</h1>
+                {/* <h1 className="guessedLetters">{this.getWronglyGuessedLetters()}</h1> */}
             </div>
         )
     }
-
 }
 
 export default Hangman;
