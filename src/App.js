@@ -1,14 +1,16 @@
 import React from 'react';
 import './App.css';
 import Title from './components/Title'
+import Hangman from './components/Hangman/Hangman';
+import { Route, Switch } from 'react-router-dom'; 
 
-const changeStyle = () => {
-  
-}
 
 function App() {
     return(
-      <Title />
+      <Switch>
+        <Route exact path='/' component={Title} />
+        <Route path='/hangman' component={Hangman} />
+      </Switch> 
     )
 }
 
