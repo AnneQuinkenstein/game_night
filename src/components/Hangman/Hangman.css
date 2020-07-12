@@ -1,18 +1,128 @@
-html .Hangman{
-    overflow: visible; 
-    /* background-image: url('./Wheel_puzzle_board.jpg');  */
-    background-size: cover; 
+/* 'https://fonts.googleapis.com/css?family=VT323 */
+/* import url('https://fonts.googleapis.com/css?family=Orbitron|Quicksand:500'); */
+/* https://acupoftee.github.io/fonts/Clip.ttf */
 
+/* Hangman classic  */
+
+.Hangman {
+    background-color: #111;
+    background-image: radial-gradient(#333, #111);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: -2;
+    color: #fff;
+    text-align: center;
+    width: 100vw;
+    font-weight: 700;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  #fly-in {
+    font-size: 4em;
+    margin: 40vh auto;
+    height: 20vh; 
+    text-transform: uppercase;
+  }
+  
+  #fly-in span {
+    display: block;
+    font-size: .4em;
+    opacity: .8;
+  }
+  
+  #fly-in div {
+    position: fixed; 
+    margin: 2vh 0;
+    opacity: 0;
+    left: 10vw;
+    width: 80vw;
+    animation: switch 32s linear;
+  }
+  
+  #fly-in div:nth-child(2) { animation-delay: 4s}
+  #fly-in div:nth-child(3) { animation-delay: 8s}
+  #fly-in div:nth-child(4) { animation-delay: 12s}
+  #fly-in div:nth-child(5) { animation-delay: 16s}
+  #fly-in div:nth-child(6) { animation-delay: 20s}
+  #fly-in div:nth-child(7) { animation-delay: 24s}
+  #fly-in div:nth-child(8) { animation-delay: 28s}
+  
+  @keyframes switch {
+      0% { opacity: 0;filter: blur(20px); transform:scale(12)}
+      3% { opacity: 1;filter: blur(0); transform:scale(1)}
+      10% { opacity: 1;filter: blur(0); transform:scale(.9)}
+      13% { opacity: 0;filter: blur(10px); transform:scale(.1)}
+      80% { opacity: 0}
+      100% { opacity: 0}
   }
 
-.DisplayWord, .Guess, .Letterbox {
-    display: flex; 
-    justify-content: space-evenly;
-    font-size: 70px; 
+  #fly-inStay {
+    position: fixed; 
+    animation: flyIn 4s linear; 
+    animation-delay: 32s;
+    opacity: 0; 
+    margin: 
+
+  }
+/* 
+.DisplayWord {
+    font-family: 'Fira Mono', monospace;
+    letter-spacing: -5px;
+    position: relative;
+    top: 30vh; 
+    text-align: center;
+    font-size: 10vw;
     font-weight: bolder;
+    color: #ffffffe5;
+    text-shadow: 20px 20px 0 black, 20px 20px black, 20px 20px 0 black, 20px 20px black;  
+} */
+
+.Guess {
+    z-index: 2;
+    opacity: 0.1; 
 }
 
-.Letterbox {
-    width: 10px; 
-    border: 3px solid black;
+/* Background Pics */
+  
+.GifsList {
+    display: flex;
+    position: absolute;
+    height: 100vh;
+    z-index: -1;
+    box-shadow: inset 0 0 10px 5px black;
+}
+  
+.Gif{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 100%;
+    width: 20vw; 
+}
+  
+.Gif img {
+    min-width: 100%; 
+    min-height: 100%; 
+    flex-shrink: 0;
+}
+ 
+.blurr {
+    filter: blur(30px);
+}
+  
+.wrongLetter {
+    font-family: 'Fira Mono', monospace;
+    letter-spacing: -5px;
+    position: relative;
+    animation: glitch 1s linear infinite;
+    position: absolute;
+    font-size: 5em;
+    bottom: 3vh;
+    text-decoration: line-through;
+    font-weight: bolder;
+    color: #ffffffe5;
+    text-shadow: 20px 20px 0 black, 20px 20px black, 20px 20px 0 black, 20px 20px black;  
 }
