@@ -7,7 +7,7 @@ import './Hangman.css';
 import ExplainHangman from './ExplainHangman';
 // import themoviedb_key from './../../Keys';
 
-const movieTitle = "Snow White and the Seven Dwarfs";
+const movieTitle = "The Snowpiercer";
 const year = 2005;
 
 class Hangman extends Component {
@@ -23,7 +23,7 @@ class Hangman extends Component {
         }
     }
 
-   
+
     //Fetch Array of popluar Movies by Year
     popularMovies = (year) => {
         fetch(
@@ -44,22 +44,18 @@ class Hangman extends Component {
 
     // select Year of Movie 
     handleSelectYear = (event) => {
-        this.setState({year: event.target.value}); 
+        this.setState({ year: event.target.value });
     }
 
- 
-  
+
+
 
     // Array of GuessedLetters
     updateGuessedLetters = (letter) => {
         letter = letter.toLowerCase();
-        if (this.state.guessedLetters.includes(letter)) {
-            alert(`You already guessed ${letter}!`)
-        } else {
-            this.setState({
-                guessedLetters: [...this.state.guessedLetters, letter]
-            })
-        }
+        this.setState({
+            guessedLetters: [...this.state.guessedLetters, letter]
+        })
     }
 
     // Array of WronglyGussedLetters 
@@ -80,11 +76,22 @@ class Hangman extends Component {
         console.log('Movies', this.state.arrMovies)
         return (
             <div className="Hangman">
-                <ExplainHangman/>
+                {/* <ExplainHangman/> */}
                 <GifsList movieTitle={movieTitle} falseGuesses={this.getWronglyGuessedLetters().length} wrongLetters={this.getWronglyGuessedLetters()} />
-                <DisplayWord sentence={this.state.sentence} guessedLetters={this.state.guessedLetters} />
-                <Guess updateGuessedLetters={this.updateGuessedLetters} />
-                {/* <h1 className="guessedLetters">{this.getWronglyGuessedLetters()}</h1> */}
+                {/* <div id="fly-in">
+                    <div><span>Guess</span>the Movie Title</div>
+                    <div>Letter<span>by Letter</span></div>
+                    <div>No more than 5 <span> wrong guesses</span></div>
+                    <div><span>Start by</span>typing with your keyboard</div>
+                    <div><span>Letter</span>by Letter</div>
+                    <div>Wrong guess<span>will lead to</span></div>
+                    <div>reavel a <span> picture</span></div>
+                    <div><span>which might or might not</span> be from the movie</div>
+                </div> */}
+                <div id='fly-inStay'>
+                    <DisplayWord sentence={this.state.sentence} guessedLetters={this.state.guessedLetters} />
+                    <Guess updateGuessedLetters={this.updateGuessedLetters} />
+                </div>
             </div>
         )
     }
