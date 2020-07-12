@@ -20,6 +20,7 @@ class GifsList extends Component {
     fetch(`https://api.giphy.com/v1/gifs/search?q=${this.state.cathegory}&tag=movie&api_key=${giphy_key}&limit=5`)
       .then(res => res.json())
       .then(data => this.setState({ gifs: data.data }))
+      .catch(error => {console.log("There was an error fetching and parsing data", error);});
   }
 
 
