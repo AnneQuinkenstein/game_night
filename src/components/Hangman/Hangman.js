@@ -7,7 +7,7 @@ import './Hangman.css';
 import ExplainHangman from './ExplainHangman';
 // import themoviedb_key from './../../Keys';
 
-const movieTitle = "Magnolia";
+const movieTitle = "The Snowpiercer";
 const year = 2005;
 
 class Hangman extends Component {
