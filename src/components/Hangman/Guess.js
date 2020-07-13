@@ -15,8 +15,8 @@ class Guess extends Component {
     render() {
         return(
                 <form className="Guess" onSubmit={this.handleSubmit}>
-                    <input onChange={this.handleChange} type="text" name="guessedLetter" id="guessedLetter" maxLength="1" autoFocus/>
-                </form>
+                    <input onChange={this.handleChange} type="text" name="guessedLetter" id="guessedLetter" maxLength="1" autoFocus />
+                </form>         
             )
     }
     

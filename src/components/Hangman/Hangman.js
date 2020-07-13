@@ -5,10 +5,12 @@ import Guess from './Guess';
 import GifsList from './GigsToDisplayAttempts/GifsList';
 import './Hangman.css';
 import ExplainHangman from './ExplainHangman';
-import themoviedb_key from './../../Keys';
+// import themoviedb_key from './../../Keys';
 
-const movieTitle = "The Snowpiercer";
-const year = 2005;
+// const movieTitle = "The Snowpiercer";
+const year = 1995;
+const themoviedb_key = '4db4144033ef5a34afbec19191f494c4';
+const randomNum = Math.floor(Math.random() * 20)
 
 class Hangman extends Component {
 
@@ -16,13 +18,11 @@ class Hangman extends Component {
         super(props);
         this.state = {
             guessedLetters: [],
-            arrMovies: [],
-            sentence: movieTitle.split(''),
+            movieData: null,
             Guesses: 5,
             wrongLetters: [],
         }
     }
-
 
     //Fetch Array of popluar Movies by Year
     popularMovies = (year) => {
@@ -31,7 +31,9 @@ class Hangman extends Component {
         )
             .then(res => res.json())
             .then(data => {
-                this.setState({ arrMovies: data.results });
+                this.setState({
+                    movieData: data.results[randomNum],
+                });
             })
             .catch(error => {
                 console.log("There was an error fetching and parsing data", error);
@@ -47,9 +49,6 @@ class Hangman extends Component {
         this.setState({ year: event.target.value });
     }
 
-
-
-
     // Array of GuessedLetters
     updateGuessedLetters = (letter) => {
         letter = letter.toLowerCase();
@@ -61,7 +60,7 @@ class Hangman extends Component {
     // Array of WronglyGussedLetters 
     getWronglyGuessedLetters = () => {
         const wrongLetters = this.state.guessedLetters.filter(letter => {
-            return !this.state.sentence.includes(letter) && !this.state.sentence.includes(letter.toUpperCase())
+            return !this.state.movieData.title.split('').includes(letter) && !this.state.movieData.title.split('').includes(letter.toUpperCase())
         })
         return wrongLetters;
     }
@@ -73,18 +72,19 @@ class Hangman extends Component {
     }
 
     render() {
-        console.log('Movies', this.state.arrMovies)
+        const { movieData, guessedLetters } = this.state
+        console.log('Hangman:', movieData);
         return (
             <div className="Hangman">
-                <GifsList movieTitle={movieTitle} falseGuesses={this.getWronglyGuessedLetters().length} wrongLetters={this.getWronglyGuessedLetters()} />
+                {movieData && <GifsList movieData={movieData} falseGuesses={this.getWronglyGuessedLetters().length} wrongLetters={this.getWronglyGuessedLetters()} />}
                 <div className="explainHangman">
                     <div className='fly-in'>
                         <ExplainHangman />
-                        <DisplayWord sentence={this.state.sentence} guessedLetters={this.state.guessedLetters} />
+                        {movieData && <DisplayWord movieData={movieData} guessedLetters={guessedLetters} />}
                     </div>
                 </div>
                 <Guess updateGuessedLetters={this.updateGuessedLetters} />
-                <GifsList movieTitle={movieTitle} falseGuesses={this.getWronglyGuessedLetters().length} wrongLetters={this.getWronglyGuessedLetters()} />
+                {movieData && <GifsList movieData={movieData} falseGuesses={this.getWronglyGuessedLetters().length} wrongLetters={this.getWronglyGuessedLetters()} />}
             </div>
         )
     }

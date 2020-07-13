@@ -8,8 +8,9 @@ class GifsList extends Component {
     super(props);
     this.state = {
       gifs: [],
-      cathegory: this.props.movieTitle,
+      cathegory: this.props.movieData.title,
     }
+    console.log('GifList: ', this.props.movieData.title);
   }
 
   componentDidMount() {
