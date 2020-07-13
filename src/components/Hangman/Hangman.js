@@ -5,7 +5,7 @@ import Guess from './Guess';
 import GifsList from './GigsToDisplayAttempts/GifsList';
 import './Hangman.css';
 import ExplainHangman from './ExplainHangman';
-// import themoviedb_key from './../../Keys';
+import themoviedb_key from './../../Keys';
 
 const movieTitle = "The Snowpiercer";
 const year = 2005;
@@ -27,7 +27,7 @@ class Hangman extends Component {
     //Fetch Array of popluar Movies by Year
     popularMovies = (year) => {
         fetch(
-            `https://api.themoviedb.org/3/discover/movie?api_key=4db4144033ef5a34afbec19191f494c4&year=${year}&language=en-US&page=1`
+            `https://api.themoviedb.org/3/discover/movie?api_key=${themoviedb_key}&year=${year}&language=en-US&page=1`
         )
             .then(res => res.json())
             .then(data => {
