@@ -5,18 +5,16 @@ class ExplainHangman extends Component {
 
     render() {
         return (
-            <div className="epxlainHangman">
-                <div id="fly-in">
-                    <div><span>Guess</span>the Movie Title</div>
-                    <div>Letter<span>by Letter</span></div>
-                    <div>No more than 5 <span> wrong guesses</span></div>
-                    <div><span>Start by</span>typing with your keyboard</div>
-                    <div><span>Letter</span>by Letter</div>
-                    <div>Wrong guess<span>will lead to</span></div>
-                    <div>reavel a <span> picture</span></div>
-                    <div><span>which might or might not</span> be from the movie</div>
-                </div>
-            </div>
+            <>
+                <div className='explain'><span>Guess</span>the Movie Title</div>
+                <div className='explain'>Letter<span>by Letter</span></div>
+                <div className='explain'>No more than 5 <span> wrong guesses</span></div>
+                <div className='explain'><span>Start by</span>typing with your keyboard</div>
+                <div className='explain'><span>Letter</span>by Letter</div>
+                <div className='explain'>Wrong guess<span>will lead to</span></div>
+                <div className='explain'>reavel a <span> picture</span></div>
+                <div className='explain'><span>which might or might not</span> be from the movie</div>
+            </>
         )
     }
 
