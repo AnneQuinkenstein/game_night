@@ -76,22 +76,15 @@ class Hangman extends Component {
         console.log('Movies', this.state.arrMovies)
         return (
             <div className="Hangman">
-                {/* <ExplainHangman/> */}
                 <GifsList movieTitle={movieTitle} falseGuesses={this.getWronglyGuessedLetters().length} wrongLetters={this.getWronglyGuessedLetters()} />
-                {/* <div id="fly-in">
-                    <div><span>Guess</span>the Movie Title</div>
-                    <div>Letter<span>by Letter</span></div>
-                    <div>No more than 5 <span> wrong guesses</span></div>
-                    <div><span>Start by</span>typing with your keyboard</div>
-                    <div><span>Letter</span>by Letter</div>
-                    <div>Wrong guess<span>will lead to</span></div>
-                    <div>reavel a <span> picture</span></div>
-                    <div><span>which might or might not</span> be from the movie</div>
-                </div> */}
-                <div id='fly-inStay'>
-                    <DisplayWord sentence={this.state.sentence} guessedLetters={this.state.guessedLetters} />
-                    <Guess updateGuessedLetters={this.updateGuessedLetters} />
+                <div className="explainHangman">
+                    <div className='fly-in'>
+                        <ExplainHangman />
+                        <DisplayWord sentence={this.state.sentence} guessedLetters={this.state.guessedLetters} />
+                    </div>
                 </div>
+                <Guess updateGuessedLetters={this.updateGuessedLetters} />
+                <GifsList movieTitle={movieTitle} falseGuesses={this.getWronglyGuessedLetters().length} wrongLetters={this.getWronglyGuessedLetters()} />
             </div>
         )
     }
