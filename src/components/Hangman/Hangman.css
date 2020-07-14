@@ -1,5 +1,4 @@
 /* 'https://fonts.googleapis.com/css?family=VT323 */
-/* import url('https://fonts.googleapis.com/css?family=Orbitron|Quicksand:500'); */
 /* https://acupoftee.github.io/fonts/Clip.ttf */
 
 /* Hangman classic  */
@@ -111,7 +110,7 @@
     left: 10vw;
     width: 80vw;
     animation: flyIn 4s linear; 
-    /* animation-delay: 32s; */
+    animation-delay: 32s;
     animation-fill-mode: forwards;
   }
 
