@@ -1,6 +1,7 @@
 /* 'https://fonts.googleapis.com/css?family=VT323 */
-/* import url('https://fonts.googleapis.com/css?family=Orbitron|Quicksand:500'); */
 /* https://acupoftee.github.io/fonts/Clip.ttf */
+/* font-family: 'digital';
+src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/38273/digital-webfont.woff'); */
 
 /* Hangman classic  */
 
@@ -11,7 +12,6 @@
     text-align: center;
     width: 100vw;
     font-weight: 700;
-    font-family: 'Montserrat', sans-serif;
   }
 
   /* Filmrolle mit Giphy-Gifs */
@@ -80,26 +80,22 @@
     opacity: 0;
     left: 10vw;
     width: 80vw;
-    animation: switch 32s linear;
-    animation-delay: 0s; 
+    animation: switch 12s linear;
+    animation-delay: 2s; 
     transform:scale(12);
     filter: blur(10px); 
     text-transform: uppercase;
+    /* font-family: 'Montserrat', sans-serif; */
   }
   
-  .explain:nth-child(2) { animation-delay: 4s}
-  .explain:nth-child(3) { animation-delay: 8s}
-  .explain:nth-child(4) { animation-delay: 12s}
-  .explain:nth-child(5) { animation-delay: 16s}
-  .explain:nth-child(6) { animation-delay: 20s}
-  .explain:nth-child(7) { animation-delay: 24s}
-  .explain:nth-child(8) { animation-delay: 28s}
+  .explain:nth-child(2) { animation-delay: 6s}
+  .explain:nth-child(3) { animation-delay: 10s}
   
   @keyframes switch {
       0% { opacity: 0;filter: blur(10px); transform:scale(12)}
-      3% { opacity: 1;filter: blur(0); transform:scale(1)}
-      10% { opacity: 1;filter: blur(0); transform:scale(.9)}
-      13% { opacity: 0;filter: blur(10px); transform:scale(.1)}
+      5% { opacity: 1;filter: blur(0); transform:scale(1)}
+      15% { opacity: 1;filter: blur(0); transform:scale(.9)}
+      20% { opacity: 0;filter: blur(10px); transform:scale(.1)}
       80% { opacity: 0}
       100% { opacity: 0}
   }
@@ -111,24 +107,104 @@
     left: 10vw;
     width: 80vw;
     animation: flyIn 4s linear; 
-    animation-delay: 32s;
+    animation-delay: 12s;
     animation-fill-mode: forwards;
   }
 
   @keyframes flyIn {
-    0% { opacity: 0;filter: blur(20px); transform:scale(12)}
-    3% { opacity: 1;filter: blur(0); transform:scale(1)}
+    0% { opacity: 0;filter: blur(10px); transform:scale(12)}
+    5% { opacity: 1;filter: blur(0); transform:scale(1)}
     100% {opacity: 1; filter: blur(0); transform:scale(1)}
   }
 
 
 .Guess, .Guess input {
-    position: absolute; 
-    z-index: 5;
-    opacity: 1; 
+  position: absolute;
+  z-index: 5;
+  opacity: 0;
+  height: 100vh;
+  width: 100%;
+  left: 0;
 }
 
+/* Hangman-Menu */
+.HangmanMenu {
+  height: 0;
+  }
 
+.HangmanMenu ul{
+  list-style-type: none;
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+  -moz-perspective: 1000px;
+  top:200px;
+}
+
+.HangmanMenu ul li{
+  display: grid;
+  grid-template-columns: 20% auto;
+  width: 8em;
+  top:2.5em; 
+  left: 2em;
+  border-radius: 10px;
+  padding:15px;
+  cursor: pointer;
+  transform:  rotateY(70deg) rotateX(21deg) skewY(13deg);
+  position: absolute;
+  border-bottom: 4px solid ;
+  border: linear-gradient(45deg, rgba(141, 58, 197, 0.3), rgba(114, 86, 190, 0.3));
+  text-shadow: 1px 1px 2px rgb(197, 51, 161), 0 0 1em  #fe735a, 0 0 0.2em #b91317;
+  mix-blend-mode:multiply;
+  font-weight: 800;
+  font-size: 1.9em; 
+  text-align: center;
+  user-select:none;
+  -webkit-user-select: none;
+  -moz-user-select: none;   
+}
+
+.HangmanMenu ul li:nth-child(1){
+  background: rgb(160, 162, 233,0.4);
+  top:3.4em;
+}
+
+.HangmanMenu ul li:nth-child(2){
+  top:5.8em;
+  background: rgb(123, 110, 180,0.4);
+}
+
+.HangmanMenu ul li:nth-child(3){
+  top: 8.4em;
+  background: rgb(167, 161, 247,0.4);
+}
+
+.HangmanMenu ul li:nth-child(4){
+  top:11.1em;
+  background: rgba(159, 118, 212, 0.4);
+}
+
+.HangmanMenu ul li:hover{
+  transform: rotateY(6deg) rotateX(4deg) scale(1.02);
+  -webkit-transform: rotateY(6deg) rotateX(4deg) scale(1.02);
+  -moz-transform: rotateY(6deg) rotateX(4deg) scale(1.02);
+  transition: transform 0.4s ease-out;
+  -webkit-transform: transform 0.4s ease-out;
+  -moz-transform: transform 0.4s ease-out;
+  z-index: 4;
+  mix-blend-mode: normal;
+}
+
+@keyframes selectoption{
+  0%{transform: scale(1.0);
+  -webkit-transform: scale(1.0);
+  -moz-transform: scale(1.0);}
+  50%{transform:  scale(0.9);
+  -webkit-transform: scale(0.9);
+  -moz-transform: scale(0.9);}
+  100%{transform: scale(1);
+  -webkit-transform: scale(1.0);
+  -moz-transform: scale(1.0);}
+}
 
 /* Background Pics */
   
