@@ -1,37 +1,36 @@
-import React, { Component } from 'react';
-import giphy_key from '../../../Keys';
+import React, { useState, useEffect } from 'react';
 import Gif from './Gif';
 
-class GifsList extends Component {
+const GifsList = (props) => {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      gifs: [],
-      cathegory: this.props.movieData.title,
-    }
-    console.log('GifList: ', this.props.movieData.title);
-  }
+  const [gifs, setGifs] = useState(null);
+  const [cathegory, setCathegory] = useState(props.movieData.title);
 
-  componentDidMount() {
-    this.fetchData();
-  }
 
-  fetchData = () => {
-    fetch(`https://api.giphy.com/v1/gifs/search?q=${this.state.cathegory}&tag=movie&api_key=${giphy_key}&limit=5`)
+  console.log('GifList: ', props.movieData.title);
+  console.log(process.env.REACT_APP_GIPHY_KEY);
+  console.log('Cathegory:', cathegory);
+
+  useEffect(() => {
+    fetch(`https://api.giphy.com/v1/gifs/search?q=${cathegory}&tag=movie&api_key=${process.env.REACT_APP_GIPHY_KEY}&limit=5`)
       .then(res => res.json())
-      .then(data => this.setState({ gifs: data.data }))
-      .catch(error => {console.log("There was an error fetching and parsing data", error);});
-  }
+      .then(data => setGifs(data.data))
+  }, [cathegory])
 
+  useEffect(() => {
+    setCathegory(props.movieData.title);
+  }, [props])
 
-  render() {
-    return (
-      <div className="GifsList">
-        {this.state.gifs.map((gif, index) => <Gif gifURL={gif.images.downsized_large.url} falseGuesses={this.props.falseGuesses} index={index} key={gif.images.downsized_large.url} wrongLetter={this.props.wrongLetters[index]} />)}
-      </div>
-    );
-  }
+  console.log('Gifs', gifs)
+
+  return (
+    <div className="GifsList">
+      {gifs ? console.log('loaded'): console.log('not loaded')}
+    </div>
+  ); 
+
 }
 
 export default GifsList;
+
+{/* { gifs.map((gif, index) => <Gif gifURL={gif.images.downsized_large.url} falseGuesses={props.falseGuesses} index={index} key={index} wrongLetter={props.wrongLetters[index]} />)  */}
