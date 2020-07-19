@@ -16,7 +16,7 @@ src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/38273/digital-webfont.wof
 
   /* Filmrolle mit Giphy-Gifs */
 
-  .GifsList {
+ .GifsList {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -118,12 +118,12 @@ src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/38273/digital-webfont.wof
   }
 
 
-.Guess, .Guess input {
+ input {
   position: absolute;
   z-index: 5;
   opacity: 0;
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   left: 0;
 }
 
@@ -141,9 +141,7 @@ src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/38273/digital-webfont.wof
 }
 
 .HangmanMenu ul li{
-  display: grid;
-  grid-template-columns: 20% auto;
-  width: 8em;
+  width: 6.5em;
   top:2.5em; 
   left: 2em;
   border-radius: 10px;
@@ -155,33 +153,27 @@ src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/38273/digital-webfont.wof
   border: linear-gradient(45deg, rgba(141, 58, 197, 0.3), rgba(114, 86, 190, 0.3));
   text-shadow: 1px 1px 2px rgb(197, 51, 161), 0 0 1em  #fe735a, 0 0 0.2em #b91317;
   mix-blend-mode:multiply;
+  text-align: left; 
   font-weight: 800;
   font-size: 1.9em; 
-  text-align: center;
-  user-select:none;
-  -webkit-user-select: none;
-  -moz-user-select: none;   
+  z-index: 25;
 }
 
 .HangmanMenu ul li:nth-child(1){
-  background: rgb(160, 162, 233,0.4);
+  background: rgb(260, 162, 233,0.4);
   top:3.4em;
 }
 
 .HangmanMenu ul li:nth-child(2){
   top:5.8em;
-  background: rgb(123, 110, 180,0.4);
+  background: rgb(223, 110, 180,0.4);
 }
 
 .HangmanMenu ul li:nth-child(3){
   top: 8.4em;
-  background: rgb(167, 161, 247,0.4);
+  background: rgb(267, 161, 247,0.4);
 }
 
-.HangmanMenu ul li:nth-child(4){
-  top:11.1em;
-  background: rgba(159, 118, 212, 0.4);
-}
 
 .HangmanMenu ul li:hover{
   transform: rotateY(6deg) rotateX(4deg) scale(1.02);
@@ -190,7 +182,7 @@ src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/38273/digital-webfont.wof
   transition: transform 0.4s ease-out;
   -webkit-transform: transform 0.4s ease-out;
   -moz-transform: transform 0.4s ease-out;
-  z-index: 4;
+  z-index: 40;
   mix-blend-mode: normal;
 }
 

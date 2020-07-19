@@ -14,7 +14,7 @@ const Title = () => {
 
 
   const handleClick = (event) => {
-    setStyle( !style )
+    setStyle(!style)
   }
 
   const changeJoke = (event) => {
@@ -26,22 +26,29 @@ const Title = () => {
   return (
     <div className="Title">
       <div className={style ? "arcadeBackground" : "entranceBackground"}>
-        <h1 className={style ? "titleName" : "nothing"}><i class="fa fa-long-arrow-left" aria-hidden="true" onClick={handleClick}></i> <span onClick={handleClick}>online Game Night</span></h1>
-        <h1 className={style ? "nothing" : "jokes"} onClick={changeJoke}> <span onClick={changeJoke}>What</span> <span onClick={changeJoke}> is so </span> <span onClick={changeJoke}>funny</span> about <span onClick={changeJoke}>... </span></h1>
+        <div className="containerSign">
+          <h1 className={style ? "titleName" : "nothing"}> <i class="fa fa-long-arrow-left" aria-hidden="true" onClick={handleClick}></i> <span onClick={handleClick}> online <span className="flicker">G</span>ame Nig<span className="flickerTwo">h</span>t</span></h1>
+        </div>
+        <div className="containerJokes">
+          <h1 className={style ? "nothing" : "jokes"} onClick={changeJoke}> Click for the fun of coding!</h1>
+        </div>
         <p className={style ? "nothing" : "jokes"}>{joke}</p>
-      </div>
-      <div className={style ? "nothing" : "gameTease"}>
-        <div className='hangman'>
-          <img src={pacghost} />
-          <div class="center"><Link to='/hangman'>HANGMAN</Link></div>
-        </div>
-        <div className='hangman'>
-          <img src={pacghost} />
-          <div class="center"> QUARTETT</div>
-        </div>
-        <div className='hangman'>
-          <img src={pacghost} />
-          <div class="center"> QUIZ</div>
+
+        <div className="containerPacman">
+          <div className={style ? "nothing" : "gameTease"}>
+            <div className='hangman'>
+              <img src={pacghost} />
+              <div class="center"><Link to='/hangman'>HANGMAN</Link></div>
+            </div>
+            <div className='hangman'>
+              <img src={pacghost} />
+              <div class="center"> QUARTETT</div>
+            </div>
+            <div className='hangman'>
+              <img src={pacghost} />
+              <div class="center"> CONTACT</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

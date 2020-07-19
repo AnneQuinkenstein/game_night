@@ -7,8 +7,10 @@ import ExplainHangman from './ExplainHangman';
 import HangmanMenu from './HangmanMenu';
 
 
-const year = 1998;
+const year = 2005;
 const randomNum = Math.floor(Math.random() * 20)
+const nonLetterSigns = [',',':',"'"]
+const e = ['è','é','ê', 'ë']
 
 const Hangman = () => {
 
@@ -33,7 +35,9 @@ const Hangman = () => {
 
     // Array of GuessedLetters
     const updateGuessedLetters = (letter) => {
+        !guessedLetters.includes(letter) &&
         setGuessedLetters([...guessedLetters, letter.toLowerCase()])
+        
     }
 
     // Array of WronglyGussedLetters 

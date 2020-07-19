@@ -13,66 +13,249 @@ html .Title{
   background-position-y: -50vh;
   background-size: cover; 
 } 
-
-.titleName {
+.containerSign{
+  perspective: 70px;
   position: absolute;
-  top: 40%;
+  top: 17%;
   left: 55%;
-  transform: translate(-70%, -50%)
-              rotate(-6deg);
-  font-size: 3.3em;
-  color: #fe735a;
-  white-space: nowrap;
-  text-shadow: 0px 0px 10px #fe735a;
-  animation-name: textMove;
-  animation-duration: 0.1s;
-  animation-timing-function: cubic-bezier(.215,.61,.355,1);
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
 }
+.titleName {
+  transform:  translate(-70%, 32%)rotateY(-2deg) rotateX(-0.5deg) skewY(-9.5deg);
+  font-size: 4em;
+  white-space: nowrap;
+  color: #ffe6ff;
+  animation: shine 2s forwards, flicker 3s infinite;
+  perspective-origin: 150% 150%;
+  transform-style: preserve-3d;
+}
+
+/* flickering font  */
+@keyframes blink {
+  0%{  color: #ffe6ff;
+    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #a6a4d6, -0.2rem 0.1rem 1rem #9692e6, 0.2rem 0.1rem 1rem #8480e9, 0 -0.5rem 2rem #615be1, 0 0.5rem 3rem #3d36e3;}
+  
+  75% {
+    color: #ffe6ff;
+    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #a6a4d6, -0.2rem 0.1rem 1rem #9692e6, 0.2rem 0.1rem 1rem #8480e9, 0 -0.5rem 2rem #615be1, 0 0.5rem 3rem #3d36e3;
+  }
+  28%,
+  35% {
+    color: #8480e9;
+    text-shadow: none;
+  }
+  45% {  color: #ffe6ff;
+    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #a6a4d6, -0.2rem 0.1rem 1rem #9692e6, 0.2rem 0.1rem 1rem #8480e9, 0 -0.5rem 2rem #615be1, 0 0.5rem 3rem #3d36e3;}
+  82%,
+  99% {
+    color: hsla(234, 77%, 53%, 0.363);    
+    text-shadow: none;
+  }
+}
+
+.flicker {
+  animation: shine 2s forwards, blink 3s 2s infinite;
+}
+
+
+.flickerTwo {
+  animation: shine 2s forwards, blink 8s 2s infinite;
+}
+
+@keyframes shine {
+  0% {
+    color: #6b1839;
+    text-shadow: none;
+  }
+  100% {
+    color: #ffe6ff;
+    text-shadow: 0 0 1.1rem #ffe6ff, 0 0 2rem #a6a4d6, -0.2rem 0.1rem 1.5rem #9692e6, 0.2rem 0.1rem 1.5rem #8480e9, 0 -0.5rem 2.5rem #615be1, 0 0.5rem 3.5rem #3d36e3;
+  }
+}
+
+@keyframes flicker {
+  from {
+    opacity: 1;
+  }
+
+  4% {
+    opacity: 0.9;
+  }
+
+  6% {
+    opacity: 0.85;
+  }
+
+  8% {
+    opacity: 0.95;
+  }
+
+  10% {
+    opacity: 0.9;
+  }
+
+  11% {
+    opacity: 0.922;
+  }
+
+  12% {
+    opacity: 0.9;
+  }
+
+  14% {
+    opacity: 0.95;
+  }
+
+  16% {
+    opacity: 0.98;
+  }
+
+  17% {
+    opacity: 0.9;
+  }
+
+  19% {
+    opacity: 0.93;
+  }
+
+  20% {
+    opacity: 0.99;
+  }
+
+  24% {
+    opacity: 1;
+  }
+
+  26% {
+    opacity: 0.94;
+  }
+
+  28% {
+    opacity: 0.98;
+  }
+
+  37% {
+    opacity: 0.93;
+  }
+
+  38% {
+    opacity: 0.5;
+  }
+
+  39% {
+    opacity: 0.96;
+  }
+
+  42% {
+    opacity: 1;
+  }
+
+  44% {
+    opacity: 0.97;
+  }
+
+  46% {
+    opacity: 0.94;
+  }
+
+  56% {
+    opacity: 0.9;
+  }
+
+  58% {
+    opacity: 0.9;
+  }
+
+  60% {
+    opacity: 0.99;
+  }
+
+  68% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0.9;
+  }
+
+  72% {
+    opacity: 0.95;
+  }
+
+  93% {
+    opacity: 0.93;
+  }
+
+  95% {
+    opacity: 0.95;
+  }
+
+  97% {
+    opacity: 0.93;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
 
 .titleName:hover {
   cursor: pointer;
 }
 
-/* on arcadeBackground */
-/* 
-h1.jokes {
-  position: absolute;
-  top: 54%;
-  left: 55%; 
-  transform: translate(-60%, -50%)
-              rotate(2deg);
-  font-size: 3em;
-  color: #fe735a;
-  white-space: nowrap;
-  text-shadow: 0px 0px 10px #fe735a;
-  animation-name: textMove;
-  animation-duration: 0.1s;
-  animation-timing-function: cubic-bezier(.215,.61,.355,1);
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-} */
-
 /* on entranceBackground */
-h1.jokes {
+
+.containerJokes{
+  perspective: 250px;
+  /* -webkit-perspective: 250px;
+  -moz-perspective: 250px; */
   position: absolute;
   top: 26%;
   left: 56%; 
-  transform: translate(10%, 0%)
-              rotate(-15deg);
-  font-size: 2em;
+}
+
+h1.jokes {
+  transform: rotate(-19deg) rotateX(-1deg) rotateY(-7deg) skewY(-5deg);
+  font-size: 1.5em;
   color: transparent;
   white-space: nowrap;
-  text-shadow: 0px 0px 10px #fe735a;
   animation-name: wait;
   animation-duration: 7s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards; 
+  animation-name: textMove;
+  animation-duration: 1s;
+  animation-delay: 3.5s;
+  animation-timing-function: cubic-bezier(.215,.61,.355,1);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes textMove {
+  0% {
+    left: 56%;
+    text-shadow: 0px 0px 50px #9d9cc8;
+  }
+  20%{
+    left: 56%;
+    text-shadow: 0px 0px 50px #7672dd;
+  }
+  40% {
+    text-shadow: 1px 1px 25px #ff3331;
+  }
+  100% {
+    left: 56.005%;
+    text-shadow: 1px 1px 35px #ce0000;
+  }
 }
 
 h1.jokes:hover {
   color: #b91317; 
+  cursor: pointer;
+  opacity: 0.8; 
+  text-shadow: 1px 1px black;
+  left: 56%;
 }
 
 @keyframes wait {
@@ -90,70 +273,7 @@ h1.jokes:hover {
     }
   }
 
-h1.jokes span:first-child {
-  font-size: 0.6em; 
-}
-
-h1.jokes span:nth-child(2) {
-  font-size: 0.8em; 
-}
-
-h1.jokes span:nth-child(3){
-  font-size: 0.9em; 
-}
-
-h1.jokes span:nth-child(4){
-  font-size: 2em; 
-}
-
-/* on arcadeBackground */
-/* p.jokes {
-  width: 800px;
-  position: absolute;
-  top: 75%;
-  left: 55%; 
-  transform: translate(-60%, -50%);
-  font-size: 1.7em;
-  color: #fe735a;
-  text-shadow: 0px 0px 10px #fe735a;
-  animation-name: textMove;
-  animation-duration: 0.1s;
-  animation-timing-function: cubic-bezier(.215,.61,.355,1);
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-} */
-
 /* on entranceBackground */
-p.jokes {
-  width: 400px;
-  position: absolute;
-  top:37%;
-  transform: translate(30%, 0%);
-  font-size: 1.5em;
-  color: #b91317;
-  text-shadow: 0px 0px 1px #fe805a;
-  background: linear-gradient(
-    rgba(0, 0, 0, 0.5), 
-    rgba(0, 0, 0, 0.5)
-  );
-  border-radius: 20px;
-  padding: 1vh; 
-}
-
-@keyframes textMove {
-  0% {
-    left: 55%;
-    color: #fe735a;
-    text-shadow: 0px 0px 10px #fe735a;}
-  100% {
-    left: 55.006%;
-    color: #fe805a;
-    text-shadow: 1px 1px 15px #fe805a;}
-}
-
-h1 :hover {
-  font-size: larger;
-} 
 
 
 .entranceBackground{
@@ -171,6 +291,19 @@ h1 :hover {
   animation-fill-mode: forwards; 
 }
 
+p.jokes {
+  width: 400px;
+  position: absolute;
+  top:37%;
+  transform: translate(30%, 0%);
+  font-size: 1.5em;
+  color: #b91317;
+  text-shadow: 0px 0px 1px #fe805a;
+  padding: 1vh; 
+  opacity: 0.8;
+  text-shadow: 1px 1px black;
+  }
+
 
 @keyframes divMove {
   0% { 
@@ -185,25 +318,28 @@ h1 :hover {
     background-position: center; 
     transform: scale(1,1);
     }
-  /* 100% {
-    transform: scale(2, 2); 
-    } */
   }
 
 .nothing {
   display:none; 
 }
 
+.containerPacman{
+  perspective: 250px;
+}
+
 .gameTease  {
   position: absolute; 
-  display: flex; 
-  flex-flow: wrap;
-  align-items: baseline; 
   height: 80%; 
   animation-name: gameTeaseBox;
   animation-duration: 7s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards; 
+  display: flex; 
+  flex-flow: wrap;
+  align-items: baseline; 
+  transform-style: preserve-3d;
+  transform: rotateX(4deg) rotateY(-1deg) skewX(-2deg);
   }
 
   @keyframes gameTeaseBox{
@@ -212,10 +348,10 @@ h1 :hover {
     40% {
       top: 100vh; 
       left: 17vw; 
-      width: 40%;
+      width: 30%;
       }
     100% {
-      top: 35vh; 
+      top: 40vh; 
       left: 33vw; 
       width: 30%;
       }
@@ -240,27 +376,30 @@ h1 :hover {
     margin: 0;
     }
   41% {
-    height: 13vw;
+    height: 11vw;
   }
   100% {
-    height: 10vw;
+    height: 9vw;
     min-height: 150px; 
     }
 }
 
 .gameTease .hangman:nth-child(1){
-  align-self: flex-end; 
+  align-self: flex-end;  
+  transform: rotateX(-2deg) rotateY(1deg) skewX(1.5deg) scale(1.025);
 }
 
 .gameTease .hangman:nth-child(2){
   align-self: flex-end; 
   margin-bottom: 5vw;
+  transform: rotateX(-3deg) rotateY(1deg) skewX(2deg);
 }
 
 .gameTease .hangman:nth-child(3){
   margin-left: 7vw; 
   margin-bottom: 1vw; 
-  height: 13vw; 
+  height: 13vw;
+  transform: rotateX(-1deg) rotateY(1deg) skewX(1deg) scale(1.05);
 }
 
 
@@ -269,12 +408,14 @@ h1 :hover {
   opacity: 0.7;
 }
 
-.center {
+.center, .center a {
   position: absolute;
   top: 65%; 
-  left: 31%; 
-  font-size: 121%;
+  left: 30%; 
   font-weight: bolder; 
+  text-decoration: none;
+  color: black;
+  text-shadow: 0 0 10px rgba(255,255,255,1) , 0 0 20px rgba(255,255,255,1) , 0 0 30px rgba(255,255,  255,1) , 0 0 40px #fe735a , 0 0 70px #fe735a , 0 0 80px #fe735a , 0 0 100px #fe735a;
   animation-name: gameTeaseFont;
   animation-duration: 7s;
   animation-iteration-count: 1;
@@ -287,12 +428,16 @@ h1 :hover {
     font-size: 0%;
     font-weight: 0; 
     }
-  40% {
-    font-size: 121%;
+  49% { 
+    font-size: 0%;
+    font-weight: 0; 
+    }
+  50% {
+    font-size: 100%;
     font-weight: 0; 
     }
   100% {
-    font-size: 121%;
+    font-size: 100%;
     font-weight: bolder; 
     }
   }
