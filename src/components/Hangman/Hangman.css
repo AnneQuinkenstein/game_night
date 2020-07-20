@@ -48,9 +48,9 @@ src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/38273/digital-webfont.wof
     filter: blur(30px);
 }
   
-  /* Animation Explanation + Hangman-Guessed Word */
+  /* Animation Intro + Hangman-Guessed Word */
   
-  .explainHangman{
+  .introHangman{
     background-color: #111;
     background-image: radial-gradient(#333, #111);
     background-size: cover;
@@ -74,7 +74,7 @@ src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/38273/digital-webfont.wof
     text-transform: uppercase;
   }
   
-  .explain {
+  .intro {
     position: fixed; 
     margin: 2vh 0;
     opacity: 0;
@@ -88,8 +88,8 @@ src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/38273/digital-webfont.wof
     /* font-family: 'Montserrat', sans-serif; */
   }
   
-  .explain:nth-child(2) { animation-delay: 6s}
-  .explain:nth-child(3) { animation-delay: 10s}
+  .intro:nth-child(2) { animation-delay: 6s}
+  .intro:nth-child(3) { animation-delay: 10s}
   
   @keyframes switch {
       0% { opacity: 0;filter: blur(10px); transform:scale(12)}
@@ -134,69 +134,41 @@ src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/38273/digital-webfont.wof
 
 .HangmanMenu ul{
   list-style-type: none;
-  perspective: 1000px;
-  -webkit-perspective: 1000px;
-  -moz-perspective: 1000px;
-  top:200px;
+  display: flex; 
+  align-items: flex-start;
+  justify-content: space-evenly;
 }
 
 .HangmanMenu ul li{
-  width: 6.5em;
-  top:2.5em; 
-  left: 2em;
-  border-radius: 10px;
-  padding:15px;
+  margin: 0; 
+  padding: 0; 
+  color: black; 
   cursor: pointer;
-  transform:  rotateY(70deg) rotateX(21deg) skewY(13deg);
-  position: absolute;
-  border-bottom: 4px solid ;
-  border: linear-gradient(45deg, rgba(141, 58, 197, 0.3), rgba(114, 86, 190, 0.3));
-  text-shadow: 1px 1px 2px rgb(197, 51, 161), 0 0 1em  #fe735a, 0 0 0.2em #b91317;
-  mix-blend-mode:multiply;
   text-align: left; 
   font-weight: 800;
-  font-size: 1.9em; 
+  font-size: 2em;
   z-index: 25;
+  font-weight: 700;
+  color: #f5f5f5;
+  text-shadow: 
+  0.25px 0.25px 0.25px #9d9cc8,
+  0.25px 0.5px 0.25px #9d9cc8,
+  0.25px 0.75px 0.25px #9d9cc8,
+  0.25px 1px 0.25px #9d9cc8,
+  0.25px 1.25px 0.25px #9d9cc8,
+  0.25px 1.5px 0.25px #9d9cc8,
+  0.25px 1.75px 0.25px #9d9cc8,
+  0.25px 2px 0.25px #9d9cc8,
+  0.25px 2.25px 0.25px #9d9cc8,
+  0.25px 2.5px 0.25px #9d9cc8,
+  0.25px 4.5px 1.5px #7672dd,
+  0.25px 5.5px 2.5px #7672dd,
+  0.25px 6.25px 8px #7672dd,
+  0.25px 8.25px 15px #7672dd;
+  position: relative;
+  top: -1em
 }
 
-.HangmanMenu ul li:nth-child(1){
-  background: rgb(260, 162, 233,0.4);
-  top:3.4em;
-}
-
-.HangmanMenu ul li:nth-child(2){
-  top:5.8em;
-  background: rgb(223, 110, 180,0.4);
-}
-
-.HangmanMenu ul li:nth-child(3){
-  top: 8.4em;
-  background: rgb(267, 161, 247,0.4);
-}
-
-
-.HangmanMenu ul li:hover{
-  transform: rotateY(6deg) rotateX(4deg) scale(1.02);
-  -webkit-transform: rotateY(6deg) rotateX(4deg) scale(1.02);
-  -moz-transform: rotateY(6deg) rotateX(4deg) scale(1.02);
-  transition: transform 0.4s ease-out;
-  -webkit-transform: transform 0.4s ease-out;
-  -moz-transform: transform 0.4s ease-out;
-  z-index: 40;
-  mix-blend-mode: normal;
-}
-
-@keyframes selectoption{
-  0%{transform: scale(1.0);
-  -webkit-transform: scale(1.0);
-  -moz-transform: scale(1.0);}
-  50%{transform:  scale(0.9);
-  -webkit-transform: scale(0.9);
-  -moz-transform: scale(0.9);}
-  100%{transform: scale(1);
-  -webkit-transform: scale(1.0);
-  -moz-transform: scale(1.0);}
-}
 
 /* Background Pics */
   

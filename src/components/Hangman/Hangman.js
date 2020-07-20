@@ -3,7 +3,7 @@ import './Hangman.css';
 import DisplayWord from './DisplayWord';
 import Guess from './Guess';
 import GifsList from './GigsToDisplayAttempts/GifsList';
-import ExplainHangman from './ExplainHangman';
+import HangmanIntro from './HangmanIntro';
 import HangmanMenu from './HangmanMenu';
 
 
@@ -60,9 +60,9 @@ const Hangman = () => {
         <div className="Hangman">
             {movieData && <GifsList movieData={movieData} falseGuesses={getWronglyGuessedLetters().length} wrongLetters={getWronglyGuessedLetters()} />}
             <HangmanMenu />
-            <div className="explainHangman">
+            <div className="introHangman">
                 <div className='fly-in'>
-                    <ExplainHangman />
+                    <HangmanIntro />
                     {movieData && <DisplayWord movieData={movieData} guessedLetters={guessedLetters} />}
                 </div>
             </div>

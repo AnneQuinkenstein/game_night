@@ -207,16 +207,14 @@ html .Title{
 /* on entranceBackground */
 
 .containerJokes{
-  perspective: 250px;
-  /* -webkit-perspective: 250px;
-  -moz-perspective: 250px; */
+  perspective: 100px;
   position: absolute;
   top: 26%;
-  left: 56%; 
+  left: 60%; 
 }
 
 h1.jokes {
-  transform: rotate(-19deg) rotateX(-1deg) rotateY(-7deg) skewY(-5deg);
+  transform: rotate(-15deg) rotateX(-1deg) rotateY(-7deg) skewY(-5deg);
   font-size: 1.5em;
   color: transparent;
   white-space: nowrap;
