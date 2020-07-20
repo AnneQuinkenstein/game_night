@@ -130,76 +130,71 @@ src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/38273/digital-webfont.wof
 .HangmanMenu {
   height: 0;
   }
-  .HangmanMenu ul {
-    position: absolute;
-    top: 17em;
-    left: 1em;
-    color: hsl(0, 0%, 93%);
-    padding: 1em;
-    width: 15em;
-    height: 17em;
-    text-align: right;
-    text-decoration: none;
-    /* background: linear-gradient(-35deg, rgba(41, 5, 99, 0.4), rgba(79, 17, 138, 0.4)); */
-    z-index: 99;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    list-style-type: none;
-    perspective: 1000px;
-   }
+
+.HangmanMenu ul {
+  left: -0.5em;
+  position: absolute;
+  top: 11em;
+  color: hsl(0, 0%, 93%);
+  padding: 1em;
+  width: 13em;
+  height: 11em;
+  text-align: right;
+  text-decoration: none;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+  perspective: 400px;
+  }
 
 
 .Hangman ul li{
-  width: 6em;
+  position: absolute;
+  width: 7em;
   left: 0.3em;
   border-radius: 10px;
-  padding:15px;
+  padding: 15px;
+  transform: rotateY(20deg) rotateX(-25deg) skewY(20deg);
   cursor: pointer;
-  transform: rotateY(20deg) rotateX(25deg) skewY(15deg);
-  position: absolute;
   border-bottom: 4px solid ;
   border-color:  rgba(158, 130, 212, 0.966);
   text-shadow: 0.5px 0.5px 1px rgb(197, 51, 161), 0 0 0.25em rgb(74, 22, 90), 0 0 0.02em rgb(125, 84, 223);
   mix-blend-mode: multiply;
   font-weight: 800;
-  font-size: 1.9em; 
-  text-align: right;
+  font-size: 1.7em; 
+  text-align: right; 
 }
 
+ 
 ul li:nth-child(1){
   background: rgb(160, 162, 233,0.4);
-  top:1.4em;
+  top:0.7em;
 }
 
 ul li:nth-child(2){
-  top:3.8em;
+  top: 3.1em;
   background: rgb(123, 110, 180,0.4);
 }
 
 ul li:nth-child(3){
-  top: 6.4em;
+  top: 5.5em;
   background: rgb(167, 161, 247,0.4);
 }
 
 ul li:nth-child(4){
-  top:11.1em;
+  top:7.9em;
   background: rgba(159, 118, 212, 0.4);
 }
 
-ul li:hover{
-  transform: rotateY(6deg) rotateX(4deg) scale(1.02);
+.Hangman ul li:hover{
+  transform: translateY(30%) rotateY(6deg) rotateX(4deg) scale(1.02);
   transition: transform 0.4s ease-out;
   z-index: 999;
   mix-blend-mode: normal;
 }
-
-@keyframes selectoption{
-  0%{transform: scale(1.0)}
-  50%{transform:  scale(0.9);}
-  100%{transform: scale(1);}
-} 
 
 
 /* Background Pics */
