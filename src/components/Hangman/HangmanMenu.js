@@ -8,7 +8,7 @@ const HangmanMenu = () => {
                 <span>Rules</span>
             </li>
             <li onclick="select(this)">
-                <span>New Game</span>
+                <span>New&nbsp;Game</span>
             </li>
             <li onclick="select(this)">
                 <span>Exit</span>
