@@ -106,7 +106,7 @@ src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/38273/digital-webfont.wof
     left: 10vw;
     width: 80vw;
     animation: flyIn 4s linear; 
-    animation-delay: 12s;
+    /* animation-delay: 12s; */
     animation-fill-mode: forwards;
   }
 
@@ -140,7 +140,6 @@ src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/38273/digital-webfont.wof
   width: 13em;
   height: 11em;
   text-align: right;
-  text-decoration: none;
   z-index: 99;
   display: flex;
   flex-direction: column;
@@ -153,7 +152,8 @@ src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/38273/digital-webfont.wof
 
 .Hangman ul li{
   position: absolute;
-  width: 7em;
+  width: 10vw;
+  min-width: 4.5em;
   left: 0.3em;
   border-radius: 10px;
   padding: 15px;
@@ -166,6 +166,8 @@ src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/38273/digital-webfont.wof
   font-weight: 800;
   font-size: 1.7em; 
   text-align: right; 
+  text-decoration: none;
+  color: hsl(0, 0%, 93%);
 }
 
  

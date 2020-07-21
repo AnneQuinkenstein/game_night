@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const HangmanMenu = () => {
     return (
@@ -11,7 +12,7 @@ const HangmanMenu = () => {
                     <span>New&nbsp;Game</span>
                 </li>
                 <li onclick="select(this)">
-                    <span>Exit</span>
+                  <Link to='/'>Exit</Link>
                 </li>
             </ul>
         </div>

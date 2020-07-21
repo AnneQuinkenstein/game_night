@@ -7,7 +7,7 @@ import HangmanIntro from './HangmanIntro';
 import HangmanMenu from './HangmanMenu';
 
 
-const year = 2005;
+const year = 2001;
 const randomNum = Math.floor(Math.random() * 20)
 const nonLetterSigns = [',',':',"'"]
 const e = ['è','é','ê', 'ë']
@@ -22,7 +22,7 @@ const Hangman = () => {
 
     //Fetch Array of popluar Movies by Year
     useEffect(() => {
-        fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_MOVIEDB_KEY}&year=${year}&language=en-US&page=1`)
+        fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_MOVIEDB_KEY}&language=en-US&page=1`)
             .then(res => res.json())
             .then(data => setMovieData(data.results[randomNum]))
     }, [])
@@ -62,7 +62,7 @@ const Hangman = () => {
             <HangmanMenu />
             <div className="introHangman">
                 <div className='fly-in'>
-                    <HangmanIntro />
+                    {/* <HangmanIntro /> */}
                     {movieData && <DisplayWord movieData={movieData} guessedLetters={guessedLetters} />}
                 </div>
             </div>
