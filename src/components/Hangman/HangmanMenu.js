@@ -4,21 +4,23 @@ import ChooseLanguage from './ChooseLanguage';
 
 const HangmanMenu = (props) => {
     return (
-        <div className="HangmanMenu left">
+        <>
+        <div className="HangmanMenu top">
             <ul>
                 <li>Rules</li>
                 <li>New&nbsp;Game</li>
                 <li><Link to='/'>Exit</Link></li>
 
             </ul>
-            <div className="chooseLang">
-                <ChooseLanguage
-                    options={props.options}
-                    handleChooseLang={props.handleChooseLang}
-                    choosenLang={props.choosenLang}
-                />
-            </div>
         </div>
+        <div className="HangmanMenu bottom">
+            <ChooseLanguage
+                options={props.options}
+                handleChooseLang={props.handleChooseLang}
+                choosenLang={props.choosenLang}
+            />
+        </div>
+        </>
     )
 }
 

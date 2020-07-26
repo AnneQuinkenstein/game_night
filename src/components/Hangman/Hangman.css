@@ -174,14 +174,27 @@ input {
     height: 0;
 }
 
+.top {
+    position: absolute;
+    top: 11em;
+    padding: 1em;
+    height: 11em;
+}
+
+.bottom {
+    position: absolute;
+    top: 11em; 
+    right: 14em; 
+    padding: 1em; 
+    height: 20em;
+}
+
 .HangmanMenu ul {
     left: -0.5em;
     position: absolute;
-    top: 11em;
+    left: 0.3em;
     color: hsl(0, 0%, 93%);
-    padding: 1em;
     width: 13em;
-    height: 11em;
     text-align: right;
     z-index: 99;
     display: flex;
@@ -190,80 +203,73 @@ input {
     justify-content: center;
     list-style-type: none;
     perspective: 400px;
+    perspective-origin: 50% 10%; 
 }
 
-.Hangman ul li {
-    position: absolute;
+.top ul li {
+    padding: 15px;
+    font-size: 1.7em;
+    transform: rotateY(20deg) rotateX(-25deg) skewY(20deg); 
+    text-align: right;
+}
+
+.bottom ul li {
+    padding: 15px;
+    font-size: 1.3em;
+    transform: rotateY(-20deg) rotateX(-25deg) skewY(-20deg); 
+    text-align: left;
+}
+
+.Hangman ul li{
     width: 10vw;
     min-width: 4.5em;
-    left: 0.3em;
     border-radius: 10px;
-    padding: 15px;
-    transform: rotateY(20deg) rotateX(-25deg) skewY(20deg);
     cursor: pointer;
     border-bottom: 4px solid;
     border-color: rgba(158, 130, 212, 0.966);
     text-shadow: 0.5px 0.5px 1px rgb(197, 51, 161), 0 0 0.25em rgb(74, 22, 90), 0 0 0.02em rgb(125, 84, 223);
     mix-blend-mode: multiply;
     font-weight: 800;
-    font-size: 1.7em;
-    text-align: right;
-    text-decoration: none;
     color: hsl(0, 0%, 93%);
 }
 
-ul li:nth-child(1) {
+.Hangman ul li:nth-child(even) {
     background: rgb(160, 162, 233, 0.4);
-    top: 0.7em;
 }
 
-ul li:nth-child(2) {
-    top: 3.1em;
+.Hangman ul li:nth-child(odd) {
     background: rgb(123, 110, 180, 0.4);
 }
 
-ul li:nth-child(3) {
-    top: 5.5em;
-    background: rgb(167, 161, 247, 0.4);
+/* 
+.Hangman ul li:nth-child(1) {
+  top: 0.7em; 
 }
 
-ul li:nth-child(4) {
-    top: 7.9em;
-    background: rgba(159, 118, 212, 0.4);
+.Hangman ul li:nth-child(2) {
+    top: 3.1em;
 }
+
+.Hangman ul li:nth-child(3) {
+    top: 5.5em;
+}
+
+.Hangman ul li:nth-child(4) {
+    top: 7.9em;
+} */
 
 .Hangman ul li:hover {
-    transform: translateY(30%) rotateY(6deg) rotateX(4deg) scale(1.02);
+    transform: translateY(20%) rotateY(6deg) rotateX(4deg) scale(1.02);
     transition: transform 0.4s ease-out;
     z-index: 999;
     mix-blend-mode: normal;
 }
 
-
-/* Choose Language */
-
-.chooseLang{
-    z-index: 6;
-    position: absolute;
-    left: 20px;
-    bottom: 35vh;
- }
-
-.chooseLang select{
-    width: 130px;
-    background: transparent;
-    text-shadow: 0.5px 0.5px 1px rgb(197, 51, 161), 0 0 0.25em rgb(74, 22, 90), 0 0 0.02em rgb(125, 84, 223);
-    border-radius: 20px;
-    font-weight: 800;
-    font-size: 1.3em;
+.Hangman ul li a{
+    text-decoration: none;
     color: hsl(0, 0%, 93%);
-    border-color: transparent;
 }
 
-.chooseLang select option {
-    background-color: rgb(113, 86, 148); 
-    color: hsl(0, 0%, 93%);
-} */
 
 /* Background Pics */
 

@@ -12,7 +12,6 @@ const Title = () => {
   const [style, setStyle] = useState(true);
   const [joke, setJoke] = useState(null);
 
-
   const handleClick = (event) => {
     setStyle(!style)
   }
@@ -53,7 +52,6 @@ const Title = () => {
       </div>
     </div>
   )
-
 }
 
 export default Title;

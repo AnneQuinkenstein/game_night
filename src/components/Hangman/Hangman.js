@@ -5,7 +5,6 @@ import Guess from './Guess';
 import GifsList from './GigsToDisplayAttempts/GifsList';
 import HangmanIntro from './HangmanIntro';
 import HangmanMenu from './HangmanMenu';
-import ChooseLanguage from './ChooseLanguage';
 
 const randomNum = Math.floor(Math.random() * 20)
 const nonLetterSigns = [',', ':', "'", "-"]
@@ -36,23 +35,15 @@ const Hangman = () => {
         italiano: 'it',
         español: 'es',
         türkçe: 'tr',
-        العربية: 'ar',
-        български: 'bg',
-        汉语_漢語: 'zh',
-        français: 'fr',
-        עברית: 'he',
-        nederlands: 'nl',
-        polszczyzna: 'pl',
-        português: 'pt',
-        русский: 'ru',
-        română: 'ro',
-        tiếng_việt: 'vi',
     }
 
     const options = Object.keys(languages);
 
-    const handleChooseLang = (event) => {
-        setchoosenLang(event.target.value)
+    const handleChooseLang = (lang,e) => {
+        e.preventDefault(); 
+        setchoosenLang(lang.opt);
+        console.log('Langugae:', lang.opt);
+        console.log('Abkuerzung:', languages[lang.opt]);
     }
 
     // Array of GuessedLetters
