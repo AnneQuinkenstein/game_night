@@ -140,6 +140,16 @@ src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/38273/digital-webfont.wof
     animation-fill-mode: forwards;
 }
 
+
+.hangmanNewGame {
+    position: fixed;
+    opacity: 0;
+    left: 10vw;
+    width: 80vw;
+    animation: flyIn 4s linear;
+    animation-fill-mode: forwards;
+}
+
 @keyframes flyIn {
     0% {
         opacity: 0;

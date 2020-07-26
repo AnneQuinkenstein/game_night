@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { HangmanContext } from '../../contexts/HangmanContext';
 
-const DisplayWord = (props) => {
+const DisplayWord = () => {
+    const { movieData, guessedLetters } = useContext(HangmanContext);
    
     let letterState = '';
-    const answer = props.movieData.title.split('')
+
+    const answer = movieData && movieData.title.split('')
         .map(letter => {
             if (letter === ' ') {
                 letterState = ' ';
-            } else if (props.guessedLetters.includes(letter.toLowerCase())) {
+            } else if (guessedLetters.includes(letter.toLowerCase())) {
                 letterState = letter
             } else {
                 letterState = '_'
@@ -16,7 +19,7 @@ const DisplayWord = (props) => {
         });
 
     return (
-        <div className="DisplayWord">
+        <div>
             {answer}
         </div>
     )
