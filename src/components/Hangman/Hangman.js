@@ -6,11 +6,10 @@ import GifsList from './GigsToDisplayAttempts/GifsList';
 import HangmanIntro from './HangmanIntro';
 import HangmanMenu from './HangmanMenu';
 
-
-const year = 2001;
 const randomNum = Math.floor(Math.random() * 20)
-const nonLetterSigns = [',',':',"'"]
-const e = ['è','é','ê', 'ë']
+const nonLetterSigns = [',', ':', "'", "-"]
+const e = ['è', 'é', 'ê', 'ë']
+
 
 const Hangman = () => {
 
@@ -18,26 +17,40 @@ const Hangman = () => {
     const [movieData, setMovieData] = useState(null);
     const [guesses, setGuesses] = useState(5);
     const [wrongLetters, setWrongLetters] = useState([]);
-
+    const [choosenLang, setchoosenLang] = useState('english')
 
     //Fetch Array of popluar Movies by Year
     useEffect(() => {
-        fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_MOVIEDB_KEY}&language=en-US&page=1`)
+        fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_MOVIEDB_KEY}&language=${languages[choosenLang]}&page=1`)
             .then(res => res.json())
             .then(data => setMovieData(data.results[randomNum]))
-    }, [])
+    }, [choosenLang])
 
 
-    // // select Year of Movie 
-    // handleSelectYear = (event) => {
-    //     this.setState({ year: event.target.value });
-    // }
+    //Select Language of MovieTitle
+
+    const languages = {
+        english: 'en',
+        deutsch: 'de',
+        italiano: 'it',
+        español: 'es',
+        türkçe: 'tr',
+    }
+
+    const options = Object.keys(languages);
+
+    const handleChooseLang = (lang,e) => {
+        e.preventDefault(); 
+        setchoosenLang(lang.opt);
+        console.log('Langugae:', lang.opt);
+        console.log('Abkuerzung:', languages[lang.opt]);
+    }
 
     // Array of GuessedLetters
     const updateGuessedLetters = (letter) => {
         !guessedLetters.includes(letter) &&
-        setGuessedLetters([...guessedLetters, letter.toLowerCase()])
-        
+            setGuessedLetters([...guessedLetters, letter.toLowerCase()])
+
     }
 
     // Array of WronglyGussedLetters 
@@ -54,20 +67,31 @@ const Hangman = () => {
         return remainingGuesses;
     }
 
-
     console.log('Hangman:', movieData);
     return (
         <div className="Hangman">
-            {movieData && <GifsList movieData={movieData} falseGuesses={getWronglyGuessedLetters().length} wrongLetters={getWronglyGuessedLetters()} />}
-            <HangmanMenu />
+            {movieData && <GifsList
+                movieData={movieData}
+                falseGuesses={getWronglyGuessedLetters().length}
+                wrongLetters={getWronglyGuessedLetters()}
+            />}
+            <HangmanMenu 
+             options={options} 
+             handleChooseLang={handleChooseLang} 
+             choosenLang={choosenLang} 
+             />
             <div className="introHangman">
                 <div className='fly-in'>
-                    {/* <HangmanIntro /> */}
+                    <HangmanIntro />
                     {movieData && <DisplayWord movieData={movieData} guessedLetters={guessedLetters} />}
                 </div>
             </div>
             <Guess updateGuessedLetters={updateGuessedLetters} />
-            {movieData && <GifsList movieData={movieData} falseGuesses={getWronglyGuessedLetters().length} wrongLetters={getWronglyGuessedLetters()} />}
+            {movieData && <GifsList
+                movieData={movieData}
+                falseGuesses={getWronglyGuessedLetters().length}
+                wrongLetters={getWronglyGuessedLetters()}
+            />}
         </div>
     )
 

@@ -1,56 +1,61 @@
 /* 'https://fonts.googleapis.com/css?family=VT323 */
+
+
 /* https://acupoftee.github.io/fonts/Clip.ttf */
+
+
 /* font-family: 'digital';
 src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/38273/digital-webfont.woff'); */
+
 
 /* Hangman classic  */
 
 .Hangman {
-    display: flex; 
+    display: flex;
     flex-direction: column;
     color: #fff;
     text-align: center;
     width: 100vw;
     font-weight: 700;
-  }
+}
 
-  /* Filmrolle mit Giphy-Gifs */
 
- .GifsList {
+/* Filmrolle mit Giphy-Gifs */
+
+.GifsList {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     height: 25vh;
-    width: 100%; 
+    width: 100%;
     z-index: -1;
-    background-color: black;    
+    background-color: black;
 }
-  
-.Gif{
+
+.Gif {
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     height: 80%;
-    width: 19vw; 
-    border: 5px solid black; 
-    border-radius: 30px; 
+    width: 19vw;
+    border: 5px solid black;
+    border-radius: 30px;
 }
-    
-  
+
 .Gif img {
-    min-width: 100%; 
-    min-height: 100%; 
+    min-width: 100%;
+    min-height: 100%;
     flex-shrink: 0;
 }
- 
+
 .blurr {
     filter: blur(30px);
 }
-  
-  /* Animation Intro + Hangman-Guessed Word */
-  
-  .introHangman{
+
+/* Animation Intro + Hangman-Guessed Word */
+
+.introHangman {
     background-color: #111;
     background-image: radial-gradient(#333, #111);
     background-size: cover;
@@ -58,149 +63,215 @@ src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/38273/digital-webfont.wof
     background-attachment: fixed;
     z-index: -2;
     overflow: hidden;
-    height: 50vh; 
-  }
-  
-  .fly-in {
+    height: 50vh;
+}
+
+.fly-in {
     font-size: 4em;
     margin: 20vh auto;
-    height: 20vh; 
-  }
-  
-  .fly-in span {
+    height: 20vh;
+}
+
+.fly-in span {
     display: block;
     font-size: .4em;
     opacity: .8;
     text-transform: uppercase;
-  }
-  
-  .intro {
-    position: fixed; 
+}
+
+.intro {
+    position: fixed;
     margin: 2vh 0;
     opacity: 0;
     left: 10vw;
     width: 80vw;
     animation: switch 12s linear;
-    animation-delay: 2s; 
-    transform:scale(12);
-    filter: blur(10px); 
+    animation-delay: 2s;
+    transform: scale(12);
+    filter: blur(10px);
     text-transform: uppercase;
-  }
-  
-  .intro:nth-child(2) { animation-delay: 6s}
-  .intro:nth-child(3) { animation-delay: 10s}
-  
-  @keyframes switch {
-      0% { opacity: 0;filter: blur(10px); transform:scale(12)}
-      5% { opacity: 1;filter: blur(0); transform:scale(1)}
-      15% { opacity: 1;filter: blur(0); transform:scale(.9)}
-      20% { opacity: 0;filter: blur(10px); transform:scale(.1)}
-      80% { opacity: 0}
-      100% { opacity: 0}
-  }
+}
+
+.intro:nth-child(2) {
+    animation-delay: 6s
+}
+
+.intro:nth-child(3) {
+    animation-delay: 10s
+}
+
+@keyframes switch {
+    0% {
+        opacity: 0;
+        filter: blur(10px);
+        transform: scale(12)
+    }
+    5% {
+        opacity: 1;
+        filter: blur(0);
+        transform: scale(1)
+    }
+    15% {
+        opacity: 1;
+        filter: blur(0);
+        transform: scale(.9)
+    }
+    20% {
+        opacity: 0;
+        filter: blur(10px);
+        transform: scale(.1)
+    }
+    80% {
+        opacity: 0
+    }
+    100% {
+        opacity: 0
+    }
+}
 
 .DisplayWord {
-    position: fixed; 
+    position: fixed;
     margin: 2vh 0;
     opacity: 0;
     left: 10vw;
     width: 80vw;
-    animation: flyIn 4s linear; 
-    /* animation-delay: 12s; */
+    animation: flyIn 4s linear;
+    animation-delay: 12s;
     animation-fill-mode: forwards;
-  }
-
-  @keyframes flyIn {
-    0% { opacity: 0;filter: blur(10px); transform:scale(12)}
-    5% { opacity: 1;filter: blur(0); transform:scale(1)}
-    100% {opacity: 1; filter: blur(0); transform:scale(1)}
-  }
-
-
- input {
-  position: absolute;
-  z-index: 5;
-  opacity: 0;
-  height: 100vh;
-  width: 100vw;
-  left: 0;
 }
+
+@keyframes flyIn {
+    0% {
+        opacity: 0;
+        filter: blur(10px);
+        transform: scale(12)
+    }
+    5% {
+        opacity: 1;
+        filter: blur(0);
+        transform: scale(1)
+    }
+    100% {
+        opacity: 1;
+        filter: blur(0);
+        transform: scale(1)
+    }
+}
+
+input {
+    position: absolute;
+    z-index: 5;
+    opacity: 0;
+    height: 100vh;
+    width: 100vw;
+    left: 0;
+}
+
 
 /* Hangman-Menu */
+
 .HangmanMenu {
-  height: 0;
-  }
+    height: 0;
+}
+
+.top {
+    position: absolute;
+    top: 11em;
+    padding: 1em;
+    height: 11em;
+}
+
+.bottom {
+    position: absolute;
+    top: 11em; 
+    right: 14em; 
+    padding: 1em; 
+    height: 20em;
+}
 
 .HangmanMenu ul {
-  left: -0.5em;
-  position: absolute;
-  top: 11em;
-  color: hsl(0, 0%, 93%);
-  padding: 1em;
-  width: 13em;
-  height: 11em;
-  text-align: right;
-  z-index: 99;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  list-style-type: none;
-  perspective: 400px;
-  }
+    left: -0.5em;
+    position: absolute;
+    left: 0.3em;
+    color: hsl(0, 0%, 93%);
+    width: 13em;
+    text-align: right;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+    perspective: 400px;
+    perspective-origin: 50% 10%; 
+}
 
+.top ul li {
+    padding: 15px;
+    font-size: 1.7em;
+    transform: rotateY(20deg) rotateX(-25deg) skewY(20deg); 
+    text-align: right;
+}
+
+.bottom ul li {
+    padding: 15px;
+    font-size: 1.3em;
+    transform: rotateY(-20deg) rotateX(-25deg) skewY(-20deg); 
+    text-align: left;
+}
 
 .Hangman ul li{
-  position: absolute;
-  width: 10vw;
-  min-width: 4.5em;
-  left: 0.3em;
-  border-radius: 10px;
-  padding: 15px;
-  transform: rotateY(20deg) rotateX(-25deg) skewY(20deg);
-  cursor: pointer;
-  border-bottom: 4px solid ;
-  border-color:  rgba(158, 130, 212, 0.966);
-  text-shadow: 0.5px 0.5px 1px rgb(197, 51, 161), 0 0 0.25em rgb(74, 22, 90), 0 0 0.02em rgb(125, 84, 223);
-  mix-blend-mode: multiply;
-  font-weight: 800;
-  font-size: 1.7em; 
-  text-align: right; 
-  text-decoration: none;
-  color: hsl(0, 0%, 93%);
+    width: 10vw;
+    min-width: 4.5em;
+    border-radius: 10px;
+    cursor: pointer;
+    border-bottom: 4px solid;
+    border-color: rgba(158, 130, 212, 0.966);
+    text-shadow: 0.5px 0.5px 1px rgb(197, 51, 161), 0 0 0.25em rgb(74, 22, 90), 0 0 0.02em rgb(125, 84, 223);
+    mix-blend-mode: multiply;
+    font-weight: 800;
+    color: hsl(0, 0%, 93%);
 }
 
- 
-ul li:nth-child(1){
-  background: rgb(160, 162, 233,0.4);
-  top:0.7em;
+.Hangman ul li:nth-child(even) {
+    background: rgb(160, 162, 233, 0.4);
 }
 
-ul li:nth-child(2){
-  top: 3.1em;
-  background: rgb(123, 110, 180,0.4);
+.Hangman ul li:nth-child(odd) {
+    background: rgb(123, 110, 180, 0.4);
 }
 
-ul li:nth-child(3){
-  top: 5.5em;
-  background: rgb(167, 161, 247,0.4);
+/* 
+.Hangman ul li:nth-child(1) {
+  top: 0.7em; 
 }
 
-ul li:nth-child(4){
-  top:7.9em;
-  background: rgba(159, 118, 212, 0.4);
+.Hangman ul li:nth-child(2) {
+    top: 3.1em;
 }
 
-.Hangman ul li:hover{
-  transform: translateY(30%) rotateY(6deg) rotateX(4deg) scale(1.02);
-  transition: transform 0.4s ease-out;
-  z-index: 999;
-  mix-blend-mode: normal;
+.Hangman ul li:nth-child(3) {
+    top: 5.5em;
+}
+
+.Hangman ul li:nth-child(4) {
+    top: 7.9em;
+} */
+
+.Hangman ul li:hover {
+    transform: translateY(20%) rotateY(6deg) rotateX(4deg) scale(1.02);
+    transition: transform 0.4s ease-out;
+    z-index: 999;
+    mix-blend-mode: normal;
+}
+
+.Hangman ul li a{
+    text-decoration: none;
+    color: hsl(0, 0%, 93%);
 }
 
 
 /* Background Pics */
-  
 
 .wrongLetter {
     font-family: 'Fira Mono', monospace;
@@ -213,5 +284,5 @@ ul li:nth-child(4){
     text-decoration: line-through;
     font-weight: bolder;
     color: #ffffffe5;
-    text-shadow: 20px 20px 0 black, 20px 20px black, 20px 20px 0 black, 20px 20px black;  
+    text-shadow: 20px 20px 0 black, 20px 20px black, 20px 20px 0 black, 20px 20px black;
 }

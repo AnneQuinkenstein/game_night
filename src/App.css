@@ -1,7 +1,8 @@
 * {
   font-family: 'Nova Mono', monospace
 }
-html .Title{
+
+html {
   overflow: hidden; 
 }
 
@@ -12,15 +13,18 @@ html .Title{
   background-position-x: right;
   background-position-y: -50vh;
   background-size: cover; 
+  background-repeat: no-repeat;
 } 
+
 .containerSign{
   perspective: 70px;
   position: absolute;
-  top: 17%;
+  top: 30%;
   left: 55%;
 }
+
 .titleName {
-  transform:  translate(-70%, 32%)rotateY(-2deg) rotateX(-1deg) skewY(-9.5deg);
+  transform:  translate(-70%, 32%)rotateY(-2deg) rotateX(-1deg) rotate(4deg) skewY(-9.5deg);
   font-size: 4em;
   white-space: nowrap;
   color: #ffe6ff;
@@ -245,6 +249,9 @@ h1.jokes {
   50% {
     left: 56.1%;
     text-shadow: 1px 10px 30px #ce0000;
+  }
+  70% {
+    text-shadow: 3px 5px 35px white;
   }
   100% {
     left: 55.7%;

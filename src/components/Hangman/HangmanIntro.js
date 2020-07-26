@@ -16,6 +16,11 @@ export default HangmanIntro;
 
 
 
+    
+
+
+  
+
 
 // <div className="HangmanIntro">
 //     <h1 className="explain">GUESS THE MOVIE TITLE &nbsp;&nbsp; LETTER BY LETTER &nbsp;&nbsp; NO MORE THAN 5 WRONG GUESSES </h1> 
