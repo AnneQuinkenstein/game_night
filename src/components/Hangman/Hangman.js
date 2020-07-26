@@ -18,7 +18,7 @@ const Hangman = () => {
     const [guesses, setGuesses] = useState(5);
     const [wrongLetters, setWrongLetters] = useState([]);
     const [choosenLang, setchoosenLang] = useState('english')
-
+   
     //Fetch Array of popluar Movies by Year
     useEffect(() => {
         fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_MOVIEDB_KEY}&language=${languages[choosenLang]}&page=1`)
@@ -28,7 +28,6 @@ const Hangman = () => {
 
 
     //Select Language of MovieTitle
-
     const languages = {
         english: 'en',
         deutsch: 'de',
@@ -41,9 +40,7 @@ const Hangman = () => {
 
     const handleChooseLang = (lang,e) => {
         e.preventDefault(); 
-        setchoosenLang(lang.opt);
-        console.log('Langugae:', lang.opt);
-        console.log('Abkuerzung:', languages[lang.opt]);
+        setchoosenLang(lang.opt);    
     }
 
     // Array of GuessedLetters
