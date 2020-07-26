@@ -258,7 +258,15 @@ input {
     top: 7.9em;
 } */
 
+
 .Hangman ul li:hover {
+    transform: translateY(20%) rotateY(6deg) rotateX(4deg) scale(1.02);
+    transition: transform 0.4s ease-out;
+    z-index: 999;
+    mix-blend-mode: normal;
+}
+
+.Hangman ul li.selected {
     transform: translateY(20%) rotateY(6deg) rotateX(4deg) scale(1.02);
     transition: transform 0.4s ease-out;
     z-index: 999;

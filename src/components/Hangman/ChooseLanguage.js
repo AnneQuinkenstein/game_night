@@ -6,9 +6,10 @@ const ChooseLanguage = (props) => {
     
     return (
         <ul>
-            {props.options.map(opt => <li onClick={(e)=> props.handleChooseLang({opt},e)}> {opt} </li>)}
+            {props.options.map(opt => <li className={props.choosenLang === opt? 'selected': null} onClick={(e)=> props.handleChooseLang({opt},e)}> {opt} </li>)} 
         </ul>
     )
 }
 
 export default ChooseLanguage;
+ 
