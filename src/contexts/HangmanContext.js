@@ -1,21 +1,22 @@
-import React, { useState, useEffect } from 'react';
-import './Hangman.css';
-import HangmanFirst from './HangmanFirst';
+import React, { createContext, useState, useEffect } from 'react';
 
-const randomNum = Math.floor(Math.random() * 20)
-const nonLetterSigns = [',', ':', "'", "-"]
-const e = ['è', 'é', 'ê', 'ë']
+export const HangmanContext = createContext();
+
+// const nonLetterSigns = [',', ':', "'", "-"]
+// const e = ['è', 'é', 'ê', 'ë']
 
 
-const Hangman = () => {
+const HangmanContextComponent = (props) => {
 
-    const [guessedLetters, setGuessedLetters] = useState([]);
     const [movieData, setMovieData] = useState(null);
     const [guesses, setGuesses] = useState(5);
+    const [guessedLetters, setGuessedLetters] = useState([]);
     const [wrongLetters, setWrongLetters] = useState([]);
     const [choosenLang, setchoosenLang] = useState('english')
 
     //Fetch Array of popluar Movies by Year
+    const randomNum = Math.floor(Math.random() * 20)
+
     useEffect(() => {
         fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_MOVIEDB_KEY}&language=${languages[choosenLang]}&page=1`)
             .then(res => res.json())
@@ -60,23 +61,12 @@ const Hangman = () => {
         return remainingGuesses;
     }
 
-    console.log('Hangman:', movieData);
     return (
-        <>
-            <HangmanFirst
-                movieData={movieData}
-                falseGuesses={getWronglyGuessedLetters().length}
-                wrongLetters={getWronglyGuessedLetters()}
-                options={options}
-                handleChooseLang={handleChooseLang}
-                choosenLang={choosenLang}
-                movieData={movieData} 
-                guessedLetters={guessedLetters}
-                updateGuessedLetters={updateGuessedLetters}
-            />
-        </>
-    )
+        <HangmanContext.Provider value={{ movieData, options, choosenLang, guessedLetters, falseGuesses: getWronglyGuessedLetters().length, wrongLetters: getWronglyGuessedLetters(), handleChooseLang: handleChooseLang, updateGuessedLetters: updateGuessedLetters }}>
+            {props.children}
+        </HangmanContext.Provider>
 
+    )
 }
 
-export default Hangman;
+export default HangmanContextComponent; 

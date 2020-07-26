@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { HangmanContext } from '../../contexts/HangmanContext';
 
-const Letter = (props) => {
+const Letter = () => {
+    const { letter, guessedLetters } = useContext(HangmanContext);
 
     const answerLetter = () => {
         let letterState = '';
-        if (props.letter === ' ') {
+        if (letter === ' ') {
             letterState = ' ';
-        } else if (props.guessedLetters.includes(props.letter.toLowerCase())) {
-            letterState = props.letter
+        } else if (guessedLetters.includes(letter.toLowerCase())) {
+            letterState = letter
         } else {
             letterState = '_'
         }

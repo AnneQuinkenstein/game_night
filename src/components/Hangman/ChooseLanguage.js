@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { HangmanContext } from '../../contexts/HangmanContext';
 
 
+const ChooseLanguage = () => {
+    const { options, choosenLang, handleChooseLang } = useContext(HangmanContext);
 
-const ChooseLanguage = (props) => {
-    
     return (
         <ul>
-            {props.options.map(opt => <li className={props.choosenLang === opt? 'selected': null} onClick={(e)=> props.handleChooseLang({opt},e)}> {opt} </li>)} 
+            {options.map(opt => <li className={choosenLang === opt? 'selected': null} onClick={(e)=> handleChooseLang({opt},e)}> {opt} </li>)} 
         </ul>
     )
 }

@@ -1,17 +1,34 @@
-import React, { Component } from 'react';
+import React, { Component, useContext } from 'react';
+import { HangmanContext } from '../../contexts/HangmanContext';
 
-class Guess extends Component {
+const Guess = () => {
+    const { updateGuessedLetters } = useContext(HangmanContext);
 
-    handleChange = event => {
-        this.props.updateGuessedLetters(event.target.value);
+    const handleChange = event => {
+        updateGuessedLetters(event.target.value);
         event.target.value = '';
     }
 
-    render() {
-        return (
-            <input onChange={this.handleChange} type="text" name="guessedLetter" id="guessedLetter" maxLength="1" autoFocus />
-        )
-    }
-
+    return (
+        <input onChange={handleChange} type="text" name="guessedLetter" id="guessedLetter" maxLength="1" autoFocus />
+    )
 }
+
+
+
+// class Guess extends Component {
+//     const { updateGuessedLetters } = useContext(HangmanContext);
+
+//     handleChange = event => {
+//         updateGuessedLetters(event.target.value);
+//         event.target.value = '';
+//     }
+
+//     render() {
+//         return (
+//             <input onChange={this.handleChange} type="text" name="guessedLetter" id="guessedLetter" maxLength="1" autoFocus />
+//         )
+//     }
+// }
+
 export default Guess; 
