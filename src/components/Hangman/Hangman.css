@@ -251,7 +251,6 @@ ul li:nth-child(4) {
 
 .chooseLang select{
     width: 130px;
-    height: 100%;
     background: transparent;
     text-shadow: 0.5px 0.5px 1px rgb(197, 51, 161), 0 0 0.25em rgb(74, 22, 90), 0 0 0.02em rgb(125, 84, 223);
     border-radius: 20px;
