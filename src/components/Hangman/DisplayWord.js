@@ -1,7 +1,7 @@
 import React from 'react';
 
 const DisplayWord = (props) => {
-    console.log('DisplayWords:', props);
+   
     let letterState = '';
     const answer = props.movieData.title.split('')
         .map(letter => {

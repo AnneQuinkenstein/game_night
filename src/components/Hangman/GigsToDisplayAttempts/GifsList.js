@@ -6,11 +6,11 @@ const GifsList = (props) => {
   const [gifs, setGifs] = useState(null);
 
   useEffect(() => {
-    fetch(`https://api.giphy.com/v1/gifs/search?q=${props.movieData.title}&tag=movie&api_key=${process.env.REACT_APP_GIPHY_KEY}&limit=5`)
+    fetch(`https://api.giphy.com/v1/gifs/search?q=${props.movieData.original_title}&tag=movie&api_key=${process.env.REACT_APP_GIPHY_KEY}&limit=5`)
       .then(res => res.json())
-      .then(data => setGifs(data.data))
-  }, [])
-
+      .then(data => 
+        setGifs(data.data))
+  }, [props])
 
   return (
     <div className="GifsList">
@@ -19,7 +19,7 @@ const GifsList = (props) => {
           gifURL={gif.images.downsized_large.url} 
           falseGuesses={props.falseGuesses} 
           index={index} 
-          key={index} 
+          key={gif.images.downsized_large.url} 
           wrongLetter={props.wrongLetters[index]}
         />))
       }
