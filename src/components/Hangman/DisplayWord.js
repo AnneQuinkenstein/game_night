@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { HangmanContext } from '../../contexts/HangmanContext';
 
 const DisplayWord = () => {
+
     const { movieData, guessedLetters } = useContext(HangmanContext);
    
     let letterState = '';
@@ -17,6 +18,8 @@ const DisplayWord = () => {
             }
             return letterState
         });
+
+    console.log(movieData);
 
     return (
         <div>
