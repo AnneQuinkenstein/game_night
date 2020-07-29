@@ -304,3 +304,28 @@ input {
     color: #ffffffe5;
     text-shadow: 20px 20px 0 black, 20px 20px black, 20px 20px 0 black, 20px 20px black;
 }
+
+/* Winner-Side */
+.winnerSide{
+    display: flex; 
+    flex-direction: row;
+    height: 100vh; 
+    width: 100vw; 
+}
+
+.winnerPoster{
+    height: 100%; 
+}
+.winnerBackdrop{
+    width: 70%;
+}
+
+.winnerBackdrop img{
+    width: 100%; 
+    margin: 0; 
+}
+
+.winnerGifs .blurr{
+    filter: none;
+
+}

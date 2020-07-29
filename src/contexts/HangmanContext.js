@@ -3,7 +3,7 @@ import React, { createContext, useState, useEffect } from 'react';
 export const HangmanContext = createContext();
 
 // const nonLetterSigns = [',', ':', "'", "-"]
-// const e = ['è', 'é', 'ê', 'ë']
+const e = ['è', 'é', 'ê', 'ë']
 
 
 const HangmanContextComponent = (props) => {
@@ -18,7 +18,7 @@ const HangmanContextComponent = (props) => {
     const randomNum = Math.floor(Math.random() * 20)
 
     useEffect(() => {
-        fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_MOVIEDB_KEY}&language=${languages[choosenLang]}&page=1`)
+        fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_MOVIEDB_KEY}&language=${languages[choosenLang]}&sort_by=vote_average.desc&vote_count.gte=200`)
             .then(res => res.json())
             .then(data => setMovieData(data.results[randomNum]))
     }, [choosenLang])
@@ -38,6 +38,8 @@ const HangmanContextComponent = (props) => {
     const handleChooseLang = (lang, e) => {
         e.preventDefault();
         setchoosenLang(lang.opt);
+        setGuessedLetters([]); 
+        setGuesses(5); 
     }
 
     // Array of GuessedLetters

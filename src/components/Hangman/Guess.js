@@ -15,20 +15,4 @@ const Guess = () => {
 }
 
 
-
-// class Guess extends Component {
-//     const { updateGuessedLetters } = useContext(HangmanContext);
-
-//     handleChange = event => {
-//         updateGuessedLetters(event.target.value);
-//         event.target.value = '';
-//     }
-
-//     render() {
-//         return (
-//             <input onChange={this.handleChange} type="text" name="guessedLetter" id="guessedLetter" maxLength="1" autoFocus />
-//         )
-//     }
-// }
-
 export default Guess; 

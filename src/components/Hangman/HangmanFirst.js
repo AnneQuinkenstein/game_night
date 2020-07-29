@@ -1,4 +1,3 @@
-
 import React from 'react';
 import DisplayWord from './DisplayWord';
 import Guess from './Guess';
