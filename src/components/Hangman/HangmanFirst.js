@@ -8,7 +8,8 @@ import './Hangman.css';
 
 const HangmanFirst = () => {
     return (
-        <div className="Hangman"> <GifsList />
+        <div className="Hangman">
+            <GifsList />
             <HangmanMenu />
             <div className="introHangman">
                 <div className='fly-in'>

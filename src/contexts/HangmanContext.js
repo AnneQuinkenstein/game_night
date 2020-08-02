@@ -18,10 +18,7 @@ const HangmanContextComponent = (props) => {
         fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_MOVIEDB_KEY}&language=${languages[choosenLang]}&sort_by=vote_average.desc&vote_count.gte=200`)
             .then(res => res.json())
             .then(data => setMovieData(data.results[randomNum])); 
-            setAnswer(ans);
     }, [choosenLang])
-
-    useEffect(()=> setAnswer(ans), [guessedLetters])
 
     //Select Language of MovieTitle
     const languages = {
@@ -57,6 +54,9 @@ const HangmanContextComponent = (props) => {
     }
 
     // Display Word 
+
+    useEffect(()=> setAnswer(ans), [guessedLetters, movieData])
+
     let letterState = '';
     const nonLetterSigns = [',', ':', "'", "-"]
     const eTypes = ['è', 'é', 'ê', 'ë']
@@ -99,14 +99,9 @@ const HangmanContextComponent = (props) => {
     const gameOver = () => {
         if (getRemainingGuesses() <= 0) {
             setGameState('loose');
-        } else if (wordIsGuessed()) {
-            setGameState('win');
-        }
-    }
-
-    const wordIsGuessed = () => {
-    
-
+        } else if (!answer.includes('_')) {
+            setGameState('won');
+        };
     }
 
     //updateGame 
@@ -117,7 +112,7 @@ const HangmanContextComponent = (props) => {
     }
 
     return (
-        <HangmanContext.Provider value={{ movieData, options, choosenLang, guessedLetters, answer, falseGuesses: getWronglyGuessedLetters().length, wrongLetters: getWronglyGuessedLetters(), handleChooseLang: handleChooseLang, updateGame: updateGame }}>
+        <HangmanContext.Provider value={{ movieData, options, choosenLang, guessedLetters, answer, gameState, falseGuesses: getWronglyGuessedLetters().length, wrongLetters: getWronglyGuessedLetters(), handleChooseLang: handleChooseLang, updateGame: updateGame }}>
             {props.children}
         </HangmanContext.Provider>
 

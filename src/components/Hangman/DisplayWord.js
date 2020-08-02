@@ -4,7 +4,7 @@ import { HangmanContext } from '../../contexts/HangmanContext';
 const DisplayWord = () => {
 
     const { answer } = useContext(HangmanContext);
-console.log(answer, ' answer diplay word')
+
 return (
     <div>
         {answer}
