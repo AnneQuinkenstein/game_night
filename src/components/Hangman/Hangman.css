@@ -86,18 +86,18 @@ src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/38273/digital-webfont.wof
     left: 10vw;
     width: 80vw;
     animation: switch 12s linear;
-    animation-delay: 2s;
+    animation-delay: 1s;
     transform: scale(12);
     filter: blur(10px);
     text-transform: uppercase;
 }
 
 .intro:nth-child(2) {
-    animation-delay: 6s
+    animation-delay: 3s
 }
 
 .intro:nth-child(3) {
-    animation-delay: 10s
+    animation-delay: 5s
 }
 
 @keyframes switch {
@@ -136,7 +136,7 @@ src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/38273/digital-webfont.wof
     left: 10vw;
     width: 80vw;
     animation: flyIn 4s linear;
-    animation-delay: 12s;
+    animation-delay: 7s;
     animation-fill-mode: forwards;
 }
 
@@ -184,17 +184,17 @@ input {
     height: 0;
 }
 
-.top {
+.left {
     position: absolute;
-    top: 11em;
+    top: 12em;
     padding: 1em;
     height: 11em;
 }
 
-.bottom {
+.right {
     position: absolute;
-    top: 11em; 
-    right: 14em; 
+    top: 12em; 
+    right: 16em; 
     padding: 1em; 
     height: 20em;
 }
@@ -216,14 +216,14 @@ input {
     perspective-origin: 50% 10%; 
 }
 
-.top ul li {
+.left ul li {
     padding: 15px;
     font-size: 1.7em;
     transform: rotateY(20deg) rotateX(-25deg) skewY(20deg); 
     text-align: right;
 }
 
-.bottom ul li {
+.right ul li {
     padding: 15px;
     font-size: 1.3em;
     transform: rotateY(-20deg) rotateX(-25deg) skewY(-20deg); 
@@ -277,8 +277,9 @@ input {
 }
 
 .Hangman ul li.selected {
-    transform: translateY(20%) rotateY(6deg) rotateX(4deg) scale(1.02);
-    transition: transform 0.4s ease-out;
+    transform: rotateY(-20deg) rotateX(-25deg) skewY(-20deg) scale(1.02);
+    color: rgb(197, 51, 161);
+    text-shadow: 0.5px 0.5px 1px rgb(197, 51, 161), 0 0 0.25em rgb(74, 22, 90), 0 0 0.02em rgb(125, 84, 223);
     z-index: 999;
     mix-blend-mode: normal;
 }

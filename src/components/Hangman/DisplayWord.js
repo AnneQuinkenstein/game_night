@@ -3,29 +3,13 @@ import { HangmanContext } from '../../contexts/HangmanContext';
 
 const DisplayWord = () => {
 
-    const { movieData, guessedLetters } = useContext(HangmanContext);
-   
-    let letterState = '';
-
-    const answer = movieData && movieData.title.split('')
-        .map(letter => {
-            if (letter === ' ') {
-                letterState = ' ';
-            } else if (guessedLetters.includes(letter.toLowerCase())) {
-                letterState = letter
-            } else {
-                letterState = '_'
-            }
-            return letterState
-        });
-
-    console.log(movieData);
-
-    return (
-        <div>
-            {answer}
-        </div>
-    )
+    const { answer } = useContext(HangmanContext);
+console.log(answer, ' answer diplay word')
+return (
+    <div>
+        {answer}
+    </div>
+)
 }
 
 export default DisplayWord;
