@@ -5,14 +5,14 @@ import ChooseLanguage from './ChooseLanguage';
 const HangmanMenu = () => {
     return (
         <>
-            <div className="HangmanMenu top">
+            <div className="HangmanMenu left">
                 <ul>
                     <li>Rules</li>
                     <li><Link to='/hangmangame'>New&nbsp;Game</Link></li>
                     <li><Link to='/'>Exit</Link></li>
                 </ul>
             </div>
-            <div className="HangmanMenu bottom">
+            <div className="HangmanMenu right">
                 <ChooseLanguage />
             </div>
         </>

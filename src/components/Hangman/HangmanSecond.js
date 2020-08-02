@@ -6,7 +6,8 @@ import GifsList from './GigsToDisplayAttempts/GifsList';
 import HangmanMenu from './HangmanMenu';
 import './Hangman.css';
 
-const HangmanSecond = (props) => {
+const HangmanSecond = () => {
+
     return (
         <div className="Hangman">
             <GifsList />
