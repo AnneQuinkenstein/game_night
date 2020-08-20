@@ -1,0 +1,106 @@
+
+ 
+ .image-slider .button {
+    position: absolute; 
+    background-color: transparent;
+    width: 50vw; 
+    height: 100vh; 
+    z-index: 5; 
+    border-color: transparent;
+    color: #00a9fa;;
+    font-size: 200px;
+  }
+
+  .image-slider .left{
+    left: 0; 
+    text-align: left;    
+    z-index: 20;
+  }
+  
+  .image-slider .left span, .image-slider .right span{
+    border-radius: 50px; 
+    z-index: 20; 
+    font-size: 200px;
+    mix-blend-mode: difference;
+    padding: 0; 
+  }
+  
+  .image-slider .right{
+    right: 0; 
+    text-align: right; 
+    z-index: 20; 
+  }
+
+  .image-slider {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background-image: url("RightButton.jpg");
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+  }
+  
+  .image-wrapper {
+    position: relative;
+    text-align: left;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .image-wrapper div {
+    display: flex;
+    justify-content: center;
+  }
+
+  .image-slider img {
+    position: absolute;
+    width: auto; 
+		height: 100%;
+
+  }
+  
+  .slide-right-enter {
+    opacity: 0.2; 
+    transform: translateX(100%);
+  }
+  
+  .slide-right-enter-active {
+    opacity: 1; 
+    transform: translateX(0%);
+    transition: transform 1000ms ease-in-out;
+  }
+  
+  .slide-right-exit {
+    opacity: 1; 
+    transform: translateX(0%);
+  }
+  
+  .slide-right-exit-active {
+    opacity: 0.2; 
+    transform: translateX(-100%);
+    transition: transform 1000ms ease-in-out;
+  }
+  
+  .slide-left-enter {
+    opacity: 0.2; 
+    transform: translateX(-100%);
+  }
+  
+  .slide-left-enter-active {
+    opacity: 1; 
+    transform: translateX(0%);
+    transition: transform 1000ms ease-in-out;
+  }
+  
+  .slide-left-exit {
+    opacity: 1; 
+    transform: translateX(0%);
+  }
+  
+  .slide-left-exit-active {
+    opacity: 0.2; 
+    transform: translateX(100%);
+    transition: transform 1000ms ease-in-out;
+  }

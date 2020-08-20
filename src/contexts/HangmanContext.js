@@ -5,20 +5,23 @@ export const HangmanContext = createContext();
 const HangmanContextComponent = (props) => {
 
     const [movieData, setMovieData] = useState(null);
-    const [guesses, setGuesses] = useState(5);
     const [guessedLetters, setGuessedLetters] = useState([]);
     const [choosenLang, setchoosenLang] = useState('english');
     const [gameState, setGameState] = useState('');
-    const [answer, setAnswer] = useState([]); 
-  
-    //Fetch Array of popluar Movies by Year
+    const [answer, setAnswer] = useState([]);
+
+    //Fetch Array of popluar Movies
     const randomNum = Math.floor(Math.random() * 20)
 
     useEffect(() => {
+        getMovieData();
+    }, [choosenLang])
+
+    const getMovieData = () => {
         fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_MOVIEDB_KEY}&language=${languages[choosenLang]}&sort_by=vote_average.desc&vote_count.gte=200`)
             .then(res => res.json())
-            .then(data => setMovieData(data.results[randomNum])); 
-    }, [choosenLang])
+            .then(data => setMovieData(data.results[randomNum]));
+    }
 
     //Select Language of MovieTitle
     const languages = {
@@ -35,14 +38,13 @@ const HangmanContextComponent = (props) => {
         e.preventDefault();
         setchoosenLang(lang.opt);
         setGuessedLetters([]);
-        setGuesses(5);
+        setGameState(''); 
     }
 
     // Array of GuessedLetters
     const updateGuessedLetters = (letter) => {
         !guessedLetters.includes(letter) &&
             setGuessedLetters([...guessedLetters, letter.toLowerCase()]);
-            setAnswer(ans)
     }
 
     // Array of WronglyGussedLetters 
@@ -55,21 +57,21 @@ const HangmanContextComponent = (props) => {
 
     // Display Word 
 
-    useEffect(()=> setAnswer(ans), [guessedLetters, movieData])
+    useEffect(() => setAnswer(updateDisplayedWord), [guessedLetters, movieData])
 
     let letterState = '';
-    const nonLetterSigns = [',', ':', "'", "-"]
+    const nonLetterSigns = [',', ':', "'", "-", '.', '!']
     const eTypes = ['è', 'é', 'ê', 'ë']
-    const aTypes = ['ä', 'å','à', 'æ', 'á']
-    // const uTypes = ['ü', 'û', 'ù', 'ú']
-    // const iTypes = ['ï', 'î', 'ì', 'í']
-    // const oTypes = ['ô' , 'ö', 'ò', 'ó']
-    // const nTypes = ['ñ']
-    // const sTypes = ['ş', 'ß']
-    // const gTpyes = ['ğ']
-    // const cTypes = ['ç']
+    const aTypes = ['ä', 'å', 'à', 'æ', 'á']
+    const uTypes = ['ü', 'û', 'ù', 'ú']
+    const iTypes = ['ï', 'î', 'ì', 'í']
+    const oTypes = ['ô', 'ö', 'ò', 'ó']
+    const nTypes = ['ñ']
+    const sTypes = ['ş', 'ß']
+    const gTypes = ['ğ']
+    const cTypes = ['ç']
 
-    const ans = (movieData && movieData.title.split('')
+    const updateDisplayedWord = (movieData && movieData.title.split('')
         .map(letter => {
             if (letter === ' ') {
                 letterState = ' ';
@@ -79,6 +81,20 @@ const HangmanContextComponent = (props) => {
                 letterState = letter
             } else if (guessedLetters.includes('a') && aTypes.includes(letter.toLowerCase())) {
                 letterState = letter
+            } else if (guessedLetters.includes('u') && uTypes.includes(letter.toLowerCase())) {
+                letterState = letter
+            } else if (guessedLetters.includes('i') && iTypes.includes(letter.toLowerCase())) {
+                letterState = letter
+            } else if (guessedLetters.includes('o') && oTypes.includes(letter.toLowerCase())) {
+                letterState = letter
+            } else if (guessedLetters.includes('n') && nTypes.includes(letter.toLowerCase())) {
+                letterState = letter
+            } else if (guessedLetters.includes('s') && sTypes.includes(letter.toLowerCase())) {
+                letterState = letter
+            } else if (guessedLetters.includes('g') && gTypes.includes(letter.toLowerCase())) {
+                letterState = letter
+            } else if (guessedLetters.includes('c') && cTypes.includes(letter.toLowerCase())) {
+                letterState = letter
             } else if (nonLetterSigns.includes(letter)) {
                 letterState = letter;
             } else {
@@ -87,32 +103,32 @@ const HangmanContextComponent = (props) => {
             return letterState
         }))
 
-  
+
 
     // Num Remaing Guesses 
+    const guesses = 5; 
     const getRemainingGuesses = () => {
         const remainingGuesses = guesses - getWronglyGuessedLetters().length;
         return remainingGuesses;
     }
 
-    //gameOver 
+    //gameOver? 
+    useEffect(()=> {
+        {answer && gameOver(); }
+     }, [answer])
+ 
     const gameOver = () => {
         if (getRemainingGuesses() <= 0) {
             setGameState('loose');
         } else if (!answer.includes('_')) {
             setGameState('won');
+        } else {
+            setGameState(''); 
         };
     }
-
-    //updateGame 
-    const updateGame = (letter) => {
-        updateGuessedLetters(letter);
-        getRemainingGuesses();
-        gameOver();
-    }
-
+  
     return (
-        <HangmanContext.Provider value={{ movieData, options, choosenLang, guessedLetters, answer, gameState, falseGuesses: getWronglyGuessedLetters().length, wrongLetters: getWronglyGuessedLetters(), handleChooseLang: handleChooseLang, updateGame: updateGame }}>
+        <HangmanContext.Provider value={{ movieData, options, choosenLang, guessedLetters, answer, gameState, falseGuesses: getWronglyGuessedLetters().length, wrongLetters: getWronglyGuessedLetters(), handleChooseLang: handleChooseLang, updateGuessedLetters: updateGuessedLetters }}>
             {props.children}
         </HangmanContext.Provider>
 

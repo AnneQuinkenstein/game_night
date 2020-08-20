@@ -2,10 +2,10 @@ import React, { useContext } from 'react';
 import { HangmanContext } from '../../contexts/HangmanContext';
 
 const Guess = () => {
-    const { updateGame } = useContext(HangmanContext);
+    const { updateGuessedLetters } = useContext(HangmanContext);
 
     const handleChange = event => {
-        updateGame(event.target.value);
+        updateGuessedLetters(event.target.value);
         event.target.value = '';
     }
 
