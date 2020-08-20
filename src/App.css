@@ -1,5 +1,6 @@
 * {
-  font-family: 'Nova Mono', monospace
+  font-family: 'Nova Mono', monospace; 
+  font-size: calc(0.5vw + 6px);
 }
 
 html {
@@ -23,17 +24,30 @@ html {
   left: 55%;
 }
 
-.titleName {
+.titleName, .titleName span {
   transform:  translate(-70%, 32%)rotateY(-2deg) rotateX(-1deg) rotate(4deg) skewY(-9.5deg);
-  font-size: 4em;
+  font-size: 4rem;
   white-space: nowrap;
   color: #ffe6ff;
   animation: shine 2s forwards, flicker 3s infinite;
   perspective-origin: 150% 150%;
   transform-style: preserve-3d;
+  cursor: pointer;
 }
 
-/* flickering font  */
+
+/* flickering letter  */
+.titleName span span.flicker {
+  animation: shine 2s forwards, blink 3s 2s infinite;
+}
+
+
+.titleName span span.flickerTwo {
+  animation: shine 2s forwards, blink 8s 2s infinite;
+}
+
+
+/* flickering font Animations */
 @keyframes blink {
   0%{  color: #ffe6ff;
     text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #a6a4d6, -0.2rem 0.1rem 1rem #9692e6, 0.2rem 0.1rem 1rem #8480e9, 0 -0.5rem 2rem #615be1, 0 0.5rem 3rem #3d36e3;}
@@ -56,14 +70,6 @@ html {
   }
 }
 
-.flicker {
-  animation: shine 2s forwards, blink 3s 2s infinite;
-}
-
-
-.flickerTwo {
-  animation: shine 2s forwards, blink 8s 2s infinite;
-}
 
 @keyframes shine {
   0% {
@@ -202,8 +208,6 @@ html {
   }
 }
 
-
-
 .titleName:hover {
   cursor: pointer;
 }
@@ -305,10 +309,11 @@ p.jokes {
   position: absolute;
   top:37%;
   transform: translate(30%, 0%);
-  font-size: 1.5em;
+  font-size: 1.5rem;
   color: #ddacac;
   padding: 1vh; 
   opacity: 0.8;
+  overflow-wrap: break-word;
   }
 
 

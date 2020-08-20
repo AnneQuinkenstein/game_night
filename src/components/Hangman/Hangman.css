@@ -1,13 +1,3 @@
-/* 'https://fonts.googleapis.com/css?family=VT323 */
-
-
-/* https://acupoftee.github.io/fonts/Clip.ttf */
-
-
-/* font-family: 'digital';
-src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/38273/digital-webfont.woff'); */
-
-
 /* Hangman classic  */
 
 .Hangman {
@@ -140,6 +130,9 @@ src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/38273/digital-webfont.wof
     animation-fill-mode: forwards;
 }
 
+.DisplayWord div{
+    font-size: 4rem; 
+}
 
 .hangmanNewGame {
     position: fixed;
@@ -184,14 +177,14 @@ input {
     height: 0;
 }
 
-.left {
+.HangmanMenu.left {
     position: absolute;
     top: 12em;
     padding: 1em;
     height: 11em;
 }
 
-.right {
+.HangmanMenu.right  {
     position: absolute;
     top: 12em; 
     right: 16em; 
@@ -216,14 +209,14 @@ input {
     perspective-origin: 50% 10%; 
 }
 
-.left ul li {
+.HangmanMenu.left ul li {
     padding: 15px;
     font-size: 1.7em;
     transform: rotateY(20deg) rotateX(-25deg) skewY(20deg); 
     text-align: right;
 }
 
-.right ul li {
+.HangmanMenu.right ul li {
     padding: 15px;
     font-size: 1.3em;
     transform: rotateY(-20deg) rotateX(-25deg) skewY(-20deg); 
@@ -328,5 +321,12 @@ input {
 
 .winnerGifs .blurr{
     filter: none;
+}
 
+.hidden{
+    display: none; 
+}
+
+.show{
+    display: inline;
 }
