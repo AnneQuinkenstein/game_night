@@ -9,6 +9,8 @@ const HangmanContextComponent = (props) => {
     const [choosenLang, setchoosenLang] = useState('english');
     const [gameState, setGameState] = useState('');
     const [answer, setAnswer] = useState([]);
+    const [gifs, setGifs] = useState(null);
+
 
     //Fetch Array of popluar Movies
     const randomNum = Math.floor(Math.random() * 20)
@@ -22,6 +24,16 @@ const HangmanContextComponent = (props) => {
             .then(res => res.json())
             .then(data => setMovieData(data.results[randomNum]));
     }
+
+    // get Gifs for movieList on top and Bottom & winning Page 
+    const movieTitle = movieData && (movieData.original_language === "en" ? movieData.original_title : movieData.title)
+
+    useEffect(() => {
+        fetch(`https://api.giphy.com/v1/gifs/search?q=${movieTitle}&tag=movie&api_key=${process.env.REACT_APP_GIPHY_KEY}&limit=5`)
+            .then(res => res.json())
+            .then(data =>
+                setGifs(data.data))
+    }, [movieData])
 
     //Select Language of MovieTitle
     const languages = {
@@ -38,7 +50,7 @@ const HangmanContextComponent = (props) => {
         e.preventDefault();
         setchoosenLang(lang.opt);
         setGuessedLetters([]);
-        setGameState(''); 
+        setGameState('');
     }
 
     // Array of GuessedLetters
@@ -106,29 +118,29 @@ const HangmanContextComponent = (props) => {
 
 
     // Num Remaing Guesses 
-    const guesses = 5; 
+    const guesses = 5;
     const getRemainingGuesses = () => {
         const remainingGuesses = guesses - getWronglyGuessedLetters().length;
         return remainingGuesses;
     }
 
     //gameOver? 
-    useEffect(()=> {
-        {answer && gameOver(); }
-     }, [answer])
- 
+    useEffect(() => {
+        { answer && gameOver(); }
+    }, [answer])
+
     const gameOver = () => {
         if (getRemainingGuesses() <= 0) {
             setGameState('loose');
         } else if (!answer.includes('_')) {
             setGameState('won');
         } else {
-            setGameState(''); 
+            setGameState('');
         };
     }
-  
+
     return (
-        <HangmanContext.Provider value={{ movieData, options, choosenLang, guessedLetters, answer, gameState, falseGuesses: getWronglyGuessedLetters().length, wrongLetters: getWronglyGuessedLetters(), handleChooseLang: handleChooseLang, updateGuessedLetters: updateGuessedLetters }}>
+        <HangmanContext.Provider value={{ movieData, gifs, options, choosenLang, guessedLetters, answer, gameState, falseGuesses: getWronglyGuessedLetters().length, wrongLetters: getWronglyGuessedLetters(), handleChooseLang: handleChooseLang, updateGuessedLetters: updateGuessedLetters }}>
             {props.children}
         </HangmanContext.Provider>
 

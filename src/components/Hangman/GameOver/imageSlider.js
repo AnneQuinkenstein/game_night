@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./imageSlider.css";
+import './imageSlider.css';
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 export default function ImageSlider({ images }) {
@@ -29,7 +29,7 @@ export default function ImageSlider({ images }) {
   return (
     images.length > 0 && (
       <div className="image-slider">
-        <button onClick={slideLeft} className="button left"><span>&#11013;</span></button>
+        <button onClick={slideLeft} className="button left">&#11013;</button>
         <div className="image-wrapper">
           <TransitionGroup childFactory={childFactory(direction)}>
             <CSSTransition
