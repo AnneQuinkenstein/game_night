@@ -299,34 +299,33 @@ input {
     text-shadow: 20px 20px 0 black, 20px 20px black, 20px 20px 0 black, 20px 20px black;
 }
 
-/* Winner-Side */
-.winnerSide{
-    display: flex; 
-    flex-direction: row;
-    height: 100vh; 
-    width: 100vw; 
-}
-
-.winnerPoster{
-    height: 100%; 
-}
-.winnerBackdrop{
-    width: 70%;
-}
-
-.winnerBackdrop img{
-    width: 100%; 
-    margin: 0; 
-}
-
-.winnerGifs .blurr{
-    filter: none;
-}
 
 .hidden{
     display: none; 
 }
 
-.show{
-    display: inline;
+
+.hangmanLooser{
+    background-image: url(GameOver/1GameOver.jpg);
+    height: 100vh; 
+    background-position: center;
+    background-size: cover;
+}
+
+.hangmanLooser div{
+    position: absolute; 
+    right: 1.5rem; 
+    top: 1.5rem; 
+    display: flex;
+    flex-direction: column;
+}
+
+.hangmanLooser img {
+    height: 80vh; 
+}
+
+.hangmanLooser div p{
+    text-align: center;
+    color: #fff488;
+    font-size: 1.5rem;
 }

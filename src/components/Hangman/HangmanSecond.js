@@ -5,7 +5,8 @@ import Guess from './Guess';
 import GifsList from './DisplayedGifs/GifsList';
 import HangmanMenu from './HangmanMenu';
 import './Hangman.css';
-import HangmanWinner from './HangmanWinner/HangmanWinner';
+import HangmanWinner from './GameOver/HangmanWinner';
+import HangmanLooser from './GameOver/HangmanLooser';
 import { HangmanContext } from '../../contexts/HangmanContext';
 
 const HangmanSecond = () => {
@@ -23,7 +24,8 @@ const HangmanSecond = () => {
         } else if (gameState === 'loose') {
             return (
                 <div>
-                    You lost!
+                    <HangmanMenu />
+                    <HangmanLooser />
                 </div>
             )
         } else {
