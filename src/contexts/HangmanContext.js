@@ -20,12 +20,12 @@ const HangmanContextComponent = (props) => {
     }, [choosenLang])
 
     const getMovieData = () => {
-        fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_MOVIEDB_KEY}&language=${languages[choosenLang]}&sort_by=vote_average.desc&vote_count.gte=200`)
+        fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_MOVIEDB_KEY}&language=${languages[choosenLang]}&sort_by=popularity.desc&page=1}`)
             .then(res => res.json())
             .then(data => setMovieData(data.results[randomNum]));
     }
 
-    // get Gifs for movieList on top and Bottom & winning Page 
+    // fetch Gifs for Top and Bottom Hangman-Game & Winning Page 
     const movieTitle = movieData && (movieData.original_language === "en" ? movieData.original_title : movieData.title)
 
     useEffect(() => {
@@ -72,7 +72,7 @@ const HangmanContextComponent = (props) => {
     useEffect(() => setAnswer(updateDisplayedWord), [guessedLetters, movieData])
 
     let letterState = '';
-    const nonLetterSigns = [',', ':', "'", "-", '.', '!']
+    const nonLetterSigns = [',', ':', "'", "-", '.', '!', '(',')','&']
     const eTypes = ['è', 'é', 'ê', 'ë']
     const aTypes = ['ä', 'å', 'à', 'æ', 'á']
     const uTypes = ['ü', 'û', 'ù', 'ú']

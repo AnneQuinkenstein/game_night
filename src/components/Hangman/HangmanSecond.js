@@ -3,11 +3,11 @@ import React, { useContext } from 'react';
 import DisplayWord from './DisplayWord';
 import Guess from './Guess';
 import GifsList from './DisplayedGifs/GifsList';
-import HangmanMenu from './HangmanMenu';
 import './Hangman.css';
 import HangmanWinner from './GameOver/HangmanWinner';
 import HangmanLooser from './GameOver/HangmanLooser';
 import { HangmanContext } from '../../contexts/HangmanContext';
+import HangmanMenu from './HangmanMenu';
 
 const HangmanSecond = () => {
 
@@ -16,15 +16,13 @@ const HangmanSecond = () => {
     const renderGameState = () => {
         if (gameState === 'won') {
             return (
-                <div>
-                    <HangmanMenu />
+                <div className="container">
                     <HangmanWinner />
                 </div>
             )
         } else if (gameState === 'loose') {
             return (
                 <div>
-                    <HangmanMenu />
                     <HangmanLooser />
                 </div>
             )

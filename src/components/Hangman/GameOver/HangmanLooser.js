@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import HangmanLooseMenu from './HangmanLooseMenu';
 import { HangmanContext } from '../../../contexts/HangmanContext';
 
 const HangmanLooser = () => {
@@ -8,9 +9,9 @@ const HangmanLooser = () => {
 
     return (
         <div className="hangmanLooser">
-            <div>
+            <HangmanLooseMenu />
+            <div className='looseImage'>
                 <img src={`https://image.tmdb.org/t/p/original${movieData.poster_path}`} />
-                <p>{movieTitle}</p>
             </div>
         </div>
     )
