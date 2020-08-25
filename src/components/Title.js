@@ -45,7 +45,7 @@ const Title = () => {
             </div>
             <div className='hangman'>
               <img src={pacghost} />
-              <div class="center"> CONTACT</div>
+              <div class="center"> <Link to='/contact'>CONTACT</Link></div>
             </div>
           </div>
         </div>

@@ -1,10 +1,10 @@
 * {
   font-family: 'Nova Mono', monospace; 
-  font-size: calc(0.5vw + 6px);
 }
 
 html {
   overflow: hidden; 
+  font-size: calc(0.5vw + 6px);
 }
 
 .arcadeBackground {

@@ -33,6 +33,31 @@
     border-radius: 30px;
 }
 
+.Gifanimated{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 80%;
+    width: 19vw;
+    border-radius: 30px;
+    border: 20px dotted; 
+    animation: bordercolor 3s linear;
+    animation-fill-mode: both;
+}
+
+@keyframes bordercolor {
+    0%, 7%, 40%, 49%, 70%, 80%{
+       border-color: rgb(125, 84, 223); 
+    }
+    5%, 30%, 55%, 100%{
+        border-color: black; 
+    }
+    10%, 45%, 60%, 75%{
+        border-color: rgb(197, 51, 161); 
+    }
+}
+
 .Gif img {
     min-width: 100%;
     min-height: 100%;
@@ -41,6 +66,29 @@
 
 .blurr {
     filter: blur(30px);
+}
+
+.Gif .wrongLetter {
+    font-family: 'Fira Mono', monospace;
+    letter-spacing: -5px;
+    position: absolute;
+    font-size: 5em;
+    bottom: 3vh;
+    text-decoration: line-through;
+    font-weight: bolder;
+    color: #ffffffe5;
+    text-shadow: 20px 20px 0 black, 20px 20px black, 20px 20px 0 black, 20px 20px black;
+}
+
+.Gifanimated .wrongLetter{
+    font-family: 'Fira Mono', monospace;
+    letter-spacing: -5px;
+    position: absolute;
+    font-size: 5em;
+    text-decoration: line-through;
+    font-weight: bolder;
+    color: #ffffffe5;
+    text-shadow: 20px 20px 0 black, 20px 20px black, 20px 20px 0 black, 20px 20px black;
 }
 
 /* Animation Intro + Hangman-Guessed Word */
@@ -56,13 +104,16 @@
     height: 50vh;
 }
 
-.fly-in {
-    font-size: 4em;
+.fly-in{
     margin: 20vh auto;
     height: 20vh;
 }
 
-.fly-in span {
+.fly-in div{
+    font-size: 4rem;
+}
+
+.fly-in div span {
     display: block;
     font-size: .4em;
     opacity: .8;
@@ -119,7 +170,7 @@
     }
 }
 
-.DisplayWord {
+.DisplayWord div{
     position: fixed;
     margin: 2vh 0;
     opacity: 0;
@@ -128,10 +179,6 @@
     animation: flyIn 4s linear;
     animation-delay: 7s;
     animation-fill-mode: forwards;
-}
-
-.DisplayWord div{
-    font-size: 4rem; 
 }
 
 .hangmanNewGame {
@@ -179,47 +226,48 @@ input {
 
 .HangmanMenu.left {
     position: absolute;
-    top: 12em;
-    padding: 1em;
-    height: 11em;
+    top: 12rem;
+    padding: 1rem;
+    height: 11rem;
 }
 
 .HangmanMenu.right  {
     position: absolute;
-    top: 12em; 
-    right: 16em; 
+    top: 12rem; 
+    right: 16rem; 
     padding: 1em; 
-    height: 20em;
+    height: 20rem;
 }
 
 .HangmanMenu ul {
     left: -0.5em;
     position: absolute;
-    left: 0.3em;
     color: hsl(0, 0%, 93%);
-    width: 13em;
+    width: 15rem;
     text-align: right;
     z-index: 99;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
     justify-content: center;
     list-style-type: none;
-    perspective: 400px;
-    perspective-origin: 50% 10%; 
+    perspective: 700px;
+    -webkit-perspective: 700px;
+    -moz-perspective: 700px;
+    perspective-origin: center top; 
 }
 
 .HangmanMenu.left ul li {
     padding: 15px;
-    font-size: 1.7em;
-    transform: rotateY(20deg) rotateX(-25deg) skewY(20deg); 
+    font-size: 1.5rem;
+    transform: rotateY(20deg) rotateX(-25deg) skewY(15deg); 
     text-align: right;
 }
 
 .HangmanMenu.right ul li {
     padding: 15px;
-    font-size: 1.3em;
-    transform: rotateY(-20deg) rotateX(-25deg) skewY(-20deg); 
+    font-size: 1.3rem;
+    transform: rotateY(-20deg) rotateX(-25deg) skewY(-15deg); 
     text-align: left;
 }
 
@@ -229,6 +277,8 @@ input {
     border-radius: 10px;
     cursor: pointer;
     border-bottom: 4px solid;
+    border: linear-gradient(45deg, rgba(141, 58, 197, 0.3), rgba(114, 86, 190, 0.3));
+    text-shadow: 1px 1px 2px rgb(197, 51, 161), 0 0 1em rgb(74, 22, 90), 0 0 0.2em rgb(125, 84, 223);
     border-color: rgba(158, 130, 212, 0.966);
     text-shadow: 0.5px 0.5px 1px rgb(197, 51, 161), 0 0 0.25em rgb(74, 22, 90), 0 0 0.02em rgb(125, 84, 223);
     mix-blend-mode: multiply;
@@ -236,41 +286,30 @@ input {
     color: hsl(0, 0%, 93%);
 }
 
+.Hangman ul li a {
+    font-size: 1.3rem;
+    text-shadow: 0.5px 0.5px 1px rgb(197, 51, 161), 0 0 0.25em rgb(74, 22, 90), 0 0 0.02em rgb(125, 84, 223);
+    font-weight: 800;
+    color: hsl(0, 0%, 93%);
+}
+
 .Hangman ul li:nth-child(even) {
-    background: rgb(160, 162, 233, 0.4);
+    background: rgba(75, 75, 114, 0.4);
 }
 
 .Hangman ul li:nth-child(odd) {
-    background: rgb(123, 110, 180, 0.4);
+    background: rgba(123, 110, 180, 0.4);
 }
-
-/* 
-.Hangman ul li:nth-child(1) {
-  top: 0.7em; 
-}
-
-.Hangman ul li:nth-child(2) {
-    top: 3.1em;
-}
-
-.Hangman ul li:nth-child(3) {
-    top: 5.5em;
-}
-
-.Hangman ul li:nth-child(4) {
-    top: 7.9em;
-} */
-
 
 .Hangman ul li:hover {
-    transform: translateY(20%) rotateY(6deg) rotateX(4deg) scale(1.02);
+    transform: translateY(20%) rotateY(1deg) rotateX(4deg) scale(1.02);
     transition: transform 0.4s ease-out;
     z-index: 999;
     mix-blend-mode: normal;
 }
 
 .Hangman ul li.selected {
-    transform: rotateY(-20deg) rotateX(-25deg) skewY(-20deg) scale(1.02);
+    transform: rotateY(-20deg) rotateX(-25deg) skewY(-15deg) scale(1.02);
     color: rgb(197, 51, 161);
     text-shadow: 0.5px 0.5px 1px rgb(197, 51, 161), 0 0 0.25em rgb(74, 22, 90), 0 0 0.02em rgb(125, 84, 223);
     z-index: 999;
@@ -283,49 +322,207 @@ input {
 }
 
 
-/* Background Pics */
-
-.wrongLetter {
-    font-family: 'Fira Mono', monospace;
-    letter-spacing: -5px;
-    position: relative;
-    animation: glitch 1s linear infinite;
-    position: absolute;
-    font-size: 5em;
-    bottom: 3vh;
-    text-decoration: line-through;
-    font-weight: bolder;
-    color: #ffffffe5;
-    text-shadow: 20px 20px 0 black, 20px 20px black, 20px 20px 0 black, 20px 20px black;
-}
-
-
-.hidden{
-    display: none; 
-}
-
+/* HangmanLoose Menu */
 
 .hangmanLooser{
     background-image: url(GameOver/1GameOver.jpg);
     height: 100vh; 
     background-position: center;
     background-size: cover;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
 }
 
-.hangmanLooser div{
-    position: absolute; 
-    right: 1.5rem; 
-    top: 1.5rem; 
-    display: flex;
-    flex-direction: column;
+.hangmanLooser .looseImage{
+    height: 90vh;
+    margin: 4vh 2vw; 
 }
 
 .hangmanLooser img {
-    height: 80vh; 
+    height: 100%; 
 }
 
-.hangmanLooser div p{
+.HangmanEnd{
+    display:flex; 
+    flex-direction: column; 
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 4vh; 
+    margin-left: 2vw; 
+    color :hsl(0, 0%, 93%);
+    border:5px solid rgb(235, 234, 243);
+    border-radius: 5px;
+    padding:1em;
+    text-align:center;
+    text-decoration:none;
+    background: linear-gradient(-35deg, rgba(41, 5, 99, 0.4), rgba(79, 17, 138, 0.4));
+}
+
+.HangmanEnd h1{
+    font-size: 3rem;
+    margin: 0;
+    height:2em;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    text-shadow: 1px 2px 2px rgb(233, 231, 240), 0 0 2em rgb(108, 77, 192), 0 0 0.2em rgb(253, 21, 126);
+}
+
+.HangmanEnd ul{
+    list-style-type: none;
+    perspective: 1000px;
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.HangmanEnd ul li{
+    border-radius: 10px;
+    padding: 15px;
+    cursor: pointer;
+    transform: rotateY(-6deg) rotateX(10deg) skewY(-5deg);
+    border-bottom: 4px solid ;
+    border: linear-gradient(45deg, rgba(141, 58, 197, 0.3), rgba(114, 86, 190, 0.3));
+    mix-blend-mode:multiply; 
+}
+
+.HangmanEnd ul li a{
+    font-size: 2rem; 
+    text-shadow: 1px 1px 2px rgb(197, 51, 161), 0 0 1em rgb(74, 22, 90), 0 0 0.2em rgb(125, 84, 223);
+    color :hsl(0, 0%, 93%);
+    text-decoration: none;
+    font-weight: 800;
     text-align: center;
-    color: #fff488;
-    font-size: 1.5rem;
+    user-select:none;
+    -webkit-user-select: none;
+    -moz-user-select: none;   
+}
+
+.HangmanEnd ul li:nth-child(odd){
+    background: rgb(160, 162, 233,0.4);
+}
+
+.HangmanEnd ul li:nth-child(even){
+    background: rgb(123, 110, 180,0.4);
+}
+
+.HangmanEnd ul li:hover{
+    transform: rotateY(6deg) rotateX(4deg) scale(1.02);
+    -webkit-transform: rotateY(6deg) rotateX(4deg) scale(1.02);
+    -moz-transform: rotateY(6deg) rotateX(4deg) scale(1.02);
+    transition: selectoption 0.4s ease-out;
+    -webkit-transform: selectoption 0.4s ease-out;
+    -moz-transform: selectoption 0.4s ease-out;
+    z-index: 999;
+    mix-blend-mode: normal;
+}
+
+.HangmanEnd @keyframes selectoption{
+    0%{transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+    -moz-transform: scale(1.0);}
+    50%{transform:  scale(0.9);
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);}
+    100%{transform: scale(1);
+    -webkit-transform: scale(1.0);
+    -moz-transform: scale(1.0);}
+}
+
+/* HangmanWin Menu */
+
+.hangmanWin{
+    z-index: 99; 
+    position: absolute; 
+    width: 25vw; 
+    display: flex; 
+    flex-direction: column; 
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 4vh; 
+    margin-left: 2vw; 
+    color :hsl(0, 0%, 93%);
+    border:5px solid rgb(235, 234, 243);
+    border-radius: 5px;
+    padding:1em;
+    text-align:center;
+    text-decoration:none;
+    background: linear-gradient(-35deg, rgba(41, 5, 99, 0.4), rgba(79, 17, 138, 0.4));
+}
+
+.hangmanWin h1{
+    font-size: 2rem;
+    margin: 0;
+    height:2em;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    text-shadow: 1px 2px 2px rgb(233, 231, 240), 0 0 2em rgb(108, 77, 192), 0 0 0.2em rgb(253, 21, 126);
+}
+
+.hangmanWin ul{
+    list-style-type: none;
+    perspective: 1000px;
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.hangmanWin ul li{
+    border-radius: 10px;
+    padding: 15px;
+    cursor: pointer;
+    transform: rotateY(-6deg) rotateX(10deg) skewY(-5deg);
+    border-bottom: 4px solid ;
+    border: linear-gradient(45deg, rgba(141, 58, 197, 0.3), rgba(114, 86, 190, 0.3));
+    mix-blend-mode:multiply; 
+}
+
+.hangmanWin ul li a{
+    font-size: 2rem; 
+    text-shadow: 1px 1px 2px rgb(197, 51, 161), 0 0 1em rgb(74, 22, 90), 0 0 0.2em rgb(125, 84, 223);
+    color :hsl(0, 0%, 93%);
+    text-decoration: none;
+    font-weight: 800;
+    text-align: center;
+    user-select:none;
+    -webkit-user-select: none;
+    -moz-user-select: none;   
+}
+
+.hangmanWin ul li:nth-child(odd){
+    background: rgb(160, 162, 233,0.4);
+}
+
+.hangmanWin ul li:nth-child(even){
+    background: rgb(123, 110, 180,0.4);
+}
+
+.hangmanWin ul li:hover{
+    transform: rotateY(6deg) rotateX(4deg) scale(1.02);
+    -webkit-transform: rotateY(6deg) rotateX(4deg) scale(1.02);
+    -moz-transform: rotateY(6deg) rotateX(4deg) scale(1.02);
+    transition: selectoption 0.4s ease-out;
+    -webkit-transform: selectoption 0.4s ease-out;
+    -moz-transform: selectoption 0.4s ease-out;
+    z-index: 999;
+    mix-blend-mode: normal;
+}
+
+.hangmanWin @keyframes selectoption{
+    0%{transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+    -moz-transform: scale(1.0);}
+    50%{transform:  scale(0.9);
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);}
+    100%{transform: scale(1);
+    -webkit-transform: scale(1.0);
+    -moz-transform: scale(1.0);}
 }
