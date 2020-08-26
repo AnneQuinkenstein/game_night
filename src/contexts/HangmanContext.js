@@ -40,7 +40,7 @@ const HangmanContextComponent = (props) => {
         english: 'en',
         deutsch: 'de',
         italiano: 'it',
-        español: 'es',
+        português: 'pt',
         türkçe: 'tr',
     }
 

@@ -43,7 +43,7 @@ class MyForm extends React.Component {
                         <div className="labelField">Your Email</div>
                     </div>
                     <div className="fieldContainer emailField">
-                        <input type="email" name="email" className="formInput" />
+                        <input className="formInput" type="email" name="email" />
                     </div>
                     <span className="fieldBottom"></span>
                 </label>

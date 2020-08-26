@@ -3,13 +3,18 @@ import { Link } from 'react-router-dom';
 import ChooseLanguage from './ChooseLanguage';
 
 const HangmanMenu = () => {
+
+    const refreshPage = () => {
+        window.location.reload(false);
+      }
+      
     return (
         <>
             <div className="HangmanMenu left">
                 <ul>
                     <li>Rules</li>
-                    <li><Link to='/hangmangame'>New&nbsp;Game</Link></li>
-                    <li><Link to='/'>Exit</Link></li>
+                    <li onClick={refreshPage}>New&nbsp;Game</li>
+                    <li><Link to='/'>Start&nbsp;Menu</Link></li>
                 </ul>
             </div>
             <div className="HangmanMenu right">

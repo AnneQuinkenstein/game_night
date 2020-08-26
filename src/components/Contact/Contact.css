@@ -13,14 +13,109 @@
     font-weight: 500;
     background-color: #0F1020;
 }
+
+.contactContainer2{
+  height: 100vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; 
+}
+
+/* Menu */
+
+
+.ContactMenu{
+  transform: translate(-23%, 3%); 
+  padding:1em;
+  width: 20em;
+  height: 20em;
+  text-align:center;
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  z-index:99;
+  align-self: center;
+}
+
+.ContactMenu ul{
+  list-style-type: none;
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+  -moz-perspective: 1000px;
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%; 
+  width: 100%; 
+}
+
+.ContactMenu ul li{
+  margin: 0 0 0 auto; 
+  width: 13rem;
+  border-radius: 10px;
+  padding:15px;
+  cursor: pointer;
+  transform: rotateY(-20deg) rotateX(25deg) skewY(-15deg);
+  border-bottom: 4px solid ;
+  border: linear-gradient(45deg, rgba(141, 58, 197, 0.3), rgba(114, 86, 190, 0.3));
+  text-shadow: 1px 1px 2px rgb(197, 51, 161), 0 0 1em rgb(74, 22, 90), 0 0 0.2em rgb(125, 84, 223);
+  mix-blend-mode:multiply; 
+}
+
+.ContactMenu ul li a {
+  font-weight: 800;
+  font-size: 1.9em; 
+  text-align: center;
+  user-select:none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  text-decoration:none;
+  color :hsl(0, 0%, 93%);
+}
+
+.ContactMenu ul li:nth-child(1){
+  background: rgb(160, 162, 233,0.4);
+  /* top:3.4em; */
+}
+
+.ContactMenu ul li:nth-child(2){
+  /* top:5.8em; */
+  background: rgb(123, 110, 180,0.4);
+}
+
+.ContactMenu ul li:hover{
+  transform: rotateY(6deg) rotateX(4deg) scale(1.02);
+  -webkit-transform: rotateY(6deg) rotateX(4deg) scale(1.02);
+  -moz-transform: rotateY(6deg) rotateX(4deg) scale(1.02);
+  transition: transform 0.4s ease-out;
+  -webkit-transform: transform 0.4s ease-out;
+  -moz-transform: transform 0.4s ease-out;
+  z-index: 999;
+  mix-blend-mode: normal;
+}
+
+@keyframes selectoption{
+  0%{transform: scale(1.0);
+  -webkit-transform: scale(1.0);
+  -moz-transform: scale(1.0);}
+  50%{transform:  scale(0.9);
+  -webkit-transform: scale(0.9);
+  -moz-transform: scale(0.9);}
+  100%{transform: scale(1);
+  -webkit-transform: scale(1.0);
+  -moz-transform: scale(1.0);}
+}
   
+/* Contact Form */
+
 .formContainer {
     width: 40vw;
-    margin: auto 0 auto 10vw;
+    margin: 0 0 auto 10vw;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-top: auto;
   }
 
 .formContainer h1 {
@@ -29,7 +124,7 @@
     flex-shrink: 1;
     display: flex;
     width: 100%;
-    padding: 0px 0 5vh 0;
+    padding: 0px 0 1vh 0;
   }
   
   
@@ -50,7 +145,7 @@
   
   .message{
     height: 200px; 
-    width: 80%;
+    width: 70%;
   }
   
   .messageField{
@@ -65,6 +160,7 @@
     position: absolute;
     bottom: 2px;
   }
+
   .fieldContainer:before, .fieldContainer:after {
     content: "";
     height: 2px;
@@ -129,27 +225,17 @@
     align-items: center;
     clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0% 100%);
   }
-  .formInput {
+  .fieldContainer .formInput {
     width: 100%;
     height: 100%;
     border: none;
     outline: none;
     background: #0F1020;
-    color: #B3B5D2;
+    color: #B3B5D2 !important;
     padding: 8px 16px;
     letter-spacing: 0.2px;
   }
-  .formInput:focus {
-    animation: 0.05s infinite alternate blink;
-  }
-  @keyframes blink {
-    from {
-      background: #0F1020;
-    }
-    to {
-      background: #111223;
-    }
-  }
+
   .editor-field:hover .fieldBottom, .editor-field.is-focused .fieldBottom {
     background: #70719C;
   }
@@ -178,16 +264,17 @@
   
   
   .btnPrimary button {
-    background: #383CAB;
-    border-color: #5054c6;
+    background: rgb(123, 110, 180,0.4);
+    border-color: rgb(160, 162, 233,0.4);
     display: flex;
     align-items: center;
     line-height: 10px;
     pointer-events: none;
     color: #dedff4;
+    text-shadow: 1px 1px 2px rgb(197, 51, 161), 0 0 1em rgb(74, 22, 90), 0 0 0.2em rgb(125, 84, 223);
   }
   .btnPrimary {
-    fill: #5054c6;
+    fill: rgb(160, 162, 233,0.4);
   }
   .btnPrimary:hover button {
     background: #34389f;
@@ -210,7 +297,7 @@
     content: "";
     height: 2px;
     width: 11px;
-    background: #5054c6;
+    background: rgb(160, 162, 233,0.4);
     display: block;
     position: absolute;
     z-index: 1;
@@ -233,19 +320,19 @@
     display: block;
     height: 4px;
     width: 50%;
-    background: #383CAB;
+    background: rgb(123, 110, 180,0.4);
     pointer-events: none;
     right: 0px;
     bottom: 0px;
     clip-path: polygon(0 0, 100% 0%, 100% 100%, calc(0% + 4px) 100%);
-    border-bottom: 2px solid #5054c6;
-    border-right: 2px solid #5054c6;
+    border-bottom: 2px solid rgb(160, 162, 233,0.4);
+    border-right: 2px solid rgb(160, 162, 233,0.4);
   }
   .btnBottom:before {
     content: "";
     height: 2px;
     width: 11px;
-    background: #5054c6;
+    background: rgb(160, 162, 233,0.4);
     display: block;
     position: absolute;
     left: -5px;
@@ -254,7 +341,7 @@
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
   }
-  
+
   .myFormButton {
     height: 100%;
     background: none;
@@ -266,6 +353,7 @@
     clip-path: polygon(0% 0%, calc(100% - 8px) 0, 100% 8px, 100% 100%, 95% 100%, calc(0% + 8px) 100%, 0% calc(100% - 8px), 0% 20%);
   }
   
+  /* about Me Text */
   .aboutMeFrame {
     margin: auto 10vw auto 0; 
     background-color: transparent;
