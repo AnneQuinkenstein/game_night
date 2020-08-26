@@ -12,7 +12,7 @@ const HangmanLooseMenu = () => {
       }
 
     return (
-        <div class="HangmanEnd" >
+        <div className="HangmanEnd" >
             <h1> I am sorry, you lost! </h1>
             <ul>
                 <li onClick={refreshPage}>New&nbsp;Game</li>

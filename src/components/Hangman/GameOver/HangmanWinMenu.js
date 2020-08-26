@@ -8,7 +8,7 @@ const HangmanWinMenu = () => {
   }
 
     return (
-        <div class="hangmanWin" >
+        <div className="hangmanWin" >
             <h1>YEAH ! You won!</h1> 
             <h1>Look at Giphy Pics!</h1>
             <ul>
