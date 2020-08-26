@@ -4,6 +4,8 @@ export const HangmanContext = createContext();
 
 const HangmanContextComponent = (props) => {
 
+    const [didMount, setDidMount] = useState(false); 
+    const [style, setStyle]= useState(true);
     const [movieData, setMovieData] = useState(null);
     const [guessedLetters, setGuessedLetters] = useState([]);
     const [choosenLang, setchoosenLang] = useState('english');
@@ -11,6 +13,13 @@ const HangmanContextComponent = (props) => {
     const [answer, setAnswer] = useState([]);
     const [gifs, setGifs] = useState(null);
 
+
+    // to use the flying Input on the Intro just once
+    const mount = () => {
+        if (didMount) {
+            setStyle(false);
+        } else setDidMount(true)    
+    }
 
     //Fetch Array of popluar Movies
     const randomNum = Math.floor(Math.random() * 20)
@@ -72,7 +81,7 @@ const HangmanContextComponent = (props) => {
     useEffect(() => setAnswer(updateDisplayedWord), [guessedLetters, movieData])
 
     let letterState = '';
-    const nonLetterSigns = [',', ':', "'", "-", '.', '!', '(',')','&']
+    const nonLetterSigns = [',', ':', "'", "-", '.', '!', '(', ')', '&']
     const eTypes = ['è', 'é', 'ê', 'ë']
     const aTypes = ['ä', 'å', 'à', 'æ', 'á']
     const uTypes = ['ü', 'û', 'ù', 'ú']
@@ -140,7 +149,7 @@ const HangmanContextComponent = (props) => {
     }
 
     return (
-        <HangmanContext.Provider value={{ movieData, gifs, options, choosenLang, guessedLetters, answer, gameState, falseGuesses: getWronglyGuessedLetters().length, wrongLetters: getWronglyGuessedLetters(), handleChooseLang: handleChooseLang, updateGuessedLetters: updateGuessedLetters }}>
+        <HangmanContext.Provider value={{ style, movieData, gifs, options, choosenLang, guessedLetters, answer, gameState, falseGuesses: getWronglyGuessedLetters().length, wrongLetters: getWronglyGuessedLetters(), handleChooseLang: handleChooseLang, updateGuessedLetters: updateGuessedLetters, mount: mount }}>
             {props.children}
         </HangmanContext.Provider>
 
