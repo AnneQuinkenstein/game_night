@@ -208,7 +208,7 @@
     }
 }
 
-input {
+.Hangman input {
     position: absolute;
     z-index: 5;
     opacity: 0;
@@ -245,7 +245,7 @@ input {
     color: hsl(0, 0%, 93%);
     width: 15rem;
     text-align: right;
-    z-index: 99;
+    z-index: 6;
     display: flex;
     flex-direction: column;
     /* align-items: center; */
@@ -284,6 +284,7 @@ input {
     mix-blend-mode: multiply;
     font-weight: 800;
     color: hsl(0, 0%, 93%);
+    font-size: 1.3rem;
 }
 
 .Hangman ul li a {
@@ -388,6 +389,7 @@ input {
     border-bottom: 4px solid ;
     border: linear-gradient(45deg, rgba(141, 58, 197, 0.3), rgba(114, 86, 190, 0.3));
     mix-blend-mode:multiply; 
+    font-size: 2rem; 
 }
 
 .HangmanEnd ul li a{
@@ -436,7 +438,7 @@ input {
 /* HangmanWin Menu */
 
 .hangmanWin{
-    z-index: 99; 
+    z-index: 6; 
     position: absolute; 
     width: 25vw; 
     display: flex; 
@@ -482,6 +484,7 @@ input {
     border-bottom: 4px solid ;
     border: linear-gradient(45deg, rgba(141, 58, 197, 0.3), rgba(114, 86, 190, 0.3));
     mix-blend-mode:multiply; 
+    font-size: 2rem; 
 }
 
 .hangmanWin ul li a{
@@ -511,7 +514,7 @@ input {
     transition: selectoption 0.4s ease-out;
     -webkit-transform: selectoption 0.4s ease-out;
     -moz-transform: selectoption 0.4s ease-out;
-    z-index: 999;
+    z-index: 5;
     mix-blend-mode: normal;
 }
 
