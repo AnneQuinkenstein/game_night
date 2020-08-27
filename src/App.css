@@ -304,19 +304,6 @@ h1.jokes:hover {
   animation-fill-mode: forwards; 
 }
 
-p.jokes {
-  width: 400px;
-  position: absolute;
-  top:37%;
-  transform: translate(30%, 0%);
-  font-size: 1.5rem;
-  color: #ddacac;
-  padding: 1vh; 
-  opacity: 0.8;
-  overflow-wrap: break-word;
-  }
-
-
 @keyframes divMove {
   0% { 
     height: calc(1000px + 100vh); 
@@ -332,6 +319,32 @@ p.jokes {
     }
   }
 
+  .titleEntranceBackground{
+    background-image: url(arcadeEntrance.jpg);
+    background-color: black; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh; 
+    width: 100vw; 
+    background-position: center; 
+    height: 100vh; 
+    width: 100vw; 
+    background-position: center; 
+    transform: scale(1,1);
+  }
+
+  p.jokes {
+    width: 400px;
+    position: absolute;
+    top:37%;
+    transform: translate(30%, 0%);
+    font-size: 1.5rem;
+    color: #ddacac;
+    padding: 1vh; 
+    opacity: 0.8;
+    overflow-wrap: break-word;
+    }
+
 .nothing {
   display:none; 
 }
@@ -343,15 +356,15 @@ p.jokes {
 .gameTease  {
   position: absolute; 
   height: 80%; 
-  animation-name: gameTeaseBox;
-  animation-duration: 7s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards; 
   display: flex; 
   flex-flow: wrap;
   align-items: baseline; 
   transform-style: preserve-3d;
   transform: rotateX(4deg) rotateY(-1deg) skewX(-2deg);
+  animation-name: gameTeaseBox;
+  animation-duration: 7s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards; 
   }
 
   @keyframes gameTeaseBox{
@@ -410,17 +423,16 @@ p.jokes {
 .gameTease .hangman:nth-child(3){
   margin-left: 7vw; 
   margin-bottom: 1vw; 
-  height: 13vw;
+  height: 13vw !important; 
   transform: rotateX(-1deg) rotateY(1deg) skewX(1deg) scale(1.05);
 }
-
 
 .gameTease .hangman img {
   height: 100%;
   opacity: 0.7;
 }
 
-.center, .center a {
+.gameTease .hangman .center,.gameTease .hangman .center a {
   position: absolute;
   top: 65%; 
   left: 30%; 
@@ -438,18 +450,74 @@ p.jokes {
 @keyframes gameTeaseFont {
   0% { 
     font-size: 0%;
-    font-weight: 0; 
     }
   49% { 
     font-size: 0%;
-    font-weight: 0; 
     }
   50% {
     font-size: 100%;
-    font-weight: 0; 
     }
   100% {
     font-size: 100%;
-    font-weight: bolder; 
     }
   }
+
+ /* EndGameTease */
+
+.titleGameTease  {
+  position: absolute; 
+  height: 80%; 
+  display: flex; 
+  flex-flow: wrap;
+  align-items: baseline; 
+  transform-style: preserve-3d;
+  transform: rotateX(4deg) rotateY(-1deg) skewX(-2deg);
+  top: 40vh; 
+  left: 33vw; 
+  width: 30%;
+  }
+
+.titleGameTease .hangman {
+  position: relative; 
+  z-index: 2;
+  padding: 0; 
+  height: 9vw;
+  min-height: 150px; 
+ }
+
+
+.titleGameTease .hangman:nth-child(1){
+  align-self: flex-end;  
+  transform: rotateX(-2deg) rotateY(1deg) skewX(1.5deg) scale(1.025);
+}
+
+.titleGameTease .hangman:nth-child(2){
+  align-self: flex-end; 
+  margin-bottom: 5vw;
+  transform: rotateX(-3deg) rotateY(1deg) skewX(2deg);
+}
+
+.titleGameTease .hangman:nth-child(3){
+  margin-left: 7vw; 
+  margin-bottom: 1vw; 
+  height: 13vw;
+  transform: rotateX(-1deg) rotateY(1deg) skewX(1deg) scale(1.05);
+}
+
+
+.titleGameTease .hangman img {
+  height: 100%;
+  opacity: 0.7;
+}
+
+.titleCenter, .titleCenter a {
+  position: absolute;
+  top: 65%; 
+  left: 30%; 
+  text-decoration: none;
+  color: black;
+  text-shadow: 0 0 10px rgba(255,255,255,1) , 0 0 20px rgba(255,255,255,1) , 0 0 30px rgba(255,255,  255,1) , 0 0 40px #fe735a , 0 0 70px #fe735a , 0 0 80px #fe735a , 0 0 100px #fe735a;
+  font-size: 100%;
+  font-weight: bolder; 
+}
+

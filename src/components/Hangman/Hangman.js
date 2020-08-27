@@ -1,24 +1,17 @@
 
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import DisplayWord from './DisplayWord';
 import Guess from './Guess';
 import GifsList from './DisplayedGifs/GifsList';
 import './Hangman.css';
 import HangmanWinner from './GameOver/HangmanWinner';
 import HangmanLooser from './GameOver/HangmanLooser';
-import { HangmanContext } from '../../contexts/HangmanContext';
 import HangmanMenu from './HangmanMenu';
 import HangmanIntro from './HangmanIntro'; 
+import { HangmanContext } from '../../contexts/HangmanContext';
 
 const Hangman = () => {
-
-    const { gameState, style, mount } = useContext(HangmanContext);
-
-    useEffect(() => {
-       mount(); 
-    }, [])
-
-    console.log('style', style);
+    const { gameState, style } = useContext(HangmanContext);
 
     const renderGameState = () => {
         if (gameState === 'won') {
@@ -33,7 +26,7 @@ const Hangman = () => {
                     <HangmanLooser />
                 </div>
             )
-        } else if (style === "false") {
+        } else if (style == 1) {
             return (
                 <div className="Hangman">
                     <GifsList />

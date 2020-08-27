@@ -4,8 +4,7 @@ export const HangmanContext = createContext();
 
 const HangmanContextComponent = (props) => {
 
-    const [didMount, setDidMount] = useState(false); 
-    const [style, setStyle]= useState(true);
+    const [style, setStyle]= useState(1);
     const [movieData, setMovieData] = useState(null);
     const [guessedLetters, setGuessedLetters] = useState([]);
     const [choosenLang, setchoosenLang] = useState('english');
@@ -16,9 +15,9 @@ const HangmanContextComponent = (props) => {
 
     // to use the flying Input on the Intro just once
     const mount = () => {
-        if (didMount) {
-            setStyle(false);
-        } else setDidMount(true)    
+            setStyle(style + 1);   
+            setGuessedLetters([]);
+            setGameState('');
     }
 
     //Fetch Array of popluar Movies
@@ -26,7 +25,7 @@ const HangmanContextComponent = (props) => {
 
     useEffect(() => {
         getMovieData();
-    }, [choosenLang])
+    }, [choosenLang, style])
 
     const getMovieData = () => {
         fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_MOVIEDB_KEY}&language=${languages[choosenLang]}&sort_by=popularity.desc&page=1}`)
