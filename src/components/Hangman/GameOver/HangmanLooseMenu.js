@@ -17,7 +17,7 @@ const HangmanLooseMenu = () => {
             <h1> I am sorry, you lost! </h1>
             <ul>
                 <li onClick={mount}>New&nbsp;Game</li>
-                <li><Link to='/'>Start&nbsp;Menu</Link></li>
+                <li><Link to='/title'>Start&nbsp;Menu</Link></li>
             </ul>
             <h1>Solution: {movieTitle}</h1>
         </div>

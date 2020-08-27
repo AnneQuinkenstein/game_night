@@ -11,7 +11,7 @@ const HangmanWinMenu = () => {
             <h1>Look at Giphy Pics!</h1>
             <ul>
                 <li onClick={mount}>New&nbsp;Game</li>
-                <li><Link to='/'>Start&nbsp;Menu</Link></li>
+                <li><Link to='/title'>Start&nbsp;Menu</Link></li>
             </ul>
         </div>
     )

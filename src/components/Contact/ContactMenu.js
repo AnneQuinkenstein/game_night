@@ -8,7 +8,7 @@ const ContactMenu = () => {
         <div className="ContactMenu">
             <ul>
                 <li><Link to='/hangman'>Hangman&nbsp;Game</Link></li>
-                <li><Link to='/'>Start&nbsp;Menu</Link></li>
+                <li><Link to='/title'>Start&nbsp;Menu</Link></li>
             </ul>
         </div>
     )
