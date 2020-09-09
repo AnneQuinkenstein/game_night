@@ -20,8 +20,8 @@ const HangmanWinner = () => {
     }
 
     return (
-        <div className="Hangmanwinner">
-            <HangmanWinMenu />
+        <div className="Hangmanwinner page">
+            {doImagesArr && <HangmanWinMenu />}
             < div >
                 <ImageSlider images={images} />
             </div >

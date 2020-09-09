@@ -4,31 +4,19 @@ import DisplayWord from './DisplayWord';
 import Guess from './Guess';
 import GifsList from './DisplayedGifs/GifsList';
 import './Hangman.css';
+import HangmanMenu from './HangmanMenu';
+import HangmanIntro from './HangmanIntro';
 import HangmanWinner from './GameOver/HangmanWinner';
 import HangmanLooser from './GameOver/HangmanLooser';
-import HangmanMenu from './HangmanMenu';
-import HangmanIntro from './HangmanIntro'; 
 import { HangmanContext } from '../../contexts/HangmanContext';
 
 const Hangman = () => {
     const { gameState, style } = useContext(HangmanContext);
-
+ 
     const renderGameState = () => {
-        if (gameState === 'won') {
+        if (style == 1 && gameState != 'loose' && gameState != 'won') {
             return (
-                <div className="container">
-                    <HangmanWinner />
-                </div>
-            )
-        } else if (gameState === 'loose') {
-            return (
-                <div>
-                    <HangmanLooser />
-                </div>
-            )
-        } else if (style == 1) {
-            return (
-                <div className="Hangman">
+                <div className="Hangman page">
                     <GifsList />
                     <HangmanMenu />
                     <div className="introHangman">
@@ -43,9 +31,15 @@ const Hangman = () => {
                     <GifsList />
                 </div>
             )
-        }   else {
+        } else if (gameState === 'loose') {
             return (
-                <div className="Hangman" >
+                <div>
+                    <HangmanLooser />
+                </div>
+            )
+        } else if (style > 1 && gameState != 'loose' && gameState != 'won') {
+            return (
+                <div className="Hangman page" >
                     <GifsList />
                     <HangmanMenu />
                     <div className="introHangman">
@@ -55,6 +49,12 @@ const Hangman = () => {
                     </div>
                     <Guess />
                     <GifsList />
+                </div>
+            )
+        } else {
+            return (
+                <div className="container">
+                    <HangmanWinner />
                 </div>
             )
         }

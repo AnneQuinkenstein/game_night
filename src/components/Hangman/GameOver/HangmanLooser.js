@@ -8,7 +8,7 @@ const HangmanLooser = () => {
     const movieTitle = movieData && (movieData.original_language === "en" ? movieData.original_title : movieData.title)
 
     return (
-        <div className="hangmanLooser">
+        <div className="hangmanLooser page">
             <HangmanLooseMenu />
             <div className='looseImage'>
                 <img src={`https://image.tmdb.org/t/p/original${movieData.poster_path}`} />
