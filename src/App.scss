@@ -1,0 +1,573 @@
+$white: #ffe6ff; 
+$rose: #ddacac; 
+$orangelight: #fe735a;
+$orange: #ce0000; 
+$bright-text-shadow: 0 0 10px $white , 0 0 20px $white , 0 0 30px $rose , 0 0 40px $orangelight , 0 0 70px $orangelight , 0 0 80px $orangelight , 0 0 100px $orangelight;
+
+* {
+  font-family: 'Nova Mono', monospace; 
+}
+
+html {
+  overflow: hidden; 
+  font-size: calc(0.5vw + 6px);
+  @media (min-width: 320px) and (max-width: 480px) {
+    font-size: calc(0.5vw + 10px);
+  }
+}
+
+.page{
+  position: absolute; 
+  top: 0; 
+  left:0; 
+  right: 0; 
+}
+
+.arcadeBackground {
+  height: calc(1000px + 100vh); 
+  background-image: url(arcadeEntrance.jpg);
+  background-color: black; 
+  background-position-x: right;
+  background-position-y: -50vh;
+  background-size: cover; 
+  background-repeat: no-repeat;
+} 
+
+.containerSign{
+  perspective: 70px;
+  position: absolute;
+  top: 30%;
+  left: 55%;
+  @media (min-width: 320px) and (max-width: 480px) {
+    top: 15%; 
+    }
+}
+
+.titleName, .titleName span {
+  transform:  translate(-70%, 32%)rotateY(-2deg) rotateX(-1deg) rotate(4deg) skewY(-9.5deg);
+  font-size: 4rem;
+  white-space: nowrap;
+  color: $white;
+  animation: shine 2s forwards, flicker 3s infinite;
+  perspective-origin: 150% 150%;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  @media (min-width: 320px) and (max-width: 480px) {
+  white-space: normal; 
+  }
+}
+
+
+/* flickering letter  */
+.titleName span span.flicker {
+  animation: shine 2s forwards, blink 3s 2s infinite;
+}
+
+
+.titleName span span.flickerTwo {
+  animation: shine 2s forwards, blink 8s 2s infinite;
+}
+
+
+/* flickering font Animations */
+@keyframes blink {
+  0%{  color: $white;
+    text-shadow: 0 0 0.6rem $white, 0 0 1.5rem #a6a4d6, -0.2rem 0.1rem 1rem #9692e6, 0.2rem 0.1rem 1rem #8480e9, 0 -0.5rem 2rem #615be1, 0 0.5rem 3rem #3d36e3;}
+  
+  75% {
+    color: $white;
+    text-shadow: 0 0 0.6rem $white, 0 0 1.5rem #a6a4d6, -0.2rem 0.1rem 1rem #9692e6, 0.2rem 0.1rem 1rem #8480e9, 0 -0.5rem 2rem #615be1, 0 0.5rem 3rem #3d36e3;
+  }
+  28%,
+  35% {
+    color: #8480e9;
+    text-shadow: none;
+  }
+  45% {  color: $white;
+    text-shadow: 0 0 0.6rem $white, 0 0 1.5rem #a6a4d6, -0.2rem 0.1rem 1rem #9692e6, 0.2rem 0.1rem 1rem #8480e9, 0 -0.5rem 2rem #615be1, 0 0.5rem 3rem #3d36e3;}
+  82%,
+  99% {
+    color: hsla(234, 77%, 53%, 0.363);    
+    text-shadow: none;
+  }
+}
+
+
+@keyframes shine {
+  0% {
+    color: #6b1839;
+    text-shadow: none;
+  }
+  100% {
+    color: $white;
+    text-shadow: 0 0 1.1rem $white, 0 0 2rem #a6a4d6, -0.2rem 0.1rem 1.5rem #9692e6, 0.2rem 0.1rem 1.5rem #8480e9, 0 -0.5rem 2.5rem #615be1, 0 0.5rem 3.5rem #3d36e3;
+  }
+}
+
+@keyframes flicker {
+  from {
+    opacity: 1;
+  }
+
+  4% {
+    opacity: 0.9;
+  }
+
+  6% {
+    opacity: 0.85;
+  }
+
+  8% {
+    opacity: 0.95;
+  }
+
+  10% {
+    opacity: 0.9;
+  }
+
+  11% {
+    opacity: 0.922;
+  }
+
+  12% {
+    opacity: 0.9;
+  }
+
+  14% {
+    opacity: 0.95;
+  }
+
+  16% {
+    opacity: 0.98;
+  }
+
+  17% {
+    opacity: 0.9;
+  }
+
+  19% {
+    opacity: 0.93;
+  }
+
+  20% {
+    opacity: 0.99;
+  }
+
+  24% {
+    opacity: 1;
+  }
+
+  26% {
+    opacity: 0.94;
+  }
+
+  28% {
+    opacity: 0.98;
+  }
+
+  37% {
+    opacity: 0.93;
+  }
+
+  38% {
+    opacity: 0.5;
+  }
+
+  39% {
+    opacity: 0.96;
+  }
+
+  42% {
+    opacity: 1;
+  }
+
+  44% {
+    opacity: 0.97;
+  }
+
+  46% {
+    opacity: 0.94;
+  }
+
+  56% {
+    opacity: 0.9;
+  }
+
+  58% {
+    opacity: 0.9;
+  }
+
+  60% {
+    opacity: 0.99;
+  }
+
+  68% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0.9;
+  }
+
+  72% {
+    opacity: 0.95;
+  }
+
+  93% {
+    opacity: 0.93;
+  }
+
+  95% {
+    opacity: 0.95;
+  }
+
+  97% {
+    opacity: 0.93;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.titleName:hover {
+  cursor: pointer;
+}
+
+/* on entranceBackground */
+
+.containerJokes{
+  perspective: 100px;
+  position: absolute;
+  top: 26%;
+  left: 60%; 
+}
+
+h1.jokes {
+  transform: rotate(-15deg) rotateX(-1deg) rotateY(-7deg) skewY(-5deg);
+  font-size: 1.5em;
+  color: transparent;
+  white-space: nowrap;
+  animation-name: wait;
+  animation-duration: 7s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards; 
+  animation-name: textMove;
+  animation-duration: 2s;
+  animation-delay: 3.5s;
+  animation-timing-function: cubic-bezier(.215,.61,.355,1);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  @media (min-width: 320px) and (max-width: 480px) {
+    display: none; 
+    }
+}
+
+@keyframes textMove {
+  0% {
+    left: 56%;
+    text-shadow: 4px 7px 25px $white;
+  }
+  20%{
+    left: 56%;
+    text-shadow: 3px 5px 25px $orange;
+  }
+  40% {
+    text-shadow: 3px 5px 35px $white;
+  }
+  50% {
+    left: 56.1%;
+    text-shadow: 1px 10px 30px $orange;
+  }
+  70% {
+    text-shadow: 3px 5px 35px $white;
+  }
+  100% {
+    left: 55.7%;
+    text-shadow: 2px 10px 25px $orange;
+  }
+}
+
+h1.jokes:hover {
+  color: $rose;
+  cursor: pointer;
+  opacity: 0.8; 
+  text-shadow: 5px 5px black;
+  left: 56%;
+}
+
+@keyframes wait {
+  0% { 
+    font-size:0;
+    }
+  49%{
+    font-size: 0;
+  }
+  50% {
+    font-size: 2em; 
+    }
+  100% {
+    font-size: 2em;
+    }
+  }
+
+/* on entranceBackground */
+
+
+.entranceBackground{
+  background-image: url(arcadeEntrance.jpg);
+  background-color: black; 
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh; 
+  width: 100vw; 
+  background-position: center; 
+  animation-name: divMove;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards; 
+}
+
+@keyframes divMove {
+  0% { 
+    height: calc(1000px + 100vh); 
+    background-position-x: right;
+    background-position-y: -50vh;
+    background-size: cover; 
+    }
+  100% {
+    height: 100vh; 
+    width: 100vw; 
+    background-position: center; 
+    transform: scale(1,1);
+    }
+  }
+
+  .titleEntranceBackground{
+    background-image: url(arcadeEntrance.jpg);
+    background-color: black; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh; 
+    width: 100vw; 
+    background-position: center; 
+    height: 100vh; 
+    width: 100vw; 
+    background-position: center; 
+    transform: scale(1,1);
+  }
+
+  p.jokes {
+    width: 400px;
+    position: absolute;
+    top:37%;
+    transform: translate(30%, 0%);
+    font-size: 1.5rem;
+    color: $rose;
+    padding: 1vh; 
+    opacity: 0.8;
+    overflow-wrap: break-word;
+    }
+
+.nothing {
+  display:none; 
+}
+
+.containerPacman{
+  perspective: 250px;
+}
+
+.gameTease  {
+  position: absolute; 
+  height: 80%; 
+  display: flex; 
+  flex-flow: wrap;
+  align-items: baseline; 
+  transform-style: preserve-3d;
+  transform: rotateX(4deg) rotateY(-1deg) skewX(-2deg);
+  animation-name: gameTeaseBox;
+  animation-duration: 7s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards; 
+  }
+
+  @keyframes gameTeaseBox{
+    0% { top: 100vh; 
+       }
+    40% {
+      top: 100vh; 
+      left: 17vw; 
+      width: 30%;
+      }
+    100% {
+      top: 40vh; 
+      left: 33vw; 
+      width: 30%;
+      }
+    }
+
+.gameTease .hangman {
+  position: relative; 
+  z-index: 2;
+  padding: 0; 
+  animation-name: gameTease;
+  animation-duration: 7s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards; 
+ }
+
+
+@keyframes gameTease {
+  0% { height: 0;
+     }
+  40% {
+    height: 0;
+    margin: 0;
+    }
+  41% {
+    height: 11vw;
+  }
+  100% {
+    height: 9vw;
+    min-height: 150px; 
+    }
+}
+
+.gameTease .hangman:nth-child(1){
+  align-self: flex-end;  
+  transform: rotateX(-2deg) rotateY(1deg) skewX(1.5deg) scale(1.025);
+}
+
+.gameTease .hangman:nth-child(2){
+  align-self: flex-end; 
+  margin-bottom: 5vw;
+  transform: rotateX(-3deg) rotateY(1deg) skewX(2deg);
+}
+
+.gameTease .hangman:nth-child(3){
+  margin-left: 7vw; 
+  margin-bottom: 1vw; 
+  height: 13vw !important; 
+  transform: rotateX(-1deg) rotateY(1deg) skewX(1deg) scale(1.05);
+}
+
+.gameTease .hangman img {
+  height: 100%;
+  opacity: 0.7;
+}
+
+.gameTease .hangman .center,.gameTease .hangman .center a {
+  position: absolute;
+  top: 65%; 
+  left: 30%; 
+  font-weight: bolder; 
+  text-decoration: none;
+  color: black;
+  text-shadow: $bright-text-shadow;
+  animation-name: gameTeaseFont;
+  animation-duration: 7s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards; 
+}
+
+
+@keyframes gameTeaseFont {
+  0% { 
+    font-size: 0%;
+    }
+  49% { 
+    font-size: 0%;
+    }
+  50% {
+    font-size: 100%;
+    }
+  100% {
+    font-size: 100%;
+    }
+  }
+
+ /* EndGameTease */
+
+.titleGameTease  {
+  position: absolute; 
+  height: 80%; 
+  display: flex; 
+  flex-flow: wrap;
+  align-items: baseline; 
+  transform-style: preserve-3d;
+  transform: rotateX(4deg) rotateY(-1deg) skewX(-2deg);
+  top: 40vh; 
+  left: 33vw; 
+  width: 30%;
+  }
+
+.titleGameTease .hangman {
+  position: relative; 
+  z-index: 2;
+  padding: 0; 
+  height: 9vw;
+  min-height: 150px; 
+ }
+
+
+.titleGameTease .hangman:nth-child(1){
+  align-self: flex-end;  
+  transform: rotateX(-2deg) rotateY(1deg) skewX(1.5deg) scale(1.025);
+}
+
+.titleGameTease .hangman:nth-child(2){
+  align-self: flex-end; 
+  margin-bottom: 5vw;
+  transform: rotateX(-3deg) rotateY(1deg) skewX(2deg);
+}
+
+.titleGameTease .hangman:nth-child(3){
+  margin-left: 7vw; 
+  margin-bottom: 1vw; 
+  height: 13vw;
+  transform: rotateX(-1deg) rotateY(1deg) skewX(1deg) scale(1.05);
+}
+
+
+.titleGameTease .hangman img {
+  height: 100%;
+  opacity: 0.7;
+}
+
+.titleCenter, .titleCenter a {
+  position: absolute;
+  top: 65%; 
+  left: 30%; 
+  text-decoration: none;
+  color: black;
+  text-shadow: $bright-text-shadow;
+  font-size: 100%;
+  font-weight: bolder; 
+}
+
+
+/* simple - enter transition 300ms, exit 150ms */
+.fade-appear,
+.fade-enter {
+    opacity: 0;
+    z-index: 1;
+    transform: translate(-50%);
+}
+.fade-appear-active,
+.fade-enter, .fade-enter-active {
+    transform: translate(0);
+    opacity: 1;
+    transition: opacity 300ms linear, translate 150ms linear;;
+}
+
+.fade-exit {
+    opacity: 1;
+    transform: translate(0);
+}
+
+.fade-exit, .fade-exit-active {
+    opacity: 0;
+    transform: translate(-50%);
+    transition: opacity 150ms linear, translate 150ms linear;
+}
