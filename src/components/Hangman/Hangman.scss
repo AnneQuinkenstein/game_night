@@ -1,0 +1,532 @@
+
+// Hangman classic 
+
+.Hangman {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    text-align: center;
+    width: 100vw;
+    font-weight: 700;
+}
+
+
+/* Filmrolle mit Giphy-Gifs */
+
+.GifsList {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 25vh;
+    width: 100%;
+    z-index: -1;
+    background-color: black;
+}
+
+.Gif {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 80%;
+    width: 19vw;
+    border: 5px solid black;
+    border-radius: 30px;
+}
+
+.Gifanimated{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 80%;
+    width: 19vw;
+    border-radius: 30px;
+    border: 20px dotted; 
+    animation: bordercolor 3s linear;
+    animation-fill-mode: both;
+}
+
+@keyframes bordercolor {
+    0%, 7%, 40%, 49%, 70%, 80%{
+       border-color: rgb(125, 84, 223); 
+    }
+    5%, 30%, 55%, 100%{
+        border-color: black; 
+    }
+    10%, 45%, 60%, 75%{
+        border-color: rgb(197, 51, 161); 
+    }
+}
+
+.Gif img {
+    min-width: 100%;
+    min-height: 100%;
+    flex-shrink: 0;
+}
+
+.blurr {
+    filter: blur(30px);
+}
+
+.Gif .wrongLetter {
+    font-family: 'Fira Mono', monospace;
+    letter-spacing: -5px;
+    position: absolute;
+    font-size: 5em;
+    bottom: 3vh;
+    text-decoration: line-through;
+    font-weight: bolder;
+    color: #ffffffe5;
+    text-shadow: 20px 20px 0 black, 20px 20px black, 20px 20px 0 black, 20px 20px black;
+}
+
+.Gifanimated .wrongLetter{
+    font-family: 'Fira Mono', monospace;
+    letter-spacing: -5px;
+    position: absolute;
+    font-size: 5em;
+    text-decoration: line-through;
+    font-weight: bolder;
+    color: #ffffffe5;
+    text-shadow: 20px 20px 0 black, 20px 20px black, 20px 20px 0 black, 20px 20px black;
+}
+
+/* Animation Intro + Hangman-Guessed Word */
+
+.introHangman {
+    background-color: #111;
+    background-image: radial-gradient(#333, #111);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: -2;
+    overflow: hidden;
+    height: 50vh;
+}
+
+.fly-in{
+    margin: 20vh auto;
+    height: 20vh;
+}
+
+.fly-in div{
+    font-size: 4rem;
+}
+
+.fly-in div span {
+    display: block;
+    font-size: .4em;
+    opacity: .8;
+    text-transform: uppercase;
+}
+
+.intro {
+    position: fixed;
+    margin: 2vh 0;
+    opacity: 0;
+    left: 10vw;
+    width: 80vw;
+    animation: switch 12s linear;
+    animation-delay: 1s;
+    transform: scale(12);
+    filter: blur(10px);
+    text-transform: uppercase;
+}
+
+.intro:nth-child(2) {
+    animation-delay: 3s
+}
+
+.intro:nth-child(3) {
+    animation-delay: 5s
+}
+
+@keyframes switch {
+    0% {
+        opacity: 0;
+        filter: blur(10px);
+        transform: scale(12)
+    }
+    5% {
+        opacity: 1;
+        filter: blur(0);
+        transform: scale(1)
+    }
+    15% {
+        opacity: 1;
+        filter: blur(0);
+        transform: scale(.9)
+    }
+    20% {
+        opacity: 0;
+        filter: blur(10px);
+        transform: scale(.1)
+    }
+    80% {
+        opacity: 0
+    }
+    100% {
+        opacity: 0
+    }
+}
+
+.DisplayWord div{
+    position: fixed;
+    margin: 2vh 0;
+    opacity: 0;
+    left: 10vw;
+    width: 80vw;
+    animation: flyIn 4s linear;
+    animation-delay: 7s;
+    animation-fill-mode: forwards;
+}
+
+.hangmanNewGame {
+    position: fixed;
+    opacity: 0;
+    left: 10vw;
+    width: 80vw;
+    animation: flyIn 4s linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes flyIn {
+    0% {
+        opacity: 0;
+        filter: blur(10px);
+        transform: scale(12)
+    }
+    5% {
+        opacity: 1;
+        filter: blur(0);
+        transform: scale(1)
+    }
+    100% {
+        opacity: 1;
+        filter: blur(0);
+        transform: scale(1)
+    }
+}
+
+.Hangman input {
+    position: absolute;
+    z-index: 5;
+    opacity: 0;
+    height: 100vh;
+    width: 100vw;
+    left: 0;
+}
+
+
+/* Hangman-Menu */
+
+.HangmanMenu {
+    height: 0;
+}
+
+.HangmanMenu.left {
+    position: absolute;
+    top: 12rem;
+    padding: 1rem;
+    height: 11rem;
+}
+
+.HangmanMenu.right  {
+    position: absolute;
+    top: 12rem; 
+    right: 16rem; 
+    padding: 1em; 
+    height: 20rem;
+}
+
+.HangmanMenu ul {
+    left: -0.5em;
+    position: absolute;
+    color: hsl(0, 0%, 93%);
+    width: 15rem;
+    text-align: right;
+    z-index: 6;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    list-style-type: none;
+    perspective: 700px;
+    -webkit-perspective: 700px;
+    -moz-perspective: 700px;
+    perspective-origin: center top; 
+}
+
+.HangmanMenu.left ul li {
+    padding: 15px;
+    font-size: 1.5rem;
+    transform: rotateY(20deg) rotateX(-25deg) skewY(15deg); 
+    text-align: right;
+}
+
+.HangmanMenu.right ul li {
+    padding: 15px;
+    font-size: 1.3rem;
+    transform: rotateY(-20deg) rotateX(-25deg) skewY(-15deg); 
+    text-align: left;
+}
+
+.Hangman ul li{
+    width: 10vw;
+    min-width: 4.5em;
+    border-radius: 10px;
+    cursor: pointer;
+    border-bottom: 4px solid;
+    border: linear-gradient(45deg, rgba(141, 58, 197, 0.3), rgba(114, 86, 190, 0.3));
+    text-shadow: 1px 1px 2px rgb(197, 51, 161), 0 0 1em rgb(74, 22, 90), 0 0 0.2em rgb(125, 84, 223);
+    border-color: rgba(158, 130, 212, 0.966);
+    text-shadow: 0.5px 0.5px 1px rgb(197, 51, 161), 0 0 0.25em rgb(74, 22, 90), 0 0 0.02em rgb(125, 84, 223);
+    mix-blend-mode: multiply;
+    font-weight: 800;
+    color: hsl(0, 0%, 93%);
+    font-size: 1.3rem;
+}
+
+.Hangman ul li a {
+    font-size: 1.3rem;
+    text-shadow: 0.5px 0.5px 1px rgb(197, 51, 161), 0 0 0.25em rgb(74, 22, 90), 0 0 0.02em rgb(125, 84, 223);
+    font-weight: 800;
+    color: hsl(0, 0%, 93%);
+}
+
+.Hangman ul li:nth-child(even) {
+    background: rgba(75, 75, 114, 0.4);
+}
+
+.Hangman ul li:nth-child(odd) {
+    background: rgba(123, 110, 180, 0.4);
+}
+
+.Hangman ul li:hover {
+    transform: translateY(20%) rotateY(1deg) rotateX(4deg) scale(1.02);
+    transition: transform 0.4s ease-out;
+    z-index: 999;
+    mix-blend-mode: normal;
+}
+
+.Hangman ul li.selected {
+    transform: rotateY(-20deg) rotateX(-25deg) skewY(-15deg) scale(1.02);
+    color: rgb(197, 51, 161);
+    text-shadow: 0.5px 0.5px 1px rgb(197, 51, 161), 0 0 0.25em rgb(74, 22, 90), 0 0 0.02em rgb(125, 84, 223);
+    z-index: 999;
+    mix-blend-mode: normal;
+}
+
+.Hangman ul li a{
+    text-decoration: none;
+    color: hsl(0, 0%, 93%);
+}
+
+
+/* HangmanLoose Menu */
+
+.hangmanLooser{
+    background-image: url(GameOver/1GameOver.jpg);
+    height: 100vh; 
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.hangmanLooser .looseImage{
+    height: 90vh;
+    margin: 4vh 2vw; 
+}
+
+.hangmanLooser img {
+    height: 100%; 
+}
+
+.HangmanEnd{
+    display:flex; 
+    flex-direction: column; 
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 4vh; 
+    margin-left: 2vw; 
+    color :hsl(0, 0%, 93%);
+    border:5px solid rgb(235, 234, 243);
+    border-radius: 5px;
+    padding:1em;
+    text-align:center;
+    text-decoration:none;
+    background: linear-gradient(-35deg, rgba(41, 5, 99, 0.4), rgba(79, 17, 138, 0.4));
+}
+
+.HangmanEnd h1{
+    font-size: 3rem;
+    margin: 0;
+    height:2em;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    text-shadow: 1px 2px 2px rgb(233, 231, 240), 0 0 2em rgb(108, 77, 192), 0 0 0.2em rgb(253, 21, 126);
+}
+
+.HangmanEnd ul{
+    list-style-type: none;
+    perspective: 1000px;
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.HangmanEnd ul li{
+    border-radius: 10px;
+    padding: 15px;
+    cursor: pointer;
+    transform: rotateY(-6deg) rotateX(10deg) skewY(-5deg);
+    border-bottom: 4px solid ;
+    border: linear-gradient(45deg, rgba(141, 58, 197, 0.3), rgba(114, 86, 190, 0.3));
+    mix-blend-mode:multiply; 
+    font-size: 2rem; 
+}
+
+.HangmanEnd ul li a{
+    font-size: 2rem; 
+    text-shadow: 1px 1px 2px rgb(197, 51, 161), 0 0 1em rgb(74, 22, 90), 0 0 0.2em rgb(125, 84, 223);
+    color :hsl(0, 0%, 93%);
+    text-decoration: none;
+    font-weight: 800;
+    text-align: center;
+    user-select:none;
+    -webkit-user-select: none;
+    -moz-user-select: none;   
+}
+
+.HangmanEnd ul li:nth-child(odd){
+    background: rgba(160, 162, 233, 0.4);
+}
+
+.HangmanEnd ul li:nth-child(even){
+    background: rgba(123, 110, 180, 0.4);
+}
+
+.HangmanEnd ul li:hover{
+    transform: rotateY(6deg) rotateX(4deg) scale(1.02);
+    -webkit-transform: rotateY(6deg) rotateX(4deg) scale(1.02);
+    -moz-transform: rotateY(6deg) rotateX(4deg) scale(1.02);
+    transition: selectoption 0.4s ease-out;
+    -webkit-transform: selectoption 0.4s ease-out;
+    -moz-transform: selectoption 0.4s ease-out;
+    z-index: 999;
+    mix-blend-mode: normal;
+}
+
+@keyframes selectoption {
+    0%{transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+    -moz-transform: scale(1.0);}
+    50%{transform:  scale(0.9);
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);}
+    100%{transform: scale(1);
+    -webkit-transform: scale(1.0);
+    -moz-transform: scale(1.0);}
+}
+
+/* HangmanWin Menu */
+
+.hangmanWin{
+    z-index: 6; 
+    position: absolute; 
+    width: 25vw; 
+    display: flex; 
+    flex-direction: column; 
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 4vh; 
+    margin-left: 2vw; 
+    color :hsl(0, 0%, 93%);
+    border:5px solid rgb(235, 234, 243);
+    border-radius: 5px;
+    padding:1em;
+    text-align:center;
+    text-decoration:none;
+    background: linear-gradient(-35deg, rgba(41, 5, 99, 0.4), rgba(79, 17, 138, 0.4));
+}
+
+.hangmanWin h1{
+    font-size: 2rem;
+    margin: 0;
+    height:2em;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    text-shadow: 1px 2px 2px rgb(233, 231, 240), 0 0 2em rgb(108, 77, 192), 0 0 0.2em rgb(253, 21, 126);
+}
+
+.hangmanWin ul{
+    list-style-type: none;
+    perspective: 1000px;
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.hangmanWin ul li{
+    border-radius: 10px;
+    padding: 15px;
+    cursor: pointer;
+    transform: rotateY(-6deg) rotateX(10deg) skewY(-5deg);
+    border-bottom: 4px solid ;
+    border: linear-gradient(45deg, rgba(141, 58, 197, 0.3), rgba(114, 86, 190, 0.3));
+    mix-blend-mode:multiply; 
+    font-size: 2rem; 
+}
+
+.hangmanWin ul li a{
+    font-size: 2rem; 
+    text-shadow: 1px 1px 2px rgb(197, 51, 161), 0 0 1em rgb(74, 22, 90), 0 0 0.2em rgb(125, 84, 223);
+    color :hsl(0, 0%, 93%);
+    text-decoration: none;
+    font-weight: 800;
+    text-align: center;
+    user-select:none;
+    -webkit-user-select: none;
+    -moz-user-select: none;   
+}
+
+.hangmanWin ul li:nth-child(odd){
+    background: rgba(160, 162, 233,0.4);
+}
+
+.hangmanWin ul li:nth-child(even){
+    background: rgba(123, 110, 180,0.4);
+}
+
+.hangmanWin ul li:hover{
+    transform: rotateY(6deg) rotateX(4deg) scale(1.02);
+    -webkit-transform: rotateY(6deg) rotateX(4deg) scale(1.02);
+    -moz-transform: rotateY(6deg) rotateX(4deg) scale(1.02);
+    transition: selectoption 0.4s ease-out;
+    -webkit-transform: selectoption 0.4s ease-out;
+    -moz-transform: selectoption 0.4s ease-out;
+    z-index: 5;
+    mix-blend-mode: normal;
+}
+
+ @keyframes selectoption{
+    0%{transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+    -moz-transform: scale(1.0);}
+    50%{transform:  scale(0.9);
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);}
+    100%{transform: scale(1);
+    -webkit-transform: scale(1.0);
+    -moz-transform: scale(1.0);}
+}
