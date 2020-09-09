@@ -10,6 +10,7 @@ class MyForm extends React.Component {
     }
 
     submitForm(ev) {
+        console.log('submitted');
         ev.preventDefault();
         const form = ev.target;
         const data = new FormData(form);
@@ -37,7 +38,7 @@ class MyForm extends React.Component {
                 action="https://formspree.io/maypzkgy"
                 method="POST"
             >
-                <h1>Conctact me</h1>
+                <h1>Get in touch</h1>
                 <label className="editor-field email">
                     <div className="labelContainer">
                         <div className="labelField">Your Email</div>
@@ -58,7 +59,7 @@ class MyForm extends React.Component {
                     <span className="fieldBottom"></span>
                 </label>
                 <div className="btn btnPrimary">
-                    {status === "SUCCESS" ? <h1>Thanks!</h1> : <button className="myFormButton">Submit</button>}
+                    {status === "SUCCESS" ? <h1>Thanks!</h1> : <button type="submit" className="myFormButton">Submit</button>}
                     {status === "ERROR" && <h1>Ooops! There was an error.</h1>}
                     <div className="btnBottom"></div> 
                 </div>

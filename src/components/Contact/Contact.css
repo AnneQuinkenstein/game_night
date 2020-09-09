@@ -53,7 +53,7 @@
 
 .ContactMenu ul li{
   margin: 0 0 0 auto; 
-  width: 13rem;
+  width: 250px;
   border-radius: 10px;
   padding:15px;
   cursor: pointer;
@@ -269,7 +269,6 @@
     display: flex;
     align-items: center;
     line-height: 10px;
-    pointer-events: none;
     color: #dedff4;
     text-shadow: 1px 1px 2px rgb(197, 51, 161), 0 0 1em rgb(74, 22, 90), 0 0 0.2em rgb(125, 84, 223);
   }

@@ -16,7 +16,7 @@ const Title = () => {
   }
 
   return (
-    <div className="Title">
+    <div className="Title page">
       <div className="titleEntranceBackground">
         <div className="containerSign">
           <h1 className="nothing"> <i className="fa fa-long-arrow-left" aria-hidden="true"></i> <span> online <span className="flicker">G</span>ame Nig<span className="flickerTwo">h</span>t</span></h1>

@@ -6,7 +6,7 @@ import ContactMenu from './ContactMenu';
 
 function Contact() {
   return (
-    <div className="contactContainer">
+    <div className="contactContainer page">
       <div className="contactContainer2">
         <ContactMenu />
         <MyForm />

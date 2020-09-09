@@ -7,6 +7,13 @@ html {
   font-size: calc(0.5vw + 6px);
 }
 
+.page{
+  position: absolute; 
+  top: 0; 
+  left:0; 
+  right: 0; 
+}
+
 .arcadeBackground {
   height: calc(1000px + 100vh); 
   background-image: url(arcadeEntrance.jpg);
@@ -521,3 +528,28 @@ h1.jokes:hover {
   font-weight: bolder; 
 }
 
+
+/* simple - enter transition 300ms, exit 150ms */
+.fade-appear,
+.fade-enter {
+    opacity: 0;
+    z-index: 1;
+    transform: translate(-50%);
+}
+.fade-appear-active,
+.fade-enter, .fade-enter-active {
+    transform: translate(0);
+    opacity: 1;
+    transition: opacity 300ms linear, translate 150ms linear;;
+}
+
+.fade-exit {
+    opacity: 1;
+    transform: translate(0);
+}
+
+.fade-exit, .fade-exit-active {
+    opacity: 0;
+    transform: translate(-50%);
+    transition: opacity 150ms linear, translate 150ms linear;
+}

@@ -4885,6 +4885,11 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.3.tgz#4a12ff1b60376ef09862c2093edd908328be8423"
   integrity sha512-a30VEBm4PEdx1dRB7MFK7BejejvCvBronbLjht+sHuGYj8PHs7M/5Z+rt5lw551vZ7yfTCj4Vuyy3mSJytDWRQ==
 
+group@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/group/-/group-1.0.2.tgz#3a6a6fd93f9b17ede5fe5f5ecf2459727a3e3126"
+  integrity sha1-Ompv2T+bF+3l/l9ezyRZcno+MSY=
+
 growly@^1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/growly/-/growly-1.3.0.tgz#f10748cbe76af964b7c96c93c6bcc28af120c081"
@@ -6894,6 +6899,11 @@ mkdirp@^0.5.1, mkdirp@^0.5.3, mkdirp@~0.5.1:
   dependencies:
     minimist "^1.2.5"
 
+mout@^0.9.1, mout@~0.9:
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/mout/-/mout-0.9.1.tgz#84f0f3fd6acc7317f63de2affdcc0cee009b0477"
+  integrity sha1-hPDz/WrMcxf2PeKv/cwM7gCbBHc=
+
 move-concurrently@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/move-concurrently/-/move-concurrently-1.0.1.tgz#be2c005fda32e0b29af1f05d7c4b33214c701f92"
@@ -8412,6 +8422,13 @@ pretty-format@^25.1.0:
     ansi-regex "^5.0.0"
     ansi-styles "^4.0.0"
     react-is "^16.12.0"
+
+prime@^0.4.2:
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/prime/-/prime-0.4.2.tgz#2c937c6b11e0a6488fe5cb7020a1f5db1ec59384"
+  integrity sha1-LJN8axHgpkiP5ctwIKH12x7Fk4Q=
+  dependencies:
+    mout "~0.9"
 
 private@^0.1.8:
   version "0.1.8"
@@ -10173,6 +10190,14 @@ tr46@^1.0.1:
   integrity sha1-qLE/1r/SSJUZZ0zN5VujaTtwbQk=
   dependencies:
     punycode "^2.1.0"
+
+transition@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/transition/-/transition-0.1.1.tgz#1e13f83246d10b72a1175b0cdaa8ef120d7fcd05"
+  integrity sha1-HhP4MkbRC3KhF1sM2qjvEg1/zQU=
+  dependencies:
+    mout "^0.9.1"
+    prime "^0.4.2"
 
 ts-pnp@1.1.6, ts-pnp@^1.1.6:
   version "1.1.6"

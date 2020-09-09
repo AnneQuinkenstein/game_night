@@ -138,9 +138,11 @@ const HangmanContextComponent = (props) => {
     }, [answer])
 
     const gameOver = () => {
+        const answerGiven = answer.length > 0
+        const answerCorrect = answerGiven && !answer.includes('_')
         if (getRemainingGuesses() <= 0) {
             setGameState('loose');
-        } else if (!answer.includes('_')) {
+        } else if (answerCorrect) {
             setGameState('won');
         } else {
             setGameState('');
@@ -151,7 +153,6 @@ const HangmanContextComponent = (props) => {
         <HangmanContext.Provider value={{ style, movieData, gifs, options, choosenLang, guessedLetters, answer, gameState, falseGuesses: getWronglyGuessedLetters().length, wrongLetters: getWronglyGuessedLetters(), handleChooseLang: handleChooseLang, updateGuessedLetters: updateGuessedLetters, mount: mount }}>
             {props.children}
         </HangmanContext.Provider>
-
     )
 }
 
