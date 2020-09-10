@@ -371,17 +371,18 @@ h1.jokes:hover {
     }
   }
 
-  p.jokes {
-    width: 400px;
+ p.jokes {
+    min-width: 200px;
     position: absolute;
-    top:37%;
-    transform: translate(30%, 0%);
+    top: 37%;
+    transform: translate(5vw);
     font-size: 1.5rem;
-    color: $rose;
-    padding: 1vh; 
-    opacity: 0.8;
+    color: #ddacac;
+    padding: 1vh;
+    opacity: .8;
     overflow-wrap: break-word;
-    }
+    width: 22vw;
+ }
 
 .nothing {
   display:none; 
@@ -419,6 +420,24 @@ h1.jokes:hover {
       width: 250px;
       }
     }
+@media (max-width: 767px) {
+  @keyframes gameTeaseBox{
+    0% { 
+      top: 150vh; 
+       }
+    40% {
+      top: 130vh; 
+      left: 10vw; 
+      width: 250px;
+      }
+    100% {
+      top: 40vh; 
+      left: 20vw; 
+      width: 250px;
+      }
+    
+  }
+}
 
 .gameTease .hangman {
   position: relative; 

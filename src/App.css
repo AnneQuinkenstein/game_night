@@ -561,16 +561,17 @@ h1.jokes:hover {
 }
 
 p.jokes {
-  width: 400px;
+  min-width: 200px;
   position: absolute;
   top: 37%;
-  -webkit-transform: translate(30%, 0%);
-          transform: translate(30%, 0%);
+  -webkit-transform: translate(5vw);
+          transform: translate(5vw);
   font-size: 1.5rem;
   color: #ddacac;
   padding: 1vh;
-  opacity: 0.8;
+  opacity: .8;
   overflow-wrap: break-word;
+  width: 22vw;
 }
 
 .nothing {
@@ -636,6 +637,39 @@ p.jokes {
     top: 40vh;
     left: 33vw;
     width: 250px;
+  }
+}
+
+@media (max-width: 767px) {
+  @-webkit-keyframes gameTeaseBox {
+    0% {
+      top: 150vh;
+    }
+    40% {
+      top: 130vh;
+      left: 10vw;
+      width: 250px;
+    }
+    100% {
+      top: 40vh;
+      left: 20vw;
+      width: 250px;
+    }
+  }
+  @keyframes gameTeaseBox {
+    0% {
+      top: 150vh;
+    }
+    40% {
+      top: 130vh;
+      left: 10vw;
+      width: 250px;
+    }
+    100% {
+      top: 40vh;
+      left: 20vw;
+      width: 250px;
+    }
   }
 }
 
