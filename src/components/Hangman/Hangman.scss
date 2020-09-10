@@ -45,8 +45,8 @@ $radial-background: radial-gradient(#333, #111);
     background-color: black;
 }
 
-.GifsList:nth-of-type(5),.Gif:nth-of-type(4), .Gif:nth-last-of-type(5) {
-    @media (min-width: 320px) and (max-width: 480px)  {
+.GifsList:nth-of-type(5),.Gif:nth-of-type(4), .Gif:nth-of-type(5) {
+    @media (max-width: 767px)  {
         display: none;
     }
 }
@@ -100,7 +100,6 @@ $radial-background: radial-gradient(#333, #111);
     letter-spacing: -5px;
     position: absolute;
     font-size: 5em;
-    bottom: 3vh;
     text-decoration: line-through;
     font-weight: bolder;
     color: $white;
@@ -110,6 +109,15 @@ $radial-background: radial-gradient(#333, #111);
 .Gif .wrongLetter{
     @extend .wrongLetter;   
     bottom: 3vh;
+}
+
+.phone-wrongLetter{
+    display: none; 
+    @media (max-width: 767px){
+    display: flex; 
+    flex-direction: row;
+    justify-content: center;
+    }
 }
 
 /* Animation Intro + Hangman-Guessed Word */

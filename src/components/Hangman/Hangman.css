@@ -38,8 +38,8 @@
   background-color: black;
 }
 
-@media (min-width: 320px) and (max-width: 480px) {
-  .GifsList:nth-of-type(5), .Gif:nth-of-type(4), .Gifanimated:nth-of-type(4), .Gif:nth-last-of-type(5), .Gifanimated:nth-last-of-type(5) {
+@media (max-width: 767px) {
+  .GifsList:nth-of-type(5), .Gif:nth-of-type(4), .Gifanimated:nth-of-type(4), .Gif:nth-of-type(5), .Gifanimated:nth-of-type(5) {
     display: none;
   }
 }
@@ -116,7 +116,6 @@
   letter-spacing: -5px;
   position: absolute;
   font-size: 5em;
-  bottom: 3vh;
   text-decoration: line-through;
   font-weight: bolder;
   color: #ffe6ff;
@@ -125,6 +124,25 @@
 
 .Gif .wrongLetter, .Gifanimated .wrongLetter {
   bottom: 3vh;
+}
+
+.phone-wrongLetter {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .phone-wrongLetter {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 /* Animation Intro + Hangman-Guessed Word */
