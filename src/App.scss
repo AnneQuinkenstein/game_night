@@ -5,7 +5,7 @@ $orange: #ce0000;
 $darkred: #6b1839;
 $lila: #3d36e3;
 
-$bright-text-shadow: 0 0 10px $white , 0 0 20px $white , 0 0 30px $rose , 0 0 40px $orangelight , 0 0 70px $orangelight , 0 0 80px $orangelight , 0 0 100px $orangelight;
+$bright-text-shadow: 0 0 10px $white , 0 0 20px $white , 0 0 30px $rose , 0 0 40px $rose , 0 0 70px $rose , 0 0 80px $orangelight , 0 0 100px $orangelight;
 
 $textborder-small: 0 0 0.1rem $white, 0 0 1rem #a6a4d6, -0.2rem 0.1rem 0.5rem #9692e6, 0.2rem 0.1rem 0.5rem #8480e9, 0 -0.5rem 1.5rem #615be1, 0 0.5rem 1.5rem $lila;
 
@@ -297,7 +297,7 @@ html {
   }
 
 .containerJokes{
-  perspective: 100px;
+  perspective: 300px;
   position: absolute;
   top: 26%;
   left: 60%; 
@@ -397,7 +397,7 @@ h1.jokes:hover {
   flex-wrap: wrap;
   flex-direction: column;
   transform-style: preserve-3d;
-  transform: rotateX(7deg) rotateY(5deg) rotateZ(5deg) translateZ(2vh) scaleZ(-1.5);
+  transform: rotateX(3deg) rotateY(2deg) rotate(2deg) translateZ(2vh)skewX(1deg);
   animation-name: gameTeaseBox;
   animation-duration: 7s;
   animation-iteration-count: 1;
@@ -448,13 +448,13 @@ h1.jokes:hover {
 
 .gameTease .hangman img {
   height: 100%;
-  opacity: 0.7;
+  opacity: 0.9;
 }
 
 .gameTease .hangman a {
   position: absolute;
   top: 65%; 
-  left: 3vw; 
+  left: 3rem; 
   font-weight: bolder; 
   text-decoration: none;
   color: black;
@@ -468,13 +468,13 @@ h1.jokes:hover {
 .gameTease .hangman:nth-child(1){
   margin-left: 0; 
   >img {
-  transform: skewY(-8deg) scale(0.9);
+  transform: skewY(-1deg) scale(0.9);
   }
 }
 
 .gameTease .hangman:nth-child(2){
   margin-left: auto; 
-  transform: rotateY(1deg) skewX(8deg);
+  transform: rotateY(1deg);
 }
 
 .gameTease .hangman:nth-child(3){
@@ -491,10 +491,10 @@ h1.jokes:hover {
     font-size: 0%;
     }
   50% {
-    font-size: 100%;
+    font-size: 1rem;
     }
   100% {
-    font-size: 100%;
+    font-size: 1.2rem;
     }
   }
 
