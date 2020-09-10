@@ -60,6 +60,10 @@ html {
           transform-style: preserve-3d;
 }
 
+.titleName:hover {
+  cursor: pointer;
+}
+
 @media (max-width: 767px) {
   .titleName {
     white-space: normal;
@@ -73,7 +77,6 @@ html {
   }
 }
 
-/* flickering letter  */
 .titleName span.flicker {
   -webkit-animation: shine 2s forwards, blink 3s 2s infinite;
           animation: shine 2s forwards, blink 3s 2s infinite;
@@ -84,13 +87,9 @@ html {
           animation: shine 2s forwards, blink 8s 2s infinite;
 }
 
-/* flickering font Animations */
+/* Keyframes for flickering font Animations */
 @-webkit-keyframes blink {
-  0% {
-    color: #ffe6ff;
-    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #a6a4d6, -0.2rem 0.1rem 1rem #9692e6, 0.2rem 0.1rem 1rem #8480e9, 0 -0.5rem 2rem #615be1, 0 0.5rem 3rem #3d36e3;
-  }
-  75% {
+  0%, 45%, 75% {
     color: #ffe6ff;
     text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #a6a4d6, -0.2rem 0.1rem 1rem #9692e6, 0.2rem 0.1rem 1rem #8480e9, 0 -0.5rem 2rem #615be1, 0 0.5rem 3rem #3d36e3;
   }
@@ -98,10 +97,6 @@ html {
   35% {
     color: #8480e9;
     text-shadow: none;
-  }
-  45% {
-    color: #ffe6ff;
-    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #a6a4d6, -0.2rem 0.1rem 1rem #9692e6, 0.2rem 0.1rem 1rem #8480e9, 0 -0.5rem 2rem #615be1, 0 0.5rem 3rem #3d36e3;
   }
   82%,
   99% {
@@ -110,11 +105,7 @@ html {
   }
 }
 @keyframes blink {
-  0% {
-    color: #ffe6ff;
-    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #a6a4d6, -0.2rem 0.1rem 1rem #9692e6, 0.2rem 0.1rem 1rem #8480e9, 0 -0.5rem 2rem #615be1, 0 0.5rem 3rem #3d36e3;
-  }
-  75% {
+  0%, 45%, 75% {
     color: #ffe6ff;
     text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #a6a4d6, -0.2rem 0.1rem 1rem #9692e6, 0.2rem 0.1rem 1rem #8480e9, 0 -0.5rem 2rem #615be1, 0 0.5rem 3rem #3d36e3;
   }
@@ -122,10 +113,6 @@ html {
   35% {
     color: #8480e9;
     text-shadow: none;
-  }
-  45% {
-    color: #ffe6ff;
-    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #a6a4d6, -0.2rem 0.1rem 1rem #9692e6, 0.2rem 0.1rem 1rem #8480e9, 0 -0.5rem 2rem #615be1, 0 0.5rem 3rem #3d36e3;
   }
   82%,
   99% {
@@ -361,10 +348,6 @@ html {
   }
 }
 
-.titleName:hover {
-  cursor: pointer;
-}
-
 /* on entranceBackground */
 .entranceBackground {
   background-image: url(arcadeEntrance.jpg);
@@ -466,6 +449,14 @@ h1.jokes {
           animation-direction: alternate;
 }
 
+h1.jokes:hover {
+  color: #ddacac;
+  cursor: pointer;
+  opacity: 0.8;
+  text-shadow: 5px 5px black;
+  left: 56%;
+}
+
 @media (max-width: 767px) {
   h1.jokes {
     display: none;
@@ -522,14 +513,6 @@ h1.jokes {
   }
 }
 
-h1.jokes:hover {
-  color: #ddacac;
-  cursor: pointer;
-  opacity: 0.8;
-  text-shadow: 5px 5px black;
-  left: 56%;
-}
-
 @-webkit-keyframes wait {
   0% {
     font-size: 0;
@@ -583,7 +566,7 @@ p.jokes {
           perspective: 500px;
 }
 
-.gameTease {
+.titleGameTease, .gameTease {
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -598,6 +581,63 @@ p.jokes {
           transform-style: preserve-3d;
   -webkit-transform: rotateX(3deg) rotateY(2deg) rotate(2deg) translateZ(2vh) skewX(1deg);
           transform: rotateX(3deg) rotateY(2deg) rotate(2deg) translateZ(2vh) skewX(1deg);
+  top: 40vh;
+  left: 33vw;
+  width: 250px;
+}
+
+@media (max-width: 767px) {
+  .titleGameTease, .gameTease {
+    left: 20vw;
+  }
+}
+
+.titleGameTease .titlehangman, .gameTease .titlehangman, .gameTease .hangman {
+  position: relative;
+  padding: 0;
+  height: 9vw;
+  min-height: 150px;
+}
+
+.titleGameTease .titlehangman > img, .gameTease .titlehangman > img, .gameTease .titleGameTease .hangman > img, .gameTease .hangman > img {
+  height: 100%;
+  opacity: 0.9;
+}
+
+.titleGameTease .titlehangman > a, .gameTease .titlehangman > a, .gameTease .titleGameTease .hangman > a, .gameTease .hangman > a {
+  position: absolute;
+  top: 65%;
+  left: 3rem;
+  font-weight: bolder;
+  text-decoration: none;
+  color: black;
+  text-shadow: 0 0 10px #ffe6ff, 0 0 20px #ffe6ff, 0 0 30px #ddacac, 0 0 40px #ddacac, 0 0 70px #ddacac, 0 0 80px #fe735a, 0 0 100px #fe735a;
+  font-size: 1.2rem;
+}
+
+.titleGameTease .titlehangman:nth-child(1), .gameTease .titlehangman:nth-child(1), .gameTease .hangman:nth-child(1) {
+  margin-left: 0;
+}
+
+.titleGameTease .titlehangman:nth-child(1) > img, .gameTease .titlehangman:nth-child(1) > img, .gameTease .titleGameTease .hangman:nth-child(1) > img, .gameTease .hangman:nth-child(1) > img {
+  -webkit-transform: skewY(-1deg) scale(0.9);
+          transform: skewY(-1deg) scale(0.9);
+}
+
+.titleGameTease .titlehangman:nth-child(2), .gameTease .titlehangman:nth-child(2), .gameTease .hangman:nth-child(2) {
+  margin-left: auto;
+  -webkit-transform: rotateY(1deg);
+          transform: rotateY(1deg);
+}
+
+.titleGameTease .titlehangman:nth-child(3), .gameTease .titlehangman:nth-child(3), .gameTease .hangman:nth-child(3) {
+  margin-bottom: 1vw;
+  margin-left: 2vw;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.gameTease {
   -webkit-animation-name: gameTeaseBox;
           animation-name: gameTeaseBox;
   -webkit-animation-duration: 7s;
@@ -606,6 +646,62 @@ p.jokes {
           animation-iteration-count: 1;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
+}
+
+.gameTease .hangman {
+  -webkit-animation-name: gameTease;
+          animation-name: gameTease;
+  -webkit-animation-duration: 7s;
+          animation-duration: 7s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.gameTease .hangman > a {
+  -webkit-animation-name: gameTeaseFont;
+          animation-name: gameTeaseFont;
+  -webkit-animation-duration: 7s;
+          animation-duration: 7s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes gameTease {
+  0% {
+    height: 0;
+  }
+  40% {
+    height: 0;
+    margin: 0;
+  }
+  41% {
+    height: 11vw;
+  }
+  100% {
+    height: 9vw;
+    min-height: 150px;
+  }
+}
+
+@keyframes gameTease {
+  0% {
+    height: 0;
+  }
+  40% {
+    height: 0;
+    margin: 0;
+  }
+  41% {
+    height: 11vw;
+  }
+  100% {
+    height: 9vw;
+    min-height: 150px;
+  }
 }
 
 @-webkit-keyframes gameTeaseBox {
@@ -673,98 +769,6 @@ p.jokes {
   }
 }
 
-.gameTease .hangman {
-  position: relative;
-  padding: 0;
-  -webkit-animation-name: gameTease;
-          animation-name: gameTease;
-  -webkit-animation-duration: 7s;
-          animation-duration: 7s;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-@-webkit-keyframes gameTease {
-  0% {
-    height: 0;
-  }
-  40% {
-    height: 0;
-    margin: 0;
-  }
-  41% {
-    height: 11vw;
-  }
-  100% {
-    height: 9vw;
-    min-height: 150px;
-  }
-}
-
-@keyframes gameTease {
-  0% {
-    height: 0;
-  }
-  40% {
-    height: 0;
-    margin: 0;
-  }
-  41% {
-    height: 11vw;
-  }
-  100% {
-    height: 9vw;
-    min-height: 150px;
-  }
-}
-
-.gameTease .hangman img {
-  height: 100%;
-  opacity: 0.9;
-}
-
-.gameTease .hangman a {
-  position: absolute;
-  top: 65%;
-  left: 3rem;
-  font-weight: bolder;
-  text-decoration: none;
-  color: black;
-  text-shadow: 0 0 10px #ffe6ff, 0 0 20px #ffe6ff, 0 0 30px #ddacac, 0 0 40px #ddacac, 0 0 70px #ddacac, 0 0 80px #fe735a, 0 0 100px #fe735a;
-  -webkit-animation-name: gameTeaseFont;
-          animation-name: gameTeaseFont;
-  -webkit-animation-duration: 7s;
-          animation-duration: 7s;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-.gameTease .hangman:nth-child(1) {
-  margin-left: 0;
-}
-
-.gameTease .hangman:nth-child(1) > img {
-  -webkit-transform: skewY(-1deg) scale(0.9);
-          transform: skewY(-1deg) scale(0.9);
-}
-
-.gameTease .hangman:nth-child(2) {
-  margin-left: auto;
-  -webkit-transform: rotateY(1deg);
-          transform: rotateY(1deg);
-}
-
-.gameTease .hangman:nth-child(3) {
-  margin-bottom: 1vw;
-  margin-left: 2vw;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-}
-
 @-webkit-keyframes gameTeaseFont {
   0% {
     font-size: 0%;
@@ -793,73 +797,6 @@ p.jokes {
   100% {
     font-size: 1.2rem;
   }
-}
-
-/* EndGameTease */
-.titleGameTease {
-  position: absolute;
-  height: 80%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-flow: wrap;
-      flex-flow: wrap;
-  -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  -webkit-transform: rotateX(4deg) rotateY(-1deg) skewX(-2deg);
-          transform: rotateX(4deg) rotateY(-1deg) skewX(-2deg);
-  top: 40vh;
-  left: 33vw;
-  width: 30%;
-}
-
-.titleGameTease .hangman {
-  position: relative;
-  padding: 0;
-  height: 9vw;
-  min-height: 150px;
-}
-
-.titleGameTease .hangman:nth-child(1) {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-  -webkit-transform: rotateX(-2deg) rotateY(1deg) skewX(1.5deg) scale(1.025);
-          transform: rotateX(-2deg) rotateY(1deg) skewX(1.5deg) scale(1.025);
-}
-
-.titleGameTease .hangman:nth-child(2) {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-  margin-bottom: 5vw;
-  -webkit-transform: rotateX(-3deg) rotateY(1deg) skewX(2deg);
-          transform: rotateX(-3deg) rotateY(1deg) skewX(2deg);
-}
-
-.titleGameTease .hangman:nth-child(3) {
-  margin-left: 7vw;
-  margin-bottom: 1vw;
-  height: 13vw;
-  -webkit-transform: rotateX(-1deg) rotateY(1deg) skewX(1deg) scale(1.05);
-          transform: rotateX(-1deg) rotateY(1deg) skewX(1deg) scale(1.05);
-}
-
-.titleGameTease .hangman img {
-  height: 100%;
-  opacity: 0.7;
-}
-
-.titleCenter, .titleCenter a {
-  position: absolute;
-  top: 65%;
-  left: 30%;
-  text-decoration: none;
-  color: black;
-  text-shadow: 0 0 10px #ffe6ff, 0 0 20px #ffe6ff, 0 0 30px #ddacac, 0 0 40px #ddacac, 0 0 70px #ddacac, 0 0 80px #fe735a, 0 0 100px #fe735a;
-  font-size: 100%;
-  font-weight: bolder;
 }
 
 /* simple - enter transition 300ms, exit 150ms */

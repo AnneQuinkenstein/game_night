@@ -3,11 +3,11 @@ $rose: #ddacac;
 $orangelight: #fe735a;
 $orange: #ce0000; 
 $darkred: #6b1839;
-$lila: #3d36e3;
+$purple: #3d36e3;
 
 $bright-text-shadow: 0 0 10px $white , 0 0 20px $white , 0 0 30px $rose , 0 0 40px $rose , 0 0 70px $rose , 0 0 80px $orangelight , 0 0 100px $orangelight;
 
-$textborder-small: 0 0 0.1rem $white, 0 0 1rem #a6a4d6, -0.2rem 0.1rem 0.5rem #9692e6, 0.2rem 0.1rem 0.5rem #8480e9, 0 -0.5rem 1.5rem #615be1, 0 0.5rem 1.5rem $lila;
+$textborder-small: 0 0 0.1rem $white, 0 0 1rem #a6a4d6, -0.2rem 0.1rem 0.5rem #9692e6, 0.2rem 0.1rem 0.5rem #8480e9, 0 -0.5rem 1.5rem #615be1, 0 0.5rem 1.5rem $purple;
 
 * {
   font-family: 'Nova Mono', monospace; 
@@ -58,6 +58,9 @@ html {
   perspective-origin: 150% 150%;
   cursor: pointer;
   transform-style: preserve-3d;
+  &:hover {
+    cursor: pointer;
+  }
   @media (max-width: 767px) {
   white-space: normal; 
   }
@@ -67,8 +70,6 @@ html {
   }
 }
 
-
-/* flickering letter  */
 .titleName span.flicker {
   animation: shine 2s forwards, blink 3s 2s infinite;
 }
@@ -79,22 +80,17 @@ html {
 }
 
 
-/* flickering font Animations */
+/* Keyframes for flickering font Animations */
 @keyframes blink {
-  0%{  color: $white;
-    text-shadow: 0 0 0.6rem $white, 0 0 1.5rem #a6a4d6, -0.2rem 0.1rem 1rem #9692e6, 0.2rem 0.1rem 1rem #8480e9, 0 -0.5rem 2rem #615be1, 0 0.5rem 3rem $lila;}
-  
-  75% {
+0%, 45%, 75% {
     color: $white;
-    text-shadow: 0 0 0.6rem $white, 0 0 1.5rem #a6a4d6, -0.2rem 0.1rem 1rem #9692e6, 0.2rem 0.1rem 1rem #8480e9, 0 -0.5rem 2rem #615be1, 0 0.5rem 3rem $lila;
+    text-shadow: 0 0 0.6rem $white, 0 0 1.5rem #a6a4d6, -0.2rem 0.1rem 1rem #9692e6, 0.2rem 0.1rem 1rem #8480e9, 0 -0.5rem 2rem #615be1, 0 0.5rem 3rem $purple;
   }
   28%,
   35% {
     color: #8480e9;
     text-shadow: none;
   }
-  45% {  color: $white;
-    text-shadow: 0 0 0.6rem $white, 0 0 1.5rem #a6a4d6, -0.2rem 0.1rem 1rem #9692e6, 0.2rem 0.1rem 1rem #8480e9, 0 -0.5rem 2rem #615be1, 0 0.5rem 3rem $lila;}
   82%,
   99% {
     color: hsla(234, 77%, 53%, 0.363);    
@@ -110,7 +106,7 @@ html {
   }
   100% {
     color: $white;
-    text-shadow: 0 0 1.1rem $white, 0 0 2rem #a6a4d6, -0.2rem 0.1rem 1.5rem #9692e6, 0.2rem 0.1rem 1.5rem #8480e9, 0 -0.5rem 2.5rem #615be1, 0 0.5rem 3.5rem $lila;
+    text-shadow: 0 0 1.1rem $white, 0 0 2rem #a6a4d6, -0.2rem 0.1rem 1.5rem #9692e6, 0.2rem 0.1rem 1.5rem #8480e9, 0 -0.5rem 2.5rem #615be1, 0 0.5rem 3.5rem $purple;
   }
 }
 
@@ -248,10 +244,6 @@ html {
   }
 }
 
-.titleName:hover {
-  cursor: pointer;
-}
-
 
 /* on entranceBackground */
 
@@ -318,6 +310,13 @@ h1.jokes {
   animation-timing-function: cubic-bezier(.215,.61,.355,1);
   animation-iteration-count: infinite;
   animation-direction: alternate;
+  &:hover {
+    color: $rose;
+    cursor: pointer;
+    opacity: 0.8; 
+    text-shadow: 5px 5px black;
+    left: 56%;
+  }
   @media (max-width: 767px) {
     display: none; 
     }
@@ -348,14 +347,6 @@ h1.jokes {
   }
 }
 
-h1.jokes:hover {
-  color: $rose;
-  cursor: pointer;
-  opacity: 0.8; 
-  text-shadow: 5px 5px black;
-  left: 56%;
-}
-
 @keyframes wait {
   0% { 
     font-size:0;
@@ -377,7 +368,7 @@ h1.jokes:hover {
     top: 37%;
     transform: translate(5vw);
     font-size: 1.5rem;
-    color: #ddacac;
+    color: $rose;
     padding: 1vh;
     opacity: .8;
     overflow-wrap: break-word;
@@ -392,18 +383,98 @@ h1.jokes:hover {
   perspective: 500px;
 }
 
-.gameTease  {
+//Pacman without animation
+.titleGameTease  {
   position: absolute;  
   display: flex; 
   flex-wrap: wrap;
   flex-direction: column;
   transform-style: preserve-3d;
   transform: rotateX(3deg) rotateY(2deg) rotate(2deg) translateZ(2vh)skewX(1deg);
+  top: 40vh; 
+  left: 33vw; 
+  width: 250px;
+  @media (max-width: 767px) {
+    left: 20vw; 
+    }
+    .titlehangman {
+      position: relative; 
+      padding: 0;
+      height: 9vw;
+      min-height: 150px; 
+       >img {
+          height: 100%;
+          opacity: 0.9;
+        }
+       >a {
+          position: absolute;
+          top: 65%; 
+          left: 3rem; 
+          font-weight: bolder; 
+          text-decoration: none;
+          color: black;
+          text-shadow: $bright-text-shadow;
+          font-size: 1.2rem
+        }
+        &:nth-child(1){
+          margin-left: 0; 
+          >img {
+          transform: skewY(-1deg) scale(0.9);
+          }
+        }
+        &:nth-child(2){
+          margin-left: auto; 
+          transform: rotateY(1deg);
+         }
+        &:nth-child(3){
+          margin-bottom: 1vw; 
+          margin-left: 2vw; 
+          transform: scale(1.1);
+        }
+     }
+  }
+
+//pacman with animation
+.gameTease  {
+  @extend .titleGameTease; 
   animation-name: gameTeaseBox;
   animation-duration: 7s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards; 
+  .hangman {
+    @extend .titlehangman; 
+    animation-name: gameTease;
+    animation-duration: 7s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards; 
+    > img {
+      @extend img;
+      }
+    > a {
+        @extend a; 
+        animation-name: gameTeaseFont;
+        animation-duration: 7s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards; 
+      }
+   }
+ }
+
+ @keyframes gameTease {
+  0% { height: 0;
+     }
+  40% {
+    height: 0;
+    margin: 0;
+    }
+  41% {
+    height: 11vw;
   }
+  100% {
+    height: 9vw;
+    min-height: 150px; 
+    }
+}
 
   @keyframes gameTeaseBox{
     0% { 
@@ -420,6 +491,7 @@ h1.jokes:hover {
       width: 250px;
       }
     }
+
 @media (max-width: 767px) {
   @keyframes gameTeaseBox{
     0% { 
@@ -434,72 +506,8 @@ h1.jokes:hover {
       top: 40vh; 
       left: 20vw; 
       width: 250px;
-      }
-    
+      }    
   }
-}
-
-.gameTease .hangman {
-  position: relative; 
-  padding: 0; 
-  animation-name: gameTease;
-  animation-duration: 7s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards; 
- }
-
-
-@keyframes gameTease {
-  0% { height: 0;
-     }
-  40% {
-    height: 0;
-    margin: 0;
-    }
-  41% {
-    height: 11vw;
-  }
-  100% {
-    height: 9vw;
-    min-height: 150px; 
-    }
-}
-
-.gameTease .hangman img {
-  height: 100%;
-  opacity: 0.9;
-}
-
-.gameTease .hangman a {
-  position: absolute;
-  top: 65%; 
-  left: 3rem; 
-  font-weight: bolder; 
-  text-decoration: none;
-  color: black;
-  text-shadow: $bright-text-shadow;
-  animation-name: gameTeaseFont;
-  animation-duration: 7s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards; 
-}
-
-.gameTease .hangman:nth-child(1){
-  margin-left: 0; 
-  >img {
-  transform: skewY(-1deg) scale(0.9);
-  }
-}
-
-.gameTease .hangman:nth-child(2){
-  margin-left: auto; 
-  transform: rotateY(1deg);
-}
-
-.gameTease .hangman:nth-child(3){
-  margin-bottom: 1vw; 
-  margin-left: 2vw; 
-  transform: scale(1.1);
 }
 
 @keyframes gameTeaseFont {
@@ -516,64 +524,6 @@ h1.jokes:hover {
     font-size: 1.2rem;
     }
   }
-
- /* EndGameTease */
-
-.titleGameTease  {
-  position: absolute; 
-  height: 80%; 
-  display: flex; 
-  flex-flow: wrap;
-  align-items: baseline; 
-  transform-style: preserve-3d;
-  transform: rotateX(4deg) rotateY(-1deg) skewX(-2deg);
-  top: 40vh; 
-  left: 33vw; 
-  width: 30%;
-  }
-
-.titleGameTease .hangman {
-  position: relative; 
-  padding: 0; 
-  height: 9vw;
-  min-height: 150px; 
- }
-
-
-.titleGameTease .hangman:nth-child(1){
-  align-self: flex-end;  
-  transform: rotateX(-2deg) rotateY(1deg) skewX(1.5deg) scale(1.025);
-}
-
-.titleGameTease .hangman:nth-child(2){
-  align-self: flex-end; 
-  margin-bottom: 5vw;
-  transform: rotateX(-3deg) rotateY(1deg) skewX(2deg);
-}
-
-.titleGameTease .hangman:nth-child(3){
-  margin-left: 7vw; 
-  margin-bottom: 1vw; 
-  height: 13vw;
-  transform: rotateX(-1deg) rotateY(1deg) skewX(1deg) scale(1.05);
-}
-
-
-.titleGameTease .hangman img {
-  height: 100%;
-  opacity: 0.7;
-}
-
-.titleCenter, .titleCenter a {
-  position: absolute;
-  top: 65%; 
-  left: 30%; 
-  text-decoration: none;
-  color: black;
-  text-shadow: $bright-text-shadow;
-  font-size: 100%;
-  font-weight: bolder; 
-}
 
 
 /* simple - enter transition 300ms, exit 150ms */
