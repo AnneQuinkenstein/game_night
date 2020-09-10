@@ -2,7 +2,12 @@ $white: #ffe6ff;
 $rose: #ddacac; 
 $orangelight: #fe735a;
 $orange: #ce0000; 
+$darkred: #6b1839;
+$lila: #3d36e3;
+
 $bright-text-shadow: 0 0 10px $white , 0 0 20px $white , 0 0 30px $rose , 0 0 40px $orangelight , 0 0 70px $orangelight , 0 0 80px $orangelight , 0 0 100px $orangelight;
+
+$textborder-small: 0 0 0.1rem $white, 0 0 1rem #a6a4d6, -0.2rem 0.1rem 0.5rem #9692e6, 0.2rem 0.1rem 0.5rem #8480e9, 0 -0.5rem 1.5rem #615be1, 0 0.5rem 1.5rem $lila;
 
 * {
   font-family: 'Nova Mono', monospace; 
@@ -11,7 +16,7 @@ $bright-text-shadow: 0 0 10px $white , 0 0 20px $white , 0 0 30px $rose , 0 0 40
 html {
   overflow: hidden; 
   font-size: calc(0.5vw + 6px);
-  @media (min-width: 320px) and (max-width: 480px) {
+  @media (max-width: 767px) {
     font-size: calc(0.5vw + 10px);
   }
 }
@@ -21,6 +26,7 @@ html {
   top: 0; 
   left:0; 
   right: 0; 
+  bottom: 0; 
 }
 
 .arcadeBackground {
@@ -38,33 +44,37 @@ html {
   position: absolute;
   top: 30%;
   left: 55%;
-  @media (min-width: 320px) and (max-width: 480px) {
+  @media (max-width: 767px) {
     top: 15%; 
     }
 }
 
-.titleName, .titleName span {
-  transform:  translate(-70%, 32%)rotateY(-2deg) rotateX(-1deg) rotate(4deg) skewY(-9.5deg);
-  font-size: 4rem;
+.titleName {
+  transform:  translate(-85%, 32%) rotateY(-2deg) rotateX(-1deg) rotateZ(4deg) skewY(-9.5deg);
+  font-size: 3.5rem;
   white-space: nowrap;
   color: $white;
   animation: shine 2s forwards, flicker 3s infinite;
   perspective-origin: 150% 150%;
   cursor: pointer;
   transform-style: preserve-3d;
-  @media (min-width: 320px) and (max-width: 480px) {
+  @media (max-width: 767px) {
   white-space: normal; 
+  }
+  //Media Queries for monitors? changed skewY
+  @media (min-width:2000px) {
+    transform:  translate(-90%, 32%) rotateY(-2deg) rotateX(-1deg) rotateZ(4deg) skewY(-13deg);
   }
 }
 
 
 /* flickering letter  */
-.titleName span span.flicker {
+.titleName span.flicker {
   animation: shine 2s forwards, blink 3s 2s infinite;
 }
 
 
-.titleName span span.flickerTwo {
+.titleName span.flickerTwo {
   animation: shine 2s forwards, blink 8s 2s infinite;
 }
 
@@ -72,11 +82,11 @@ html {
 /* flickering font Animations */
 @keyframes blink {
   0%{  color: $white;
-    text-shadow: 0 0 0.6rem $white, 0 0 1.5rem #a6a4d6, -0.2rem 0.1rem 1rem #9692e6, 0.2rem 0.1rem 1rem #8480e9, 0 -0.5rem 2rem #615be1, 0 0.5rem 3rem #3d36e3;}
+    text-shadow: 0 0 0.6rem $white, 0 0 1.5rem #a6a4d6, -0.2rem 0.1rem 1rem #9692e6, 0.2rem 0.1rem 1rem #8480e9, 0 -0.5rem 2rem #615be1, 0 0.5rem 3rem $lila;}
   
   75% {
     color: $white;
-    text-shadow: 0 0 0.6rem $white, 0 0 1.5rem #a6a4d6, -0.2rem 0.1rem 1rem #9692e6, 0.2rem 0.1rem 1rem #8480e9, 0 -0.5rem 2rem #615be1, 0 0.5rem 3rem #3d36e3;
+    text-shadow: 0 0 0.6rem $white, 0 0 1.5rem #a6a4d6, -0.2rem 0.1rem 1rem #9692e6, 0.2rem 0.1rem 1rem #8480e9, 0 -0.5rem 2rem #615be1, 0 0.5rem 3rem $lila;
   }
   28%,
   35% {
@@ -84,7 +94,7 @@ html {
     text-shadow: none;
   }
   45% {  color: $white;
-    text-shadow: 0 0 0.6rem $white, 0 0 1.5rem #a6a4d6, -0.2rem 0.1rem 1rem #9692e6, 0.2rem 0.1rem 1rem #8480e9, 0 -0.5rem 2rem #615be1, 0 0.5rem 3rem #3d36e3;}
+    text-shadow: 0 0 0.6rem $white, 0 0 1.5rem #a6a4d6, -0.2rem 0.1rem 1rem #9692e6, 0.2rem 0.1rem 1rem #8480e9, 0 -0.5rem 2rem #615be1, 0 0.5rem 3rem $lila;}
   82%,
   99% {
     color: hsla(234, 77%, 53%, 0.363);    
@@ -95,12 +105,20 @@ html {
 
 @keyframes shine {
   0% {
-    color: #6b1839;
+    color: $darkred;
     text-shadow: none;
   }
   100% {
     color: $white;
-    text-shadow: 0 0 1.1rem $white, 0 0 2rem #a6a4d6, -0.2rem 0.1rem 1.5rem #9692e6, 0.2rem 0.1rem 1.5rem #8480e9, 0 -0.5rem 2.5rem #615be1, 0 0.5rem 3.5rem #3d36e3;
+    text-shadow: 0 0 1.1rem $white, 0 0 2rem #a6a4d6, -0.2rem 0.1rem 1.5rem #9692e6, 0.2rem 0.1rem 1.5rem #8480e9, 0 -0.5rem 2.5rem #615be1, 0 0.5rem 3.5rem $lila;
+  }
+}
+
+@media (max-width: 767px) {
+  @keyframes shine {
+   100% {
+    text-shadow: $textborder-small;
+   } 
   }
 }
 
@@ -234,7 +252,49 @@ html {
   cursor: pointer;
 }
 
+
 /* on entranceBackground */
+
+.entranceBackground{
+  background-image: url(arcadeEntrance.jpg);
+  background-color: black; 
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh; 
+  width: 100vw; 
+  background-position: center; 
+  animation-name: divMove;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards; 
+}
+
+@keyframes divMove {
+  0% { 
+    height: calc(1000px + 100vh); 
+    background-position-x: right;
+    background-position-y: -50vh;
+    background-size: cover; 
+    }
+  100% {
+    height: 100vh; 
+    width: 100vw; 
+    background-position: center; 
+    transform: scale(1,1);
+    }
+  }
+
+  .titleEntranceBackground{
+    background-image: url(arcadeEntrance.jpg);
+    background-color: black; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh; 
+    width: 100vw; 
+    background-position: center; 
+    transform: scale(1,1);
+  }
 
 .containerJokes{
   perspective: 100px;
@@ -258,7 +318,7 @@ h1.jokes {
   animation-timing-function: cubic-bezier(.215,.61,.355,1);
   animation-iteration-count: infinite;
   animation-direction: alternate;
-  @media (min-width: 320px) and (max-width: 480px) {
+  @media (max-width: 767px) {
     display: none; 
     }
 }
@@ -311,53 +371,6 @@ h1.jokes:hover {
     }
   }
 
-/* on entranceBackground */
-
-
-.entranceBackground{
-  background-image: url(arcadeEntrance.jpg);
-  background-color: black; 
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100vh; 
-  width: 100vw; 
-  background-position: center; 
-  animation-name: divMove;
-  animation-duration: 5s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards; 
-}
-
-@keyframes divMove {
-  0% { 
-    height: calc(1000px + 100vh); 
-    background-position-x: right;
-    background-position-y: -50vh;
-    background-size: cover; 
-    }
-  100% {
-    height: 100vh; 
-    width: 100vw; 
-    background-position: center; 
-    transform: scale(1,1);
-    }
-  }
-
-  .titleEntranceBackground{
-    background-image: url(arcadeEntrance.jpg);
-    background-color: black; 
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh; 
-    width: 100vw; 
-    background-position: center; 
-    height: 100vh; 
-    width: 100vw; 
-    background-position: center; 
-    transform: scale(1,1);
-  }
-
   p.jokes {
     width: 400px;
     position: absolute;
@@ -374,18 +387,17 @@ h1.jokes:hover {
   display:none; 
 }
 
-.containerPacman{
-  perspective: 250px;
+.containerPacman {
+  perspective: 500px;
 }
 
 .gameTease  {
-  position: absolute; 
-  height: 80%; 
+  position: absolute;  
   display: flex; 
-  flex-flow: wrap;
-  align-items: baseline; 
+  flex-wrap: wrap;
+  flex-direction: column;
   transform-style: preserve-3d;
-  transform: rotateX(4deg) rotateY(-1deg) skewX(-2deg);
+  transform: rotateX(7deg) rotateY(5deg) rotateZ(5deg) translateZ(2vh) scaleZ(-1.5);
   animation-name: gameTeaseBox;
   animation-duration: 7s;
   animation-iteration-count: 1;
@@ -393,23 +405,23 @@ h1.jokes:hover {
   }
 
   @keyframes gameTeaseBox{
-    0% { top: 100vh; 
+    0% { 
+      top: 150vh; 
        }
     40% {
-      top: 100vh; 
+      top: 130vh; 
       left: 17vw; 
-      width: 30%;
+      width: 250px;
       }
     100% {
       top: 40vh; 
       left: 33vw; 
-      width: 30%;
+      width: 250px;
       }
     }
 
 .gameTease .hangman {
   position: relative; 
-  z-index: 2;
   padding: 0; 
   animation-name: gameTease;
   animation-duration: 7s;
@@ -434,33 +446,15 @@ h1.jokes:hover {
     }
 }
 
-.gameTease .hangman:nth-child(1){
-  align-self: flex-end;  
-  transform: rotateX(-2deg) rotateY(1deg) skewX(1.5deg) scale(1.025);
-}
-
-.gameTease .hangman:nth-child(2){
-  align-self: flex-end; 
-  margin-bottom: 5vw;
-  transform: rotateX(-3deg) rotateY(1deg) skewX(2deg);
-}
-
-.gameTease .hangman:nth-child(3){
-  margin-left: 7vw; 
-  margin-bottom: 1vw; 
-  height: 13vw !important; 
-  transform: rotateX(-1deg) rotateY(1deg) skewX(1deg) scale(1.05);
-}
-
 .gameTease .hangman img {
   height: 100%;
   opacity: 0.7;
 }
 
-.gameTease .hangman .center,.gameTease .hangman .center a {
+.gameTease .hangman a {
   position: absolute;
   top: 65%; 
-  left: 30%; 
+  left: 3vw; 
   font-weight: bolder; 
   text-decoration: none;
   color: black;
@@ -471,6 +465,23 @@ h1.jokes:hover {
   animation-fill-mode: forwards; 
 }
 
+.gameTease .hangman:nth-child(1){
+  margin-left: 0; 
+  >img {
+  transform: skewY(-8deg) scale(0.9);
+  }
+}
+
+.gameTease .hangman:nth-child(2){
+  margin-left: auto; 
+  transform: rotateY(1deg) skewX(8deg);
+}
+
+.gameTease .hangman:nth-child(3){
+  margin-bottom: 1vw; 
+  margin-left: 2vw; 
+  transform: scale(1.1);
+}
 
 @keyframes gameTeaseFont {
   0% { 
@@ -504,7 +515,6 @@ h1.jokes:hover {
 
 .titleGameTease .hangman {
   position: relative; 
-  z-index: 2;
   padding: 0; 
   height: 9vw;
   min-height: 150px; 

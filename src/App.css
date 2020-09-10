@@ -7,7 +7,7 @@ html {
   font-size: calc(0.5vw + 6px);
 }
 
-@media (min-width: 320px) and (max-width: 480px) {
+@media (max-width: 767px) {
   html {
     font-size: calc(0.5vw + 10px);
   }
@@ -18,6 +18,7 @@ html {
   top: 0;
   left: 0;
   right: 0;
+  bottom: 0;
 }
 
 .arcadeBackground {
@@ -38,16 +39,16 @@ html {
   left: 55%;
 }
 
-@media (min-width: 320px) and (max-width: 480px) {
+@media (max-width: 767px) {
   .containerSign {
     top: 15%;
   }
 }
 
-.titleName, .titleName span {
-  -webkit-transform: translate(-70%, 32%) rotateY(-2deg) rotateX(-1deg) rotate(4deg) skewY(-9.5deg);
-          transform: translate(-70%, 32%) rotateY(-2deg) rotateX(-1deg) rotate(4deg) skewY(-9.5deg);
-  font-size: 4rem;
+.titleName {
+  -webkit-transform: translate(-85%, 32%) rotateY(-2deg) rotateX(-1deg) rotateZ(4deg) skewY(-9.5deg);
+          transform: translate(-85%, 32%) rotateY(-2deg) rotateX(-1deg) rotateZ(4deg) skewY(-9.5deg);
+  font-size: 3.5rem;
   white-space: nowrap;
   color: #ffe6ff;
   -webkit-animation: shine 2s forwards, flicker 3s infinite;
@@ -59,19 +60,26 @@ html {
           transform-style: preserve-3d;
 }
 
-@media (min-width: 320px) and (max-width: 480px) {
-  .titleName, .titleName span {
+@media (max-width: 767px) {
+  .titleName {
     white-space: normal;
   }
 }
 
+@media (min-width: 2000px) {
+  .titleName {
+    -webkit-transform: translate(-90%, 32%) rotateY(-2deg) rotateX(-1deg) rotateZ(4deg) skewY(-13deg);
+            transform: translate(-90%, 32%) rotateY(-2deg) rotateX(-1deg) rotateZ(4deg) skewY(-13deg);
+  }
+}
+
 /* flickering letter  */
-.titleName span span.flicker {
+.titleName span.flicker {
   -webkit-animation: shine 2s forwards, blink 3s 2s infinite;
           animation: shine 2s forwards, blink 3s 2s infinite;
 }
 
-.titleName span span.flickerTwo {
+.titleName span.flickerTwo {
   -webkit-animation: shine 2s forwards, blink 8s 2s infinite;
           animation: shine 2s forwards, blink 8s 2s infinite;
 }
@@ -145,6 +153,19 @@ html {
   100% {
     color: #ffe6ff;
     text-shadow: 0 0 1.1rem #ffe6ff, 0 0 2rem #a6a4d6, -0.2rem 0.1rem 1.5rem #9692e6, 0.2rem 0.1rem 1.5rem #8480e9, 0 -0.5rem 2.5rem #615be1, 0 0.5rem 3.5rem #3d36e3;
+  }
+}
+
+@media (max-width: 767px) {
+  @-webkit-keyframes shine {
+    100% {
+      text-shadow: 0 0 0.1rem #ffe6ff, 0 0 1rem #a6a4d6, -0.2rem 0.1rem 0.5rem #9692e6, 0.2rem 0.1rem 0.5rem #8480e9, 0 -0.5rem 1.5rem #615be1, 0 0.5rem 1.5rem #3d36e3;
+    }
+  }
+  @keyframes shine {
+    100% {
+      text-shadow: 0 0 0.1rem #ffe6ff, 0 0 1rem #a6a4d6, -0.2rem 0.1rem 0.5rem #9692e6, 0.2rem 0.1rem 0.5rem #8480e9, 0 -0.5rem 1.5rem #615be1, 0 0.5rem 1.5rem #3d36e3;
+    }
   }
 }
 
@@ -345,6 +366,70 @@ html {
 }
 
 /* on entranceBackground */
+.entranceBackground {
+  background-image: url(arcadeEntrance.jpg);
+  background-color: black;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+  background-position: center;
+  -webkit-animation-name: divMove;
+          animation-name: divMove;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes divMove {
+  0% {
+    height: calc(1000px + 100vh);
+    background-position-x: right;
+    background-position-y: -50vh;
+    background-size: cover;
+  }
+  100% {
+    height: 100vh;
+    width: 100vw;
+    background-position: center;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+}
+
+@keyframes divMove {
+  0% {
+    height: calc(1000px + 100vh);
+    background-position-x: right;
+    background-position-y: -50vh;
+    background-size: cover;
+  }
+  100% {
+    height: 100vh;
+    width: 100vw;
+    background-position: center;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+}
+
+.titleEntranceBackground {
+  background-image: url(arcadeEntrance.jpg);
+  background-color: black;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+  background-position: center;
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+}
+
 .containerJokes {
   -webkit-perspective: 100px;
           perspective: 100px;
@@ -381,7 +466,7 @@ h1.jokes {
           animation-direction: alternate;
 }
 
-@media (min-width: 320px) and (max-width: 480px) {
+@media (max-width: 767px) {
   h1.jokes {
     display: none;
   }
@@ -475,74 +560,6 @@ h1.jokes:hover {
   }
 }
 
-/* on entranceBackground */
-.entranceBackground {
-  background-image: url(arcadeEntrance.jpg);
-  background-color: black;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100vh;
-  width: 100vw;
-  background-position: center;
-  -webkit-animation-name: divMove;
-          animation-name: divMove;
-  -webkit-animation-duration: 5s;
-          animation-duration: 5s;
-  -webkit-animation-timing-function: ease-in-out;
-          animation-timing-function: ease-in-out;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-@-webkit-keyframes divMove {
-  0% {
-    height: calc(1000px + 100vh);
-    background-position-x: right;
-    background-position-y: -50vh;
-    background-size: cover;
-  }
-  100% {
-    height: 100vh;
-    width: 100vw;
-    background-position: center;
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
-  }
-}
-
-@keyframes divMove {
-  0% {
-    height: calc(1000px + 100vh);
-    background-position-x: right;
-    background-position-y: -50vh;
-    background-size: cover;
-  }
-  100% {
-    height: 100vh;
-    width: 100vw;
-    background-position: center;
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
-  }
-}
-
-.titleEntranceBackground {
-  background-image: url(arcadeEntrance.jpg);
-  background-color: black;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100vh;
-  width: 100vw;
-  background-position: center;
-  height: 100vh;
-  width: 100vw;
-  background-position: center;
-  -webkit-transform: scale(1, 1);
-          transform: scale(1, 1);
-}
-
 p.jokes {
   width: 400px;
   position: absolute;
@@ -561,25 +578,25 @@ p.jokes {
 }
 
 .containerPacman {
-  -webkit-perspective: 250px;
-          perspective: 250px;
+  -webkit-perspective: 500px;
+          perspective: 500px;
 }
 
 .gameTease {
   position: absolute;
-  height: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-flow: wrap;
-      flex-flow: wrap;
-  -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
-  -webkit-transform: rotateX(4deg) rotateY(-1deg) skewX(-2deg);
-          transform: rotateX(4deg) rotateY(-1deg) skewX(-2deg);
+  -webkit-transform: rotateX(7deg) rotateY(5deg) rotateZ(5deg) translateZ(2vh) scaleZ(-1.5);
+          transform: rotateX(7deg) rotateY(5deg) rotateZ(5deg) translateZ(2vh) scaleZ(-1.5);
   -webkit-animation-name: gameTeaseBox;
           animation-name: gameTeaseBox;
   -webkit-animation-duration: 7s;
@@ -592,39 +609,38 @@ p.jokes {
 
 @-webkit-keyframes gameTeaseBox {
   0% {
-    top: 100vh;
+    top: 150vh;
   }
   40% {
-    top: 100vh;
+    top: 130vh;
     left: 17vw;
-    width: 30%;
+    width: 250px;
   }
   100% {
     top: 40vh;
     left: 33vw;
-    width: 30%;
+    width: 250px;
   }
 }
 
 @keyframes gameTeaseBox {
   0% {
-    top: 100vh;
+    top: 150vh;
   }
   40% {
-    top: 100vh;
+    top: 130vh;
     left: 17vw;
-    width: 30%;
+    width: 250px;
   }
   100% {
     top: 40vh;
     left: 33vw;
-    width: 30%;
+    width: 250px;
   }
 }
 
 .gameTease .hangman {
   position: relative;
-  z-index: 2;
   padding: 0;
   -webkit-animation-name: gameTease;
           animation-name: gameTease;
@@ -670,38 +686,15 @@ p.jokes {
   }
 }
 
-.gameTease .hangman:nth-child(1) {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-  -webkit-transform: rotateX(-2deg) rotateY(1deg) skewX(1.5deg) scale(1.025);
-          transform: rotateX(-2deg) rotateY(1deg) skewX(1.5deg) scale(1.025);
-}
-
-.gameTease .hangman:nth-child(2) {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-  margin-bottom: 5vw;
-  -webkit-transform: rotateX(-3deg) rotateY(1deg) skewX(2deg);
-          transform: rotateX(-3deg) rotateY(1deg) skewX(2deg);
-}
-
-.gameTease .hangman:nth-child(3) {
-  margin-left: 7vw;
-  margin-bottom: 1vw;
-  height: 13vw !important;
-  -webkit-transform: rotateX(-1deg) rotateY(1deg) skewX(1deg) scale(1.05);
-          transform: rotateX(-1deg) rotateY(1deg) skewX(1deg) scale(1.05);
-}
-
 .gameTease .hangman img {
   height: 100%;
   opacity: 0.7;
 }
 
-.gameTease .hangman .center, .gameTease .hangman .center a {
+.gameTease .hangman a {
   position: absolute;
   top: 65%;
-  left: 30%;
+  left: 3vw;
   font-weight: bolder;
   text-decoration: none;
   color: black;
@@ -714,6 +707,28 @@ p.jokes {
           animation-iteration-count: 1;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
+}
+
+.gameTease .hangman:nth-child(1) {
+  margin-left: 0;
+}
+
+.gameTease .hangman:nth-child(1) > img {
+  -webkit-transform: skewY(-8deg) scale(0.9);
+          transform: skewY(-8deg) scale(0.9);
+}
+
+.gameTease .hangman:nth-child(2) {
+  margin-left: auto;
+  -webkit-transform: rotateY(1deg) skewX(8deg);
+          transform: rotateY(1deg) skewX(8deg);
+}
+
+.gameTease .hangman:nth-child(3) {
+  margin-bottom: 1vw;
+  margin-left: 2vw;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 @-webkit-keyframes gameTeaseFont {
@@ -769,7 +784,6 @@ p.jokes {
 
 .titleGameTease .hangman {
   position: relative;
-  z-index: 2;
   padding: 0;
   height: 9vw;
   min-height: 150px;
