@@ -6,7 +6,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  color: #fff;
+  color: #ffe6ff;
   text-align: center;
   width: 100vw;
   font-weight: 700;
@@ -30,12 +30,12 @@
 }
 
 @media (min-width: 320px) and (max-width: 480px) {
-  .GifsList:nth-of-type(5), .Gif:nth-of-type(4), .Gif:nth-last-of-type(5) {
+  .GifsList:nth-of-type(5), .Gif:nth-of-type(4), .Gifanimated:nth-of-type(4), .Gif:nth-last-of-type(5), .Gifanimated:nth-last-of-type(5) {
     display: none;
   }
 }
 
-.Gif {
+.Gif, .Gifanimated {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -53,19 +53,6 @@
 }
 
 .Gifanimated {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  overflow: hidden;
-  height: 80%;
-  width: 19vw;
-  border-radius: 30px;
   border: 20px dotted;
   -webkit-animation: bordercolor 3s linear;
           animation: bordercolor 3s linear;
@@ -97,7 +84,7 @@
   }
 }
 
-.Gif img {
+.Gif img, .Gifanimated img {
   min-width: 100%;
   min-height: 100%;
   -ms-flex-negative: 0;
@@ -109,7 +96,7 @@
           filter: blur(30px);
 }
 
-.Gif .wrongLetter {
+.Gif .wrongLetter, .Gifanimated .wrongLetter {
   font-family: 'Fira Mono', monospace;
   letter-spacing: -5px;
   position: absolute;
@@ -117,19 +104,12 @@
   bottom: 3vh;
   text-decoration: line-through;
   font-weight: bolder;
-  color: #ffffffe5;
+  color: #ffe6ff;
   text-shadow: 20px 20px 0 black, 20px 20px black, 20px 20px 0 black, 20px 20px black;
 }
 
-.Gifanimated .wrongLetter {
-  font-family: 'Fira Mono', monospace;
-  letter-spacing: -5px;
-  position: absolute;
-  font-size: 5em;
-  text-decoration: line-through;
-  font-weight: bolder;
-  color: #ffffffe5;
-  text-shadow: 20px 20px 0 black, 20px 20px black, 20px 20px 0 black, 20px 20px black;
+.Gif .wrongLetter, .Gifanimated .wrongLetter {
+  bottom: 3vh;
 }
 
 /* Animation Intro + Hangman-Guessed Word */
@@ -377,7 +357,6 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  /* align-items: center; */
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
