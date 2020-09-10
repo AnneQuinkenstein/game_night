@@ -23,6 +23,13 @@
     background-color: black;
 }
 
+.GifsList:nth-of-type(5),.Gif:nth-of-type(4), .Gif:nth-last-of-type(5) {
+    @media (min-width: 320px) and (max-width: 480px)  {
+        display: none;
+    }
+}
+
+
 .Gif {
     display: flex;
     justify-content: center;

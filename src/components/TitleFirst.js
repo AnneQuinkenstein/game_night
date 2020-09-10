@@ -21,10 +21,10 @@ const Title = () => {
   }
 
   return (
-    <div className="Title">
+    <div className="Title page">
       <div className={style ? "arcadeBackground" : "entranceBackground"}>
-        <div className="containerSign">
-          <h1 className={style ? "titleName" : "nothing"}> <i className="fa fa-long-arrow-left" aria-hidden="true" onClick={handleClick}></i> <span onClick={handleClick}> online <span className="flicker">G</span>ame Nig<span className="flickerTwo">h</span>t</span></h1>
+        <div className="containerSign" onClick={handleClick}>
+          <h1 className={style ? "titleName" : "nothing"}> <i className="fa fa-long-arrow-left" aria-hidden="true"></i> online <span className="flicker">G</span>ame Nig<span className="flickerTwo">h</span>t</h1>
         </div>
         <div className="containerJokes">
           <h1 className={style ? "nothing" : "jokes"} onClick={changeJoke}> Click for the fun of coding!</h1>
@@ -35,15 +35,14 @@ const Title = () => {
           <div className={style ? "nothing" : "gameTease"}>
             <div className='hangman'>
               <img src={pacghost} />
-              <div className="center"><Link to='/hangman'>HANGMAN</Link></div>
+              <Link to='/hangman'>HANGMAN</Link>
             </div>
             <div className='hangman'>
               <img src={pacghost} />
-              <div className="center"><Link to='/contact'>CONTACT</Link></div>
+             <Link to='/contact'>CONTACT</Link>
             </div>
             <div className='hangman'>
               <img src={pacghost} />
-              <div className="center"> </div>
             </div>
           </div>
         </div>
