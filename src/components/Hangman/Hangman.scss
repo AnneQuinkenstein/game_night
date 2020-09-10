@@ -8,7 +8,10 @@ $purple: rgb(125, 84, 223);
 $pink: rgb(197, 51, 161);
 
 $black-text-shadow: 20px 20px 0 black, 20px 20px black, 20px 20px 0 black, 20px 20px black;
-$radial-background: $radial-background;
+$pinkish-text-shadow:  0.5px 0.5px 1px rgb(197, 51, 161), 0 0 0.25em rgb(74, 22, 90), 0 0 0.02em rgb(125, 84, 223);
+
+
+$radial-background: radial-gradient(#333, #111); 
 
 // Hangman classic 
 
@@ -50,6 +53,9 @@ $radial-background: $radial-background;
 
 
 .Gif {
+    @media (max-width: 767px) {
+        width: 30vw;
+    }
     display: flex;
     justify-content: center;
     align-items: center;
@@ -102,7 +108,7 @@ $radial-background: $radial-background;
 }
 
 .Gif .wrongLetter{
-    @extend wrongLetter;   
+    @extend .wrongLetter;   
     bottom: 3vh;
 }
 
@@ -110,13 +116,16 @@ $radial-background: $radial-background;
 
 .introHangman {
     background-color: #111;
-    background-image: $radial-background;
+    background-image: $radial-background; 
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     z-index: -2;
     overflow: hidden;
     height: 50vh;
+    @media (max-width: 767px) {
+        height: 77vh;
+    }
 }
 
 .fly-in{
@@ -222,8 +231,11 @@ $radial-background: $radial-background;
 /* Hangman-Menu */
 
 .HangmanMenu {
+    @media (max-width: 767px) {
+        display: none;
+    }
     height: 0;
-    .left {
+    &.left {
         position: absolute;
         top: 12rem;
         padding: 1rem;
@@ -235,7 +247,7 @@ $radial-background: $radial-background;
             text-align: right;
         }
     }
-    .right  {
+    &.right  {
         position: absolute;
         top: 12rem; 
         right: 16rem; 
@@ -266,19 +278,17 @@ $radial-background: $radial-background;
         li{
             width: 10vw;
             min-width: 4.5em;
-            border-radius: 10px;
-            cursor: pointer;
-            border-bottom: 4px solid;
-            border: linear-gradient(45deg, rgba(141, 58, 197, 0.3), rgba(114, 86, 190, 0.3));
-            text-shadow: 1px 1px 2px rgb(197, 51, 161), 0 0 1em rgb(74, 22, 90), 0 0 0.2em rgb(125, 84, 223);
-            border-color: rgba(158, 130, 212, 0.966);
-            text-shadow: 0.5px 0.5px 1px rgb(197, 51, 161), 0 0 0.25em rgb(74, 22, 90), 0 0 0.02em rgb(125, 84, 223);
-            mix-blend-mode: multiply;
             font-weight: 800;
             color: $semiwhite;
-            font-size: 1.3rem;
+            border-radius: 10px;
+            border-bottom: 4px solid;
+            border-color: rgba(158, 130, 212, 0.966);
+            text-shadow: 0.5px 0.5px 1px rgb(114, 114, 114), 0 0 0.25em rgb(74, 22, 90), 0 0 0.02em rgb(125, 84, 223);       
+            mix-blend-mode: multiply;
+            cursor: pointer;
             &:hover {
                 transform: translateY(20%) rotateY(1deg) rotateX(4deg) scale(1.02);
+                text-shadow: $pinkish-text-shadow;
                 transition: transform 0.4s ease-out;
                 z-index: 999;
                 mix-blend-mode: normal;
@@ -291,15 +301,15 @@ $radial-background: $radial-background;
             }
             a {
                 font-size: 1.3rem;
-                text-shadow: 0.5px 0.5px 1px rgb(197, 51, 161), 0 0 0.25em rgb(74, 22, 90), 0 0 0.02em rgb(125, 84, 223);
+                text-shadow: $pinkish-text-shadow;
                 font-weight: 800;
                 color: $semiwhite;
                 text-decoration: none;
             }
-            .selected {
-                transform: rotateY(-20deg) rotateX(-25deg) skewY(-15deg) scale(1.02);
-                color: rgb(197, 51, 161);
-                text-shadow: 0.5px 0.5px 1px rgb(197, 51, 161), 0 0 0.25em rgb(74, 22, 90), 0 0 0.02em rgb(125, 84, 223);
+            &.selected {
+                // transform: rotateY(-20deg) rotateX(-25deg) skewY(-15deg) scale(1.02);
+                color: rgb(125, 84, 223);
+                text-shadow: $pinkish-text-shadow;
                 z-index: 999;
                 mix-blend-mode: normal;
             }            
