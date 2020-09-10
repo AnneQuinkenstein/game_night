@@ -363,12 +363,25 @@ $radial-background: radial-gradient(#333, #111);
         text-align:center;
         text-decoration:none;
         background: linear-gradient(-35deg, rgba(41, 5, 99, 0.4), rgba(79, 17, 138, 0.4));
+        @media (max-width: 767px) {
+            margin: auto; 
+            height: 96%; 
+            border: none; 
+            background: none;  
+            z-index: 3;   
+            max-width: 97vw;         
+        }
         h1{
             font-size: 3rem;
             margin: 0;
             height:2em;
             user-select: none;
             text-shadow: $pinkish-text-shadow;
+            @media (max-width: 767px) {
+                font-size: 1.6rem; 
+                height: auto; 
+                text-shadow: $black-text-shadow;
+            }
         }
         ul{
             list-style-type: none;
@@ -376,20 +389,38 @@ $radial-background: radial-gradient(#333, #111);
             display: flex;
             flex-direction: row;
             justify-content: space-evenly;
+            @media (max-width: 767px) {
+                position: absolute; 
+                bottom: 4vh; 
+                right: 2vw; 
+                flex-direction: column; 
+            }
             li{
                 border-radius: 10px;
                 padding: 15px;
+                margin: 10px; 
                 cursor: pointer;
                 border-bottom: 4px solid $purple;
                 mix-blend-mode:multiply; 
                 font-size: 2rem;
+                @media (max-width: 767px) {
+                    font-size: 1.3rem; 
+                    padding: 10px; 
+                    margin: 5px; 
+                }
                 &:nth-child(odd){
                     background: rgba(160, 162, 233, 0.4);
                     transform: rotateY(6deg) rotateX(-10deg) skewY(5deg);
+                    @media (max-width: 767px) {
+                        background: rgba(160, 162, 233, 0.8);
+                    }
                 } 
                 &:nth-child(even){
                     background: rgba(123, 110, 180, 0.4);
                     transform: rotateY(-6deg) rotateX(10deg) skewY(-5deg);
+                    @media (max-width: 767px) {
+                        background:rgba(123, 110, 180, 0.8);
+                    }
                 }
                 &:hover{
                     transform: rotateY(6deg) rotateX(4deg) scale(1.02);
@@ -405,31 +436,29 @@ $radial-background: radial-gradient(#333, #111);
                     font-weight: 800;
                     text-align: center;
                     user-select:none;
+                    @media (max-width: 767px) {
+                        font-size: 1.2rem; 
+                    }
                 }
-            }
-            
+            } 
         }
     }
     .looseImage{
         height: 90vh;
         margin: 4vh 2vw;
+        @media (max-width: 767px)  {
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100vw; 
+        }
         img {
             height: 100%; 
+            @media (max-width: 767px)  {
+                width: 96%
+            }
         }
     }
-}
-
-
-@keyframes selectoption {
-    0%{transform: scale(1.0);
-    -webkit-transform: scale(1.0);
-    -moz-transform: scale(1.0);}
-    50%{transform:  scale(0.9);
-    -webkit-transform: scale(0.9);
-    -moz-transform: scale(0.9);}
-    100%{transform: scale(1);
-    -webkit-transform: scale(1.0);
-    -moz-transform: scale(1.0);}
 }
 
 /* HangmanWin Menu */
