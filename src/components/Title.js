@@ -28,17 +28,14 @@ const Title = () => {
 
         <div className="containerPacman">
           <div className="titleGameTease">
-            <div className='hangman'>
+            <div className='titlehangman'>
               <img src={pacghost} />
-              <div className="titleCenter"><Link to='/hangman'>HANGMAN</Link></div>
-            </div>
-            <div className='hangman'>
+             <Link to='/hangman'>HANGMAN</Link></div>
+            <div className='titlehangman'>
               <img src={pacghost} />
-              <div className="titleCenter"><Link to='/contact'>CONTACT</Link> </div>
-            </div>
-            <div className='hangman'>
+             <Link to='/contact'>CONTACT</Link> </div>
+            <div className='titlehangman'>
               <img src={pacghost} />
-              <div className="titleCenter"> </div>
             </div>
           </div>
         </div>
