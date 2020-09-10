@@ -431,8 +431,8 @@ html {
 }
 
 .containerJokes {
-  -webkit-perspective: 100px;
-          perspective: 100px;
+  -webkit-perspective: 300px;
+          perspective: 300px;
   position: absolute;
   top: 26%;
   left: 60%;
@@ -595,8 +595,8 @@ p.jokes {
           flex-direction: column;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
-  -webkit-transform: rotateX(7deg) rotateY(5deg) rotateZ(5deg) translateZ(2vh) scaleZ(-1.5);
-          transform: rotateX(7deg) rotateY(5deg) rotateZ(5deg) translateZ(2vh) scaleZ(-1.5);
+  -webkit-transform: rotateX(3deg) rotateY(2deg) rotate(2deg) translateZ(2vh) skewX(1deg);
+          transform: rotateX(3deg) rotateY(2deg) rotate(2deg) translateZ(2vh) skewX(1deg);
   -webkit-animation-name: gameTeaseBox;
           animation-name: gameTeaseBox;
   -webkit-animation-duration: 7s;
@@ -688,17 +688,17 @@ p.jokes {
 
 .gameTease .hangman img {
   height: 100%;
-  opacity: 0.7;
+  opacity: 0.9;
 }
 
 .gameTease .hangman a {
   position: absolute;
   top: 65%;
-  left: 3vw;
+  left: 3rem;
   font-weight: bolder;
   text-decoration: none;
   color: black;
-  text-shadow: 0 0 10px #ffe6ff, 0 0 20px #ffe6ff, 0 0 30px #ddacac, 0 0 40px #fe735a, 0 0 70px #fe735a, 0 0 80px #fe735a, 0 0 100px #fe735a;
+  text-shadow: 0 0 10px #ffe6ff, 0 0 20px #ffe6ff, 0 0 30px #ddacac, 0 0 40px #ddacac, 0 0 70px #ddacac, 0 0 80px #fe735a, 0 0 100px #fe735a;
   -webkit-animation-name: gameTeaseFont;
           animation-name: gameTeaseFont;
   -webkit-animation-duration: 7s;
@@ -714,14 +714,14 @@ p.jokes {
 }
 
 .gameTease .hangman:nth-child(1) > img {
-  -webkit-transform: skewY(-8deg) scale(0.9);
-          transform: skewY(-8deg) scale(0.9);
+  -webkit-transform: skewY(-1deg) scale(0.9);
+          transform: skewY(-1deg) scale(0.9);
 }
 
 .gameTease .hangman:nth-child(2) {
   margin-left: auto;
-  -webkit-transform: rotateY(1deg) skewX(8deg);
-          transform: rotateY(1deg) skewX(8deg);
+  -webkit-transform: rotateY(1deg);
+          transform: rotateY(1deg);
 }
 
 .gameTease .hangman:nth-child(3) {
@@ -739,10 +739,10 @@ p.jokes {
     font-size: 0%;
   }
   50% {
-    font-size: 100%;
+    font-size: 1rem;
   }
   100% {
-    font-size: 100%;
+    font-size: 1.2rem;
   }
 }
 
@@ -754,10 +754,10 @@ p.jokes {
     font-size: 0%;
   }
   50% {
-    font-size: 100%;
+    font-size: 1rem;
   }
   100% {
-    font-size: 100%;
+    font-size: 1.2rem;
   }
 }
 
@@ -823,7 +823,7 @@ p.jokes {
   left: 30%;
   text-decoration: none;
   color: black;
-  text-shadow: 0 0 10px #ffe6ff, 0 0 20px #ffe6ff, 0 0 30px #ddacac, 0 0 40px #fe735a, 0 0 70px #fe735a, 0 0 80px #fe735a, 0 0 100px #fe735a;
+  text-shadow: 0 0 10px #ffe6ff, 0 0 20px #ffe6ff, 0 0 30px #ddacac, 0 0 40px #ddacac, 0 0 70px #ddacac, 0 0 80px #fe735a, 0 0 100px #fe735a;
   font-size: 100%;
   font-weight: bolder;
 }
