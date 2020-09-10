@@ -91,7 +91,7 @@ html {
 @-webkit-keyframes blink {
   0%, 45%, 75% {
     color: #ffe6ff;
-    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #a6a4d6, -0.2rem 0.1rem 1rem #9692e6, 0.2rem 0.1rem 1rem #8480e9, 0 -0.5rem 2rem #615be1, 0 0.5rem 3rem #3d36e3;
+    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #a6a4d6, -0.2rem 0.1rem 1rem #9692e6, 0.2rem 0.1rem 1rem #8480e9, 0 -0.5rem 2rem #615be1, 0 0.5rem 3rem #7d54df;
   }
   28%,
   35% {
@@ -107,7 +107,7 @@ html {
 @keyframes blink {
   0%, 45%, 75% {
     color: #ffe6ff;
-    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #a6a4d6, -0.2rem 0.1rem 1rem #9692e6, 0.2rem 0.1rem 1rem #8480e9, 0 -0.5rem 2rem #615be1, 0 0.5rem 3rem #3d36e3;
+    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #a6a4d6, -0.2rem 0.1rem 1rem #9692e6, 0.2rem 0.1rem 1rem #8480e9, 0 -0.5rem 2rem #615be1, 0 0.5rem 3rem #7d54df;
   }
   28%,
   35% {
@@ -128,7 +128,7 @@ html {
   }
   100% {
     color: #ffe6ff;
-    text-shadow: 0 0 1.1rem #ffe6ff, 0 0 2rem #a6a4d6, -0.2rem 0.1rem 1.5rem #9692e6, 0.2rem 0.1rem 1.5rem #8480e9, 0 -0.5rem 2.5rem #615be1, 0 0.5rem 3.5rem #3d36e3;
+    text-shadow: 0 0 1.1rem #ffe6ff, 0 0 2rem #a6a4d6, -0.2rem 0.1rem 1.5rem #9692e6, 0.2rem 0.1rem 1.5rem #8480e9, 0 -0.5rem 2.5rem #615be1, 0 0.5rem 3.5rem #7d54df;
   }
 }
 
@@ -139,19 +139,19 @@ html {
   }
   100% {
     color: #ffe6ff;
-    text-shadow: 0 0 1.1rem #ffe6ff, 0 0 2rem #a6a4d6, -0.2rem 0.1rem 1.5rem #9692e6, 0.2rem 0.1rem 1.5rem #8480e9, 0 -0.5rem 2.5rem #615be1, 0 0.5rem 3.5rem #3d36e3;
+    text-shadow: 0 0 1.1rem #ffe6ff, 0 0 2rem #a6a4d6, -0.2rem 0.1rem 1.5rem #9692e6, 0.2rem 0.1rem 1.5rem #8480e9, 0 -0.5rem 2.5rem #615be1, 0 0.5rem 3.5rem #7d54df;
   }
 }
 
 @media (max-width: 767px) {
   @-webkit-keyframes shine {
     100% {
-      text-shadow: 0 0 0.1rem #ffe6ff, 0 0 1rem #a6a4d6, -0.2rem 0.1rem 0.5rem #9692e6, 0.2rem 0.1rem 0.5rem #8480e9, 0 -0.5rem 1.5rem #615be1, 0 0.5rem 1.5rem #3d36e3;
+      text-shadow: 0 0 0.1rem #ffe6ff, 0 0 1rem #a6a4d6, -0.2rem 0.1rem 0.5rem #9692e6, 0.2rem 0.1rem 0.5rem #8480e9, 0 -0.5rem 1.5rem #615be1, 0 0.5rem 1.5rem #7d54df;
     }
   }
   @keyframes shine {
     100% {
-      text-shadow: 0 0 0.1rem #ffe6ff, 0 0 1rem #a6a4d6, -0.2rem 0.1rem 0.5rem #9692e6, 0.2rem 0.1rem 0.5rem #8480e9, 0 -0.5rem 1.5rem #615be1, 0 0.5rem 1.5rem #3d36e3;
+      text-shadow: 0 0 0.1rem #ffe6ff, 0 0 1rem #a6a4d6, -0.2rem 0.1rem 0.5rem #9692e6, 0.2rem 0.1rem 0.5rem #8480e9, 0 -0.5rem 1.5rem #615be1, 0 0.5rem 1.5rem #7d54df;
     }
   }
 }
