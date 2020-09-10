@@ -12,6 +12,15 @@
   font-weight: 700;
 }
 
+.Hangman input {
+  position: absolute;
+  z-index: 5;
+  opacity: 0;
+  height: 100vh;
+  width: 100vw;
+  left: 0;
+}
+
 /* Filmrolle mit Giphy-Gifs */
 .GifsList {
   display: -webkit-box;
@@ -50,6 +59,12 @@
   width: 19vw;
   border: 5px solid black;
   border-radius: 30px;
+}
+
+@media (max-width: 767px) {
+  .Gif, .Gifanimated {
+    width: 30vw;
+  }
 }
 
 .Gifanimated {
@@ -96,7 +111,7 @@
           filter: blur(30px);
 }
 
-.Gif .wrongLetter, .Gifanimated .wrongLetter {
+.wrongLetter, .Gif .wrongLetter, .Gifanimated .wrongLetter {
   font-family: 'Fira Mono', monospace;
   letter-spacing: -5px;
   position: absolute;
@@ -122,6 +137,12 @@
   z-index: -2;
   overflow: hidden;
   height: 50vh;
+}
+
+@media (max-width: 767px) {
+  .introHangman {
+    height: 77vh;
+  }
 }
 
 .fly-in {
@@ -314,18 +335,15 @@
   }
 }
 
-.Hangman input {
-  position: absolute;
-  z-index: 5;
-  opacity: 0;
-  height: 100vh;
-  width: 100vw;
-  left: 0;
-}
-
 /* Hangman-Menu */
 .HangmanMenu {
   height: 0;
+}
+
+@media (max-width: 767px) {
+  .HangmanMenu {
+    display: none;
+  }
 }
 
 .HangmanMenu.left {
@@ -335,12 +353,28 @@
   height: 11rem;
 }
 
+.HangmanMenu.left ul li {
+  padding: 15px;
+  font-size: 1.5rem;
+  -webkit-transform: rotateY(20deg) rotateX(-25deg) skewY(15deg);
+          transform: rotateY(20deg) rotateX(-25deg) skewY(15deg);
+  text-align: right;
+}
+
 .HangmanMenu.right {
   position: absolute;
   top: 12rem;
   right: 16rem;
   padding: 1em;
   height: 20rem;
+}
+
+.HangmanMenu.right ul li {
+  padding: 15px;
+  font-size: 1.3rem;
+  -webkit-transform: rotateY(-20deg) rotateX(-25deg) skewY(-15deg);
+          transform: rotateY(-20deg) rotateX(-25deg) skewY(-15deg);
+  text-align: left;
 }
 
 .HangmanMenu ul {
@@ -368,56 +402,23 @@
           perspective-origin: center top;
 }
 
-.HangmanMenu.left ul li {
-  padding: 15px;
-  font-size: 1.5rem;
-  -webkit-transform: rotateY(20deg) rotateX(-25deg) skewY(15deg);
-          transform: rotateY(20deg) rotateX(-25deg) skewY(15deg);
-  text-align: right;
-}
-
-.HangmanMenu.right ul li {
-  padding: 15px;
-  font-size: 1.3rem;
-  -webkit-transform: rotateY(-20deg) rotateX(-25deg) skewY(-15deg);
-          transform: rotateY(-20deg) rotateX(-25deg) skewY(-15deg);
-  text-align: left;
-}
-
-.Hangman ul li {
+.HangmanMenu ul li {
   width: 10vw;
   min-width: 4.5em;
+  font-weight: 800;
+  color: #ededed;
   border-radius: 10px;
-  cursor: pointer;
   border-bottom: 4px solid;
-  border: linear-gradient(45deg, rgba(141, 58, 197, 0.3), rgba(114, 86, 190, 0.3));
-  text-shadow: 1px 1px 2px #c533a1, 0 0 1em #4a165a, 0 0 0.2em #7d54df;
   border-color: rgba(158, 130, 212, 0.966);
-  text-shadow: 0.5px 0.5px 1px #c533a1, 0 0 0.25em #4a165a, 0 0 0.02em #7d54df;
+  text-shadow: 0.5px 0.5px 1px #727272, 0 0 0.25em #4a165a, 0 0 0.02em #7d54df;
   mix-blend-mode: multiply;
-  font-weight: 800;
-  color: #ededed;
-  font-size: 1.3rem;
+  cursor: pointer;
 }
 
-.Hangman ul li a {
-  font-size: 1.3rem;
-  text-shadow: 0.5px 0.5px 1px #c533a1, 0 0 0.25em #4a165a, 0 0 0.02em #7d54df;
-  font-weight: 800;
-  color: #ededed;
-}
-
-.Hangman ul li:nth-child(even) {
-  background: rgba(75, 75, 114, 0.4);
-}
-
-.Hangman ul li:nth-child(odd) {
-  background: rgba(123, 110, 180, 0.4);
-}
-
-.Hangman ul li:hover {
+.HangmanMenu ul li:hover {
   -webkit-transform: translateY(20%) rotateY(1deg) rotateX(4deg) scale(1.02);
           transform: translateY(20%) rotateY(1deg) rotateX(4deg) scale(1.02);
+  text-shadow: 0.5px 0.5px 1px #c533a1, 0 0 0.25em #4a165a, 0 0 0.02em #7d54df;
   -webkit-transition: -webkit-transform 0.4s ease-out;
   transition: -webkit-transform 0.4s ease-out;
   transition: transform 0.4s ease-out;
@@ -426,18 +427,27 @@
   mix-blend-mode: normal;
 }
 
-.Hangman ul li.selected {
-  -webkit-transform: rotateY(-20deg) rotateX(-25deg) skewY(-15deg) scale(1.02);
-          transform: rotateY(-20deg) rotateX(-25deg) skewY(-15deg) scale(1.02);
-  color: #c533a1;
+.HangmanMenu ul li:nth-child(even) {
+  background: rgba(75, 75, 114, 0.4);
+}
+
+.HangmanMenu ul li:nth-child(odd) {
+  background: rgba(123, 110, 180, 0.4);
+}
+
+.HangmanMenu ul li a {
+  font-size: 1.3rem;
+  text-shadow: 0.5px 0.5px 1px #c533a1, 0 0 0.25em #4a165a, 0 0 0.02em #7d54df;
+  font-weight: 800;
+  color: #ededed;
+  text-decoration: none;
+}
+
+.HangmanMenu ul li.selected {
+  color: #7d54df;
   text-shadow: 0.5px 0.5px 1px #c533a1, 0 0 0.25em #4a165a, 0 0 0.02em #7d54df;
   z-index: 999;
   mix-blend-mode: normal;
-}
-
-.Hangman ul li a {
-  text-decoration: none;
-  color: #ededed;
 }
 
 /* HangmanLoose Menu */
