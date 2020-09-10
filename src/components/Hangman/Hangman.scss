@@ -8,7 +8,7 @@ $purple: rgb(125, 84, 223);
 $pink: rgb(197, 51, 161);
 
 $black-text-shadow: 20px 20px 0 black, 20px 20px black, 20px 20px 0 black, 20px 20px black;
-$pinkish-text-shadow:  0.5px 0.5px 1px rgb(197, 51, 161), 0 0 0.25em rgb(74, 22, 90), 0 0 0.02em rgb(125, 84, 223);
+$pinkish-text-shadow:  0.5px 0.5px 1px rgb(197, 51, 161), 0 0 0.25em rgb(74, 22, 90), 0 0 0.02em $purple;
 
 
 $radial-background: radial-gradient(#333, #111); 
@@ -109,14 +109,26 @@ $radial-background: radial-gradient(#333, #111);
 .Gif .wrongLetter{
     @extend .wrongLetter;   
     bottom: 3vh;
+    @media (max-width: 767px){
+        display: none; 
+    }
 }
 
+// class for mobile devices
 .phone-wrongLetter{
     display: none; 
     @media (max-width: 767px){
     display: flex; 
     flex-direction: row;
     justify-content: center;
+    position: absolute; 
+    bottom: 3vh; 
+    font-size: 3em; 
+    &:nth-of-type(2){ left: 10vw}
+    &:nth-of-type(4){ left: 30vw}
+    &:nth-of-type(6){ left: 50vw}
+    &:nth-of-type(8){ left: 70vw}
+    &:nth-of-type(10){ left: 90vw}
     }
 }
 
@@ -336,94 +348,77 @@ $radial-background: radial-gradient(#333, #111);
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
+    .HangmanEnd{
+        max-width: 65vw; 
+        display:flex; 
+        flex-direction: column; 
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 4vh; 
+        margin-left: 2vw; 
+        color: $semiwhite;
+        border: 5px solid rgb(235, 234, 243);
+        border-radius: 5px;
+        padding:1em;
+        text-align:center;
+        text-decoration:none;
+        background: linear-gradient(-35deg, rgba(41, 5, 99, 0.4), rgba(79, 17, 138, 0.4));
+        h1{
+            font-size: 3rem;
+            margin: 0;
+            height:2em;
+            user-select: none;
+            text-shadow: $pinkish-text-shadow;
+        }
+        ul{
+            list-style-type: none;
+            perspective: 1000px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            li{
+                border-radius: 10px;
+                padding: 15px;
+                cursor: pointer;
+                border-bottom: 4px solid $purple;
+                mix-blend-mode:multiply; 
+                font-size: 2rem;
+                &:nth-child(odd){
+                    background: rgba(160, 162, 233, 0.4);
+                    transform: rotateY(6deg) rotateX(-10deg) skewY(5deg);
+                } 
+                &:nth-child(even){
+                    background: rgba(123, 110, 180, 0.4);
+                    transform: rotateY(-6deg) rotateX(10deg) skewY(-5deg);
+                }
+                &:hover{
+                    transform: rotateY(6deg) rotateX(4deg) scale(1.02);
+                    transition: selectoption 0.4s ease-out;
+                    z-index: 999;
+                    mix-blend-mode: normal;
+                }
+                a{
+                    font-size: 2rem; 
+                    text-shadow: 1px 1px 2px rgb(197, 51, 161), 0 0 1em rgb(74, 22, 90), 0 0 0.2em rgb(125, 84, 223);
+                    color :$semiwhite;
+                    text-decoration: none;
+                    font-weight: 800;
+                    text-align: center;
+                    user-select:none;
+                }
+            }
+            
+        }
+    }
+    .looseImage{
+        height: 90vh;
+        margin: 4vh 2vw;
+        img {
+            height: 100%; 
+        }
+    }
 }
 
-.hangmanLooser .looseImage{
-    height: 90vh;
-    margin: 4vh 2vw; 
-}
-
-.hangmanLooser img {
-    height: 100%; 
-}
-
-.HangmanEnd{
-    display:flex; 
-    flex-direction: column; 
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-top: 4vh; 
-    margin-left: 2vw; 
-    color: $semiwhite;
-    border: 5px solid rgb(235, 234, 243);
-    border-radius: 5px;
-    padding:1em;
-    text-align:center;
-    text-decoration:none;
-    background: linear-gradient(-35deg, rgba(41, 5, 99, 0.4), rgba(79, 17, 138, 0.4));
-}
-
-.HangmanEnd h1{
-    font-size: 3rem;
-    margin: 0;
-    height:2em;
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    text-shadow: 1px 2px 2px rgb(233, 231, 240), 0 0 2em rgb(108, 77, 192), 0 0 0.2em rgb(253, 21, 126);
-}
-
-.HangmanEnd ul{
-    list-style-type: none;
-    perspective: 1000px;
-    -webkit-perspective: 1000px;
-    -moz-perspective: 1000px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
-
-.HangmanEnd ul li{
-    border-radius: 10px;
-    padding: 15px;
-    cursor: pointer;
-    transform: rotateY(-6deg) rotateX(10deg) skewY(-5deg);
-    border-bottom: 4px solid ;
-    border: linear-gradient(45deg, rgba(141, 58, 197, 0.3), rgba(114, 86, 190, 0.3));
-    mix-blend-mode:multiply; 
-    font-size: 2rem; 
-}
-
-.HangmanEnd ul li a{
-    font-size: 2rem; 
-    text-shadow: 1px 1px 2px rgb(197, 51, 161), 0 0 1em rgb(74, 22, 90), 0 0 0.2em rgb(125, 84, 223);
-    color :$semiwhite;
-    text-decoration: none;
-    font-weight: 800;
-    text-align: center;
-    user-select:none;
-    -webkit-user-select: none;
-    -moz-user-select: none;   
-}
-
-.HangmanEnd ul li:nth-child(odd){
-    background: rgba(160, 162, 233, 0.4);
-}
-
-.HangmanEnd ul li:nth-child(even){
-    background: rgba(123, 110, 180, 0.4);
-}
-
-.HangmanEnd ul li:hover{
-    transform: rotateY(6deg) rotateX(4deg) scale(1.02);
-    -webkit-transform: rotateY(6deg) rotateX(4deg) scale(1.02);
-    -moz-transform: rotateY(6deg) rotateX(4deg) scale(1.02);
-    transition: selectoption 0.4s ease-out;
-    -webkit-transform: selectoption 0.4s ease-out;
-    -moz-transform: selectoption 0.4s ease-out;
-    z-index: 999;
-    mix-blend-mode: normal;
-}
 
 @keyframes selectoption {
     0%{transform: scale(1.0);
@@ -465,7 +460,7 @@ $radial-background: radial-gradient(#333, #111);
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
-    text-shadow: 1px 2px 2px rgb(233, 231, 240), 0 0 2em rgb(108, 77, 192), 0 0 0.2em rgb(253, 21, 126);
+    text-shadow: $pinkish-text-shadow;
 }
 
 .hangmanWin ul{

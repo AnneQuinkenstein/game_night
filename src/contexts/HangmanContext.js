@@ -126,7 +126,7 @@ const HangmanContextComponent = (props) => {
 
 
     // Num Remaing Guesses 
-    const guesses = 5;
+    const guesses = 6;
     const getRemainingGuesses = () => {
         const remainingGuesses = guesses - getWronglyGuessedLetters().length;
         return remainingGuesses;
