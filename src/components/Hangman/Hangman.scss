@@ -71,6 +71,9 @@ $radial-background: radial-gradient(#333, #111);
     border: 20px dotted; 
     animation: bordercolor 3s linear;
     animation-fill-mode: both;
+    @media (max-width: 767px){
+        border: 5px dotted; 
+    }
 }
 
 @keyframes bordercolor {
@@ -89,6 +92,9 @@ $radial-background: radial-gradient(#333, #111);
     min-width: 100%;
     min-height: 100%;
     flex-shrink: 0;
+    @media (max-width: 767px){
+    flex-shrink: unset;
+    }
 }
 
 .blurr {
@@ -124,6 +130,7 @@ $radial-background: radial-gradient(#333, #111);
     position: absolute; 
     bottom: 3vh; 
     font-size: 3em; 
+    text-decoration: line-through;
     &:nth-of-type(2){ left: 10vw}
     &:nth-of-type(4){ left: 30vw}
     &:nth-of-type(6){ left: 50vw}
@@ -426,10 +433,9 @@ $radial-background: radial-gradient(#333, #111);
                 mix-blend-mode:multiply; 
                 font-size: 2rem;
                 @media (max-width: 767px) {
-                position: absolute; 
-                bottom: 4vh; 
-                right: 2vw; 
-                flex-direction: column; 
+                padding: 10px; 
+                font-size: 1.2rem;
+                margin: 0;
                 }
                 &:nth-child(odd){
                     background: rgba(160, 162, 233, 0.4);
