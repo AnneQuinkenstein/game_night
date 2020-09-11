@@ -191,6 +191,7 @@
 @media (max-width: 767px) {
   .formContainer {
     width: 91vw;
+    margin: auto 0 auto 8vw;
   }
 }
 
