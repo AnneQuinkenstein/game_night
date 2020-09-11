@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import './imageSlider.css';
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 export default function ImageSlider({ images }) {
