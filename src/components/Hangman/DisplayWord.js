@@ -3,8 +3,8 @@ import { HangmanContext } from '../../contexts/HangmanContext';
 
 const DisplayWord = () => {
 
-    const { answer } = useContext(HangmanContext);
-
+    const { answer, movieData } = useContext(HangmanContext);
+console.log(movieData);
 return (
     <div>
         {answer}

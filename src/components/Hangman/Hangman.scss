@@ -6,6 +6,7 @@ $orange: #ce0000;
 $darkred: #6b1839;
 $purple: rgb(125, 84, 223); 
 $pink: rgb(197, 51, 161);
+$transparentrosa:  rgba(41, 5, 99, 0.4);
 
 $black-text-shadow: 20px 20px 0 black, 20px 20px black, 20px 20px 0 black, 20px 20px black;
 $pinkish-text-shadow:  0.5px 0.5px 1px rgb(197, 51, 161), 0 0 0.25em rgb(74, 22, 90), 0 0 0.02em $purple;
@@ -383,7 +384,7 @@ $radial-background: radial-gradient(#333, #111);
         padding:1em;
         text-align:center;
         text-decoration:none;
-        background: linear-gradient(-35deg, rgba(41, 5, 99, 0.4), rgba(79, 17, 138, 0.4));
+        background: linear-gradient(-35deg, $transparentrosa, rgba(79, 17, 138, 0.4));
         @media (max-width: 767px) {
             margin: auto; 
             height: 96%; 
@@ -425,9 +426,10 @@ $radial-background: radial-gradient(#333, #111);
                 mix-blend-mode:multiply; 
                 font-size: 2rem;
                 @media (max-width: 767px) {
-                    font-size: 1.3rem; 
-                    padding: 10px; 
-                    margin: 5px; 
+                position: absolute; 
+                bottom: 4vh; 
+                right: 2vw; 
+                flex-direction: column; 
                 }
                 &:nth-child(odd){
                     background: rgba(160, 162, 233, 0.4);
@@ -485,94 +487,223 @@ $radial-background: radial-gradient(#333, #111);
 /* HangmanWin Menu */
 
 .hangmanWin{
-    z-index: 6; 
+    z-index: 0; 
     position: absolute; 
-    width: 25vw; 
+    top: 4vh; 
+    left: 2vw; 
     display: flex; 
     flex-direction: column; 
     flex-wrap: wrap;
-    justify-content: space-between;
-    margin-top: 4vh; 
-    margin-left: 2vw; 
+    justify-content: space-between; 
+    text-shadow: 1px 1px 2px rgb(197, 51, 161), 0 0 1em rgb(74, 22, 90), 0 0 0.2em rgb(125, 84, 223);
     color :$semiwhite;
-    border:5px solid rgb(235, 234, 243);
-    border-radius: 5px;
+    border-bottom: 5px solid $purple;
+    border-radius: 10px;
     padding:1em;
     text-align:center;
     text-decoration:none;
-    background: linear-gradient(-35deg, rgba(41, 5, 99, 0.4), rgba(79, 17, 138, 0.4));
+    background: rgba(123, 110, 180,0.4);
+    @media (max-width: 767px) {
+	    height: 90vh;
+	    border: none;
+	    background: none;
+        z-index: 3;
+    }
+    h1{
+        font-size: 2rem;
+        margin: 0;
+        height:2em;
+        text-shadow: $pinkish-text-shadow;
+        @media (max-width: 767px) {
+            font-size: 1.6rem; 
+            height: auto; 
+            text-shadow: $black-text-shadow;
+            &:nth-of-type(1){
+                margin: 0 0 0 40vw;
+            }
+            &:nth-of-type(2){
+                margin: 0 17vw;
+            }
+        }
+    }
 }
 
-.hangmanWin h1{
-    font-size: 2rem;
-    margin: 0;
-    height:2em;
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    text-shadow: $pinkish-text-shadow;
-}
 
-.hangmanWin ul{
+.hangmanWinMenu ul{
+    position: absolute; 
+    bottom: 2vh; 
+    right: 2vw; 
     list-style-type: none;
     perspective: 1000px;
-    -webkit-perspective: 1000px;
-    -moz-perspective: 1000px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-evenly;
-}
+    z-index: 20;
+    @media (max-width: 767px) {
+       top: 1vh; 
+       left: -6.8vw;
+       right: auto; 
+       bottom: auto; 
+    }
+    li{
+        border-radius: 10px;
+        padding: 15px;
+        cursor: pointer;
+        transform: rotateY(-6deg) rotateX(10deg) skewY(-5deg);
+        border-bottom: 4px solid $purple;
+        border: linear-gradient(45deg, rgba(141, 58, 197, 0.3), rgba(114, 86, 190, 0.3));
+        mix-blend-mode:multiply; 
+        font-size: 2rem; 
+        text-shadow: 1px 1px 2px rgb(197, 51, 161), 0 0 1em rgb(74, 22, 90), 0 0 0.2em rgb(125, 84, 223);
+        color :$semiwhite;
+        @media (max-width: 767px) {
+            font-size: 1.2rem; 
+            padding: 10px; 
+            }
+        a{
+            text-shadow: 1px 1px 2px rgb(197, 51, 161), 0 0 1em rgb(74, 22, 90), 0 0 0.2em rgb(125, 84, 223);
+            color :$semiwhite;
+            text-decoration: none;
+            font-weight: 800;
+            text-align: center; 
+            @media (max-width: 767px) {
+                font-size: 1.2rem; 
+            } 
+        }
+        &:nth-child(odd){
+            background: rgba(160, 162, 233,0.4);
+            @media (max-width: 767px) {
+                background: rgba(160, 162, 233, 0.8);
+            }
+        }
+        &:nth-child(even){
+            background: rgba(123, 110, 180,0.4);
+            @media (max-width: 767px) {
+                background:rgba(123, 110, 180, 0.8);
+            }
+        }
 
-.hangmanWin ul li{
-    border-radius: 10px;
-    padding: 15px;
-    cursor: pointer;
-    transform: rotateY(-6deg) rotateX(10deg) skewY(-5deg);
-    border-bottom: 4px solid ;
-    border: linear-gradient(45deg, rgba(141, 58, 197, 0.3), rgba(114, 86, 190, 0.3));
-    mix-blend-mode:multiply; 
-    font-size: 2rem; 
-}
-
-.hangmanWin ul li a{
-    font-size: 2rem; 
-    text-shadow: 1px 1px 2px rgb(197, 51, 161), 0 0 1em rgb(74, 22, 90), 0 0 0.2em rgb(125, 84, 223);
-    color :$semiwhite;
-    text-decoration: none;
-    font-weight: 800;
-    text-align: center;
-    user-select:none;
-    -webkit-user-select: none;
-    -moz-user-select: none;   
-}
-
-.hangmanWin ul li:nth-child(odd){
-    background: rgba(160, 162, 233,0.4);
-}
-
-.hangmanWin ul li:nth-child(even){
-    background: rgba(123, 110, 180,0.4);
-}
-
-.hangmanWin ul li:hover{
-    transform: rotateY(6deg) rotateX(4deg) scale(1.02);
-    -webkit-transform: rotateY(6deg) rotateX(4deg) scale(1.02);
-    -moz-transform: rotateY(6deg) rotateX(4deg) scale(1.02);
-    transition: selectoption 0.4s ease-out;
-    -webkit-transform: selectoption 0.4s ease-out;
-    -moz-transform: selectoption 0.4s ease-out;
-    z-index: 5;
-    mix-blend-mode: normal;
+        }
+        &:hover{
+            transform: rotateY(6deg) rotateX(4deg) scale(1.02);
+            transition: selectoption 0.4s ease-out;
+            z-index: 5;
+            mix-blend-mode: normal;
+        } 
 }
 
  @keyframes selectoption{
-    0%{transform: scale(1.0);
-    -webkit-transform: scale(1.0);
-    -moz-transform: scale(1.0);}
-    50%{transform:  scale(0.9);
-    -webkit-transform: scale(0.9);
-    -moz-transform: scale(0.9);}
-    100%{transform: scale(1);
-    -webkit-transform: scale(1.0);
-    -moz-transform: scale(1.0);}
+    0%{transform: scale(1.0);}
+    50%{transform:  scale(0.9);}
+    100%{transform: scale(1);}
 }
+
+//imageSlider 
+
+
+.image-slider {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background-image: url('./GameOver/WinnerBackground.jpg');
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+    .button {
+        position: absolute; 
+        top: 35vh; 
+        background-color: transparent;
+        border-color: transparent; 
+        margin: 0 auto; 
+        z-index: 5; 
+        font-size: 15rem;    
+        color: rgba(123, 110, 180,0.9);
+        @media (max-width: 767px) {
+            font-size: 7rem;
+            top: auto;
+            bottom: -3vh; 
+        }
+        &:hover{
+            cursor: pointer;
+        }
+      }
+    .left{
+        left: 0; 
+        text-align: left;   
+    }
+    .right{
+       right: 0; 
+       text-align: right; 
+    }
+  }
+  
+  .image-wrapper {
+    position: relative;
+    text-align: left;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    div {
+        display: flex;
+        justify-content: center;
+        @media (max-width: 767px) {
+            height: 100vh;
+            align-items: center;
+            }              
+        }
+        img {
+            position: absolute;
+            width: auto; 
+            height: 100%;
+            @media (max-width: 767px) {
+                width: 100%;
+                height: auto;
+                margin: auto 0;
+                }   
+          }
+  }
+  
+  .slide-right-enter {
+    opacity: 0.2; 
+    transform: translateX(100%);
+  }
+  
+  .slide-right-enter-active {
+    opacity: 1; 
+    transform: translateX(0%);
+    transition: transform 1000ms ease-in-out;
+  }
+  
+  .slide-right-exit {
+    opacity: 1; 
+    transform: translateX(0%);
+  }
+  
+  .slide-right-exit-active {
+    opacity: 0.2; 
+    transform: translateX(-100%);
+    transition: transform 1000ms ease-in-out;
+  }
+  
+  .slide-left-enter {
+    opacity: 0.2; 
+    transform: translateX(-100%);
+  }
+  
+  .slide-left-enter-active {
+    opacity: 1; 
+    transform: translateX(0%);
+    transition: transform 1000ms ease-in-out;
+  }
+  
+  .slide-left-exit {
+    opacity: 1; 
+    transform: translateX(0%);
+  }
+  
+  .slide-left-exit-active {
+    opacity: 0.2; 
+    transform: translateX(100%);
+    transition: transform 1000ms ease-in-out;
+  }
+
