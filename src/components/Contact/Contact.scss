@@ -55,15 +55,14 @@ $yellow: #A4852F;
     align-items: center;
     justify-content: right;
     flex-direction: column;
-    position: absolute;
-    left: -45vw;
-    top: 4vh;
+    margin-left: 23vw;
+    margin-top: -3vh;
     li{
       border-radius: 10px;
       padding:15px;
       cursor: pointer;
       border-bottom: 4px solid ;
-      transform: rotateY(20deg) rotateX(-25deg) skewY(15deg);
+      transform: rotateY(-20deg) rotateX(-25deg) skewY(-15deg);
       border: linear-gradient(45deg, rgba(141, 58, 197, 0.3), rgba(114, 86, 190, 0.3));
       text-shadow: 1px 1px 2px rgb(197, 51, 161), 0 0 1em rgb(74, 22, 90), 0 0 0.2em rgb(125, 84, 223);
       mix-blend-mode:multiply; 
@@ -360,7 +359,7 @@ $yellow: #A4852F;
   
   /* about Me Text */
   .aboutMeFrame {
-    margin: auto 10vw auto 0; 
+    margin: auto 0 auto 10vw; 
     background-color: transparent;
     border-radius: 10%;
     border: 1rem solid;
