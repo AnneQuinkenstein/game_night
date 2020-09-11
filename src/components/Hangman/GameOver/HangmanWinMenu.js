@@ -6,14 +6,19 @@ const HangmanWinMenu = () => {
     const { mount } = useContext(HangmanContext);
 
     return (
-        <div className="hangmanWin" >
-            <h1>YEAH ! You won!</h1> 
-            <h1>Look at Giphy Pics!</h1>
-            <ul>
-                <li onClick={mount}>New&nbsp;Game</li>
-                <li><Link to='/title'>Start&nbsp;Menu</Link></li>
-            </ul>
-        </div>
+        <>
+            <div className="hangmanWin" >
+                <h1>YEAH ! You won!</h1>
+                <h1>Look at Giphy Pics!</h1>
+            </div>
+            <div className="hangmanWinMenu">
+                <ul>
+                    <li onClick={mount}>New&nbsp;Game</li>
+                    <li><Link to='/title'>Start&nbsp;Menu</Link></li>
+                    <li><Link to='/contact'>Contact</Link></li>
+                </ul>
+            </div>
+        </>
     )
 }
 

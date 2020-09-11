@@ -12,7 +12,6 @@ const HangmanContextComponent = (props) => {
     const [answer, setAnswer] = useState([]);
     const [gifs, setGifs] = useState(null);
 
-
     // to use the flying Input on the Intro just once
     const mount = () => {
             setStyle(style + 1);   
