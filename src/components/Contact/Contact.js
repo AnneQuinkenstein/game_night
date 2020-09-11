@@ -7,11 +7,12 @@ import ContactMenu from './ContactMenu';
 function Contact() {
   return (
     <div className="contactContainer page">
+      <Text />
       <div className="contactContainerLeft">
         <ContactMenu />
         <MyForm />
       </div>
-      <Text />
+      
     </div>
   );
 }

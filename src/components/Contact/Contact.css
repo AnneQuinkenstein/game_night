@@ -77,9 +77,8 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  position: absolute;
-  left: -45vw;
-  top: 4vh;
+  margin-left: 23vw;
+  margin-top: -3vh;
 }
 
 .ContactMenu ul li {
@@ -87,8 +86,8 @@
   padding: 15px;
   cursor: pointer;
   border-bottom: 4px solid;
-  -webkit-transform: rotateY(20deg) rotateX(-25deg) skewY(15deg);
-          transform: rotateY(20deg) rotateX(-25deg) skewY(15deg);
+  -webkit-transform: rotateY(-20deg) rotateX(-25deg) skewY(-15deg);
+          transform: rotateY(-20deg) rotateX(-25deg) skewY(-15deg);
   border: linear-gradient(45deg, rgba(141, 58, 197, 0.3), rgba(114, 86, 190, 0.3));
   text-shadow: 1px 1px 2px #c533a1, 0 0 1em #4a165a, 0 0 0.2em #7d54df;
   mix-blend-mode: multiply;
@@ -479,7 +478,7 @@
 
 /* about Me Text */
 .aboutMeFrame {
-  margin: auto 10vw auto 0;
+  margin: auto 0 auto 10vw;
   background-color: transparent;
   border-radius: 10%;
   border: 1rem solid;
