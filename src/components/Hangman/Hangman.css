@@ -75,6 +75,12 @@
           animation-fill-mode: both;
 }
 
+@media (max-width: 767px) {
+  .Gifanimated {
+    border: 5px dotted;
+  }
+}
+
 @-webkit-keyframes bordercolor {
   0%, 7%, 40%, 49%, 70%, 80% {
     border-color: #7d54df;
@@ -104,6 +110,13 @@
   min-height: 100%;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+}
+
+@media (max-width: 767px) {
+  .Gif img, .Gifanimated img {
+    -ms-flex-negative: unset;
+        flex-shrink: unset;
+  }
 }
 
 .blurr {
@@ -151,6 +164,7 @@
     position: absolute;
     bottom: 3vh;
     font-size: 3em;
+    text-decoration: line-through;
   }
   .phone-wrongLetter:nth-of-type(2) {
     left: 10vw;
@@ -631,13 +645,9 @@
 
 @media (max-width: 767px) {
   .hangmanLooser .HangmanEnd ul li {
-    position: absolute;
-    bottom: 4vh;
-    right: 2vw;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    padding: 10px;
+    font-size: 1.2rem;
+    margin: 0;
   }
 }
 
