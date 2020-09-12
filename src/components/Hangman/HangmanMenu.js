@@ -16,11 +16,11 @@ const HangmanMenu = () => {
             </p>
                 <p>
                     The Computer fills the letter in the blanks, if you guess correctly. Whenever you guess a letter that is in the secret word, the computer fills it into the blank where it occurs.
-                    If you guess a letter that repeats, both letters are filled in. If you guess "r," the computer would fill in both "r"s. ( _ _ _ &nbsp;&nbsp;&nbsp; _ _ _ _ _ _ r _ _ _ r ).
+                    If you guess a letter that repeats, both letters are filled in. If you guess "r" & "e"; the computer would fill in all "e"s & "r"s. ( _ _ e &nbsp;&nbsp;&nbsp; _ _ _ _ _ _ e r _  er ).
             </p>
                 <p>
-                    Whenever you guess a letter that is not in the secret word it brings you closer to loosing. To show this, one of the gify-pics is revealed. That might give you an additional hint.
-                    You win when you guess the correct word. When you guess 6 times a wrong letter you loose.
+                    Whenever you guess a letter that is not in the secret word it brings you closer to loosing. To show this, one of the giphy-pics which is associated to the movie title is revealed. That might give you an additional hint.
+                    You win when you guess the correct word. Your loose when you guessed 6 times a wrong letter.
             </p>
             </div>}
             <div className="HangmanMenu left">
