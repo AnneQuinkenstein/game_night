@@ -8,7 +8,9 @@ import HangmanMenu from './HangmanMenu';
 import HangmanIntro from './HangmanIntro';
 import HangmanWinner from './GameOver/HangmanWinner';
 import HangmanLooser from './GameOver/HangmanLooser';
+import Hambugermenu from './Hamburgermenu'; 
 import { HangmanContext } from '../../contexts/HangmanContext';
+
 
 const Hangman = () => {
     const { gameState, style } = useContext(HangmanContext);
@@ -17,6 +19,7 @@ const Hangman = () => {
         if (style == 1 && gameState != 'loose' && gameState != 'won') {
             return (
                 <div className="Hangman page">
+                    <Hambugermenu />
                     <GifsList />
                     <HangmanMenu />
                     <div className="introHangman">
@@ -40,6 +43,7 @@ const Hangman = () => {
         } else if (style > 1 && gameState != 'loose' && gameState != 'won') {
             return (
                 <div className="Hangman page" >
+                    <Hambugermenu />
                     <GifsList />
                     <HangmanMenu />
                     <div className="introHangman">

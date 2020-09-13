@@ -1,0 +1,133 @@
+$white: #ffe6ff; 
+$semiwhite: hsl(0, 0%, 93%);
+$rose: #ddacac; 
+$orangelight: #fe735a;
+$orange: #ce0000; 
+$darkred: #6b1839;
+$purple: rgb(125, 84, 223); 
+$pink: rgb(197, 51, 161);
+$transparentrosa:  rgba(41, 5, 99, 0.4);
+
+
+$black-text-shadow: 20px 20px 0 black, 20px 20px black, 20px 20px 0 black, 20px 20px black;
+$pinkish-text-shadow:  0.5px 0.5px 1px rgb(197, 51, 161), 0 0 0.25em rgb(74, 22, 90), 0 0 0.02em $purple;
+
+$radial-background: radial-gradient(#333, #111); 
+
+@media (max-width: 767px)  {
+
+  .HamburgermenuToggle {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    z-index: 100;
+    &.show{
+      span{
+        opacity: 1;
+        transform: rotate(45deg) translate(-2px, -1px);
+        background: $white;
+        &:nth-last-child(3) {
+          opacity: 0;
+          transform: rotate(0deg) scale(0.2, 0.2);
+        }
+        &:nth-last-child(2)
+        {
+          transform: rotate(-45deg) translate(0, -1px);
+        }    
+      }
+      ul{
+        transform: none;
+      }
+    }
+    span{
+      display: block;
+      width: 33px;
+      height: 4px;
+      margin-bottom: 5px;
+      position: relative;
+      background: $white;
+      border-radius: 3px;
+      z-index: 1;
+      transform-origin: 4px 0px;
+      transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                  background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                  opacity 0.55s ease;
+        &:first-child {
+          transform-origin: 0% 0%;
+        }
+        &:nth-last-child(2){
+          transform-origin: 0% 100%;
+        }
+      }    
+    .menu{ 
+      margin: -100px 0 0 -50px;
+      padding: 50px;
+      padding-top: 125px;
+      list-style-type: none;
+      -webkit-font-smoothing: antialiased;
+      /* to stop flickering of text in safari */
+      transform-origin: 0% 0%;
+      transform: translate(-100%, 0);
+      transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+      // new 
+      left: -0.5em;
+      position: absolute;
+      color: $semiwhite;
+      width: 10rem;
+      text-align: right;
+      z-index: 6;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      list-style-type: none;
+      perspective: 700px;
+      -webkit-perspective: 700px;
+      -moz-perspective: 700px;
+      perspective-origin: center top; 
+        li {
+          padding: 15px;
+          font-size: 1.5rem;
+          transform: rotateY(20deg) rotateX(-25deg) skewY(15deg); 
+          text-align: right;
+          transition: color 0.3s ease;
+          width: 10vw;
+              min-width: 4.5em;
+              font-weight: 800;
+              color: $semiwhite;
+              border-radius: 10px;
+              border-bottom: 4px solid;
+              border-color: rgba(158, 130, 212, 0.966);
+              text-shadow: 0.5px 0.5px 1px rgb(114, 114, 114), 0 0 0.25em rgb(74, 22, 90), 0 0 0.02em rgb(125, 84, 223);       
+              mix-blend-mode: multiply;
+              cursor: pointer;
+              &:hover {
+                  transform: translateY(20%) rotateY(1deg) rotateX(4deg) scale(1.02);
+                  text-shadow: $pinkish-text-shadow;
+                  transition: transform 0.4s ease-out;
+                  z-index: 999;
+                  mix-blend-mode: normal;
+              }
+              &:nth-child(even) {
+                  background: rgba(75, 75, 114, 0.4);
+              }
+              &:nth-child(odd) {
+                  background: rgba(123, 110, 180, 0.4);
+              }
+              a {
+                  font-size: 1.3rem;
+                  text-shadow: $pinkish-text-shadow;
+                  font-weight: 800;
+                  color: $semiwhite;
+                  text-decoration: none;
+              }
+              &.selected {
+                  // transform: rotateY(-20deg) rotateX(-25deg) skewY(-15deg) scale(1.02);
+                  color: rgb(125, 84, 223);
+                  text-shadow: $pinkish-text-shadow;
+                  z-index: 999;
+                  mix-blend-mode: normal;
+              }            
+          }
+    } 
+  }
+}

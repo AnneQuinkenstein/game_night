@@ -1,0 +1,139 @@
+@media (max-width: 767px) {
+  .HamburgermenuToggle {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    z-index: 100;
+  }
+  .HamburgermenuToggle.show span {
+    opacity: 1;
+    -webkit-transform: rotate(45deg) translate(-2px, -1px);
+            transform: rotate(45deg) translate(-2px, -1px);
+    background: #ffe6ff;
+  }
+  .HamburgermenuToggle.show span:nth-last-child(3) {
+    opacity: 0;
+    -webkit-transform: rotate(0deg) scale(0.2, 0.2);
+            transform: rotate(0deg) scale(0.2, 0.2);
+  }
+  .HamburgermenuToggle.show span:nth-last-child(2) {
+    -webkit-transform: rotate(-45deg) translate(0, -1px);
+            transform: rotate(-45deg) translate(0, -1px);
+  }
+  .HamburgermenuToggle.show ul {
+    -webkit-transform: none;
+            transform: none;
+  }
+  .HamburgermenuToggle span {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #ffe6ff;
+    border-radius: 3px;
+    z-index: 1;
+    -webkit-transform-origin: 4px 0px;
+            transform-origin: 4px 0px;
+    -webkit-transition: background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+    transition: background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  }
+  .HamburgermenuToggle span:first-child {
+    -webkit-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+  }
+  .HamburgermenuToggle span:nth-last-child(2) {
+    -webkit-transform-origin: 0% 100%;
+            transform-origin: 0% 100%;
+  }
+  .HamburgermenuToggle .menu {
+    margin: -100px 0 0 -50px;
+    padding: 50px;
+    padding-top: 125px;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    /* to stop flickering of text in safari */
+    -webkit-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+    -webkit-transform: translate(-100%, 0);
+            transform: translate(-100%, 0);
+    -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+    transition: -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+    left: -0.5em;
+    position: absolute;
+    color: #ededed;
+    width: 10rem;
+    text-align: right;
+    z-index: 6;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    list-style-type: none;
+    perspective: 700px;
+    -webkit-perspective: 700px;
+    -moz-perspective: 700px;
+    -webkit-perspective-origin: center top;
+            perspective-origin: center top;
+  }
+  .HamburgermenuToggle .menu li {
+    padding: 15px;
+    font-size: 1.5rem;
+    -webkit-transform: rotateY(20deg) rotateX(-25deg) skewY(15deg);
+            transform: rotateY(20deg) rotateX(-25deg) skewY(15deg);
+    text-align: right;
+    -webkit-transition: color 0.3s ease;
+    transition: color 0.3s ease;
+    width: 10vw;
+    min-width: 4.5em;
+    font-weight: 800;
+    color: #ededed;
+    border-radius: 10px;
+    border-bottom: 4px solid;
+    border-color: rgba(158, 130, 212, 0.966);
+    text-shadow: 0.5px 0.5px 1px #727272, 0 0 0.25em #4a165a, 0 0 0.02em #7d54df;
+    mix-blend-mode: multiply;
+    cursor: pointer;
+  }
+  .HamburgermenuToggle .menu li:hover {
+    -webkit-transform: translateY(20%) rotateY(1deg) rotateX(4deg) scale(1.02);
+            transform: translateY(20%) rotateY(1deg) rotateX(4deg) scale(1.02);
+    text-shadow: 0.5px 0.5px 1px #c533a1, 0 0 0.25em #4a165a, 0 0 0.02em #7d54df;
+    -webkit-transition: -webkit-transform 0.4s ease-out;
+    transition: -webkit-transform 0.4s ease-out;
+    transition: transform 0.4s ease-out;
+    transition: transform 0.4s ease-out, -webkit-transform 0.4s ease-out;
+    z-index: 999;
+    mix-blend-mode: normal;
+  }
+  .HamburgermenuToggle .menu li:nth-child(even) {
+    background: rgba(75, 75, 114, 0.4);
+  }
+  .HamburgermenuToggle .menu li:nth-child(odd) {
+    background: rgba(123, 110, 180, 0.4);
+  }
+  .HamburgermenuToggle .menu li a {
+    font-size: 1.3rem;
+    text-shadow: 0.5px 0.5px 1px #c533a1, 0 0 0.25em #4a165a, 0 0 0.02em #7d54df;
+    font-weight: 800;
+    color: #ededed;
+    text-decoration: none;
+  }
+  .HamburgermenuToggle .menu li.selected {
+    color: #7d54df;
+    text-shadow: 0.5px 0.5px 1px #c533a1, 0 0 0.25em #4a165a, 0 0 0.02em #7d54df;
+    z-index: 999;
+    mix-blend-mode: normal;
+  }
+}
+/*# sourceMappingURL=Hamburgermenu.css.map */
