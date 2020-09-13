@@ -3,7 +3,6 @@
 }
 
 html {
-  overflow: hidden;
   font-size: calc(0.5vw + 6px);
 }
 
@@ -19,6 +18,11 @@ html {
   left: 0;
   right: 0;
   bottom: 0;
+}
+
+.Title {
+  height: 100vh;
+  overflow: hidden;
 }
 
 .arcadeBackground {
