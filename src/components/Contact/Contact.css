@@ -16,6 +16,13 @@
   background-color: #0F1020;
 }
 
+@media (max-width: 767px) {
+  .contactContainer {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
 .contactContainerLeft {
   height: 100vh;
   display: -webkit-box;
@@ -31,6 +38,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  background-color: #0F1020;
 }
 
 /* Menu */
@@ -53,9 +61,9 @@
 
 @media (max-width: 767px) {
   .ContactMenu {
-    width: auto;
-    height: auto;
-    margin: 2vh auto;
+    position: fixed;
+    top: -8vh;
+    left: -9vw;
   }
 }
 
@@ -120,11 +128,11 @@
 }
 
 .ContactMenu ul li:nth-child(1) {
-  background: rgba(160, 162, 233, 0.4);
+  background-color: rgba(160, 162, 233, 0.4);
 }
 
 .ContactMenu ul li:nth-child(2) {
-  background: rgba(123, 110, 180, 0.4);
+  background-color: rgba(123, 110, 180, 0.4);
 }
 
 .ContactMenu ul li:hover {
@@ -185,12 +193,13 @@
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  background-color: #0F1020;
 }
 
 @media (max-width: 767px) {
   .formContainer {
     width: 91vw;
-    margin: auto 0 auto 8vw;
+    margin: 2vh 0 auto 8vw;
   }
 }
 
@@ -269,7 +278,7 @@
   content: "";
   height: 2px;
   width: 11.5px;
-  background: #5E5F84;
+  background-color: #5E5F84;
   display: block;
   position: absolute;
   z-index: 1;
@@ -294,7 +303,7 @@
   display: block;
   height: 2px;
   width: 30%;
-  background: #5E5F84;
+  background-color: #5E5F84;
   right: 0px;
   -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, calc(0% + 2px) 100%);
           clip-path: polygon(0 0, 100% 0%, 100% 100%, calc(0% + 2px) 100%);
@@ -312,7 +321,7 @@
   display: block;
   height: 4px;
   width: 32px;
-  background: #5E5F84;
+  background-color: #5E5F84;
   right: -29px;
   -webkit-clip-path: polygon(0 0, calc(100% - 2px) 0%, 100% 100%, 22% 100%);
   clip-path: polygon(0 0, calc(100% - 2px) 0%, 100% 100%, 0% 100%);
@@ -324,7 +333,7 @@
   display: block;
   height: 22px;
   width: auto;
-  background: #5E5F84;
+  background-color: #5E5F84;
   left: 0px;
   color: #0F1020;
   font-size: 14px;
@@ -347,14 +356,14 @@
   height: 100%;
   border: none;
   outline: none;
-  background: #0F1020;
+  background-color: #0F1020;
   color: #B3B5D2 !important;
   padding: 0px;
   letter-spacing: 0.2px;
 }
 
 .editor-field:hover .fieldBottom, .editor-field.is-focused .fieldBottom {
-  background: #70719C;
+  background-color: #70719C;
 }
 
 .editor-field:hover .fieldContainer, .editor-field.is-focused .fieldContainer {
@@ -362,21 +371,21 @@
 }
 
 .editor-field:hover .fieldContainer:after, .editor-field:hover .fieldContainer:before, .editor-field.is-focused .fieldContainer:after, .editor-field.is-focused .fieldContainer:before {
-  background: #70719C !important;
+  background-color: #70719C !important;
 }
 
 .editor-field:hover .labelContainer:after, .editor-field.is-focused .labelContainer:after {
-  background: #70719C;
+  background-color: #70719C;
 }
 
 .editor-field:hover .labelField,
 .editor-field:hover .editor-field__helper, .editor-field.is-focused .labelField,
 .editor-field.is-focused .editor-field__helper {
-  background: #70719C;
+  background-color: #70719C;
 }
 
 .btnPrimary button {
-  background: rgba(123, 110, 180, 0.4);
+  background-color: rgba(123, 110, 180, 0.4);
   border-color: rgba(160, 162, 233, 0.4);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -390,23 +399,23 @@
 }
 
 .btnPrimary:hover button {
-  background: #34389f;
+  background-color: #34389f;
   border-color: #494dc3;
 }
 
 .btnPrimary:hover .btnBottom {
-  background: #34389f;
+  background-color: #34389f;
   border-color: #494dc3;
 }
 
 .btnPrimary:active button {
-  background: #2e318c;
+  background-color: #2e318c;
   border-color: #3b3fb3;
   color: #c3c5ec;
 }
 
 .btnPrimary:active .btnBottom {
-  background: #2e318c;
+  background-color: #2e318c;
   border-color: #3b3fb3;
 }
 
@@ -414,7 +423,7 @@
   content: "";
   height: 2px;
   width: 11px;
-  background: rgba(160, 162, 233, 0.4);
+  background-color: rgba(160, 162, 233, 0.4);
   display: block;
   position: absolute;
   z-index: 1;
@@ -440,7 +449,7 @@
   display: block;
   height: 4px;
   width: 50%;
-  background: rgba(123, 110, 180, 0.4);
+  background-color: rgba(123, 110, 180, 0.4);
   pointer-events: none;
   right: 0px;
   bottom: 0px;
@@ -454,7 +463,7 @@
   content: "";
   height: 2px;
   width: 11px;
-  background: rgba(160, 162, 233, 0.4);
+  background-color: rgba(160, 162, 233, 0.4);
   display: block;
   position: absolute;
   left: -5px;
@@ -466,7 +475,7 @@
 
 .myFormButton {
   height: 100%;
-  background: none;
+  background-color: none;
   border: none;
   color: white;
   padding: 0 24px;
@@ -491,6 +500,14 @@
   height: 72%;
 }
 
+@media (max-width: 767px) {
+  .aboutMeFrame {
+    margin: 3vw;
+    overflow: scroll;
+    height: 90vh;
+  }
+}
+
 .aboutMeWrapper {
   position: relative;
   padding: 30px 40px;
@@ -504,7 +521,7 @@
   line-height: 1.9;
   margin: 0 0.5em;
   color: #78cd6e;
-  background-color: #121b14;
+  background-color: #0F1020;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, transparent), color-stop(50%, rgba(10, 15, 8, 0.1))), radial-gradient(transparent 65%, rgba(2, 10, 1, 0.6) 100%);
   background-image: linear-gradient(transparent 50%, rgba(10, 15, 8, 0.1) 50%), radial-gradient(transparent 65%, rgba(2, 10, 1, 0.6) 100%);
   background-size: 15px, 100%;
@@ -561,7 +578,7 @@
   width: 100vw;
   height: 120px;
   mix-blend-mode: screen;
-  background-color: black;
+  background-color: #0F1020;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, transparent), color-stop(50%, rgba(0, 0, 0, 0.5))), -webkit-gradient(linear, left bottom, left top, from(#050f05), color-stop(110%, rgba(0, 0, 0, 0)));
   background-image: linear-gradient(transparent 50%, rgba(0, 0, 0, 0.5) 50%), linear-gradient(to top, #050f05, rgba(0, 0, 0, 0) 110%);
   background-size: 15px 15px, 100%;

@@ -4,6 +4,7 @@ $orangelight: #fe735a;
 $orange: #ce0000; 
 $darkred: #6b1839;
 $purple: rgb(125, 84, 223); 
+$radial-background: radial-gradient(#333, #111); 
 
 $bright-text-shadow: 0 0 10px $white , 0 0 20px $white , 0 0 30px $rose , 0 0 40px $rose , 0 0 70px $rose , 0 0 80px $orangelight , 0 0 100px $orangelight;
 
@@ -14,11 +15,9 @@ $textborder-small: 0 0 0.1rem $white, 0 0 1rem #a6a4d6, -0.2rem 0.1rem 0.5rem #9
 }
 
 html {
-  overflow: hidden; 
   font-size: calc(0.5vw + 6px);
   @media (max-width: 767px) {
     font-size: calc(0.5vw + 10px);
-    // overflow: visible; 
   }
 }
 
@@ -28,6 +27,11 @@ html {
   left:0; 
   right: 0; 
   bottom: 0; 
+}
+
+.Title{
+    height: 100vh;
+    overflow: hidden;
 }
 
 .arcadeBackground {

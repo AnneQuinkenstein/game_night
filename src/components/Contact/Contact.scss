@@ -19,7 +19,10 @@ $yellow: #A4852F;
     color: #B3B5D2;
     font-family: 'Tomorrow' !important;
     font-weight: 500;
-    background-color: #0F1020;
+    background-color: $black; 
+    @media (max-width: 767px) {
+      flex-wrap: wrap;
+    }    
 }
 
 .contactContainerLeft{
@@ -28,6 +31,7 @@ $yellow: #A4852F;
   justify-content: center;
   align-items: center;
   flex-direction: column; 
+  background-color: $black; 
 }
 
 /* Menu */
@@ -43,9 +47,9 @@ $yellow: #A4852F;
   justify-content: left;
   z-index:99;
   @media (max-width: 767px) {
-      width: auto; 
-      height: auto; 
-      margin: 2vh auto;
+      position: fixed;
+      top: -8vh;
+      left: -9vw;
   }
   ul{
     width: 100%; 
@@ -85,10 +89,10 @@ $yellow: #A4852F;
         }
       }
       &:nth-child(1){
-        background: rgba(160, 162, 233,0.4);
+        background-color: rgba(160, 162, 233,0.4);
       }
       &:nth-child(2){
-        background: rgba(123, 110, 180,0.4);
+        background-color: rgba(123, 110, 180,0.4);
       }
       &:hover{
         transform: rotateY(6deg) rotateX(4deg) scale(1.02);
@@ -117,9 +121,10 @@ $yellow: #A4852F;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    @media (max-width: 767px) {
+    background-color: $black;
+     @media (max-width: 767px) {
       width: 91vw; 
-      margin: auto 0 auto 8vw;
+      margin: 2vh 0 auto 8vw;
     }
     h1 {
       font-size: 24px;
@@ -182,7 +187,7 @@ $yellow: #A4852F;
     content: "";
     height: 2px;
     width: 11.5px;
-    background: #5E5F84;
+    background-color: #5E5F84;
     display: block;
     position: absolute;
     z-index: 1;
@@ -204,7 +209,7 @@ $yellow: #A4852F;
     display: block;
     height: 2px;
     width: 30%;
-    background: #5E5F84;
+    background-color: #5E5F84;
     right: 0px;
     clip-path: polygon(0 0, 100% 0%, 100% 100%, calc(0% + 2px) 100%);
     bottom: 0px;
@@ -219,7 +224,7 @@ $yellow: #A4852F;
     display: block;
     height: 4px;
     width: 32px;
-    background: #5E5F84;
+    background-color: #5E5F84;
     right: -29px;
     -webkit-clip-path: polygon(0 0, calc(100% - 2px) 0%, 100% 100%, 22% 100%);
     clip-path: polygon(0 0, calc(100% - 2px) 0%, 100% 100%, 0% 100%);
@@ -230,7 +235,7 @@ $yellow: #A4852F;
     display: block;
     height: 22px;
     width: auto;
-    background: #5E5F84;
+    background-color: #5E5F84;
     left: 0px;
     color: #0F1020;
     font-size: 14px;
@@ -247,32 +252,32 @@ $yellow: #A4852F;
     height: 100%;
     border: none;
     outline: none;
-    background: #0F1020;
+    background-color: $black;
     color: #B3B5D2 !important;
     padding: 0px; 
     letter-spacing: 0.2px;
   }
 
   .editor-field:hover .fieldBottom, .editor-field.is-focused .fieldBottom {
-    background: #70719C;
+    background-color: #70719C;
   }
   .editor-field:hover .fieldContainer, .editor-field.is-focused .fieldContainer {
     border-color: #70719C;
   }
   .editor-field:hover .fieldContainer:after, .editor-field:hover .fieldContainer:before, .editor-field.is-focused .fieldContainer:after, .editor-field.is-focused .fieldContainer:before {
-    background: #70719C !important;
+    background-color: #70719C !important;
   }
   .editor-field:hover .labelContainer:after, .editor-field.is-focused .labelContainer:after {
-    background: #70719C;
+    background-color: #70719C;
   }
   .editor-field:hover .labelField,
   .editor-field:hover .editor-field__helper, .editor-field.is-focused .labelField,
   .editor-field.is-focused .editor-field__helper {
-    background: #70719C;
+    background-color: #70719C;
   }
     
   .btnPrimary button {
-    background: rgba(123, 110, 180,0.4);
+    background-color: rgba(123, 110, 180,0.4);
     border-color: rgba(160, 162, 233,0.4);
     display: flex;
     align-items: center;
@@ -281,27 +286,27 @@ $yellow: #A4852F;
     text-shadow: 1px 1px 2px rgb(197, 51, 161), 0 0 1em rgb(74, 22, 90), 0 0 0.2em rgb(125, 84, 223);
   }
   .btnPrimary:hover button {
-    background: #34389f;
+    background-color: #34389f;
     border-color: #494dc3;
   }
   .btnPrimary:hover .btnBottom {
-    background: #34389f;
+    background-color: #34389f;
     border-color: #494dc3;
   }
   .btnPrimary:active button {
-    background: #2e318c;
+    background-color: #2e318c;
     border-color: #3b3fb3;
     color: #c3c5ec;
   }
   .btnPrimary:active .btnBottom {
-    background: #2e318c;
+    background-color: #2e318c;
     border-color: #3b3fb3;
   }
   .btn:before, .btn:after {
     content: "";
     height: 2px;
     width: 11px;
-    background: rgba(160, 162, 233,0.4);
+    background-color: rgba(160, 162, 233,0.4);
     display: block;
     position: absolute;
     z-index: 1;
@@ -324,7 +329,7 @@ $yellow: #A4852F;
     display: block;
     height: 4px;
     width: 50%;
-    background: rgba(123, 110, 180,0.4);
+    background-color: rgba(123, 110, 180,0.4);
     pointer-events: none;
     right: 0px;
     bottom: 0px;
@@ -336,7 +341,7 @@ $yellow: #A4852F;
     content: "";
     height: 2px;
     width: 11px;
-    background: rgba(160, 162, 233,0.4);
+    background-color: rgba(160, 162, 233,0.4);
     display: block;
     position: absolute;
     left: -5px;
@@ -348,7 +353,7 @@ $yellow: #A4852F;
 
   .myFormButton {
     height: 100%;
-    background: none;
+    background-color: none;
     border: none;
     color: white;
     padding: 0 24px;
@@ -360,6 +365,11 @@ $yellow: #A4852F;
   /* about Me Text */
   .aboutMeFrame {
     margin: auto 0 auto 10vw; 
+    @media (max-width: 767px) {
+      margin: 3vw; 
+      overflow: scroll; 
+      height: 90vh; 
+    }
     background-color: transparent;
     border-radius: 10%;
     border: 1rem solid;
@@ -386,7 +396,7 @@ $yellow: #A4852F;
     line-height: 1.9;
     margin: 0 0.5em;
     color: #78cd6e;
-    background-color: #121b14;
+    background-color: $black;
     background-image: linear-gradient(transparent 50%, rgba(10, 15, 8, 0.1) 50%), radial-gradient(transparent 65%, rgba(2, 10, 1, 0.6) 100%);
     background-size: 15px, 100%;
     border-radius: 10%; 
@@ -427,7 +437,7 @@ $yellow: #A4852F;
     width: 100vw;
     height: 120px;
     mix-blend-mode: screen;
-    background-color: black;
+    background-color: $black;
     background-image: linear-gradient(transparent 50%, rgba(0, 0, 0, 0.5) 50%), linear-gradient(to top, #050f05, rgba(0, 0, 0, 0) 110%);
     background-size: 15px 15px, 100%;
     animation: scan 2.5s linear infinite, blink 0.6s infinite;
