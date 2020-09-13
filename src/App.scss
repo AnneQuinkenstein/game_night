@@ -18,6 +18,7 @@ html {
   font-size: calc(0.5vw + 6px);
   @media (max-width: 767px) {
     font-size: calc(0.5vw + 10px);
+    // overflow: visible; 
   }
 }
 
