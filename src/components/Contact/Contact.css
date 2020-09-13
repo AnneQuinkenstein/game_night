@@ -503,7 +503,6 @@
 @media (max-width: 767px) {
   .aboutMeFrame {
     margin: 3vw;
-    overflow: scroll;
     height: 90vh;
   }
 }
