@@ -14,12 +14,15 @@ $pinkish-text-shadow:  0.5px 0.5px 1px rgb(197, 51, 161), 0 0 0.25em rgb(74, 22,
 
 $radial-background: radial-gradient(#333, #111); 
 
-@media (max-width: 767px)  {
+
 
   .HamburgermenuToggle {
+    display:none; 
+    @media (max-width: 767px)  {
+    display: block; 
     position: absolute;
-    top: 50px;
-    left: 50px;
+    top: 25px;
+    left: 25px;
     z-index: 100;
     &.show{
       span{
@@ -62,7 +65,7 @@ $radial-background: radial-gradient(#333, #111);
     .menu{ 
       margin: -100px 0 0 -50px;
       padding: 50px;
-      padding-top: 125px;
+      padding-top: 33vh;
       list-style-type: none;
       -webkit-font-smoothing: antialiased;
       /* to stop flickering of text in safari */
@@ -85,13 +88,11 @@ $radial-background: radial-gradient(#333, #111);
       -moz-perspective: 700px;
       perspective-origin: center top; 
         li {
-          padding: 15px;
-          font-size: 1.5rem;
-          transform: rotateY(20deg) rotateX(-25deg) skewY(15deg); 
+          padding: 13px;
+          font-size: 1.2rem;
+          transform: rotateY(15deg) rotateX(-15deg) skewY(5deg); 
           text-align: right;
           transition: color 0.3s ease;
-          width: 10vw;
-              min-width: 4.5em;
               font-weight: 800;
               color: $semiwhite;
               border-radius: 10px;
@@ -108,10 +109,10 @@ $radial-background: radial-gradient(#333, #111);
                   mix-blend-mode: normal;
               }
               &:nth-child(even) {
-                  background: rgba(75, 75, 114, 0.4);
+                  background: rgba(75, 75, 114, 0.9);
               }
               &:nth-child(odd) {
-                  background: rgba(123, 110, 180, 0.4);
+                  background: rgba(123, 110, 180, 0.9);
               }
               a {
                   font-size: 1.3rem;
