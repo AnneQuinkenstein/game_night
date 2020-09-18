@@ -12,6 +12,10 @@ html {
   }
 }
 
+body {
+  background: #0F1020;
+}
+
 .page {
   position: absolute;
   top: 0;

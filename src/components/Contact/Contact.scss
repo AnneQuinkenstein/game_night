@@ -31,7 +31,6 @@ $yellow: #A4852F;
   justify-content: center;
   align-items: center;
   flex-direction: column; 
-  background-color: $black; 
 }
 
 /* Menu */
@@ -367,7 +366,8 @@ $yellow: #A4852F;
     margin: auto 0 auto 10vw; 
     @media (max-width: 767px) {
       margin: 3vw; 
-      height: 90vh; 
+      height: 77vh;
+      overflow: scroll; 
     }
     background-color: transparent;
     border-radius: 10%;
@@ -413,6 +413,9 @@ $yellow: #A4852F;
     background-size: 100 100;
     animation: noise 240ms infinite;
     background-image: url(http://api.thumbr.it/whitenoise-300x300.png?background=0a2406ff&noise=142238&density=85&opacity=100);
+    @media (max-width: 767px) {
+      height: 100%; 
+    }
   }
   
   @keyframes noise {

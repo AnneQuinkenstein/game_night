@@ -38,7 +38,6 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #0F1020;
 }
 
 /* Menu */
@@ -503,7 +502,8 @@
 @media (max-width: 767px) {
   .aboutMeFrame {
     margin: 3vw;
-    height: 90vh;
+    height: 77vh;
+    overflow: scroll;
   }
 }
 
@@ -540,6 +540,12 @@
   -webkit-animation: noise 240ms infinite;
           animation: noise 240ms infinite;
   background-image: url(http://api.thumbr.it/whitenoise-300x300.png?background=0a2406ff&noise=142238&density=85&opacity=100);
+}
+
+@media (max-width: 767px) {
+  .aboutMeLine {
+    height: 100%;
+  }
 }
 
 @-webkit-keyframes noise {
