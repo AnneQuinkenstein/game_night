@@ -30,12 +30,12 @@
 ### Built With
 
 - [React](https://reactjs.org/)
-- [React Context](https://material-ui.com/)
-- [React Router](https://formspree.io/)
-- [Transition Groups](https://formspree.io/)
+- [React Context](https://reactjs.org/docs/context.html)
+- [React Router](https://reactrouter.com/)
+- [Transition Groups](http://reactcommunity.org/react-transition-group)
 - [Formspree](https://formspree.io/)
 - [Open Movie API](https://www.omdbapi.com/)
-- [Developer Joke API](https://formspree.io/)
+- [Developer Joke API](https://sv443.net/jokeapi/v2/)
 - [Giphy API](https://giphy.com/)
 
 ## Contact
