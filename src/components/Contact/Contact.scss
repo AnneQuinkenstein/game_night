@@ -31,6 +31,12 @@ $yellow: #A4852F;
   justify-content: center;
   align-items: center;
   flex-direction: column; 
+  @media (max-width: 767px) {
+    height: auto; 
+    top: -8vh;
+    left: -9vw;
+    padding-bottom: 7vh; 
+}
 }
 
 /* Menu */

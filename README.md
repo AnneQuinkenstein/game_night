@@ -1,81 +1,47 @@
 
-Do you find the easteregg? https://game-night-aquin.netlify.app/
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links-->
+<!-- search and replace  game_night -->
 
-## Used Technology
+<p align="center">
+  <a href="mailto:a.quinkenstein@gmail.com"><img src="https://image.flaticon.com/icons/svg/725/725643.svg" height="20" width="20" /></a>
+  <a href="https://linkedin.com/in/AnneQuinkenstein"><img src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/linkedin.svg" height="20"     width="20" /></a>
+</p>
 
-React 
-  - Router
-  - Context
-  - Hooks
-  - Transition-Groups
-  - public API for Movie-Titles, - Poster, Coding Jokes 
- 
+<!-- PROJECT LOGO -->
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  <h3 align="center">GAME NIGHT</h3>
 
-## Available Scripts
+<br />
+<p align="center">
+  <a href="https://game-night-aquin.netlify.app/">
+    <img src="https://i.ibb.co/0Z13t1L/gamenight.png" alt="Logo" width="300" height="160">
+  </a>
 
-In the project directory, you can run:
+  <p align="center">
+    Game Night is to have fun online alone or with friends e.g. during a pandemie. Play Hangman with Movie Titles (fetched from a open Movie Database) -If your Guess is wrong, you will see a Giphy with a hint. Additionally - will you find the easteregg? 
+    <br />
+    <br />
+    <a href="https://game-night-aquin.netlify.app/">Demo</a>
+    ·
+    <a href="https://github.com/AnneQuinkenstein/game_night/issues">Report Bug</a>
+  </p>
+</p>
 
-### `yarn start`
+### Built With
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [React](https://reactjs.org/)
+- [React Context](https://material-ui.com/)
+- [React Router](https://formspree.io/)
+- [Transition Groups](https://formspree.io/)
+- [Formspree](https://formspree.io/)
+- [Open Movie API](https://www.omdbapi.com/)
+- [Developer Joke API](https://formspree.io/)
+- [Giphy API](https://giphy.com/)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Contact
 
-### `yarn test`
+<p> <a target="_blank" href="https://www.linkedin.com/in/anne-quinkenstein"><img src="https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the-badge&logo=Linkedin&logoColor=white"></img></a>
+<a target="_blank" href="mailto:a.quinkenstein@gmail.com"><img src="https://img.shields.io/badge/-Gmail-D14836?style=for-the-badge&logo=Gmail&logoColor=white"></img></a>
+</p>
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+<img src="https://media.giphy.com/media/LnQjpWaON8nhr21vNW/giphy.gif" width="60"> <em>I love connecting with different people. So if you want to say 'hi', I'll be happy to meet you more! :)</em>
