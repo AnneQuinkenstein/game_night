@@ -36,7 +36,7 @@ export default function ImageSlider({ images }) {
               timeout={1000}
               classNames={direction}
             >
-              <img src={images[index]} />
+              <img src={images[index]} alt="Movie Poster or Gif from Giphy" />
           
             </CSSTransition>
           </TransitionGroup>

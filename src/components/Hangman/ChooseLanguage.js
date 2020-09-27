@@ -7,7 +7,7 @@ const ChooseLanguage = () => {
 
     return (
         <ul>
-            {options.map(opt => <li className={choosenLang === opt? 'selected': null} onClick={(e)=> handleChooseLang({opt},e)}> {opt} </li>)} 
+            {options.map(opt => <li className={choosenLang === opt? 'selected': null} onClick={(e)=> handleChooseLang({opt},e)} key={opt}> {opt} </li>)} 
         </ul>
     )
 }

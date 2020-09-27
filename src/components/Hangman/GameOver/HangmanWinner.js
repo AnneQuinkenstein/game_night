@@ -8,8 +8,9 @@ const HangmanWinner = () => {
     const { movieData, gifs } = useContext(HangmanContext);
     const [images, setImages] = useState([]);
 
-    useEffect(() => doImagesArr(), [gifs])
-
+    useEffect(() => {
+        doImagesArr()
+    }, [gifs, movieData]);
 
     const doImagesArr = () => {
         if (gifs && movieData) {

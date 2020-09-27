@@ -3,7 +3,6 @@ import './Contact.css';
 import MyForm from './MyForm';
 import Text from './Text';
 import ContactMenu from './ContactMenu';
-import Hambugermenu from '../Hangman/Hamburgermenu';
 
 function Contact() {
   return (
