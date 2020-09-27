@@ -16,7 +16,7 @@ const Hangman = () => {
     const { gameState, style } = useContext(HangmanContext);
  
     const renderGameState = () => {
-        if (style == 1 && gameState != 'loose' && gameState != 'won') {
+        if (style === 1 && gameState !== 'loose' && gameState !== 'won') {
             return (
                 <div className="Hangman page">
                     <Hambugermenu />
@@ -40,7 +40,7 @@ const Hangman = () => {
                     <HangmanLooser />
                 </div>
             )
-        } else if (style > 1 && gameState != 'loose' && gameState != 'won') {
+        } else if (style > 1 && gameState !== 'loose' && gameState !== 'won') {
             return (
                 <div className="Hangman page" >
                     <Hambugermenu />

@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { HangmanContext } from '../../../contexts/HangmanContext';
 import Gif from './Gif';
 

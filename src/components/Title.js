@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import pacghost from '../blinky.png';
@@ -29,13 +29,13 @@ const Title = () => {
         <div className="containerPacman">
           <div className="titleGameTease">
             <div className='titlehangman'>
-              <img src={pacghost} />
+              <img src={pacghost} alt="pacmanghost"/>
              <Link to='/hangman'>HANGMAN</Link></div>
             <div className='titlehangman'>
-              <img src={pacghost} />
+              <img src={pacghost} alt="pacmanghost" />
              <Link to='/contact'>CONTACT</Link> </div>
             <div className='titlehangman'>
-              <img src={pacghost} />
+              <img src={pacghost} alt="pacmanghost" />
             </div>
           </div>
         </div>

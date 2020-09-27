@@ -6,11 +6,7 @@ const HangmanLooseMenu = () => {
     const { movieData, mount } = useContext(HangmanContext);
 
     const movieTitle = movieData && (movieData.original_language === "en" ? movieData.original_title : movieData.title)
-    
-    const refresh = () => {
-        mount(); 
-        
-    }
+
 
     return (
         <div className="HangmanEnd" >
