@@ -1,17 +1,10 @@
-import React, { useContext } from 'react';
-import { HangmanContext } from '../../contexts/HangmanContext';
+import React, { useContext } from "react";
+import { HangmanContext } from "../../contexts/HangmanContext";
 
 const DisplayWord = () => {
+  const { answer, movieData } = useContext(HangmanContext);
 
-    const { answer, movieData } = useContext(HangmanContext);
-console.log(movieData);
-return (
-    <div>
-        {answer}
-    </div>
-)
-}
+  return <div>{answer}</div>;
+};
 
 export default DisplayWord;
-
-

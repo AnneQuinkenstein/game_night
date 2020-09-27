@@ -5,7 +5,6 @@ export const HangmanContext = createContext();
 const HangmanContextComponent = (props) => {
   const [style, setStyle] = useState(1);
   const [movieData, setMovieData] = useState(null);
-  const [movieId, setMovieId] = useState(null);
   const [guessedLetters, setGuessedLetters] = useState([]);
   const [choosenLang, setchoosenLang] = useState("english");
   const [gameState, setGameState] = useState("");
@@ -17,36 +16,23 @@ const HangmanContextComponent = (props) => {
     setStyle(style + 1);
     setGuessedLetters([]);
     setGameState("");
+    getMovieData();
   };
 
   //Fetch Array of popluar Movies
-  const randomNum = Math.floor(Math.random() * 100);
-
-  useEffect(() => {
-    getMovie();
-  }, [choosenLang, style]);
+  const randomNum = Math.floor(Math.random() * 20);
 
   useEffect(() => {
     getMovieData();
-  }, [movieId]);
-
-  const getMovie = () => {
-    fetch(`https://imdb-api.com/en/API/MostPopularMovies/k_orIqSAxu`)
-      .then((res) => res.json())
-      .then((data) => setMovieId(data.items[randomNum].id));
-  };
+  }, [choosenLang]);
 
   const getMovieData = () => {
-    movieId &&
-      fetch(
-        `https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.REACT_APP_MOVIEDB_KEY}&language=${languages[choosenLang]}`
-      )
-        .then((res) => res.json())
-        .then((data) => setMovieData(data));
+    fetch(
+      `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_MOVIEDB_KEY}&language=${languages[choosenLang]}&sort_by=popularity.desc&page=1}`
+    )
+      .then((res) => res.json())
+      .then((data) => setMovieData(data.results[randomNum]));
   };
-
-  console.log("movieId", movieId);
-  console.log("movieData", movieData);
 
   // fetch Gifs for Top and Bottom Hangman-Game & Winning Page
   const movieTitle =
