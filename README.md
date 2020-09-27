@@ -32,11 +32,14 @@
 - [React](https://reactjs.org/)
 - [React Context](https://reactjs.org/docs/context.html)
 - [React Router](https://reactrouter.com/)
-- [Transition Groups](http://reactcommunity.org/react-transition-group)
+- [React Transition Groups](http://reactcommunity.org/react-transition-group)
+- [SCSS](https://sass-lang.com/)
+- [Axios](https://www.axios.com/)
 - [Formspree](https://formspree.io/)
 - [Open Movie API](https://www.omdbapi.com/)
 - [Developer Joke API](https://sv443.net/jokeapi/v2/)
 - [Giphy API](https://giphy.com/)
+
 
 ## Contact
 
