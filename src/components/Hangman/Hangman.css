@@ -16,8 +16,8 @@
   position: absolute;
   z-index: 5;
   opacity: 0;
-  height: 95%;
-  width: 95%;
+  height: 98%;
+  width: 98%;
   left: 0;
 }
 
@@ -39,7 +39,11 @@
 }
 
 @media (max-width: 767px) {
-  .GifsList:nth-of-type(5), .Gif:nth-of-type(4), .Gifanimated:nth-of-type(4), .Gif:nth-of-type(5), .Gifanimated:nth-of-type(5) {
+  .GifsList:nth-of-type(5),
+  .Gif:nth-of-type(4),
+  .Gifanimated:nth-of-type(4),
+  .Gif:nth-of-type(5),
+  .Gifanimated:nth-of-type(5) {
     display: none;
   }
 }
@@ -68,7 +72,7 @@
 }
 
 .Gifanimated {
-  border: 20px dotted;
+  border: 7px solid;
   -webkit-animation: bordercolor 3s linear;
           animation: bordercolor 3s linear;
   -webkit-animation-fill-mode: both;
@@ -77,30 +81,52 @@
 
 @media (max-width: 767px) {
   .Gifanimated {
-    border: 5px dotted;
+    border: 5px solid;
   }
 }
 
 @-webkit-keyframes bordercolor {
-  0%, 7%, 40%, 49%, 70%, 80% {
+  0%,
+  7%,
+  40%,
+  49%,
+  70%,
+  80% {
     border-color: #7d54df;
   }
-  5%, 30%, 55%, 100% {
+  5%,
+  30%,
+  55%,
+  100% {
     border-color: black;
   }
-  10%, 45%, 60%, 75% {
+  10%,
+  45%,
+  60%,
+  75% {
     border-color: #c533a1;
   }
 }
 
 @keyframes bordercolor {
-  0%, 7%, 40%, 49%, 70%, 80% {
+  0%,
+  7%,
+  40%,
+  49%,
+  70%,
+  80% {
     border-color: #7d54df;
   }
-  5%, 30%, 55%, 100% {
+  5%,
+  30%,
+  55%,
+  100% {
     border-color: black;
   }
-  10%, 45%, 60%, 75% {
+  10%,
+  45%,
+  60%,
+  75% {
     border-color: #c533a1;
   }
 }
@@ -125,7 +151,7 @@
 }
 
 .wrongLetter, .Gif .wrongLetter, .Gifanimated .wrongLetter {
-  font-family: 'Fira Mono', monospace;
+  font-family: "Fira Mono", monospace;
   letter-spacing: -5px;
   position: absolute;
   font-size: 5em;
@@ -212,8 +238,8 @@
 
 .fly-in div span {
   display: block;
-  font-size: .4em;
-  opacity: .8;
+  font-size: 0.4em;
+  opacity: 0.8;
   text-transform: uppercase;
 }
 
@@ -678,10 +704,13 @@
 }
 
 .hangmanLooser .HangmanEnd ul li:hover {
-  -webkit-transform: rotateY(6deg) rotateX(4deg) scale(1.02);
-          transform: rotateY(6deg) rotateX(4deg) scale(1.02);
-  -webkit-transition: selectoption 0.4s ease-out;
-  transition: selectoption 0.4s ease-out;
+  -webkit-transform: translateY(20%) rotateY(1deg) rotateX(4deg) scale(1.02);
+          transform: translateY(20%) rotateY(1deg) rotateX(4deg) scale(1.02);
+  text-shadow: 0.5px 0.5px 1px #c533a1, 0 0 0.25em #4a165a, 0 0 0.02em #7d54df;
+  -webkit-transition: -webkit-transform 0.4s ease-out;
+  transition: -webkit-transform 0.4s ease-out;
+  transition: transform 0.4s ease-out;
+  transition: transform 0.4s ease-out, -webkit-transform 0.4s ease-out;
   z-index: 999;
   mix-blend-mode: normal;
 }
@@ -871,7 +900,7 @@
   }
 }
 
-.hangmanWinMenu ul:hover {
+.hangmanWinMenu ul li:hover {
   -webkit-transform: rotateY(6deg) rotateX(4deg) scale(1.02);
           transform: rotateY(6deg) rotateX(4deg) scale(1.02);
   -webkit-transition: selectoption 0.4s ease-out;

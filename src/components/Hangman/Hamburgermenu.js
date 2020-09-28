@@ -21,7 +21,7 @@ const Hamburgermenu = () => {
                 <span></span>
                 <ul className="menu">
                     <li onClick={() => setRules(!rules)}> {rules ? 'Game' : 'Rules'} </li>
-                    <li onClick={mount}>{rules ? 'whatsup' : 'New Game'}</li>
+                    {!rules && <li onClick={mount}>New Game</li>}
                     <li><Link to='/contact'>Contact</Link></li>
                     <li><Link to='/title'>Start&nbsp;Menu</Link></li>
                 </ul>

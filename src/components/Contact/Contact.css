@@ -16,6 +16,7 @@
   background-color: #0f1020;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  z-index: -1;
 }
 
 /* Menu */
@@ -45,9 +46,11 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  z-index: 99;
 }
 
 .ContactMenu ul li {
+  z-index: 99;
   border-radius: 10px;
   padding: 15px;
   cursor: pointer;
@@ -68,6 +71,7 @@
 }
 
 .ContactMenu ul li a {
+  z-index: 99;
   font-weight: 800;
   font-size: 1.7rem;
   text-align: center;
@@ -103,7 +107,7 @@
   transition: transform 0.4s ease-out, -webkit-transform 0.4s ease-out;
   -webkit-transform: transform 0.4s ease-out;
   -moz-transform: transform 0.4s ease-out;
-  z-index: 999;
+  z-index: 2;
   mix-blend-mode: normal;
 }
 
@@ -525,7 +529,7 @@
 
 .aboutMeLine {
   position: absolute;
-  z-index: 999;
+  z-index: 2;
   top: 0;
   left: 0;
   width: 100%;
