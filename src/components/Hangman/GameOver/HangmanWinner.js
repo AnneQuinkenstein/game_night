@@ -9,20 +9,18 @@ const HangmanWinner = () => {
     const [images, setImages] = useState([]);
 
     useEffect(() => {
-        doImagesArr()
-    }, [gifs, movieData]);
-
-    const doImagesArr = () => {
         if (gifs && movieData) {
             const movieArr = [`https://image.tmdb.org/t/p/original${movieData.poster_path}`, `https://image.tmdb.org/t/p/original${movieData.backdrop_path}`];
             const gifsArr = gifs.map(gif => `${gif.images.downsized_large.url}`);
             setImages(movieArr.concat(gifsArr))
         }
-    }
+    }, [gifs, movieData]);
+
+    //use images as terenary operator if it not works
 
     return (
         <div className="Hangmanwinner page">
-            {doImagesArr && <HangmanWinMenu />}
+            <HangmanWinMenu />
             < div >
                 <ImageSlider images={images} />
             </div >
