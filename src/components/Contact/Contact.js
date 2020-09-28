@@ -8,9 +8,9 @@ function Contact() {
   return (
     <>
     <div className="contactContainer page">
+    <ContactMenu />
       <Text />
-      <div className="contactContainerLeft">
-        <ContactMenu />
+      <div className="contactFormContainer">
         <MyForm />
       </div>
     </div>
