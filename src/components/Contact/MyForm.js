@@ -4,6 +4,7 @@ class MyForm extends React.Component {
     constructor(props) {
         super(props);
         this.submitForm = this.submitForm.bind(this);
+        this.renderButton = this.renderButton.bind(this);
         this.state = {
             status: ""
         };
@@ -28,6 +29,15 @@ class MyForm extends React.Component {
         };
         xhr.send(data);
     }
+
+ renderButton=()=>{
+       return (
+<div className="btn btnPrimary">
+<button type="submit" className="myFormButton">Submit</button>
+<div className="btnBottom"></div> 
+</div>
+       )
+      }
 
     render() {
         const { status } = this.state;
@@ -58,11 +68,9 @@ class MyForm extends React.Component {
                     </div>
                     <span className="fieldBottom"></span>
                 </label>
-                <div className="btn btnPrimary">
-                    {status === "SUCCESS" ? <h1>Thanks!</h1> : <button type="submit" className="myFormButton">Submit</button>}
+                    {status === "SUCCESS" ? <h1>Thanks!</h1> : this.renderButton() }
                     {status === "ERROR" && <h1>Ooops! There was an error.</h1>}
-                    <div className="btnBottom"></div> 
-                </div>
+              
             </form>
         );
     }

@@ -3,67 +3,28 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   font-size: 13.5px !important;
-  color: #B3B5D2;
-  font-family: 'Tomorrow' !important;
+  color: #b3b5d2;
+  font-family: "Tomorrow" !important;
   font-weight: 500;
-  background-color: #0F1020;
-}
-
-@media (max-width: 767px) {
-  .contactContainer {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-  }
-}
-
-.contactContainerLeft {
-  height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  background-color: #0f1020;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 /* Menu */
 .ContactMenu {
   padding: 1em;
-  height: 20em;
-  width: 100%;
-  text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: left;
-      -ms-flex-pack: left;
-          justify-content: left;
+  position: fixed;
+  top: 0.5rem;
+  right: 3rem;
   z-index: 99;
-}
-
-@media (max-width: 767px) {
-  .ContactMenu {
-    position: fixed;
-    top: -8vh;
-    left: -9vw;
-  }
 }
 
 .ContactMenu ul {
@@ -84,8 +45,6 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-left: 23vw;
-  margin-top: -3vh;
 }
 
 .ContactMenu ul li {
@@ -179,9 +138,36 @@
 }
 
 /* Contact Form */
-.formContainer {
-  width: 40vw;
-  margin: -5vh 0 auto 8vw;
+.contactFormContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (max-width: 767px) {
+  .contactFormContainer {
+    height: auto;
+    top: -8vh;
+    left: -9vw;
+    padding-bottom: 7vh;
+  }
+}
+
+.contactFormContainer .formContainer {
+  width: 30vw;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
+  min-width: min-content;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -192,17 +178,18 @@
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  background-color: #0F1020;
+  background-color: #0f1020;
+  margin-top: 7vh;
 }
 
 @media (max-width: 767px) {
-  .formContainer {
+  .contactFormContainer .formContainer {
     width: 91vw;
     margin: 2vh 0 auto 8vw;
   }
 }
 
-.formContainer h1 {
+.contactFormContainer .formContainer h1 {
   font-size: 24px;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
@@ -216,35 +203,39 @@
   padding: 0px 0 1vh 0;
 }
 
-.formContainer .editor-field {
+.contactFormContainer .formContainer .editor-field {
   position: relative;
   margin: 14px 0;
-  fill: #70719C;
+  fill: #70719c;
 }
 
-.formContainer .email {
+.contactFormContainer .formContainer .email {
   height: 76px;
-  width: 60%;
+  width: 90%;
 }
 
-@media (max-width: 767px) {
-  .formContainer .email {
-    width: 90%;
-  }
+.contactFormContainer .formContainer .email .emailField {
+  height: 48px;
 }
 
-.formContainer .message {
+.contactFormContainer .formContainer .message {
   height: 212px;
-  width: 70%;
+  width: 100%;
+  min-width: 380px;
 }
 
 @media (max-width: 767px) {
-  .formContainer .message {
+  .contactFormContainer .formContainer .message {
     width: 90%;
+    min-width: 0;
   }
 }
 
-.formContainer .btn {
+.contactFormContainer .formContainer .message .messageField {
+  height: 184px;
+}
+
+.contactFormContainer .formContainer .btn {
   display: inline-block;
   position: relative;
   height: 50px;
@@ -252,32 +243,25 @@
   cursor: pointer;
 }
 
-.formContainer .btnPrimary {
+.contactFormContainer .formContainer .btnPrimary {
   fill: rgba(160, 162, 233, 0.4);
-}
-
-.emailField {
-  height: 48px;
-}
-
-.messageField {
-  height: 184px;
 }
 
 .fieldContainer {
   -webkit-clip-path: polygon(0% 0%, calc(100% - 8px) 0, 100% 8px, 100% 100%, 95% 100%, calc(0% + 8px) 100%, 0% calc(100% - 8px), 0% calc(100% + 8px));
           clip-path: polygon(0% 0%, calc(100% - 8px) 0, 100% 8px, 100% 100%, 95% 100%, calc(0% + 8px) 100%, 0% calc(100% - 8px), 0% calc(100% + 8px));
-  border: 2px solid #5E5F84;
+  border: 2px solid #5e5f84;
   width: 100%;
   position: absolute;
   bottom: 2px;
 }
 
-.fieldContainer:before, .fieldContainer:after {
+.fieldContainer:before,
+.fieldContainer:after {
   content: "";
   height: 2px;
   width: 11.5px;
-  background-color: #5E5F84;
+  background-color: #5e5f84;
   display: block;
   position: absolute;
   z-index: 1;
@@ -302,7 +286,7 @@
   display: block;
   height: 2px;
   width: 30%;
-  background-color: #5E5F84;
+  background-color: #5e5f84;
   right: 0px;
   -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, calc(0% + 2px) 100%);
           clip-path: polygon(0 0, 100% 0%, 100% 100%, calc(0% + 2px) 100%);
@@ -320,7 +304,7 @@
   display: block;
   height: 4px;
   width: 32px;
-  background-color: #5E5F84;
+  background-color: #5e5f84;
   right: -29px;
   -webkit-clip-path: polygon(0 0, calc(100% - 2px) 0%, 100% 100%, 22% 100%);
   clip-path: polygon(0 0, calc(100% - 2px) 0%, 100% 100%, 0% 100%);
@@ -332,9 +316,9 @@
   display: block;
   height: 22px;
   width: auto;
-  background-color: #5E5F84;
+  background-color: #5e5f84;
   left: 0px;
-  color: #0F1020;
+  color: #0f1020;
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 1.25px;
@@ -355,32 +339,39 @@
   height: 100%;
   border: none;
   outline: none;
-  background-color: #0F1020;
-  color: #B3B5D2 !important;
+  background-color: #0f1020;
+  color: #b3b5d2 !important;
   padding: 0px;
   letter-spacing: 0.2px;
 }
 
-.editor-field:hover .fieldBottom, .editor-field.is-focused .fieldBottom {
-  background-color: #70719C;
+.editor-field:hover .fieldBottom,
+.editor-field.is-focused .fieldBottom {
+  background-color: #70719c;
 }
 
-.editor-field:hover .fieldContainer, .editor-field.is-focused .fieldContainer {
-  border-color: #70719C;
+.editor-field:hover .fieldContainer,
+.editor-field.is-focused .fieldContainer {
+  border-color: #70719c;
 }
 
-.editor-field:hover .fieldContainer:after, .editor-field:hover .fieldContainer:before, .editor-field.is-focused .fieldContainer:after, .editor-field.is-focused .fieldContainer:before {
-  background-color: #70719C !important;
+.editor-field:hover .fieldContainer:after,
+.editor-field:hover .fieldContainer:before,
+.editor-field.is-focused .fieldContainer:after,
+.editor-field.is-focused .fieldContainer:before {
+  background-color: #70719c !important;
 }
 
-.editor-field:hover .labelContainer:after, .editor-field.is-focused .labelContainer:after {
-  background-color: #70719C;
+.editor-field:hover .labelContainer:after,
+.editor-field.is-focused .labelContainer:after {
+  background-color: #70719c;
 }
 
 .editor-field:hover .labelField,
-.editor-field:hover .editor-field__helper, .editor-field.is-focused .labelField,
+.editor-field:hover .editor-field__helper,
+.editor-field.is-focused .labelField,
 .editor-field.is-focused .editor-field__helper {
-  background-color: #70719C;
+  background-color: #70719c;
 }
 
 .btnPrimary button {
@@ -398,7 +389,6 @@
 }
 
 .btnPrimary:hover button {
-  background-color: #34389f;
   border-color: #494dc3;
 }
 
@@ -418,7 +408,8 @@
   border-color: #3b3fb3;
 }
 
-.btn:before, .btn:after {
+.btn:before,
+.btn:after {
   content: "";
   height: 2px;
   width: 11px;
@@ -486,7 +477,6 @@
 
 /* about Me Text */
 .aboutMeFrame {
-  margin: auto 0 auto 10vw;
   background-color: transparent;
   border-radius: 10%;
   border: 1rem solid;
@@ -502,15 +492,15 @@
 @media (max-width: 767px) {
   .aboutMeFrame {
     margin: 3vw;
-    height: 77vh;
-    overflow: scroll;
+    height: 82.5vh;
+    overflow: auto;
   }
 }
 
 .aboutMeWrapper {
   position: relative;
   padding: 30px 40px;
-  max-width: 780px;
+  max-width: 600px;
   margin: 0 auto !important;
   min-height: 70vh;
   font-family: "Space Mono", monospace;
@@ -520,11 +510,17 @@
   line-height: 1.9;
   margin: 0 0.5em;
   color: #78cd6e;
-  background-color: #0F1020;
+  background-color: #0f1020;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, transparent), color-stop(50%, rgba(10, 15, 8, 0.1))), radial-gradient(transparent 65%, rgba(2, 10, 1, 0.6) 100%);
   background-image: linear-gradient(transparent 50%, rgba(10, 15, 8, 0.1) 50%), radial-gradient(transparent 65%, rgba(2, 10, 1, 0.6) 100%);
   background-size: 15px, 100%;
   border-radius: 10%;
+}
+
+@media (max-width: 767px) {
+  .aboutMeWrapper {
+    min-height: 76vh;
+  }
 }
 
 .aboutMeLine {
@@ -532,20 +528,14 @@
   z-index: 999;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   mix-blend-mode: screen;
   opacity: 0.65;
   background-size: 100 100;
   -webkit-animation: noise 240ms infinite;
           animation: noise 240ms infinite;
   background-image: url(http://api.thumbr.it/whitenoise-300x300.png?background=0a2406ff&noise=142238&density=85&opacity=100);
-}
-
-@media (max-width: 767px) {
-  .aboutMeLine {
-    height: 100%;
-  }
 }
 
 @-webkit-keyframes noise {
@@ -583,7 +573,7 @@
   width: 100vw;
   height: 120px;
   mix-blend-mode: screen;
-  background-color: #0F1020;
+  background-color: #0f1020;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, transparent), color-stop(50%, rgba(0, 0, 0, 0.5))), -webkit-gradient(linear, left bottom, left top, from(#050f05), color-stop(110%, rgba(0, 0, 0, 0)));
   background-image: linear-gradient(transparent 50%, rgba(0, 0, 0, 0.5) 50%), linear-gradient(to top, #050f05, rgba(0, 0, 0, 0) 110%);
   background-size: 15px 15px, 100%;
