@@ -1,38 +1,88 @@
 import React, { createContext, useState, useEffect } from "react";
+import items from "../components/data";
 
 export const HangmanContext = createContext();
+
+const languages = {
+  english: "en",
+  deutsch: "de",
+  italiano: "it",
+  português: "pt",
+  türkçe: "tr",
+};
+
+const nonLetterSigns = [
+  ",",
+  ":",
+  "'",
+  "-",
+  ".",
+  "!",
+  "(",
+  ")",
+  "&",
+  "1",
+  "2",
+  "3",
+];
+const eTypes = ["è", "é", "ê", "ë"];
+const aTypes = ["ä", "å", "à", "æ", "á"];
+const uTypes = ["ü", "û", "ù", "ú"];
+const iTypes = ["ï", "î", "ì", "í"];
+const oTypes = ["ô", "ö", "ò", "ó"];
+const nTypes = ["ñ"];
+const sTypes = ["ş", "ß"];
+const gTypes = ["ğ"];
+const cTypes = ["ç"];
 
 const HangmanContextComponent = (props) => {
   const [style, setStyle] = useState(1);
   const [movieData, setMovieData] = useState(null);
+  const [movie, setMovie] = useState(null);
   const [guessedLetters, setGuessedLetters] = useState([]);
   const [choosenLang, setchoosenLang] = useState("english");
   const [gameState, setGameState] = useState("");
   const [answer, setAnswer] = useState([]);
   const [gifs, setGifs] = useState(null);
+  const [falseGuesses, setFalseGuesses] = useState(0);
 
   // to use the flying Input on the Intro just once
   const mount = () => {
     setStyle(style + 1);
     setGuessedLetters([]);
     setGameState("");
-    getMovieData();
   };
-
-  //Fetch Array of popluar Movies
-  const randomNum = Math.floor(Math.random() * 20);
 
   useEffect(() => {
-    getMovieData();
-  }, [choosenLang]);
+    const getMovie = () => {
+      fetch(
+        `https://imdb-api.com/en/API/MostPopularMovies/${process.env.REACT_APP_IMDB_KEY}`
+      )
+        .then((res) => res.json())
+        .then((data) => setMovie(data));
+    };
+    getMovie();
+  }, [choosenLang, style, setGameState]);
 
-  const getMovieData = () => {
-    fetch(
-      `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_MOVIEDB_KEY}&language=${languages[choosenLang]}&sort_by=popularity.desc&page=1}`
-    )
-      .then((res) => res.json())
-      .then((data) => setMovieData(data.results[randomNum]));
-  };
+  useEffect(() => {
+    const randomNum = Math.floor(Math.random() * 100);
+    const getMovieData = () => {
+      if (movie && movie.items.length > 0) {
+        fetch(
+          `https://api.themoviedb.org/3/movie/${movie.items[randomNum].id}?api_key=${process.env.REACT_APP_MOVIEDB_KEY}&language=${languages[choosenLang]}`
+        )
+          .then((res) => res.json())
+          .then((data) => setMovieData(data));
+      } else {
+        fetch(
+          `https://api.themoviedb.org/3/movie/${items[randomNum].id}?api_key=${process.env.REACT_APP_MOVIEDB_KEY}&language=${languages[choosenLang]}`
+        )
+          .then((res) => res.json())
+          .then((data) => setMovieData(data));
+      }
+    };
+    getMovieData();
+  }, [movie]);
 
   // fetch Gifs for Top and Bottom Hangman-Game & Winning Page
   const movieTitle =
@@ -47,16 +97,9 @@ const HangmanContextComponent = (props) => {
     )
       .then((res) => res.json())
       .then((data) => setGifs(data.data));
-  }, [movieData]);
+  }, [movieTitle]);
 
   //Select Language of MovieTitle
-  const languages = {
-    english: "en",
-    deutsch: "de",
-    italiano: "it",
-    português: "pt",
-    türkçe: "tr",
-  };
 
   const options = Object.keys(languages);
 
@@ -74,130 +117,101 @@ const HangmanContextComponent = (props) => {
   };
 
   // Array of WronglyGussedLetters
-  const getWronglyGuessedLetters = () => {
-    const wrongLetters = guessedLetters.filter((letter) => {
-      return (
-        !movieData.title.split("").includes(letter) &&
-        !movieData.title.split("").includes(letter.toUpperCase())
-      );
-    });
-    return wrongLetters;
-  };
+  const wrongLetters = guessedLetters.filter((letter) => {
+    return (
+      !movieData.title.split("").includes(letter) &&
+      !movieData.title.split("").includes(letter.toUpperCase())
+    );
+  });
 
   // Display Word
 
-  useEffect(() => setAnswer(updateDisplayedWord), [guessedLetters, movieData]);
+  useEffect(() => {
+    let letterState = "";
+    setAnswer(
+      movieData &&
+        movieData.title.split("").map((letter) => {
+          if (letter === " ") {
+            letterState = " ";
+          } else if (guessedLetters.includes(letter.toLowerCase())) {
+            letterState = letter;
+          } else if (
+            guessedLetters.includes("e") &&
+            eTypes.includes(letter.toLowerCase())
+          ) {
+            letterState = letter;
+          } else if (
+            guessedLetters.includes("a") &&
+            aTypes.includes(letter.toLowerCase())
+          ) {
+            letterState = letter;
+          } else if (
+            guessedLetters.includes("u") &&
+            uTypes.includes(letter.toLowerCase())
+          ) {
+            letterState = letter;
+          } else if (
+            guessedLetters.includes("i") &&
+            iTypes.includes(letter.toLowerCase())
+          ) {
+            letterState = letter;
+          } else if (
+            guessedLetters.includes("o") &&
+            oTypes.includes(letter.toLowerCase())
+          ) {
+            letterState = letter;
+          } else if (
+            guessedLetters.includes("n") &&
+            nTypes.includes(letter.toLowerCase())
+          ) {
+            letterState = letter;
+          } else if (
+            guessedLetters.includes("s") &&
+            sTypes.includes(letter.toLowerCase())
+          ) {
+            letterState = letter;
+          } else if (
+            guessedLetters.includes("g") &&
+            gTypes.includes(letter.toLowerCase())
+          ) {
+            letterState = letter;
+          } else if (
+            guessedLetters.includes("c") &&
+            cTypes.includes(letter.toLowerCase())
+          ) {
+            letterState = letter;
+          } else if (nonLetterSigns.includes(letter)) {
+            letterState = letter;
+          } else {
+            letterState = "_";
+          }
+          return letterState;
+        })
+    );
+  }, [guessedLetters, movieData]);
 
-  let letterState = "";
-  const nonLetterSigns = [
-    ",",
-    ":",
-    "'",
-    "-",
-    ".",
-    "!",
-    "(",
-    ")",
-    "&",
-    "1",
-    "2",
-    "3",
-  ];
-  const eTypes = ["è", "é", "ê", "ë"];
-  const aTypes = ["ä", "å", "à", "æ", "á"];
-  const uTypes = ["ü", "û", "ù", "ú"];
-  const iTypes = ["ï", "î", "ì", "í"];
-  const oTypes = ["ô", "ö", "ò", "ó"];
-  const nTypes = ["ñ"];
-  const sTypes = ["ş", "ß"];
-  const gTypes = ["ğ"];
-  const cTypes = ["ç"];
-
-  const updateDisplayedWord =
-    movieData &&
-    movieData.title.split("").map((letter) => {
-      if (letter === " ") {
-        letterState = " ";
-      } else if (guessedLetters.includes(letter.toLowerCase())) {
-        letterState = letter;
-      } else if (
-        guessedLetters.includes("e") &&
-        eTypes.includes(letter.toLowerCase())
-      ) {
-        letterState = letter;
-      } else if (
-        guessedLetters.includes("a") &&
-        aTypes.includes(letter.toLowerCase())
-      ) {
-        letterState = letter;
-      } else if (
-        guessedLetters.includes("u") &&
-        uTypes.includes(letter.toLowerCase())
-      ) {
-        letterState = letter;
-      } else if (
-        guessedLetters.includes("i") &&
-        iTypes.includes(letter.toLowerCase())
-      ) {
-        letterState = letter;
-      } else if (
-        guessedLetters.includes("o") &&
-        oTypes.includes(letter.toLowerCase())
-      ) {
-        letterState = letter;
-      } else if (
-        guessedLetters.includes("n") &&
-        nTypes.includes(letter.toLowerCase())
-      ) {
-        letterState = letter;
-      } else if (
-        guessedLetters.includes("s") &&
-        sTypes.includes(letter.toLowerCase())
-      ) {
-        letterState = letter;
-      } else if (
-        guessedLetters.includes("g") &&
-        gTypes.includes(letter.toLowerCase())
-      ) {
-        letterState = letter;
-      } else if (
-        guessedLetters.includes("c") &&
-        cTypes.includes(letter.toLowerCase())
-      ) {
-        letterState = letter;
-      } else if (nonLetterSigns.includes(letter)) {
-        letterState = letter;
-      } else {
-        letterState = "_";
-      }
-      return letterState;
-    });
-
-  // Num Remaing Guesses
-  const guesses = 6;
-  const getRemainingGuesses = () => {
-    const remainingGuesses = guesses - getWronglyGuessedLetters().length;
-    return remainingGuesses;
-  };
+  // Num False Guesses
+  useEffect(() => {
+    setFalseGuesses(wrongLetters.length);
+  }, [wrongLetters]);
 
   //gameOver?
   useEffect(() => {
-    {
-      answer && gameOver();
-    }
-  }, [answer]);
-
-  const gameOver = () => {
-    const answerGiven = answer.length > 0;
-    const answerCorrect = answerGiven && !answer.includes("_");
-    if (getRemainingGuesses() <= 0) {
-      setGameState("loose");
-    } else if (answerCorrect) {
-      setGameState("won");
-    } else {
-      setGameState("");
-    }
-  };
+    const guesses = 6;
+    const remainingGuesses = guesses - falseGuesses;
+    const gameOver = () => {
+      const answerGiven = answer.length > 0;
+      const answerCorrect = answerGiven && !answer.includes("_");
+      if (remainingGuesses <= 0) {
+        setGameState("loose");
+      } else if (answerCorrect) {
+        setGameState("won");
+      } else {
+        setGameState("");
+      }
+    };
+    answer && gameOver();
+  }, [answer, falseGuesses]);
 
   return (
     <HangmanContext.Provider
@@ -210,8 +224,8 @@ const HangmanContextComponent = (props) => {
         guessedLetters,
         answer,
         gameState,
-        falseGuesses: getWronglyGuessedLetters().length,
-        wrongLetters: getWronglyGuessedLetters(),
+        falseGuesses,
+        wrongLetters,
         handleChooseLang: handleChooseLang,
         updateGuessedLetters: updateGuessedLetters,
         mount: mount,

@@ -26,7 +26,7 @@ const HangmanMenu = () => {
             <div className="HangmanMenu left">
                 <ul>
                     <li onClick={() => setRules(!rules)}> {rules? 'Game': 'Rules'} </li>
-                    <li onClick={mount}>New&nbsp;Game</li>
+                    {!rules && <li onClick={mount}>New Game</li>}
                     <li><Link to='/contact'>Contact</Link></li>
                     <li><Link to='/title'>Start&nbsp;Menu</Link></li>
                 </ul>
