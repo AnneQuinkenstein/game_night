@@ -675,6 +675,9 @@ $radial-background: radial-gradient(#333, #111);
     &:hover {
       cursor: pointer;
     }
+    &:focus {
+      outline: -webkit-focus-ring-color auto 0;
+    }
   }
   .left {
     left: 0;
