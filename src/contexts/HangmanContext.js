@@ -59,12 +59,11 @@ const HangmanContextComponent = (props) => {
         `https://imdb-api.com/en/API/MostPopularMovies/${process.env.REACT_APP_IMDB_KEY}`
       )
         .then((res) => res.json())
-        .then((data) => setMovie(data));
+        .then((data) => setMovie(data))
+        .catch((err) => console.log("Error fetching and parsing data", err));
     };
     getMovie();
-  }, [choosenLang, style, setGameState]);
 
-  useEffect(() => {
     const randomNum = Math.floor(Math.random() * 100);
     const getMovieData = () => {
       if (movie && movie.items.length > 0) {
@@ -82,7 +81,8 @@ const HangmanContextComponent = (props) => {
       }
     };
     getMovieData();
-  }, [movie]);
+   // eslint-disable-next-line react-hooks/exhaustive-deps
+ }, [choosenLang, style, setGameState]);
 
   // fetch Gifs for Top and Bottom Hangman-Game & Winning Page
   const movieTitle =

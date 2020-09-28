@@ -977,6 +977,10 @@
   cursor: pointer;
 }
 
+.image-slider .button:focus {
+  outline: -webkit-focus-ring-color auto 0;
+}
+
 .image-slider .left {
   left: 0;
   text-align: left;
