@@ -37,6 +37,7 @@
 - [Axios](https://www.axios.com/)
 - [Formspree](https://formspree.io/)
 - [Open Movie API](https://www.omdbapi.com/)
+- [The Movie DB API](https://www.themoviedb.org/)
 - [Developer Joke API](https://sv443.net/jokeapi/v2/)
 - [Giphy API](https://giphy.com/)
 
@@ -44,7 +45,7 @@
 ## Contact
 
 <p> <a target="_blank" href="https://www.linkedin.com/in/anne-quinkenstein"><img src="https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the-badge&logo=Linkedin&logoColor=white"></img></a>
-<a target="_blank" href="mailto:a.quinkenstein@gmail.com"><img src="https://img.shields.io/badge/-Gmail-D14836?style=for-the-badge&logo=Gmail&logoColor=white"></img></a>
+<a target="_blank" href="mailto:a.quinkenstein@gmail.com?Subject=Hello_from_Github"><img src="https://img.shields.io/badge/-Gmail-D14836?style=for-the-badge&logo=Gmail&logoColor=white"></img></a>
 </p>
 
-<img src="https://media.giphy.com/media/LnQjpWaON8nhr21vNW/giphy.gif" width="60"> <em>I love connecting with different people. So if you want to say 'hi', I'll be happy to meet you more! :)</em>
+<img src="https://media.giphy.com/media/LnQjpWaON8nhr21vNW/giphy.gif" width="60"> <em>I love connecting with different people.</em>
