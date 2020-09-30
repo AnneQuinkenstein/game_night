@@ -53,6 +53,7 @@ const HangmanContextComponent = (props) => {
     setGameState("");
   };
 
+  //  get a reliable lists of popular movies from imdb-api & the fetch the infos for each movie more reliable from the moviedb.org
   useEffect(() => {
     const getMovie = () => {
       fetch(
@@ -189,6 +190,12 @@ const HangmanContextComponent = (props) => {
         })
     );
   }, [guessedLetters, movieData]);
+
+  //render again if Movie-Title is too long to display
+  useEffect(() => {
+   answer &&
+    ((answer.length> 25 )&& setStyle(style+1))
+  }, [answer])
 
   // Num False Guesses
   useEffect(() => {
