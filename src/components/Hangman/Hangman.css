@@ -647,6 +647,7 @@
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  margin-left: -2vw;
 }
 
 @media (max-width: 767px) {

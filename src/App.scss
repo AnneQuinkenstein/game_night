@@ -49,7 +49,8 @@ body{
 } 
 
 .containerSign{
-  perspective: 70px;
+  perspective: 500px;
+  perspective-origin: bottom left;
   position: absolute;
   top: 30%;
   left: 55%;
@@ -59,8 +60,8 @@ body{
 }
 
 .titleName {
-  transform:  translate(-85%, 32%) rotateY(-2deg) rotateX(-1deg) rotateZ(4deg) skewY(-9.5deg);
-  font-size: 3.5rem;
+  transform:  translate(-85%, 32%) rotateY(-3deg) rotateX(-1deg) rotateZ(-5deg) skewY(-3.5deg);
+  font-size: 3rem;
   white-space: nowrap;
   color: $white;
   animation: shine 2s forwards, flicker 3s infinite;
@@ -305,7 +306,7 @@ body{
 }
 
 h1.jokes {
-  transform: rotate(-15deg) rotateX(-1deg) rotateY(-7deg) skewY(-5deg);
+  transform: rotate(-15deg) rotateX(-1deg) rotateY(-22deg) skewY(-3deg);
   font-size: 1.5em;
   color: transparent;
   white-space: nowrap;

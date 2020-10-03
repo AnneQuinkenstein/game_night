@@ -18,7 +18,9 @@
   </a>
 
   <p align="center">
-    Game Night is to have fun online alone or with friends e.g. during a pandemie. Play Hangman with Movie Titles (fetched from a open Movie Database) -If your Guess is wrong, you will see a Giphy with a hint. Additionally - will you find the easteregg? 
+    Game Night is to have fun alone or with friends, even through a pandemic.
+    Play a hangman game with movie titles in your favorite Language! (choosen from popular movies on OMDBApi & sea the poster passed from themoviedb.org) For each wrong guess a associated giphy is revealed - failure is not bad :) <br/>
+    I used Context to pass the logic of the game. I did some animations utilizing SCSS - will you find a easteregg? With Formspree the Input of the Contactform is sent to my Email.
     <br />
     <br />
     <a href="https://game-night-aquin.netlify.app/">Demo</a>
@@ -48,4 +50,4 @@
 <a target="_blank" href="mailto:a.quinkenstein@gmail.com?Subject=Hello_from_Github"><img src="https://img.shields.io/badge/-Gmail-D14836?style=for-the-badge&logo=Gmail&logoColor=white"></img></a>
 </p>
 
-<img src="https://media.giphy.com/media/LnQjpWaON8nhr21vNW/giphy.gif" width="60"> <em>I love connecting with different people.</em>
+<img src="https://media.giphy.com/media/LnQjpWaON8nhr21vNW/giphy.gif" width="60"> <em>Let's connect!</em>

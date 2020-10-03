@@ -449,6 +449,7 @@ $radial-background: radial-gradient(#333, #111);
       display: flex;
       flex-direction: row;
       justify-content: space-evenly;
+      margin-left: -2vw;
       @media (max-width: 767px) {
         position: absolute;
         bottom: 4vh;
