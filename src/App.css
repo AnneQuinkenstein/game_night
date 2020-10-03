@@ -58,7 +58,7 @@ body {
 .titleName {
   -webkit-transform: translate(-85%, 32%) rotateY(-3deg) rotateX(-1deg) rotateZ(-5deg) skewY(-3.5deg);
           transform: translate(-85%, 32%) rotateY(-3deg) rotateX(-1deg) rotateZ(-5deg) skewY(-3.5deg);
-  font-size: 3.5rem;
+  font-size: 3rem;
   white-space: nowrap;
   color: #ffe6ff;
   -webkit-animation: shine 2s forwards, flicker 3s infinite;

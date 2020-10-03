@@ -61,7 +61,7 @@ body{
 
 .titleName {
   transform:  translate(-85%, 32%) rotateY(-3deg) rotateX(-1deg) rotateZ(-5deg) skewY(-3.5deg);
-  font-size: 3.5rem;
+  font-size: 3rem;
   white-space: nowrap;
   color: $white;
   animation: shine 2s forwards, flicker 3s infinite;

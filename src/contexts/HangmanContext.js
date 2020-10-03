@@ -1,3 +1,4 @@
+import { render } from "@testing-library/react";
 import React, { createContext, useState, useEffect } from "react";
 import items from "../components/data";
 
@@ -45,6 +46,7 @@ const HangmanContextComponent = (props) => {
   const [answer, setAnswer] = useState([]);
   const [gifs, setGifs] = useState(null);
   const [falseGuesses, setFalseGuesses] = useState(0);
+  const [render, setRender] = useState(false);
 
   // to use the flying Input on the Intro just once
   const mount = () => {
@@ -66,24 +68,24 @@ const HangmanContextComponent = (props) => {
     getMovie();
 
     const randomNum = Math.floor(Math.random() * 100);
-    const getMovieData = () => {
+    const getMovieData = () => { 
       if (movie && movie.items.length > 0) {
         fetch(
           `https://api.themoviedb.org/3/movie/${movie.items[randomNum].id}?api_key=${process.env.REACT_APP_MOVIEDB_KEY}&language=${languages[choosenLang]}`
         )
           .then((res) => res.json())
-          .then((data) => setMovieData(data));
+          .then((data) => (data.title.length < 25) ? setMovieData(data) : setRender(!render));
       } else {
         fetch(
           `https://api.themoviedb.org/3/movie/${items[randomNum].id}?api_key=${process.env.REACT_APP_MOVIEDB_KEY}&language=${languages[choosenLang]}`
         )
           .then((res) => res.json())
-          .then((data) => setMovieData(data));
+          .then((data) => (data.title.length < 25) ? setMovieData(data) : setRender(!render));
       }
     };
     getMovieData();
-   // eslint-disable-next-line react-hooks/exhaustive-deps
- }, [choosenLang, style, setGameState]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [choosenLang, style, setGameState]);
 
   // fetch Gifs for Top and Bottom Hangman-Game & Winning Page
   const movieTitle =
@@ -126,7 +128,6 @@ const HangmanContextComponent = (props) => {
   });
 
   // Display Word
-
   useEffect(() => {
     let letterState = "";
     setAnswer(
@@ -190,12 +191,6 @@ const HangmanContextComponent = (props) => {
         })
     );
   }, [guessedLetters, movieData]);
-
-  //render again if Movie-Title is too long to display
-  useEffect(() => {
-   answer &&
-    ((answer.length> 25 )&& setStyle(style+1))
-  }, [answer])
 
   // Num False Guesses
   useEffect(() => {
