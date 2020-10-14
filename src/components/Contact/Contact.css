@@ -424,7 +424,6 @@
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
   border-radius: 2px;
-  border-radius: 2px;
 }
 
 .btn:before {
@@ -498,6 +497,8 @@
     margin: 3vw;
     height: 82.5vh;
     overflow: auto;
+    height: 55%;
+    margin-top: 15vh;
   }
 }
 
@@ -507,10 +508,9 @@
   max-width: 600px;
   margin: 0 auto !important;
   min-height: 70vh;
-  font-family: "Space Mono", monospace;
-  font-family: "Share Tech Mono", monospace;
+  font-family: "Share Tech Mono", "Space Mono", monospace;
   overflow: hidden;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.9;
   margin: 0 0.5em;
   color: #78cd6e;
@@ -524,6 +524,7 @@
 @media (max-width: 767px) {
   .aboutMeWrapper {
     min-height: 76vh;
+    border-radius: 6%;
   }
 }
 

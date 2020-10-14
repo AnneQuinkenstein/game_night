@@ -332,7 +332,6 @@ $yellow: #a4852f;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
   border-radius: 2px;
-  border-radius: 2px;
 }
 .btn:before {
   right: -1.07px;
@@ -396,6 +395,8 @@ $yellow: #a4852f;
     margin: 3vw;
     height: 82.5vh;
     overflow: auto;
+    height: 55%; 
+    margin-top: 15vh; 
   }
   background-color: transparent;
   border-radius: 10%;
@@ -427,6 +428,7 @@ $yellow: #a4852f;
   border-radius: 10%;
   @media (max-width: 767px) {
     min-height: 76vh;
+    border-radius: 6%; 
   }
 }
 
