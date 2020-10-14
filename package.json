@@ -10,6 +10,7 @@
     "group": "^1.0.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-media-hook": "^0.4.7",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "react-transition-group": "^4.4.1",

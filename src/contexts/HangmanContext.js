@@ -1,6 +1,7 @@
 import { render } from "@testing-library/react";
 import React, { createContext, useState, useEffect } from "react";
 import items from "../components/data";
+import { useMediaPredicate } from "react-media-hook";
 
 export const HangmanContext = createContext();
 
@@ -13,6 +14,7 @@ const languages = {
 };
 
 const nonLetterSigns = [
+  "#",
   ",",
   ":",
   "'",
@@ -48,9 +50,11 @@ const HangmanContextComponent = (props) => {
   const [falseGuesses, setFalseGuesses] = useState(0);
   const [render, setRender] = useState(false);
 
+  const phone = useMediaPredicate("(max-width: 768px)");
+
   // to use the flying Input on the Intro just once
   const mount = () => {
-    setStyle(style + 1);
+    setRender(!render);
     setGuessedLetters([]);
     setGameState("");
   };
@@ -67,25 +71,49 @@ const HangmanContextComponent = (props) => {
     };
     getMovie();
 
-    const randomNum = Math.floor(Math.random() * 100);
-    const getMovieData = () => { 
-      if (movie && movie.items.length > 0) {
-        fetch(
-          `https://api.themoviedb.org/3/movie/${movie.items[randomNum].id}?api_key=${process.env.REACT_APP_MOVIEDB_KEY}&language=${languages[choosenLang]}`
-        )
-          .then((res) => res.json())
-          .then((data) => (data.title.length < 25) ? setMovieData(data) : setRender(!render));
+    const randomNum = Math.floor(Math.random() * 90);
+    const getMovieData = () => {
+      if (!phone) {
+        if (movie && movie.items.length > 0) {
+          fetch(
+            `https://api.themoviedb.org/3/movie/${movie.items[randomNum].id}?api_key=${process.env.REACT_APP_MOVIEDB_KEY}&language=${languages[choosenLang]}`
+          )
+            .then((res) => res.json())
+            .then((data) =>
+              data.title.length < 25 ? setMovieData(data) : setRender(!render)
+            );
+        } else {
+          fetch(
+            `https://api.themoviedb.org/3/movie/${items[randomNum].id}?api_key=${process.env.REACT_APP_MOVIEDB_KEY}&language=${languages[choosenLang]}`
+          )
+            .then((res) => res.json())
+            .then((data) =>
+              data.title.length < 25 ? setMovieData(data) : setRender(!render)
+            );
+        }
       } else {
-        fetch(
-          `https://api.themoviedb.org/3/movie/${items[randomNum].id}?api_key=${process.env.REACT_APP_MOVIEDB_KEY}&language=${languages[choosenLang]}`
-        )
-          .then((res) => res.json())
-          .then((data) => (data.title.length < 25) ? setMovieData(data) : setRender(!render));
+        if (movie && movie.items.length > 0) {
+          fetch(
+            `https://api.themoviedb.org/3/movie/${movie.items[randomNum].id}?api_key=${process.env.REACT_APP_MOVIEDB_KEY}&language=${languages[choosenLang]}`
+          )
+            .then((res) => res.json())
+            .then((data) =>
+              data.title.length < 10 ? setMovieData(data) : setRender(!render)
+            );
+        } else {
+          fetch(
+            `https://api.themoviedb.org/3/movie/${items[randomNum].id}?api_key=${process.env.REACT_APP_MOVIEDB_KEY}&language=${languages[choosenLang]}`
+          )
+            .then((res) => res.json())
+            .then((data) =>
+              data.title.length < 10 ? setMovieData(data) : setRender(!render)
+            );
+        }
       }
     };
     getMovieData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [choosenLang, style, setGameState]);
+  }, [choosenLang, style, setGameState, phone]);
 
   // fetch Gifs for Top and Bottom Hangman-Game & Winning Page
   const movieTitle =
@@ -215,6 +243,7 @@ const HangmanContextComponent = (props) => {
     answer && gameOver();
   }, [answer, falseGuesses]);
 
+  console.log(movieData);
   return (
     <HangmanContext.Provider
       value={{
