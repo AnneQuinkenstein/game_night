@@ -968,7 +968,7 @@
 
 @media (max-width: 767px) {
   .image-slider .button {
-    font-size: 7rem;
+    font-size: 70px;
     top: auto;
     bottom: -3vh;
   }

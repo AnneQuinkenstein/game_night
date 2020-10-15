@@ -1,4 +1,3 @@
-import { render } from "@testing-library/react";
 import React, { createContext, useState, useEffect } from "react";
 import items from "../components/data";
 import { useMediaPredicate } from "react-media-hook";
@@ -55,6 +54,7 @@ const HangmanContextComponent = (props) => {
   // to use the flying Input on the Intro just once
   const mount = () => {
     setRender(!render);
+    setStyle(style + 1);
     setGuessedLetters([]);
     setGameState("");
   };
