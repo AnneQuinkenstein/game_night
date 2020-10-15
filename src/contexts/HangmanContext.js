@@ -113,7 +113,7 @@ const HangmanContextComponent = (props) => {
     };
     getMovieData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [choosenLang, style, setGameState, phone]);
+  }, [choosenLang, style, setGameState, phone, render]);
 
   // fetch Gifs for Top and Bottom Hangman-Game & Winning Page
   const movieTitle =
