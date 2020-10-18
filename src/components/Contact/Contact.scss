@@ -406,18 +406,19 @@ $yellow: #a4852f;
   border-right-color: #080808;
   border-top-color: #020202;
   box-shadow: inset 0 0 18rem black, inset 0 0 3rem black, 0 0 10rem black;
-  height: 72%;
+  height: min-content;
 }
 
 .aboutMeWrapper {
   position: relative;
   padding: 30px 40px;
-  max-width: 600px;
+  max-width: 45vw;
+  min-width: 600px;
   margin: 0 auto !important;
-  min-height: 70vh;
+  min-height: min-content;
   font-family: "Share Tech Mono", "Space Mono", monospace;
   overflow: hidden;
-  font-size: 12px;
+  font-size: 1.1rem;
   line-height: 1.9;
   margin: 0 0.5em;
   color: #78cd6e;
@@ -429,6 +430,8 @@ $yellow: #a4852f;
   @media (max-width: 767px) {
     min-height: 76vh;
     border-radius: 6%; 
+    max-width: 600px;
+    min-width: initial;
   }
 }
 
