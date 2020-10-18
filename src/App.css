@@ -1,5 +1,5 @@
 * {
-  font-family: 'Nova Mono', monospace;
+  font-family: "Nova Mono", monospace;
 }
 
 html {
@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  background: #0F1020;
+  background: #0f1020;
 }
 
 .page {
@@ -40,24 +40,19 @@ body {
 }
 
 .containerSign {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotateX(8deg) rotateZ(-2deg) skewY(-0.5deg);
+          transform: translate(-50%, -50%) rotateX(8deg) rotateZ(-2deg) skewY(-0.5deg);
   -webkit-perspective: 500px;
           perspective: 500px;
   -webkit-perspective-origin: bottom left;
           perspective-origin: bottom left;
   position: absolute;
-  top: 30%;
-  left: 55%;
-}
-
-@media (max-width: 767px) {
-  .containerSign {
-    top: 15%;
-  }
 }
 
 .titleName {
-  -webkit-transform: translate(-85%, 32%) rotateY(-3deg) rotateX(-1deg) rotateZ(-5deg) skewY(-3.5deg);
-          transform: translate(-85%, 32%) rotateY(-3deg) rotateX(-1deg) rotateZ(-5deg) skewY(-3.5deg);
   font-size: 3rem;
   white-space: nowrap;
   color: #ffe6ff;
@@ -99,7 +94,9 @@ body {
 
 /* Keyframes for flickering font Animations */
 @-webkit-keyframes blink {
-  0%, 45%, 75% {
+  0%,
+  45%,
+  75% {
     color: #ffe6ff;
     text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #a6a4d6, -0.2rem 0.1rem 1rem #9692e6, 0.2rem 0.1rem 1rem #8480e9, 0 -0.5rem 2rem #615be1, 0 0.5rem 3rem #7d54df;
   }
@@ -115,7 +112,9 @@ body {
   }
 }
 @keyframes blink {
-  0%, 45%, 75% {
+  0%,
+  45%,
+  75% {
     color: #ffe6ff;
     text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #a6a4d6, -0.2rem 0.1rem 1rem #9692e6, 0.2rem 0.1rem 1rem #8480e9, 0 -0.5rem 2rem #615be1, 0 0.5rem 3rem #7d54df;
   }
@@ -562,7 +561,7 @@ p.jokes {
   font-size: 1.5rem;
   color: #ddacac;
   padding: 1vh;
-  opacity: .8;
+  opacity: 0.8;
   overflow-wrap: break-word;
   width: 22vw;
 }
@@ -819,7 +818,8 @@ p.jokes {
 }
 
 .fade-appear-active,
-.fade-enter, .fade-enter-active {
+.fade-enter,
+.fade-enter-active {
   -webkit-transform: translate(0);
           transform: translate(0);
   opacity: 1;
@@ -833,7 +833,8 @@ p.jokes {
           transform: translate(0);
 }
 
-.fade-exit, .fade-exit-active {
+.fade-exit,
+.fade-exit-active {
   opacity: 0;
   -webkit-transform: translate(-50%);
           transform: translate(-50%);

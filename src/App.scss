@@ -1,17 +1,20 @@
-$white: #ffe6ff; 
-$rose: #ddacac; 
+$white: #ffe6ff;
+$rose: #ddacac;
 $orangelight: #fe735a;
-$orange: #ce0000; 
+$orange: #ce0000;
 $darkred: #6b1839;
-$purple: rgb(125, 84, 223); 
-$radial-background: radial-gradient(#333, #111); 
+$purple: rgb(125, 84, 223);
+$radial-background: radial-gradient(#333, #111);
 
-$bright-text-shadow: 0 0 10px $white , 0 0 20px $white , 0 0 30px $rose , 0 0 40px $rose , 0 0 70px $rose , 0 0 80px $orangelight , 0 0 100px $orangelight;
+$bright-text-shadow: 0 0 10px $white, 0 0 20px $white, 0 0 30px $rose,
+  0 0 40px $rose, 0 0 70px $rose, 0 0 80px $orangelight, 0 0 100px $orangelight;
 
-$textborder-small: 0 0 0.1rem $white, 0 0 1rem #a6a4d6, -0.2rem 0.1rem 0.5rem #9692e6, 0.2rem 0.1rem 0.5rem #8480e9, 0 -0.5rem 1.5rem #615be1, 0 0.5rem 1.5rem $purple;
+$textborder-small: 0 0 0.1rem $white, 0 0 1rem #a6a4d6,
+  -0.2rem 0.1rem 0.5rem #9692e6, 0.2rem 0.1rem 0.5rem #8480e9,
+  0 -0.5rem 1.5rem #615be1, 0 0.5rem 1.5rem $purple;
 
 * {
-  font-family: 'Nova Mono', monospace; 
+  font-family: "Nova Mono", monospace;
 }
 
 html {
@@ -21,46 +24,47 @@ html {
   }
 }
 
-body{
-  background: #0F1020;
+body {
+  background: #0f1020;
 }
 
-.page{
-  position: absolute; 
-  top: 0; 
-  left:0; 
-  right: 0; 
-  bottom: 0; 
+.page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
-.Title{
-    height: 100vh;
-    overflow: hidden;
+.Title {
+  height: 100vh;
+  overflow: hidden;
 }
 
 .arcadeBackground {
-  height: calc(1000px + 100vh); 
+  height: calc(1000px + 100vh);
   background-image: url(arcadeEntrance.jpg);
-  background-color: black; 
+  background-color: black;
   background-position-x: right;
   background-position-y: -50vh;
-  background-size: cover; 
+  background-size: cover;
   background-repeat: no-repeat;
-} 
+}
 
-.containerSign{
+.containerSign {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotateX(8deg) rotateZ( -2deg) skewY(-0.5deg);
   perspective: 500px;
   perspective-origin: bottom left;
   position: absolute;
-  top: 30%;
-  left: 55%;
   @media (max-width: 767px) {
-    top: 15%; 
-    }
+   
+  }
 }
 
 .titleName {
-  transform:  translate(-85%, 32%) rotateY(-3deg) rotateX(-1deg) rotateZ(-5deg) skewY(-3.5deg);
   font-size: 3rem;
   white-space: nowrap;
   color: $white;
@@ -72,11 +76,12 @@ body{
     cursor: pointer;
   }
   @media (max-width: 767px) {
-  white-space: normal; 
+    white-space: normal;
   }
   //Media Queries for monitors? changed skewY
-  @media (min-width:2000px) {
-    transform:  translate(-90%, 32%) rotateY(-2deg) rotateX(-1deg) rotateZ(4deg) skewY(-13deg);
+  @media (min-width: 2000px) {
+    transform: translate(-90%, 32%) rotateY(-2deg) rotateX(-1deg) rotateZ(4deg)
+      skewY(-13deg);
   }
 }
 
@@ -84,17 +89,19 @@ body{
   animation: shine 2s forwards, blink 3s 2s infinite;
 }
 
-
 .titleName span.flickerTwo {
   animation: shine 2s forwards, blink 8s 2s infinite;
 }
 
-
 /* Keyframes for flickering font Animations */
 @keyframes blink {
-0%, 45%, 75% {
+  0%,
+  45%,
+  75% {
     color: $white;
-    text-shadow: 0 0 0.6rem $white, 0 0 1.5rem #a6a4d6, -0.2rem 0.1rem 1rem #9692e6, 0.2rem 0.1rem 1rem #8480e9, 0 -0.5rem 2rem #615be1, 0 0.5rem 3rem $purple;
+    text-shadow: 0 0 0.6rem $white, 0 0 1.5rem #a6a4d6,
+      -0.2rem 0.1rem 1rem #9692e6, 0.2rem 0.1rem 1rem #8480e9,
+      0 -0.5rem 2rem #615be1, 0 0.5rem 3rem $purple;
   }
   28%,
   35% {
@@ -103,11 +110,10 @@ body{
   }
   82%,
   99% {
-    color: hsla(234, 77%, 53%, 0.363);    
+    color: hsla(234, 77%, 53%, 0.363);
     text-shadow: none;
   }
 }
-
 
 @keyframes shine {
   0% {
@@ -116,15 +122,17 @@ body{
   }
   100% {
     color: $white;
-    text-shadow: 0 0 1.1rem $white, 0 0 2rem #a6a4d6, -0.2rem 0.1rem 1.5rem #9692e6, 0.2rem 0.1rem 1.5rem #8480e9, 0 -0.5rem 2.5rem #615be1, 0 0.5rem 3.5rem $purple;
+    text-shadow: 0 0 1.1rem $white, 0 0 2rem #a6a4d6,
+      -0.2rem 0.1rem 1.5rem #9692e6, 0.2rem 0.1rem 1.5rem #8480e9,
+      0 -0.5rem 2.5rem #615be1, 0 0.5rem 3.5rem $purple;
   }
 }
 
 @media (max-width: 767px) {
   @keyframes shine {
-   100% {
-    text-shadow: $textborder-small;
-   } 
+    100% {
+      text-shadow: $textborder-small;
+    }
   }
 }
 
@@ -254,55 +262,54 @@ body{
   }
 }
 
-
 /* on entranceBackground */
 
-.entranceBackground{
+.entranceBackground {
   background-image: url(arcadeEntrance.jpg);
-  background-color: black; 
+  background-color: black;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh; 
-  width: 100vw; 
-  background-position: center; 
+  height: 100vh;
+  width: 100vw;
+  background-position: center;
   animation-name: divMove;
   animation-duration: 5s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: 1;
-  animation-fill-mode: forwards; 
+  animation-fill-mode: forwards;
 }
 
 @keyframes divMove {
-  0% { 
-    height: calc(1000px + 100vh); 
+  0% {
+    height: calc(1000px + 100vh);
     background-position-x: right;
     background-position-y: -50vh;
-    background-size: cover; 
-    }
-  100% {
-    height: 100vh; 
-    width: 100vw; 
-    background-position: center; 
-    transform: scale(1,1);
-    }
-  }
-
-  .titleEntranceBackground{
-    background-image: url(arcadeEntrance.jpg);
-    background-color: black; 
     background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh; 
-    width: 100vw; 
-    background-position: center; 
-    transform: scale(1,1);
   }
+  100% {
+    height: 100vh;
+    width: 100vw;
+    background-position: center;
+    transform: scale(1, 1);
+  }
+}
 
-.containerJokes{
+.titleEntranceBackground {
+  background-image: url(arcadeEntrance.jpg);
+  background-color: black;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+  background-position: center;
+  transform: scale(1, 1);
+}
+
+.containerJokes {
   perspective: 300px;
   position: absolute;
   top: 26%;
-  left: 60%; 
+  left: 60%;
 }
 
 h1.jokes {
@@ -313,23 +320,23 @@ h1.jokes {
   animation-name: wait;
   animation-duration: 7s;
   animation-iteration-count: 1;
-  animation-fill-mode: forwards; 
+  animation-fill-mode: forwards;
   animation-name: textMove;
   animation-duration: 2s;
   animation-delay: 3.5s;
-  animation-timing-function: cubic-bezier(.215,.61,.355,1);
+  animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
   animation-iteration-count: infinite;
   animation-direction: alternate;
   &:hover {
     color: $rose;
     cursor: pointer;
-    opacity: 0.8; 
+    opacity: 0.8;
     text-shadow: 5px 5px black;
     left: 56%;
   }
   @media (max-width: 767px) {
-    display: none; 
-    }
+    display: none;
+  }
 }
 
 @keyframes textMove {
@@ -337,7 +344,7 @@ h1.jokes {
     left: 56%;
     text-shadow: 4px 7px 25px $white;
   }
-  20%{
+  20% {
     left: 56%;
     text-shadow: 3px 5px 25px $orange;
   }
@@ -358,35 +365,35 @@ h1.jokes {
 }
 
 @keyframes wait {
-  0% { 
-    font-size:0;
-    }
-  49%{
+  0% {
+    font-size: 0;
+  }
+  49% {
     font-size: 0;
   }
   50% {
-    font-size: 2em; 
-    }
+    font-size: 2em;
+  }
   100% {
     font-size: 2em;
-    }
   }
+}
 
- p.jokes {
-    min-width: 200px;
-    position: absolute;
-    top: 37%;
-    transform: translate(5vw);
-    font-size: 1.5rem;
-    color: $rose;
-    padding: 1vh;
-    opacity: .8;
-    overflow-wrap: break-word;
-    width: 22vw;
- }
+p.jokes {
+  min-width: 200px;
+  position: absolute;
+  top: 37%;
+  transform: translate(5vw);
+  font-size: 1.5rem;
+  color: $rose;
+  padding: 1vh;
+  opacity: 0.8;
+  overflow-wrap: break-word;
+  width: 22vw;
+}
 
 .nothing {
-  display:none; 
+  display: none;
 }
 
 .containerPacman {
@@ -394,169 +401,172 @@ h1.jokes {
 }
 
 //Pacman without animation
-.titleGameTease  {
-  position: absolute;  
-  display: flex; 
+.titleGameTease {
+  position: absolute;
+  display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   transform-style: preserve-3d;
-  transform: rotateX(3deg) rotateY(2deg) rotate(2deg) translateZ(2vh)skewX(1deg);
-  top: 40vh; 
-  left: 33vw; 
+  transform: rotateX(3deg) rotateY(2deg) rotate(2deg) translateZ(2vh)
+    skewX(1deg);
+  top: 40vh;
+  left: 33vw;
   width: 250px;
   @media (max-width: 767px) {
-    left: 20vw; 
-    }
-    .titlehangman {
-      position: relative; 
-      padding: 0;
-      height: 9vw;
-      min-height: 150px; 
-       >img {
-          height: 100%;
-          opacity: 0.9;
-        }
-       >a {
-          position: absolute;
-          top: 65%; 
-          left: 3rem; 
-          font-weight: bolder; 
-          text-decoration: none;
-          color: black;
-          text-shadow: $bright-text-shadow;
-          font-size: 1.2rem
-        }
-        &:nth-child(1){
-          margin-left: 0; 
-          >img {
-          transform: skewY(-1deg) scale(0.9);
-          }
-        }
-        &:nth-child(2){
-          margin-left: auto; 
-          transform: rotateY(1deg);
-         }
-        &:nth-child(3){
-          margin-bottom: 1vw; 
-          margin-left: 2vw; 
-          transform: scale(1.1);
-        }
-     }
+    left: 20vw;
   }
+  .titlehangman {
+    position: relative;
+    padding: 0;
+    height: 9vw;
+    min-height: 150px;
+    > img {
+      height: 100%;
+      opacity: 0.9;
+    }
+    > a {
+      position: absolute;
+      top: 65%;
+      left: 3rem;
+      font-weight: bolder;
+      text-decoration: none;
+      color: black;
+      text-shadow: $bright-text-shadow;
+      font-size: 1.2rem;
+    }
+    &:nth-child(1) {
+      margin-left: 0;
+      > img {
+        transform: skewY(-1deg) scale(0.9);
+      }
+    }
+    &:nth-child(2) {
+      margin-left: auto;
+      transform: rotateY(1deg);
+    }
+    &:nth-child(3) {
+      margin-bottom: 1vw;
+      margin-left: 2vw;
+      transform: scale(1.1);
+    }
+  }
+}
 
 //pacman with animation
-.gameTease  {
-  @extend .titleGameTease; 
+.gameTease {
+  @extend .titleGameTease;
   animation-name: gameTeaseBox;
   animation-duration: 7s;
   animation-iteration-count: 1;
-  animation-fill-mode: forwards; 
+  animation-fill-mode: forwards;
   .hangman {
-    @extend .titlehangman; 
+    @extend .titlehangman;
     animation-name: gameTease;
     animation-duration: 7s;
     animation-iteration-count: 1;
-    animation-fill-mode: forwards; 
+    animation-fill-mode: forwards;
     > img {
       @extend img;
-      }
+    }
     > a {
-        @extend a; 
-        animation-name: gameTeaseFont;
-        animation-duration: 7s;
-        animation-iteration-count: 1;
-        animation-fill-mode: forwards; 
-      }
-   }
- }
+      @extend a;
+      animation-name: gameTeaseFont;
+      animation-duration: 7s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+    }
+  }
+}
 
- @keyframes gameTease {
-  0% { height: 0;
-     }
+@keyframes gameTease {
+  0% {
+    height: 0;
+  }
   40% {
     height: 0;
     margin: 0;
-    }
+  }
   41% {
     height: 11vw;
   }
   100% {
     height: 9vw;
-    min-height: 150px; 
-    }
+    min-height: 150px;
+  }
 }
 
-  @keyframes gameTeaseBox{
-    0% { 
-      top: 150vh; 
-       }
-    40% {
-      top: 130vh; 
-      left: 17vw; 
-      width: 250px;
-      }
-    100% {
-      top: 40vh; 
-      left: 33vw; 
-      width: 250px;
-      }
-    }
+@keyframes gameTeaseBox {
+  0% {
+    top: 150vh;
+  }
+  40% {
+    top: 130vh;
+    left: 17vw;
+    width: 250px;
+  }
+  100% {
+    top: 40vh;
+    left: 33vw;
+    width: 250px;
+  }
+}
 
 @media (max-width: 767px) {
-  @keyframes gameTeaseBox{
-    0% { 
-      top: 150vh; 
-       }
+  @keyframes gameTeaseBox {
+    0% {
+      top: 150vh;
+    }
     40% {
-      top: 130vh; 
-      left: 10vw; 
+      top: 130vh;
+      left: 10vw;
       width: 250px;
-      }
+    }
     100% {
-      top: 40vh; 
-      left: 20vw; 
+      top: 40vh;
+      left: 20vw;
       width: 250px;
-      }    
+    }
   }
 }
 
 @keyframes gameTeaseFont {
-  0% { 
+  0% {
     font-size: 0%;
-    }
-  49% { 
+  }
+  49% {
     font-size: 0%;
-    }
+  }
   50% {
     font-size: 1rem;
-    }
+  }
   100% {
     font-size: 1.2rem;
-    }
   }
-
+}
 
 /* simple - enter transition 300ms, exit 150ms */
 .fade-appear,
 .fade-enter {
-    opacity: 0;
-    z-index: 1;
-    transform: translate(-50%);
+  opacity: 0;
+  z-index: 1;
+  transform: translate(-50%);
 }
 .fade-appear-active,
-.fade-enter, .fade-enter-active {
-    transform: translate(0);
-    opacity: 1;
-    transition: opacity 300ms linear, translate 150ms linear;;
+.fade-enter,
+.fade-enter-active {
+  transform: translate(0);
+  opacity: 1;
+  transition: opacity 300ms linear, translate 150ms linear;
 }
 
 .fade-exit {
-    opacity: 1;
-    transform: translate(0);
+  opacity: 1;
+  transform: translate(0);
 }
 
-.fade-exit, .fade-exit-active {
-    opacity: 0;
-    transform: translate(-50%);
-    transition: opacity 150ms linear, translate 150ms linear;
+.fade-exit,
+.fade-exit-active {
+  opacity: 0;
+  transform: translate(-50%);
+  transition: opacity 150ms linear, translate 150ms linear;
 }

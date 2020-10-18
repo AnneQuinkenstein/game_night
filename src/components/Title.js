@@ -8,7 +8,6 @@ const Title = () => {
 
   const [joke, setJoke] = useState(null);
 
-
   const changeJoke = () => {
     axios.get('https://sv443.net/jokeapi/v2/joke/Programming?blacklistFlags=nsfw,religious,political,racist,sexist&type=single')
       .then(response => response.data)
@@ -25,7 +24,6 @@ const Title = () => {
           <h1 className="jokes" onClick={changeJoke}> Click for the fun of coding!</h1>
         </div>
         <p className="jokes">{joke}</p>
-
         <div className="containerPacman">
           <div className="titleGameTease">
             <div className='titlehangman'>

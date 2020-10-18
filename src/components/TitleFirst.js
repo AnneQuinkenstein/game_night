@@ -7,11 +7,11 @@ import pacghost from '../blinky.png';
 const Title = () => {
 
   const [joke, setJoke] = useState(null);
-  const [style, setStyle] = useState(true);  
+  const [title, setTitle] = useState(true);  
 
 
   const handleClick = () => {
-    setStyle(false)
+    setTitle(false)
   }
 
   const changeJoke = () => {
@@ -22,17 +22,16 @@ const Title = () => {
 
   return (
     <div className="Title page">
-      <div className={style ? "arcadeBackground" : "entranceBackground"}>
+      <div className={title ? "arcadeBackground" : "entranceBackground"}>
         <div className="containerSign" onClick={handleClick}>
-          <h1 className={style ? "titleName" : "nothing"}> <i className="fa fa-long-arrow-left" aria-hidden="true"></i> online <span className="flicker">G</span>ame Nig<span className="flickerTwo">h</span>t</h1>
+          <h1 className={title ? "titleName" : "nothing"}> <i className="fa fa-long-arrow-left" aria-hidden="true"></i> online <span className="flicker">G</span>ame Nig<span className="flickerTwo">h</span>t</h1>
         </div>
         <div className="containerJokes">
-          <h1 className={style ? "nothing" : "jokes"} onClick={changeJoke}> Click for the fun of coding!</h1>
+          <h1 className={title ? "nothing" : "jokes"} onClick={changeJoke}> Click for the fun of coding!</h1>
         </div>
-        <p className={style ? "nothing" : "jokes"}>{joke}</p>
-
+        <p className={title ? "nothing" : "jokes"}>{joke}</p>
         <div className="containerPacman">
-          <div className={style ? "nothing" : "gameTease"}>
+          <div className={title ? "nothing" : "gameTease"}>
             <div className='hangman'>
               <img src={pacghost} alt="pacmanghost"/>
               <Link to='/hangman'>HANGMAN</Link>
