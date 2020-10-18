@@ -28,9 +28,12 @@ $yellow: #a4852f;
 .ContactMenu {
   padding: 1em;
   position: fixed;
-  top: 0.5rem;
+  top: 1rem;
   right: 3rem;
   z-index: 99;
+  @media (max-width: 767px) {
+    top: 0.5rem;
+  }
   ul {
     width: 100%;
     list-style-type: none;
@@ -400,7 +403,7 @@ $yellow: #a4852f;
   }
   background-color: transparent;
   border-radius: 10%;
-  border: 1rem solid;
+  border: 0.5rem solid;
   border-bottom-color: #121212;
   border-left-color: #080808;
   border-right-color: #080808;
