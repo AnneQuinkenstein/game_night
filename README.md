@@ -57,12 +57,13 @@ I started with the idea: a gameing site to have fun alone or with friends in an 
 [the Stocks](http://thestocks.im/)
 [imcreator](http://imcreator.com/free) 
 
-####icons 
+#### Icons 
 [icon scout](https://iconscout.com/)
 
 ### Entrance Animation
 
-#### Look at a sign at the wall and if you click on the font, reach the entrance
+#### Background-Pic
+Look at a sign at the wall and if you click on the font, reach the entrance
 1. scale pic to show the wall, 
 2. onclick: scale pic to cover whole Screen
 
@@ -162,8 +163,8 @@ Font is aligned to the wall using
   perspective-origin: 150% 150%;
 ```
 
-##Easteregg 
-On the right wall, there is a flickering light. If you hover over ist, you will see ... 
+#### Easteregg 
+On the right wall, there is a flickering light. If you hover over ist, you will see 
 a developer joke from [Joke API](https://sv443.net/jokeapi/v2/)
 
 #### Menu
