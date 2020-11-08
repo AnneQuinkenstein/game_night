@@ -181,13 +181,14 @@ Objective: get a reliable lists of popular movies from imdb-api & the fetch the 
 
 -fetch-calls
 1. fetch popular movies from imdb-api.com
-2. fetch movie infos and movie poster using a movie id from a random movie from themoviedb.org
-
+2. select one Movie from popluar Movie array 
 - get a random number 
-`const randomNum = Math.floor(Math.random() * 90);` 
+`const randomNum = Math.floor(Math.random() * 90);`  
 as index of popular Movie array
 `${movie.items[randomNum].id}`
+3. fetch movie infos and movie poster from themoviedb.org
 
+Obejective: Don't display Movies longer then 25 charaters because of the screen size
 - check lenght of movie title with terenary operator
 ` data.title.length < 25 ? setMovieData(data) : setRender(!render)`
 if length is more then 25 letters, fetch a new title
