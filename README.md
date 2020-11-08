@@ -173,7 +173,7 @@ Pacman ghosts flying in with CSS [Keyframes](https://developer.mozilla.org/en-US
 ## Hangman Logic 
 ### APIs 
 #### get Movie-Data 
-##### get a reliable lists of popular movies from imdb-api & the fetch the infos for each movie more reliable from the moviedb.org
+- -> get a reliable lists of popular movies from imdb-api & the fetch the infos for each movie more reliable from the moviedb.org
 
 - Lifecycle-Methode [useEffect](https://reactjs.org/docs/hooks-effect.html) 
 render fetch-calls on first render (ex componentDidMount())
