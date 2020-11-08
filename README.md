@@ -168,7 +168,7 @@ On the right wall, there is a flickering light. If you hover over ist, you will 
 a developer joke from [Joke API](https://sv443.net/jokeapi/v2/)
 
 #### Menu
-Pacman ghosts flying in with CSS [Keyframes](https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes)
+Pacman ghosts flying in using CSS [Keyframes](https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes)
 
 ## Hangman Logic 
 ### APIs 
