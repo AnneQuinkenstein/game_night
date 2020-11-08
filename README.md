@@ -176,8 +176,8 @@ Pacman ghosts flying in with CSS [Keyframes](https://developer.mozilla.org/en-US
 - -> get a reliable lists of popular movies from imdb-api & the fetch the infos for each movie more reliable from the moviedb.org
 
 - Lifecycle-Methode [useEffect](https://reactjs.org/docs/hooks-effect.html) 
-render fetch-calls on first render (ex componentDidMount())
-render fetch-calls if [choosenLang, style, setGameState, phone, render] is changing
+1. render fetch-calls on first render (ex componentDidMount())
+2. render fetch-calls if [choosenLang, style, setGameState, phone, render] is changing
 
 -fetch-calls
 1. fetch popular movies from imdb-api.com
