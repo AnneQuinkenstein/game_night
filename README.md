@@ -50,15 +50,15 @@ I started with the idea: a gameing site to have fun alone or with friends in an 
 ### Wireframe 
 
 ### Royalty free Pics 
-[unsplash](https://unsplash.com/)
-[freepik](https://www.freepik.com/)
-[pexels](https://www.pexels.com/)
-[pixabay](https://pixabay.com/)
-[the Stocks](http://thestocks.im/)
-[imcreator](http://imcreator.com/free) 
+- [unsplash](https://unsplash.com/)
+- [freepik](https://www.freepik.com/)
+- [pexels](https://www.pexels.com/)
+- [pixabay](https://pixabay.com/)
+- [the Stocks](http://thestocks.im/)
+- [imcreator](http://imcreator.com/free) 
 
 #### Icons 
-[icon scout](https://iconscout.com/)
+- [icon scout](https://iconscout.com/)
 
 ### Entrance Animation
 
