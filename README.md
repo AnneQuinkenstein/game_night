@@ -45,7 +45,8 @@
 # Special Gotchas
 
 ## Design
-I started with the idea: a gameing site to have fun alone or with friends in an easy way during lockdown of Covid19. I choosed to do Hangman, which is commenly known and easy to learn even if you don't know the rules. With games you can create an atmosephere of a specifiy world - i utilized movies for the athmosphere in hangman, retro arcade athetics for the home page and retro monitor athetics for the contact page. 
+I started with the idea: a gameing site to have fun alone or with friends in an easy way during lockdown of Covid19. I choosed to do Hangman, which is commenly known and easy to learn even if you don't know it yet. 
+With games you can create an atmosephere of a specifiy world - i utilized movies for the athmosphere in hangman, retro arcade athetics for the home page and retro monitor athetics for the contact page. 
 
 ### Wireframe 
 
