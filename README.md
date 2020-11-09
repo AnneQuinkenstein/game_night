@@ -74,9 +74,6 @@ Look at a sign at the wall and if you click on the font, reach the entrance
   background-color: black;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh;
-  width: 100vw;
-  background-position: center;
   animation-name: divMove;
   animation-duration: 5s;
   animation-timing-function: ease-in-out;
@@ -89,25 +86,12 @@ Look at a sign at the wall and if you click on the font, reach the entrance
     height: calc(1000px + 100vh);
     background-position-x: right;
     background-position-y: -50vh;
-    background-size: cover;
   }
   100% {
     height: 100vh;
     width: 100vw;
     background-position: center;
-    transform: scale(1, 1);
   }
-}
-``` 
-```CSS
-.arcadeBackground {
-  height: calc(1000px + 100vh);
-  background-image: url(arcadeEntrance.jpg);
-  background-color: black;
-  background-position-x: right;
-  background-position-y: -50vh;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 ``` 
 
