@@ -16,9 +16,9 @@
     <img src="https://i.ibb.co/0Z13t1L/gamenight.png" alt="Logo" width="300" height="160">
   </a>
 
-  <p align="center">
+  <p align="left">
     Game Night is to have fun alone or with friends, even through a pandemic.
-    Play a hangman game with movie titles in your favorite Language! (choosen from popular movies on OMDBApi & sea the poster passed from themoviedb.org) For each wrong guess a associated giphy is revealed - failure is not bad :) <br/>
+    Play a hangman game with movie titles in your favorite Language! (choosen from popular movies on OMDBApi & see the poster passed from themoviedb.org) For each wrong guess a associated giphy (fetched from Giphy API) is revealed - failure is not bad :) <br/>
     I used React Context to pass the logic of the game. I did some animations utilizing SCSS - will you find a easteregg? With Formspree the Input of the Contactform is sent to my Email.
     <br />
     <br />
@@ -45,7 +45,8 @@
 # Special Gotchas
 
 ## Design
-I started with the idea: a gameing site to have fun alone or with friends in an easy way during lockdown of Covid19. I choosed to do Hangman, which is commenly known and easy to learn even if you don't know the rules. With games you can create an atmosephere of a specifiy world - i utilized movies for the athmosphere in hangman, retro arcade athetics for the home page and retro monitor athetics for the contact page. 
+I started with the idea: a gameing site to have fun alone or with friends in an easy way during lockdown of Covid19. I choosed to do Hangman, which is commenly known and easy to learn even if you don't know it yet. 
+With games you can create an atmosephere of a specifiy world - i utilized movies for the athmosphere in hangman, retro arcade athetics for the home page and retro monitor athetics for the contact page. 
 
 ### Wireframe 
 
@@ -73,9 +74,6 @@ Look at a sign at the wall and if you click on the font, reach the entrance
   background-color: black;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh;
-  width: 100vw;
-  background-position: center;
   animation-name: divMove;
   animation-duration: 5s;
   animation-timing-function: ease-in-out;
@@ -88,25 +86,12 @@ Look at a sign at the wall and if you click on the font, reach the entrance
     height: calc(1000px + 100vh);
     background-position-x: right;
     background-position-y: -50vh;
-    background-size: cover;
   }
   100% {
     height: 100vh;
     width: 100vw;
     background-position: center;
-    transform: scale(1, 1);
   }
-}
-``` 
-```CSS
-.arcadeBackground {
-  height: calc(1000px + 100vh);
-  background-image: url(arcadeEntrance.jpg);
-  background-color: black;
-  background-position-x: right;
-  background-position-y: -50vh;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 ``` 
 
