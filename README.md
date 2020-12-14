@@ -18,8 +18,8 @@
 
   <p align="left">
     Game Night is to have fun alone or with friends, even through a pandemic.
-    Play a hangman game with movie titles in your favorite Language! (choosen from popular movies on OMDBApi & see the poster passed from themoviedb.org) For each wrong guess a associated giphy (fetched from Giphy API) is revealed - failure is not bad :) <br/>
-    I used React Context to pass the logic of the game. I did some animations utilizing SCSS - will you find a easteregg? With Formspree the Input of the Contactform is sent to my Email.
+    Play a hangman game with movie titles in your favorite Language! (choosen from popular movies on OMDBApi & see the poster passed from themoviedb.org) For each wrong guess a associated giphy (fetched from Giphy API) is revealed - failure is not bad 👾 <br/>
+    I used React Context to pass the logic of the game. I did some animations utilizing SCSS - will you find an easteregg? With Formspree the Input of the Contactform is sent to my Email.
     <br />
     <br />
     <a href="https://game-night-aquin.netlify.app/">Demo</a>
